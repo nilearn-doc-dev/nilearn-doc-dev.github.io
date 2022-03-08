@@ -1,0 +1,22 @@
+div.sphx-glr-download a {
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid var(--sd-color-primary);
+  border-radius: 4px;
+  color: var(--sd-color-primary);
+  padding: 1ex;
+  text-align: center;
+}
+
+div.sphx-glr-download a:hover {
+  box-shadow: none;
+  text-decoration: none;
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid var(--sd-color-primary-highlight);
+  color: var(--sd-color-primary-highlight);
+}
+
+div.sphx-glr-download a .pre {
+  font-family: var(--font-stack);
+}
