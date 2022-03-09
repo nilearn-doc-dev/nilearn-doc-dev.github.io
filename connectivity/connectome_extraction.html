@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Connectome extraction: inverse covariance for direct connections" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/connectivity/connectome_extraction.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="Page summary: Given a set of time-series (eg as extracted in the previous section) A functional connectome is a set of connections representing brain interactions between regions. Here we show the ..." />
-  <meta property="og:image" content="https://nilearn.github.io/auto_examples/03_connectivity/images/sphx_glr_plot_inverse_covariance_connectome_001.png" />
-  <meta property="og:image:alt" content="covariance" />
+<meta property="og:title" content="Connectome extraction: inverse covariance for direct connections" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/connectivity/connectome_extraction.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="Page summary: Given a set of time-series (eg as extracted in the previous section) A functional connectome is a set of connections representing brain interactions between regions. Here we show the ..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/auto_examples/03_connectivity/images/sphx_glr_plot_inverse_covariance_connectome_001.png" />
+  
+<meta property="og:image:alt" content="covariance" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Group-sparse covariance estimation" href="../developers/group_sparse_covariance.html" /><link rel="prev" title="Extracting times series to build a functional connectome" href="functional_connectomes.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Connectome extraction: inverse covariance for direct connections - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -637,7 +647,7 @@
         </div>
         <article role="main">
           <section id="connectome-extraction-inverse-covariance-for-direct-connections">
-<span id="connectome-extraction"></span><h1>Connectome extraction: inverse covariance for direct connections<a class="headerlink" href="#connectome-extraction-inverse-covariance-for-direct-connections" title="Permalink to this headline">¶</a></h1>
+<span id="connectome-extraction"></span><h1>Connectome extraction: inverse covariance for direct connections<a class="headerlink" href="#connectome-extraction-inverse-covariance-for-direct-connections" title="Permalink to this headline">#</a></h1>
 <div class="topic">
 <p class="topic-title"><strong>Page summary</strong></p>
 <p>Given a set of time-series (eg as extracted in the previous section)
@@ -656,7 +666,7 @@ connectomes across subjects, NeuroImage 2013</a></p></li>
 </ul>
 </div>
 <section id="sparse-inverse-covariance-for-functional-connectomes">
-<h2>Sparse inverse covariance for functional connectomes<a class="headerlink" href="#sparse-inverse-covariance-for-functional-connectomes" title="Permalink to this headline">¶</a></h2>
+<h2>Sparse inverse covariance for functional connectomes<a class="headerlink" href="#sparse-inverse-covariance-for-functional-connectomes" title="Permalink to this headline">#</a></h2>
 <p>Functional connectivity can be obtained by estimating a covariance
 (or correlation) matrix for signals from different brain
 regions decomposed, for example on resting-state or naturalistic-stimuli datasets.
@@ -693,8 +703,8 @@ of the estimator:</p>
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="covariance" src="auto_examples/03_connectivity/images/sphx_glr_plot_inverse_covariance_connectome_001.png"/></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="precision" src="auto_examples/03_connectivity/images/sphx_glr_plot_inverse_covariance_connectome_003.png"/></a></strong></p><p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="covariance_graph" src="auto_examples/03_connectivity/images/sphx_glr_plot_inverse_covariance_connectome_002.png"/></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="precision_graph" src="auto_examples/03_connectivity/images/sphx_glr_plot_inverse_covariance_connectome_004.png"/></a></strong></p><div class="topic">
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="covariance" src="../_images/sphx_glr_plot_inverse_covariance_connectome_001.png" style="width: 360.0px; height: 280.0px;"/></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="precision" src="../_images/sphx_glr_plot_inverse_covariance_connectome_003.png" style="width: 360.0px; height: 280.0px;"/></a></strong></p><p class="centered">
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="covariance_graph" src="../_images/sphx_glr_plot_inverse_covariance_connectome_002.png" style="width: 363.00000000000006px; height: 143.0px;"/></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="precision_graph" src="../_images/sphx_glr_plot_inverse_covariance_connectome_004.png" style="width: 363.00000000000006px; height: 143.0px;"/></a></strong></p><div class="topic">
 <p class="topic-title"><strong>Parameter selection</strong></p>
 <p>The parameter controlling the sparsity is set by <a class="reference external" href="http://scikit-learn.org/stable/modules/cross_validation.html">cross-validation</a>
 scheme. If you want to specify it manually, use the estimator
@@ -721,7 +731,7 @@ multi-subject data.</p></li>
 </div>
 </section>
 <section id="sparse-inverse-covariance-on-multiple-subjects">
-<h2>Sparse inverse covariance on multiple subjects<a class="headerlink" href="#sparse-inverse-covariance-on-multiple-subjects" title="Permalink to this headline">¶</a></h2>
+<h2>Sparse inverse covariance on multiple subjects<a class="headerlink" href="#sparse-inverse-covariance-on-multiple-subjects" title="Permalink to this headline">#</a></h2>
 <p>To work at the level of a group of subject, it can be interesting to
 estimate multiple connectomes for each, with a similar structure but
 differing connection values across subjects.</p>
@@ -777,7 +787,7 @@ adhd.</p>
 </div>
 </section>
 <section id="comparing-the-different-approaches-on-simulated-data">
-<h2>Comparing the different approaches on simulated data<a class="headerlink" href="#comparing-the-different-approaches-on-simulated-data" title="Permalink to this headline">¶</a></h2>
+<h2>Comparing the different approaches on simulated data<a class="headerlink" href="#comparing-the-different-approaches-on-simulated-data" title="Permalink to this headline">#</a></h2>
 <p>We simulate several sets of signals, one set representing one subject,
 with different precision matrices, but sharing a common sparsity pattern:
 10 brain regions, for 20 subjects.</p>
@@ -788,7 +798,7 @@ together.</p>
 <p>Finally, we use the
 <a class="reference internal" href="../modules/generated/nilearn.connectome.GroupSparseCovarianceCV.html#nilearn.connectome.GroupSparseCovarianceCV" title="nilearn.connectome.GroupSparseCovarianceCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.connectome.GroupSparseCovarianceCV</span></code></a> <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <p>The results are the following:</p>
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_simulated_connectome.html"><img alt="auto_examples/03_connectivity/images/sphx_glr_plot_simulated_connectome_001.png" src="auto_examples/03_connectivity/images/sphx_glr_plot_simulated_connectome_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_simulated_connectome.html"><img alt="../_images/sphx_glr_plot_simulated_connectome_001.png" src="../_images/sphx_glr_plot_simulated_connectome_001.png" style="width: 600.0px; height: 420.0px;"/></a>
 <p>The group-sparse estimation outputs matrices with
 the same sparsity pattern, but different values for the non-zero
 coefficients. This is not the case for the graph lasso output, which
@@ -818,7 +828,7 @@ estimation and its implementation can be found in
 </div>
 </section>
 <section id="linking-total-and-direct-interactions-at-the-group-level">
-<h2>Linking total and direct interactions at the group level<a class="headerlink" href="#linking-total-and-direct-interactions-at-the-group-level" title="Permalink to this headline">¶</a></h2>
+<h2>Linking total and direct interactions at the group level<a class="headerlink" href="#linking-total-and-direct-interactions-at-the-group-level" title="Permalink to this headline">#</a></h2>
 <p>Individual connectivity patterns reflect both on covariances and inverse covariances, but in different ways. For multiple subjects, mean covariance (or correlation) and group sparse inverse covariance provide different insights into the connectivity at the group level.</p>
 <p>We can go one step further by coupling the information from total (pairwise) and direct interactions in a unique group connectome. This can be done through a geometrical framework allowing to measure interactions in a common space called <strong>tangent space</strong> <a class="reference external" href="https://hal.inria.fr/inria-00512417/">[Varoquaux et al, MICCAI 2010]</a>.</p>
 <p>In nilearn, this is implemented in
@@ -879,11 +889,21 @@ dataset downloaded with <a class="reference internal" href="../modules/generated
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

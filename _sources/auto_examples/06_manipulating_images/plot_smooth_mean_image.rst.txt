@@ -30,6 +30,64 @@ effects that are expected.
 
 .. GENERATED FROM PYTHON SOURCE LINES 13-36
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_001.png
+         :alt: plot smooth mean image
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_002.png
+         :alt: plot smooth mean image
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_003.png
+         :alt: plot smooth mean image
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_004.png
+         :alt: plot smooth mean image
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_005.png
+         :alt: plot smooth mean image
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_smooth_mean_image_005.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    First subject functional nifti image (4D) are located at: /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+    /home/alexis/singbrain/repo/nilearn/nilearn/image/image.py:207: UserWarning:
+
+    The parameter 'fwhm' for smoothing is specified as 0. Setting it to None (no smoothing will be performed)
+
+
+
+
+
+
+
+|
+
 .. code-block:: default
 
 
@@ -59,9 +117,9 @@ effects that are expected.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  8.027 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  354 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_smooth_mean_image.py:

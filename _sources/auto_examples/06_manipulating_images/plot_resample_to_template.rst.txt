@@ -43,6 +43,12 @@ First we load the required datasets using the nilearn datasets module.
     stat_img = motor_images.images[0]
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 22-23
 
 Now, the localizer t-map image can be resampled to the MNI template image.
@@ -54,6 +60,12 @@ Now, the localizer t-map image can be resampled to the MNI template image.
     from nilearn.image import resample_to_img
 
     resampled_stat_img = resample_to_img(stat_img, template)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 28-29
@@ -91,6 +103,39 @@ Let's check the shape and affine have been correctly updated.
     """.format(original_affine, resampled_affine, template_affine))
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Shape comparison:
+    - Original t-map image shape : (53, 63, 46)
+    - Resampled t-map image shape: (99, 117, 95)
+    - Template image shape       : (99, 117, 95)
+
+    Affine comparison:
+    - Original t-map image affine :
+     [[  -3.    0.    0.   78.]
+     [   0.    3.    0. -112.]
+     [   0.    0.    3.  -50.]
+     [   0.    0.    0.    1.]]
+    - Resampled t-map image affine:
+     [[   2.    0.    0.  -98.]
+     [   0.    2.    0. -134.]
+     [   0.    0.    2.  -72.]
+     [   0.    0.    0.    1.]]
+    - Template image affine       :
+     [[   2.    0.    0.  -98.]
+     [   0.    2.    0. -134.]
+     [   0.    0.    2.  -72.]
+     [   0.    0.    0.    1.]]
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 56-57
 
 Finally, result images are displayed using nilearn plotting module.
@@ -114,11 +159,34 @@ Finally, result images are displayed using nilearn plotting module.
     plotting.show()
 
 
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_resample_to_template_001.png
+         :alt: plot resample to template
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_resample_to_template_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_resample_to_template_002.png
+         :alt: plot resample to template
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_resample_to_template_002.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  8.016 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_resample_to_template.py:

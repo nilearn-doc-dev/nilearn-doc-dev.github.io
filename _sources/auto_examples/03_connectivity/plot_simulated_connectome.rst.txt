@@ -26,6 +26,91 @@ estimation of connectivity structure for a synthetic dataset.
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-83
 
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_simulated_connectome_001.png
+   :alt: ground truth, group-sparse $\alpha=0.04$, graph lasso, graph lasso, all subjects $\alpha=0.03$
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_simulated_connectome_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.4s finished
+    [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  1 out of 4
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.4s finished
+    [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  2 out of 4
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.4s finished
+    [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  3 out of 4
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.4s finished
+    [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  4 out of 4
+    [GroupSparseCovarianceCV.fit] Final optimization
+    /home/alexis/singbrain/repo/nilearn/nilearn/connectome/group_sparse_cov.py:245: UserWarning:
+
+    input signals do not all have unit variance. This can lead to numerical instability.
+
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  1 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  2 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  3 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  4 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  1 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  2 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  3 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  4 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
+    [GraphicalLassoCV] Done refinement  1 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  2 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  3 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  4 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  1 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  2 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  3 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [GraphicalLassoCV] Done refinement  4 out of 4:   0s
+
+
+
+
+
+
+|
+
 .. code-block:: default
 
 
@@ -106,9 +191,9 @@ estimation of connectivity structure for a synthetic dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  3.299 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_03_connectivity_plot_simulated_connectome.py:

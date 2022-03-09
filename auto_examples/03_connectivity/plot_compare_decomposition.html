@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Deriving spatial maps from group fMRI data using ICA and Dictionary Learning" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/auto_examples/03_connectivity/plot_compare_decomposition.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="Various approaches exist to derive spatial maps or networks from group fmr data. The methods extract distributed brain regions that exhibit similar BOLD fluctuations over time. Decomposition method..." />
-  <meta property="og:image" content="https://nilearn.github.io/_static/nilearn-logo.png" />
-  <meta property="og:image:alt" content="Nilearn" />
+<meta property="og:title" content="Deriving spatial maps from group fMRI data using ICA and Dictionary Learning" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/auto_examples/03_connectivity/plot_compare_decomposition.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="Various approaches exist to derive spatial maps or networks from group fmr data. The methods extract distributed brain regions that exhibit similar BOLD fluctuations over time. Decomposition method..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/_static/nilearn-logo.png" />
+  
+<meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Producing single subject maps of seed-to-voxel correlation" href="plot_seed_to_voxel_correlation.html" /><link rel="prev" title="Connectivity structure estimation on simulated data" href="plot_simulated_connectome.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Deriving spatial maps from group fMRI data using ICA and Dictionary Learning - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -642,7 +652,7 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="deriving-spatial-maps-from-group-fmri-data-using-ica-and-dictionary-learning">
-<span id="sphx-glr-auto-examples-03-connectivity-plot-compare-decomposition-py"></span><h1>Deriving spatial maps from group fMRI data using ICA and Dictionary Learning<a class="headerlink" href="#deriving-spatial-maps-from-group-fmri-data-using-ica-and-dictionary-learning" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-examples-03-connectivity-plot-compare-decomposition-py"></span><h1>Deriving spatial maps from group fMRI data using ICA and Dictionary Learning<a class="headerlink" href="#deriving-spatial-maps-from-group-fmri-data-using-ica-and-dictionary-learning" title="Permalink to this headline">#</a></h1>
 <p>Various approaches exist to derive spatial maps or networks from
 group fmr data. The methods extract distributed brain regions that
 exhibit similar <a class="reference internal" href="../../glossary.html#term-BOLD"><span class="xref std std-term">BOLD</span></a> fluctuations over time. Decomposition
@@ -664,59 +674,345 @@ fMRI datasets”, NeuroImage Vol 51 (2010), p. 288-299
 </ul>
 </div></blockquote>
 <section id="load-brain-development-fmri-dataset">
-<h2>Load brain development fmri dataset<a class="headerlink" href="#load-brain-development-fmri-dataset" title="Permalink to this headline">¶</a></h2>
+<h2>Load brain development fmri dataset<a class="headerlink" href="#load-brain-development-fmri-dataset" title="Permalink to this headline">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 
-<span class="n">rest_dataset</span> <span class="o">=</span> <a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_development_fmri</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">n_subjects</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">func_filenames</span> <span class="o">=</span> <span class="n">rest_dataset</span><span class="o">.</span><span class="n">func</span>  <span class="c1"># list of 4D nifti files for each subject</span>
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">rest_dataset</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_development_fmri</span></a><span class="p">(</span><span class="n">n_subjects</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filenames</span></a> <span class="o">=</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rest_dataset</span><span class="o">.</span><span class="n">func</span></a>  <span class="c1"># list of 4D nifti files for each subject</span>
 
 <span class="c1"># print basic information on the dataset</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'First functional nifti image (4D) is at: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span>
-      <span class="n">rest_dataset</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 4D data</span>
+      <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rest_dataset</span><span class="o">.</span><span class="n">func</span></a><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 4D data</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>First functional nifti image (4D) is at: /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
 </pre></div>
 </div>
 </section>
 <section id="apply-canica-on-the-data">
-<h2>Apply CanICA on the data<a class="headerlink" href="#apply-canica-on-the-data" title="Permalink to this headline">¶</a></h2>
+<h2>Apply CanICA on the data<a class="headerlink" href="#apply-canica-on-the-data" title="Permalink to this headline">#</a></h2>
 <p>We use “whole-brain-template” as a strategy to compute the mask,
 as this leads to slightly faster and more reproducible results.
 However, the images need to be in <a class="reference internal" href="../../glossary.html#term-MNI"><span class="xref std std-term">MNI</span></a> template space.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.decomposition</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">CanICA</span></a></a></a></a></a></a></a></a></a></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.decomposition</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class"><span class="n">CanICA</span></a>
 
-<span class="n">canica</span> <span class="o">=</span> <a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">CanICA</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">canica</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class"><span class="n">CanICA</span></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
                 <span class="n">memory</span><span class="o">=</span><span class="s2">"nilearn_cache"</span><span class="p">,</span> <span class="n">memory_level</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                 <span class="n">verbose</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                 <span class="n">mask_strategy</span><span class="o">=</span><span class="s1">'whole-brain-template'</span><span class="p">,</span>
                 <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">canica</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">func_filenames</span><span class="p">)</span>
+<a href="../../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA.fit" title="nilearn.decomposition.CanICA.fit" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-method"><span class="n">canica</span><span class="o">.</span><span class="n">fit</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filenames</span></a><span class="p">)</span>
 
 <span class="c1"># Retrieve the independent components in brain space. Directly</span>
 <span class="c1"># accessible through attribute `components_img_`.</span>
-<span class="n">canica_components_img</span> <span class="o">=</span> <span class="n">canica</span><span class="o">.</span><span class="n">components_img_</span>
+<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">canica_components_img</span></a> <span class="o">=</span> <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">canica</span><span class="o">.</span><span class="n">components_img_</span></a>
 <span class="c1"># components_img is a Nifti Image object, and can be saved to a file with</span>
 <span class="c1"># the following line:</span>
-<span class="n">canica_components_img</span><span class="o">.</span><span class="n">to_filename</span><span class="p">(</span><span class="s1">'canica_resting_state.nii.gz'</span><span class="p">)</span>
+<a href="https://nipy.org/nibabel/reference/nibabel.filebasedimages.html#nibabel.filebasedimages.FileBasedImage.to_filename" title="nibabel.filebasedimages.FileBasedImage.to_filename" class="sphx-glr-backref-module-nibabel-filebasedimages sphx-glr-backref-type-py-method"><span class="n">canica_components_img</span><span class="o">.</span><span class="n">to_filename</span></a><span class="p">(</span><span class="s1">'canica_resting_state.nii.gz'</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[MultiNiftiMasker.fit] Loading data from [/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar124_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar125_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar126_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar127_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar128_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar001_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar002_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar003_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar004_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar005_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar006_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar007_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar008_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar009_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar010_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar011_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar012_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar013_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar014_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar015_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar016_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar017_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar018_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar019_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar020_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar021_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar022_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar023_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar024_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz]
+[MultiNiftiMasker.fit] Computing mask
+/home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/memory.py:632: UserWarning:
+
+Cannot inspect object functools.partial(&lt;function compute_multi_brain_mask at 0x7f61f9e796c0&gt;, mask_type='whole-brain'), ignore list will not work.
+
+Template whole-brain mask computation
+/home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/memory.py:810: UserWarning:
+
+Cannot inspect object functools.partial(&lt;function compute_multi_brain_mask at 0x7f61f9e796c0&gt;, mask_type='whole-brain'), ignore list will not work.
+
+/home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/memory.py:632: UserWarning:
+
+Cannot inspect object functools.partial(&lt;function compute_multi_brain_mask at 0x7f61f9e796c0&gt;, mask_type='whole-brain'), ignore list will not work.
+
+[MultiNiftiMasker.transform] Resampling mask
+[CanICA] Loading data
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar124_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar125_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar126_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar127_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar128_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar001_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar002_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar003_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar004_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar005_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar006_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar007_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar008_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar009_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar010_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar011_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar012_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar013_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar014_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar015_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar016_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar017_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar018_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar019_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar020_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar021_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar022_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar023_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar024_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+________________________________________________________________________________
+[Memory] Calling sklearn.utils.extmath.randomized_svd...
+randomized_svd(array([[0.003659, ..., 0.013254],
+       ...,
+       [0.012477, ..., 0.002881]]), n_components=20, transpose=True, random_state=0, n_iter=3)
+___________________________________________________randomized_svd - 0.5s, 0.0min
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=209652396)
+__________________________________________________________fastica - 0.5s, 0.0min
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.6s remaining:    0.0s
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=398764591)
+__________________________________________________________fastica - 0.7s, 0.0min
+[Parallel(n_jobs=1)]: Done   2 out of   2 | elapsed:    1.3s remaining:    0.0s
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=924231285)
+__________________________________________________________fastica - 0.6s, 0.0min
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    1.9s remaining:    0.0s
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=1478610112)
+__________________________________________________________fastica - 0.9s, 0.0min
+[Parallel(n_jobs=1)]: Done   4 out of   4 | elapsed:    2.8s remaining:    0.0s
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=441365315)
+__________________________________________________________fastica - 0.8s, 0.0min
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    3.6s remaining:    0.0s
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=1537364731)
+__________________________________________________________fastica - 0.7s, 0.0min
+[Parallel(n_jobs=1)]: Done   6 out of   6 | elapsed:    4.3s remaining:    0.0s
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=192771779)
+__________________________________________________________fastica - 1.0s, 0.0min
+[Parallel(n_jobs=1)]: Done   7 out of   7 | elapsed:    5.3s remaining:    0.0s
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=1491434855)
+__________________________________________________________fastica - 0.6s, 0.0min
+[Parallel(n_jobs=1)]: Done   8 out of   8 | elapsed:    5.9s remaining:    0.0s
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=1819583497)
+__________________________________________________________fastica - 0.8s, 0.0min
+[Parallel(n_jobs=1)]: Done   9 out of   9 | elapsed:    6.7s remaining:    0.0s
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.004071, ...,  0.000497],
+       ...,
+       [ 0.005856, ..., -0.004765]]), whiten=True, fun='cube', random_state=530702035)
+__________________________________________________________fastica - 0.7s, 0.0min
+[Parallel(n_jobs=1)]: Done  10 out of  10 | elapsed:    7.5s finished
 </pre></div>
 </div>
 <p>To visualize we plot the outline of all components on one figure</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_prob_atlas</span></a></a></a></a></a></a></a></a></a></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_prob_atlas</span></a>
 
 <span class="c1"># Plot all ICA components together</span>
-<a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_prob_atlas</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">canica_components_img</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'All ICA components'</span><span class="p">)</span>
+<a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_prob_atlas</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">canica_components_img</span></a><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'All ICA components'</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="plot compare decomposition" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_compare_decomposition_001.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_001.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+No contour levels were found within the data range.
+
+/home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+linewidths is ignored by contourf
+
+/home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/ma/core.py:2826: UserWarning:
+
+Warning: converting a masked element to nan.
+
+
+&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b1c51660&gt;
 </pre></div>
 </div>
 <p>Finally, we plot the map for each <a class="reference internal" href="../../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> component separately</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">iter_img</span></a></a></a></a></a></a></a></a></a></a>
-<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a></a></a></a></a></a></a></a></a></a><span class="p">,</span> <a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a></a></a></a></a></a></a></a></a></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">iter_img</span></a>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a><span class="p">,</span> <a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a>
 
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cur_img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">iter_img</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">canica_components_img</span><span class="p">)):</span>
-    <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">cur_img</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">"z"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"IC </span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span>
+<span class="k">for</span> <a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">,</span> <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cur_img</span></a> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">iter_img</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">canica_components_img</span></a><span class="p">)):</span>
+    <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cur_img</span></a><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">"z"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"IC </span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">,</span>
                   <span class="n">cut_coords</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+<ul class="sphx-glr-horizontal">
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_002.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_002.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_003.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_003.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_004.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_004.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_005.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_005.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_006.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_006.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_007.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_007.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_008.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_008.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_009.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_009.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_010.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_010.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_011.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_011.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_012.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_012.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_013.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_013.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_014.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_014.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_015.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_015.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_016.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_016.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_017.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_017.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_018.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_018.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_019.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_019.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_020.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_020.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_021.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_021.png"/></li>
+</ul>
 </section>
 <section id="compare-canica-to-dictionary-learning">
-<h2>Compare CanICA to dictionary learning<a class="headerlink" href="#compare-canica-to-dictionary-learning" title="Permalink to this headline">¶</a></h2>
+<h2>Compare CanICA to dictionary learning<a class="headerlink" href="#compare-canica-to-dictionary-learning" title="Permalink to this headline">#</a></h2>
 <p><a class="reference internal" href="../../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> is a sparsity based decomposition method
 for extracting spatial maps. It extracts maps that are naturally sparse
 and usually cleaner than <a class="reference internal" href="../../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a>. Here, we will compare networks built
@@ -728,9 +1024,9 @@ ISBI 2016, Lecture Notes in Computer Science</p></li>
 </ul>
 </div></blockquote>
 <p>Create a dictionary learning estimator</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.decomposition</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">DictLearning</span></a></a></a></a></a></a></a></a></a></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.decomposition</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class"><span class="n">DictLearning</span></a>
 
-<span class="n">dict_learning</span> <span class="o">=</span> <a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">DictLearning</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dict_learning</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-class"><span class="n">DictLearning</span></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
                              <span class="n">memory</span><span class="o">=</span><span class="s2">"nilearn_cache"</span><span class="p">,</span> <span class="n">memory_level</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                              <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                              <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
@@ -738,46 +1034,309 @@ ISBI 2016, Lecture Notes in Computer Science</p></li>
                              <span class="n">mask_strategy</span><span class="o">=</span><span class="s1">'whole-brain-template'</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">'[Example] Fitting dicitonary learning model'</span><span class="p">)</span>
-<span class="n">dict_learning</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">func_filenames</span><span class="p">)</span>
+<a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning.fit" title="nilearn.decomposition.DictLearning.fit" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-method"><span class="n">dict_learning</span><span class="o">.</span><span class="n">fit</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filenames</span></a><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'[Example] Saving results'</span><span class="p">)</span>
 <span class="c1"># Grab extracted components umasked back to Nifti image.</span>
 <span class="c1"># Note: For older versions, less than 0.4.1. components_img_</span>
 <span class="c1"># is not implemented. See Note section above for details.</span>
-<span class="n">dictlearning_components_img</span> <span class="o">=</span> <span class="n">dict_learning</span><span class="o">.</span><span class="n">components_img_</span>
-<span class="n">dictlearning_components_img</span><span class="o">.</span><span class="n">to_filename</span><span class="p">(</span><span class="s1">'dictionary_learning_resting_state.nii.gz'</span><span class="p">)</span>
+<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dictlearning_components_img</span></a> <span class="o">=</span> <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dict_learning</span><span class="o">.</span><span class="n">components_img_</span></a>
+<a href="https://nipy.org/nibabel/reference/nibabel.filebasedimages.html#nibabel.filebasedimages.FileBasedImage.to_filename" title="nibabel.filebasedimages.FileBasedImage.to_filename" class="sphx-glr-backref-module-nibabel-filebasedimages sphx-glr-backref-type-py-method"><span class="n">dictlearning_components_img</span><span class="o">.</span><span class="n">to_filename</span></a><span class="p">(</span><span class="s1">'dictionary_learning_resting_state.nii.gz'</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[Example] Fitting dicitonary learning model
+[MultiNiftiMasker.fit] Loading data from [/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar124_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar125_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar126_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar127_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar128_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar001_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar002_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar003_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar004_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar005_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar006_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar007_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar008_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar009_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar010_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar011_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar012_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar013_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar014_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar015_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar016_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar017_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar018_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar019_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar020_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar021_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar022_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar023_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz,
+ /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar024_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz]
+[MultiNiftiMasker.fit] Computing mask
+/home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/memory.py:632: UserWarning:
+
+Cannot inspect object functools.partial(&lt;function compute_multi_brain_mask at 0x7f61f9e796c0&gt;, mask_type='whole-brain'), ignore list will not work.
+
+/home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/memory.py:810: UserWarning:
+
+Cannot inspect object functools.partial(&lt;function compute_multi_brain_mask at 0x7f61f9e796c0&gt;, mask_type='whole-brain'), ignore list will not work.
+
+/home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/memory.py:632: UserWarning:
+
+Cannot inspect object functools.partial(&lt;function compute_multi_brain_mask at 0x7f61f9e796c0&gt;, mask_type='whole-brain'), ignore list will not work.
+
+[MultiNiftiMasker.transform] Resampling mask
+[DictLearning] Loading data
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar124_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar125_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar126_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar127_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar128_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar001_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar002_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar003_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar004_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar005_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar006_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar007_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar008_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar009_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar010_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar011_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar012_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar013_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar014_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar015_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar016_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar017_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar018_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar019_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar020_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar021_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar022_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar023_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[MultiNiftiMasker.transform_single_imgs] Loading data from Nifti1Image('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar024_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz')
+[MultiNiftiMasker.transform_single_imgs] Smoothing images
+[MultiNiftiMasker.transform_single_imgs] Extracting region signals
+[MultiNiftiMasker.transform_single_imgs] Cleaning extracted signals
+[DictLearning] Learning initial components
+________________________________________________________________________________
+[Memory] Calling sklearn.utils.extmath.randomized_svd...
+randomized_svd(array([[-0.001315, ...,  0.004387],
+       ...,
+       [ 0.011243, ...,  0.004194]]), n_components=20, transpose=True, random_state=0, n_iter=3)
+___________________________________________________randomized_svd - 0.7s, 0.0min
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._fastica.fastica...
+fastica(array([[ 0.00289 , ..., -0.002135],
+       ...,
+       [ 0.005107, ..., -0.012507]]), whiten=True, fun='cube', random_state=209652396)
+__________________________________________________________fastica - 1.7s, 0.0min
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.7s finished
+[DictLearning] Computing initial loadings
+________________________________________________________________________________
+[Memory] Calling nilearn.decomposition.dict_learning._compute_loadings...
+_compute_loadings(array([[-0.006971, ..., -0.00035 ],
+       ...,
+       [ 0.001073, ...,  0.014516]]),
+array([[-0.624512, ...,  5.338654],
+       ...,
+       [ 0.779528, ...,  0.745343]]))
+_________________________________________________compute_loadings - 0.2s, 0.0min
+[DictLearning] Learning dictionary
+________________________________________________________________________________
+[Memory] Calling sklearn.decomposition._dict_learning.dict_learning_online...
+dict_learning_online(array([[-0.624512, ...,  0.779528],
+       ...,
+       [ 5.338654, ...,  0.745343]]),
+20, alpha=10, n_iter=1090, batch_size=20, method='cd', dict_init=array([[ 0.09987 , ..., -0.223282],
+       ...,
+       [ 0.010094, ..., -0.327508]]), verbose=0, random_state=0, return_code=True, shuffle=True, n_jobs=1)
+_____________________________________________dict_learning_online - 5.9s, 0.1min
+[Example] Saving results
 </pre></div>
 </div>
 <p>Visualize the results</p>
 <p>First plot all DictLearning components together</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_prob_atlas</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">dictlearning_components_img</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_prob_atlas</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dictlearning_components_img</span></a><span class="p">,</span>
                 <span class="n">title</span><span class="o">=</span><span class="s1">'All DictLearning components'</span><span class="p">)</span>
 </pre></div>
 </div>
+<img alt="plot compare decomposition" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_compare_decomposition_022.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_022.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+linewidths is ignored by contourf
+
+/home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+No contour levels were found within the data range.
+
+/home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/ma/core.py:2826: UserWarning:
+
+Warning: converting a masked element to nan.
+
+
+&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61afa560b0&gt;
+</pre></div>
+</div>
 <p>One plot of each component</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cur_img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">iter_img</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">dictlearning_components_img</span><span class="p">)):</span>
-    <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">cur_img</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">"z"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Comp </span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">,</span> <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cur_img</span></a> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">iter_img</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dictlearning_components_img</span></a><span class="p">)):</span>
+    <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cur_img</span></a><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">"z"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Comp </span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">,</span>
                   <span class="n">cut_coords</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+<ul class="sphx-glr-horizontal">
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_023.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_023.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_024.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_024.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_025.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_025.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_026.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_026.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_027.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_027.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_028.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_028.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_029.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_029.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_030.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_030.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_031.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_031.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_032.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_032.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_033.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_033.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_034.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_034.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_035.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_035.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_036.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_036.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_037.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_037.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_038.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_038.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_039.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_039.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_040.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_040.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_041.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_041.png"/></li>
+<li><img alt="plot compare decomposition" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_compare_decomposition_042.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_042.png"/></li>
+</ul>
 <p>Estimate explained variance per component and plot using matplotlib</p>
 <p>The fitted object <cite>dict_learning</cite> can be used to calculate the score per component</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">dict_learning</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">func_filenames</span><span class="p">,</span> <span class="n">per_component</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scores</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning.score" title="nilearn.decomposition.DictLearning.score" class="sphx-glr-backref-module-nilearn-decomposition sphx-glr-backref-type-py-method"><span class="n">dict_learning</span><span class="o">.</span><span class="n">score</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filenames</span></a><span class="p">,</span> <span class="n">per_component</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Plot the scores</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">FormatStrFormatter</span></a></a></a></a></a></a></a></a></a></a>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class"><span class="n">FormatStrFormatter</span></a>
 
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">positions</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">barh</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="s1">'Component #'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="s1">'Explained variance'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">gca</span></a></a></a></a></a></a></a></a></a></a><span class="p">()</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">FormatStrFormatter</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="s1">'</span><span class="si">%.3f</span><span class="s1">'</span><span class="p">))</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a></a></a></a></a></a></a></a></a></a><span class="p">()</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">positions</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="nb">len</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scores</span></a><span class="p">))</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh" title="matplotlib.pyplot.barh" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">barh</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">positions</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scores</span></a><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s1">'Component #'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s1">'Explained variance'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html#matplotlib.pyplot.gca" title="matplotlib.pyplot.gca" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">gca</span></a><span class="p">()</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="https://matplotlib.org/stable/api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" title="matplotlib.ticker.FormatStrFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class"><span class="n">FormatStrFormatter</span></a><span class="p">(</span><span class="s1">'</span><span class="si">%.3f</span><span class="s1">'</span><span class="p">))</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
 
-<a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a></a></a></a></a></a></a></a></a></a><span class="p">()</span>
+<a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="plot compare decomposition" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_compare_decomposition_043.png" srcset="../../_images/sphx_glr_plot_compare_decomposition_043.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>________________________________________________________________________________
+[Memory] Calling nilearn.decomposition.base.explained_variance...
+explained_variance(array([[-6.245714e-01, ...,  5.338591e+00],
+       ...,
+       [-6.323485e-15, ..., -1.154503e-16]]),
+array([[0., ..., 0.],
+       ...,
+       [0., ..., 0.]]), per_component=True)
+/home/alexis/singbrain/repo/nilearn/nilearn/decomposition/base.py:502: UserWarning:
+
+Persisting input arguments took 1.23s to run.
+If this happens often in your code, it can cause performance problems
+(results will be correct in all cases).
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+
+______________________________________________explained_variance - 74.5s, 1.2min
 </pre></div>
 </div>
 <div class="admonition note">
@@ -786,8 +1345,8 @@ ISBI 2016, Lecture Notes in Computer Science</p></li>
 created using <a class="reference internal" href="../../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a>, see <a class="reference internal" href="plot_extract_regions_dictlearning_maps.html#sphx-glr-auto-examples-03-connectivity-plot-extract-regions-dictlearning-maps-py"><span class="std std-ref">example Regions
 extraction using dictionary learning and functional connectomes</span></a>.</p>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  0 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 6 minutes  36.181 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  2621 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-03-connectivity-plot-compare-decomposition-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/03_connectivity/plot_compare_decomposition.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo3.svg" width="150px"/></a>
@@ -829,11 +1388,21 @@ extraction using dictionary learning and functional connectomes</span></a>.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

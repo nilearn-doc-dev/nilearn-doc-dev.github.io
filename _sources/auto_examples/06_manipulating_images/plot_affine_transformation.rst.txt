@@ -103,6 +103,12 @@ First make a simple synthetic image
     img = nibabel.Nifti1Image(image[:, :, np.newaxis], affine=source_affine)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 83-84
 
 Now resample the image
@@ -133,6 +139,29 @@ Now resample the image
         img_4d_affine,
         target_affine=np.eye(4),
         target_shape=(np.array(img_4d_affine.shape) * 2).astype(int))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/image/resampling.py:531: UserWarning:
+
+    Casting data from int64 to float64
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/image/resampling.py:531: UserWarning:
+
+    Casting data from int64 to float64
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/image/resampling.py:531: UserWarning:
+
+    Casting data from int64 to float64
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 108-109
@@ -168,11 +197,48 @@ Finally, visualize
     show()
 
 
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_affine_transformation_001.png
+         :alt: The original data in voxel space
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_affine_transformation_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_affine_transformation_002.png
+         :alt: The original data in mm space
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_affine_transformation_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_affine_transformation_003.png
+         :alt: Transformed using a 3x3 affine -  leads to re-estimation of bounding box
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_affine_transformation_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_affine_transformation_004.png
+         :alt: Transformed using a 4x4 affine -  Uses affine anchor and estimates bounding box size
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_affine_transformation_004.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  1.929 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_affine_transformation.py:

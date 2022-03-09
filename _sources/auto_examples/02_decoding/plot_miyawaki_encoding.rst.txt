@@ -65,6 +65,12 @@ Now we can load the data set:
     dataset = fetch_miyawaki2008()
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 We only use the training data of this study,
@@ -78,6 +84,12 @@ where random binary images were shown.
     # training data starts after the first 12 files
     fmri_random_runs_filenames = dataset.func[12:]
     stimuli_random_runs_filenames = dataset.label[12:]
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 52-54
@@ -109,6 +121,12 @@ data, clean and mask it.
                                   (-1,) + stimulus_shape, order='F'))
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 74-75
 
 Let's take a look at some of these binary images:
@@ -131,6 +149,17 @@ Let's take a look at some of these binary images:
     plt.subplots_adjust(wspace=0.5)
 
 
+
+
+.. image-sg:: /auto_examples/02_decoding/images/sphx_glr_plot_miyawaki_encoding_001.png
+   :alt: Run 1, Stimulus 125, Run 3, Stimulus 102
+   :srcset: /auto_examples/02_decoding/images/sphx_glr_plot_miyawaki_encoding_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 89-91
 
 We now stack the fmri and stimulus data and remove an offset in the
@@ -145,6 +174,12 @@ beginning/end.
     stimuli = np.vstack([stimuli_run[:-2] for stimuli_run in stimuli]).astype(float)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 96-97
 
 fmri_data is a matrix of *samples* x *voxels*
@@ -155,6 +190,18 @@ fmri_data is a matrix of *samples* x *voxels*
 
 
     print(fmri_data.shape)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    (2860, 5438)
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 101-103
@@ -171,6 +218,18 @@ so it is a matrix of *samples* x *pixels*.
     stimuli = np.reshape(stimuli, (-1, stimulus_shape[0] * stimulus_shape[1]))
 
     print(stimuli.shape)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    (2860, 100)
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-117
@@ -190,6 +249,12 @@ activity in this voxel.
 
     from sklearn.linear_model import Ridge
     from sklearn.model_selection import KFold
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 122-126
@@ -220,6 +285,12 @@ and fmri_data as targets, and create predictions for the held-out 10th.
                                multioutput='raw_values'))
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 143-147
 
 Mapping the encoding scores on the brain
@@ -240,6 +311,12 @@ the scores and then threshold it:
     score_map_img = masker.inverse_transform(cut_score)
 
     thresholded_score_map_img = threshold_img(score_map_img, threshold=1e-6, copy=False)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 158-160
@@ -279,6 +356,17 @@ which we will inspect more closely later on.
     # re-set figure size after construction so colorbar gets rescaled too
     fig = plt.gcf()
     fig.set_size_inches(12, 12)
+
+
+
+
+
+.. image-sg:: /auto_examples/02_decoding/images/sphx_glr_plot_miyawaki_encoding_002.png
+   :alt: plot miyawaki encoding
+   :srcset: /auto_examples/02_decoding/images/sphx_glr_plot_miyawaki_encoding_002.png
+   :class: sphx-glr-single-img
+
+
 
 
 
@@ -359,6 +447,23 @@ set of regression coefficients.
     plt.colorbar(ax_im, ax=ax)
 
 
+
+
+.. image-sg:: /auto_examples/02_decoding/images/sphx_glr_plot_miyawaki_encoding_003.png
+   :alt: Receptive fields of the marked voxels
+   :srcset: /auto_examples/02_decoding/images/sphx_glr_plot_miyawaki_encoding_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <matplotlib.colorbar.Colorbar object at 0x7f61afa7beb0>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 261-266
 
 The receptive fields of the four voxels are not only close to each other,
@@ -370,9 +475,9 @@ its location in the brain.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  38.177 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  502 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_miyawaki_encoding.py:

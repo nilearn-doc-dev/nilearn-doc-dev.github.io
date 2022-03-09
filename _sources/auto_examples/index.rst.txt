@@ -22,12 +22,6 @@ Examples
 
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /
-
 ===============
 Basic tutorials
 ===============

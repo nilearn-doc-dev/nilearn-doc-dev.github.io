@@ -41,6 +41,12 @@ documentation for more details.
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 22-24
 
 Fetch images for "successful stop minus go"-like protocols.
@@ -74,6 +80,26 @@ Fetch images for "successful stop minus go"-like protocols.
     collections = nv_data['collections_meta']
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Reading local neurovault data.
+    Already fetched 1 image
+    Already fetched 2 images
+    Already fetched 3 images
+    Already fetched 4 images
+    Already fetched 5 images
+    Already fetched 6 images
+    Already fetched 7 images
+    7 images found on local disk.
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 48-50
 
 Visualize the data
@@ -90,6 +116,72 @@ Visualize the data
         plotting.plot_glass_brain(
             im['absolute_path'],
             title='image {0}: {1}'.format(im['id'], im['contrast_definition']))
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_001.png
+         :alt: plot neurovault meta analysis
+         :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_002.png
+         :alt: plot neurovault meta analysis
+         :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_003.png
+         :alt: plot neurovault meta analysis
+         :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_004.png
+         :alt: plot neurovault meta analysis
+         :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_005.png
+         :alt: plot neurovault meta analysis
+         :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_005.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_006.png
+         :alt: plot neurovault meta analysis
+         :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_006.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_007.png
+         :alt: plot neurovault meta analysis
+         :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_007.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    plotting glass brain for collected images
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 59-61
@@ -137,6 +229,38 @@ Compute statistics
 
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    Computing maps...
+
+
+    Collection 2818:
+         Image 2818: degrees of freedom: 18
+         Image 2834: degrees of freedom: 18
+
+
+    Collection 3042:
+         Image 3042: degrees of freedom: 22
+
+
+    Collection 3041:
+         Image 3041: degrees of freedom: 13
+         Image 151: degrees of freedom: 13
+
+
+    Collection 2676:
+         Image 2676: degrees of freedom: 6
+         Image 2675: degrees of freedom: 6
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 97-99
 
 Plot the combined z maps
@@ -159,11 +283,22 @@ Plot the combined z maps
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_008.png
+   :alt: plot neurovault meta analysis
+   :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_neurovault_meta_analysis_008.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  23.289 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  128 MB
 
 
 .. _sphx_glr_download_auto_examples_07_advanced_plot_neurovault_meta_analysis.py:

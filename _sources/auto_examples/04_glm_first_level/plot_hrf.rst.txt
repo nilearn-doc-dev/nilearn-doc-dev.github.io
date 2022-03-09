@@ -66,6 +66,12 @@ with duration 1s.
     exp_condition = np.array((onset, duration, amplitude)).reshape(3, 1)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 45-46
 
 Make a time array of this condition for display:
@@ -76,6 +82,12 @@ Make a time array of this condition for display:
 
     stim = np.zeros_like(frame_times)
     stim[(frame_times > onset) * (frame_times <= onset + duration)] = amplitude
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 50-52
@@ -147,6 +159,12 @@ functions should at least take tr and oversampling as arguments:
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 112-113
 
 Define response function models to be displayed:
@@ -165,6 +183,12 @@ Define response function models to be displayed:
             ["main", "main_derivative"],
         ),
     ]
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 125-127
@@ -215,11 +239,22 @@ Sample and plot response functions
     plt.show()
 
 
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_hrf_001.png
+   :alt: SPM HRF, Glover HRF, Mion RF + derivative
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_hrf_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  2.302 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_hrf.py:

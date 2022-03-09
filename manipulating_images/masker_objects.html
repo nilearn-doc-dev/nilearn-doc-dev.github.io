@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="From neuroimaging volumes to data matrices: the masker objects" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/manipulating_images/masker_objects.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="This chapter introduces the maskers: objects that go from neuroimaging volumes, on the disk or in memory, to data matrices, eg of time series. The concept of “masker” objects: In any analysis, the ..." />
-  <meta property="og:image" content="https://nilearn.github.io/images/niimgs.jpg" />
-  <meta property="og:image:alt" content="niimgs" />
+<meta property="og:title" content="From neuroimaging volumes to data matrices: the masker objects" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/manipulating_images/masker_objects.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="This chapter introduces the maskers: objects that go from neuroimaging volumes, on the disk or in memory, to data matrices, eg of time series. The concept of “masker” objects: In any analysis, the ..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/images/niimgs.jpg" />
+  
+<meta property="og:image:alt" content="niimgs" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Advanced usage: manual pipelines and scaling up" href="../building_blocks/index.html" /><link rel="prev" title="Manipulating images: resampling, smoothing, masking, ROIs…" href="manipulating_images.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>From neuroimaging volumes to data matrices: the masker objects - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -637,12 +647,12 @@
         </div>
         <article role="main">
           <section id="from-neuroimaging-volumes-to-data-matrices-the-masker-objects">
-<span id="masker-objects"></span><h1>From neuroimaging volumes to data matrices: the masker objects<a class="headerlink" href="#from-neuroimaging-volumes-to-data-matrices-the-masker-objects" title="Permalink to this headline">¶</a></h1>
+<span id="masker-objects"></span><h1>From neuroimaging volumes to data matrices: the masker objects<a class="headerlink" href="#from-neuroimaging-volumes-to-data-matrices-the-masker-objects" title="Permalink to this headline">#</a></h1>
 <p>This chapter introduces the maskers: objects that go from
 neuroimaging volumes, on the disk or in memory, to data matrices, eg of
 time series.</p>
 <section id="the-concept-of-masker-objects">
-<h2>The concept of “masker” objects<a class="headerlink" href="#the-concept-of-masker-objects" title="Permalink to this headline">¶</a></h2>
+<h2>The concept of “masker” objects<a class="headerlink" href="#the-concept-of-masker-objects" title="Permalink to this headline">#</a></h2>
 <p>In any analysis, the first step is to load the data.
 It is often convenient to apply some basic data
 transformations and to turn the data in a 2D (samples x features) matrix,
@@ -677,7 +687,7 @@ data themselves (e.g., extracting time series from images).</p>
 </div>
 </section>
 <section id="niftimasker-applying-a-mask-to-load-time-series">
-<span id="nifti-masker"></span><h2><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a>: applying a mask to load time-series<a class="headerlink" href="#niftimasker-applying-a-mask-to-load-time-series" title="Permalink to this headline">¶</a></h2>
+<span id="nifti-masker"></span><h2><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a>: applying a mask to load time-series<a class="headerlink" href="#niftimasker-applying-a-mask-to-load-time-series" title="Permalink to this headline">#</a></h2>
 <p><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> is a powerful tool to load images and
 extract voxel signals in the area defined by the mask.
 It applies some basic preprocessing
@@ -691,7 +701,7 @@ transformer so that you can directly plug it into a <a class="reference external
 pipeline</a>.</p>
 </div>
 <section id="custom-data-loading-loading-only-the-first-100-time-points">
-<h3>Custom data loading: loading only the first 100 time points<a class="headerlink" href="#custom-data-loading-loading-only-the-first-100-time-points" title="Permalink to this headline">¶</a></h3>
+<h3>Custom data loading: loading only the first 100 time points<a class="headerlink" href="#custom-data-loading-loading-only-the-first-100-time-points" title="Permalink to this headline">#</a></h3>
 <p>Suppose we want to restrict a dataset to the first 100 frames. Below, we load
 a movie-watching dataset with <a class="reference internal" href="../modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri" title="nilearn.datasets.fetch_development_fmri"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_development_fmri()</span></code></a>, restrict it to 100 frames and
 build a new niimg object that we can give to the masker. Although
@@ -709,7 +719,7 @@ slice and create a <a class="reference internal" href="input_output.html#niimg">
 </div>
 </section>
 <section id="controlling-how-the-mask-is-computed-from-the-data">
-<h3>Controlling how the mask is computed from the data<a class="headerlink" href="#controlling-how-the-mask-is-computed-from-the-data" title="Permalink to this headline">¶</a></h3>
+<h3>Controlling how the mask is computed from the data<a class="headerlink" href="#controlling-how-the-mask-is-computed-from-the-data" title="Permalink to this headline">#</a></h3>
 <p>In this section, we show how the masker object can compute a mask
 automatically for subsequent statistical analysis.
 On some datasets, the default algorithm may however perform poorly.
@@ -724,7 +734,7 @@ It is also related to this example:
 <a class="reference internal" href="../auto_examples/06_manipulating_images/plot_nifti_simple.html"><span class="doc">plot_nifti_simple.py</span></a>.</p>
 </div>
 <section id="visualizing-the-computed-mask">
-<h4>Visualizing the computed mask<a class="headerlink" href="#visualizing-the-computed-mask" title="Permalink to this headline">¶</a></h4>
+<h4>Visualizing the computed mask<a class="headerlink" href="#visualizing-the-computed-mask" title="Permalink to this headline">#</a></h4>
 <p>If a mask is not specified as an argument, <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> will try to
 compute one from the provided neuroimaging data.
 It is <em>very important</em> to verify the quality of the generated mask by visualization.
@@ -745,7 +755,7 @@ of the masker:</p>
 </pre></div>
 </div>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_mask_computation.html"><img alt="auto_examples/06_manipulating_images/images/sphx_glr_plot_mask_computation_002.png" src="auto_examples/06_manipulating_images/images/sphx_glr_plot_mask_computation_002.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_mask_computation.html"><img alt="../_images/sphx_glr_plot_mask_computation_002.png" src="../_images/sphx_glr_plot_mask_computation_002.png" style="width: 264.0px; height: 104.0px;"/></a>
 </figure>
 <p>Alternatively, the mask can be visualized using the <cite>generate_report</cite>
 method of the masker. The generated report can be viewed in a Jupyter notebook,
@@ -764,7 +774,7 @@ or saved as a portable HTML file <cite>report.save_as_html(output_filepath)</cit
 </figure>
 </section>
 <section id="different-masking-strategies">
-<h4>Different masking strategies<a class="headerlink" href="#different-masking-strategies" title="Permalink to this headline">¶</a></h4>
+<h4>Different masking strategies<a class="headerlink" href="#different-masking-strategies" title="Permalink to this headline">#</a></h4>
 <p>The <cite>mask_strategy</cite> argument controls how the mask is computed:</p>
 <ul class="simple">
 <li><p><cite>background</cite>: detects a continuous background</p></li>
@@ -775,7 +785,7 @@ or saved as a portable HTML file <cite>report.save_as_html(output_filepath)</cit
 </ul>
 </section>
 <section id="extra-mask-parameters-opening-cutoff">
-<h4>Extra mask parameters: opening, cutoff…<a class="headerlink" href="#extra-mask-parameters-opening-cutoff" title="Permalink to this headline">¶</a></h4>
+<h4>Extra mask parameters: opening, cutoff…<a class="headerlink" href="#extra-mask-parameters-opening-cutoff" title="Permalink to this headline">#</a></h4>
 <p>The underlying function is <a class="reference internal" href="../modules/generated/nilearn.masking.compute_epi_mask.html#nilearn.masking.compute_epi_mask" title="nilearn.masking.compute_epi_mask"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.masking.compute_epi_mask</span></code></a>
 called using the <cite>mask_args</cite> argument of the <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a>.
 Controlling these arguments set the fine aspects of the mask. See the
@@ -786,7 +796,7 @@ functions documentation, or <a class="reference internal" href="../auto_examples
 </section>
 </section>
 <section id="common-data-preparation-steps-smoothing-filtering-resampling">
-<span id="masker-preprocessing-steps"></span><h3>Common data preparation steps: smoothing, filtering, resampling<a class="headerlink" href="#common-data-preparation-steps-smoothing-filtering-resampling" title="Permalink to this headline">¶</a></h3>
+<span id="masker-preprocessing-steps"></span><h3>Common data preparation steps: smoothing, filtering, resampling<a class="headerlink" href="#common-data-preparation-steps-smoothing-filtering-resampling" title="Permalink to this headline">#</a></h3>
 <p><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> comes with many parameters that enable data
 preparation:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sklearn</span><span class="p">;</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">set_config</span><span class="p">(</span><span class="n">print_changed_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -820,7 +830,7 @@ accessed in nilearn such as in
 <a class="reference internal" href="manipulating_images.html#preprocessing-functions"><span class="std std-ref">corresponding functions</span></a>.</p>
 </div>
 <section id="smoothing">
-<h4>Smoothing<a class="headerlink" href="#smoothing" title="Permalink to this headline">¶</a></h4>
+<h4>Smoothing<a class="headerlink" href="#smoothing" title="Permalink to this headline">#</a></h4>
 <p><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> can apply Gaussian spatial smoothing to the
 neuroimaging data, useful to fight noise or for inter-individual
 differences in neuroanatomy. It is achieved by specifying the
@@ -836,7 +846,7 @@ by scaling the given widths appropriately.</p>
 </div>
 </section>
 <section id="temporal-filtering-and-confound-removal">
-<span id="temporal-filtering"></span><h4>Temporal Filtering and confound removal<a class="headerlink" href="#temporal-filtering-and-confound-removal" title="Permalink to this headline">¶</a></h4>
+<span id="temporal-filtering"></span><h4>Temporal Filtering and confound removal<a class="headerlink" href="#temporal-filtering-and-confound-removal" title="Permalink to this headline">#</a></h4>
 <p><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> can also improve aspects of temporal data
 properties, before conversion to voxel signals.</p>
 <ul class="simple">
@@ -888,7 +898,7 @@ does it have a big impact on the result?</p>
 </div>
 </section>
 <section id="resampling-resizing-and-changing-resolutions-of-images">
-<h4>Resampling: resizing and changing resolutions of images<a class="headerlink" href="#resampling-resizing-and-changing-resolutions-of-images" title="Permalink to this headline">¶</a></h4>
+<h4>Resampling: resizing and changing resolutions of images<a class="headerlink" href="#resampling-resizing-and-changing-resolutions-of-images" title="Permalink to this headline">#</a></h4>
 <p><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> and many similar classes enable resampling
 (recasting of images into different resolutions and transformations of
 brain voxel data). Two parameters control resampling:</p>
@@ -909,7 +919,7 @@ is explained in details in <a class="reference internal" href="manipulating_imag
 </section>
 </section>
 <section id="inverse-transform-unmasking-data">
-<span id="unmasking-step"></span><h3>Inverse transform: unmasking data<a class="headerlink" href="#inverse-transform-unmasking-data" title="Permalink to this headline">¶</a></h3>
+<span id="unmasking-step"></span><h3>Inverse transform: unmasking data<a class="headerlink" href="#inverse-transform-unmasking-data" title="Permalink to this headline">#</a></h3>
 <p>Once voxel signals have been processed, the result can be visualized as
 images after unmasking (masked-reduced data transformed back into
 the original whole-brain space). This step is present in many
@@ -940,12 +950,12 @@ an excerpt of <a class="reference internal" href="../auto_examples/02_decoding/p
 </section>
 </section>
 <section id="extraction-of-signals-from-regions-niftilabelsmasker-niftimapsmasker">
-<span id="region"></span><h2>Extraction of signals from regions: <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker" title="nilearn.maskers.NiftiLabelsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code></a>, <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a><a class="headerlink" href="#extraction-of-signals-from-regions-niftilabelsmasker-niftimapsmasker" title="Permalink to this headline">¶</a></h2>
+<span id="region"></span><h2>Extraction of signals from regions: <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker" title="nilearn.maskers.NiftiLabelsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code></a>, <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a><a class="headerlink" href="#extraction-of-signals-from-regions-niftilabelsmasker-niftimapsmasker" title="Permalink to this headline">#</a></h2>
 <p>The purpose of <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker" title="nilearn.maskers.NiftiLabelsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code></a> and <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a> is to
 compute signals from regions containing many voxels. They make it easy to get
 these signals once you have an atlas or a parcellation into brain regions.</p>
 <section id="regions-definition">
-<h3>Regions definition<a class="headerlink" href="#regions-definition" title="Permalink to this headline">¶</a></h3>
+<h3>Regions definition<a class="headerlink" href="#regions-definition" title="Permalink to this headline">#</a></h3>
 <p>Nilearn understands two different ways of defining regions, which are called
 labels and maps, handled by <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker" title="nilearn.maskers.NiftiLabelsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code></a> and
 <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a>, respectively.</p>
@@ -976,7 +986,7 @@ whole-brain voxel data into weighted region-wise data.</p></li>
 </div>
 </section>
 <section id="niftilabelsmasker-usage">
-<h3><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker" title="nilearn.maskers.NiftiLabelsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code></a> Usage<a class="headerlink" href="#niftilabelsmasker-usage" title="Permalink to this headline">¶</a></h3>
+<h3><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker" title="nilearn.maskers.NiftiLabelsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code></a> Usage<a class="headerlink" href="#niftilabelsmasker-usage" title="Permalink to this headline">#</a></h3>
 <p>Usage of <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker" title="nilearn.maskers.NiftiLabelsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code></a> is similar to that of
 <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a>. The main difference is that it requires a labels image
 instead of a set of maps as input.</p>
@@ -996,7 +1006,7 @@ to change the background value with the <cite>background_label</cite> keyword.</
 </div>
 </section>
 <section id="niftimapsmasker-usage">
-<h3><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a> Usage<a class="headerlink" href="#niftimapsmasker-usage" title="Permalink to this headline">¶</a></h3>
+<h3><a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a> Usage<a class="headerlink" href="#niftimapsmasker-usage" title="Permalink to this headline">#</a></h3>
 <p>This atlas defines its regions using maps. The path to the corresponding
 file is given in the <cite>maps_img</cite> argument.</p>
 <p>One important thing that happens transparently during the execution of
@@ -1016,7 +1026,7 @@ possible option.</p>
 </section>
 </section>
 <section id="extraction-of-signals-from-seeds-niftispheresmasker">
-<h2>Extraction of signals from seeds: <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiSpheresMasker</span></code></a><a class="headerlink" href="#extraction-of-signals-from-seeds-niftispheresmasker" title="Permalink to this headline">¶</a></h2>
+<h2>Extraction of signals from seeds: <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiSpheresMasker</span></code></a><a class="headerlink" href="#extraction-of-signals-from-seeds-niftispheresmasker" title="Permalink to this headline">#</a></h2>
 <p>The purpose of <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiSpheresMasker</span></code></a> is to compute signals from
 seeds containing voxels in spheres. It makes it easy to get these signals once
 you have a list of coordinates.
@@ -1069,11 +1079,21 @@ seed position is used.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

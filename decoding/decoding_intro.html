@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="An introduction to decoding" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/decoding/decoding_intro.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="This section gives an introduction to the main concept of decoding: predicting from brain images. The discussion and examples are articulated on the analysis of the Haxby 2001 dataset, showing how ..." />
-  <meta property="og:image" content="https://nilearn.github.io/auto_examples/02_decoding/images/sphx_glr_plot_haxby_stimuli_004.png" />
-  <meta property="og:image:alt" content="Nilearn" />
+<meta property="og:title" content="An introduction to decoding" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/decoding/decoding_intro.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="This section gives an introduction to the main concept of decoding: predicting from brain images. The discussion and examples are articulated on the analysis of the Haxby 2001 dataset, showing how ..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_haxby_stimuli_004.png" />
+  
+<meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Choosing the right predictive model for neuroimaging" href="estimator_choice.html" /><link rel="prev" title="Decoding and MVPA: predicting from brain images" href="index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>An introduction to decoding - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -637,7 +647,7 @@
         </div>
         <article role="main">
           <section id="an-introduction-to-decoding">
-<span id="decoding-intro"></span><h1>An introduction to decoding<a class="headerlink" href="#an-introduction-to-decoding" title="Permalink to this headline">¶</a></h1>
+<span id="decoding-intro"></span><h1>An introduction to decoding<a class="headerlink" href="#an-introduction-to-decoding" title="Permalink to this headline">#</a></h1>
 <p>This section gives an introduction to the main concept of decoding:
 predicting from brain images.</p>
 <p>The discussion and examples are articulated on the analysis of the Haxby
@@ -654,36 +664,36 @@ pitfalls of decoding analysis. For an introduction on the code to use please
 refer to : <span class="xref std std-ref">sphx_glr_auto_examples_plot_decoding_tutorial.py</span></p>
 </div>
 <section id="loading-and-preparing-the-data">
-<h2>Loading and preparing the data<a class="headerlink" href="#loading-and-preparing-the-data" title="Permalink to this headline">¶</a></h2>
+<h2>Loading and preparing the data<a class="headerlink" href="#loading-and-preparing-the-data" title="Permalink to this headline">#</a></h2>
 <section id="the-haxby-2001-experiment">
-<h3>The Haxby 2001 experiment<a class="headerlink" href="#the-haxby-2001-experiment" title="Permalink to this headline">¶</a></h3>
+<h3>The Haxby 2001 experiment<a class="headerlink" href="#the-haxby-2001-experiment" title="Permalink to this headline">#</a></h3>
 <p>In the Haxby experiment, subjects were presented visual stimuli from
 different categories. We are going to predict which category the subject is
 seeing from the <a class="reference internal" href="../glossary.html#term-fMRI"><span class="xref std std-term">fMRI</span></a> activity recorded in regions of the ventral visual system.
 Significant prediction shows that the signal in the region contains
 information on the corresponding category.</p>
 <figure class="align-left" id="id1">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_stimuli.html"><img alt="auto_examples/02_decoding/images/sphx_glr_plot_haxby_stimuli_004.png" src="auto_examples/02_decoding/images/sphx_glr_plot_haxby_stimuli_004.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_stimuli.html"><img alt="../_images/sphx_glr_plot_haxby_stimuli_004.png" src="../_images/sphx_glr_plot_haxby_stimuli_004.png" style="width: 192.0px; height: 144.0px;"/></a>
 <figcaption>
-<p><span class="caption-text">Face stimuli</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Face stimuli</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-left" id="id2">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_stimuli.html"><img alt="auto_examples/02_decoding/images/sphx_glr_plot_haxby_stimuli_002.png" src="auto_examples/02_decoding/images/sphx_glr_plot_haxby_stimuli_002.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_stimuli.html"><img alt="../_images/sphx_glr_plot_haxby_stimuli_002.png" src="../_images/sphx_glr_plot_haxby_stimuli_002.png" style="width: 192.0px; height: 144.0px;"/></a>
 <figcaption>
-<p><span class="caption-text">Cat stimuli</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Cat stimuli</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-left" id="id3">
-<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_haxby_masks.html"><img alt="auto_examples/01_plotting/images/sphx_glr_plot_haxby_masks_001.png" src="auto_examples/01_plotting/images/sphx_glr_plot_haxby_masks_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_haxby_masks.html"><img alt="../_images/sphx_glr_plot_haxby_masks_001.png" src="../_images/sphx_glr_plot_haxby_masks_001.png" style="width: 120.0px; height: 162.0px;"/></a>
 <figcaption>
-<p><span class="caption-text">Masks</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Masks</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-left" id="id4">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_full_analysis.html"><img alt="auto_examples/02_decoding/images/sphx_glr_plot_haxby_full_analysis_001.png" src="auto_examples/02_decoding/images/sphx_glr_plot_haxby_full_analysis_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_full_analysis.html"><img alt="../_images/sphx_glr_plot_haxby_full_analysis_001.png" src="../_images/sphx_glr_plot_haxby_full_analysis_001.png" style="width: 224.0px; height: 168.0px;"/></a>
 <figcaption>
-<p><span class="caption-text">Decoding scores per mask</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Decoding scores per mask</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <hr class="docutils"/>
@@ -710,7 +720,7 @@ responses from various confounds</strong> as demonstrated in <a class="reference
 </div>
 </section>
 <section id="loading-the-data-into-nilearn">
-<h3>Loading the data into nilearn<a class="headerlink" href="#loading-the-data-into-nilearn" title="Permalink to this headline">¶</a></h3>
+<h3>Loading the data into nilearn<a class="headerlink" href="#loading-the-data-into-nilearn" title="Permalink to this headline">#</a></h3>
 <div class="topic">
 <p class="topic-title"><strong>Full code example</strong></p>
 <p>The documentation here just gives the big idea. A full code example,
@@ -756,9 +766,9 @@ for instance standardizing the data.</p>
 </section>
 </section>
 <section id="performing-a-simple-decoding-analysis">
-<h2>Performing a simple decoding analysis<a class="headerlink" href="#performing-a-simple-decoding-analysis" title="Permalink to this headline">¶</a></h2>
+<h2>Performing a simple decoding analysis<a class="headerlink" href="#performing-a-simple-decoding-analysis" title="Permalink to this headline">#</a></h2>
 <section id="a-few-definitions">
-<h3>A few definitions<a class="headerlink" href="#a-few-definitions" title="Permalink to this headline">¶</a></h3>
+<h3>A few definitions<a class="headerlink" href="#a-few-definitions" title="Permalink to this headline">#</a></h3>
 <p>When doing predictive analysis you train an estimator to predict a variable of
 interest to you. Or in other words to predict a condition label <strong>y</strong> given a
 set <strong>X</strong> of imaging data.</p>
@@ -779,7 +789,7 @@ optimistic scores.</strong></p>
 </div>
 </section>
 <section id="a-first-estimator">
-<h3>A first estimator<a class="headerlink" href="#a-first-estimator" title="Permalink to this headline">¶</a></h3>
+<h3>A first estimator<a class="headerlink" href="#a-first-estimator" title="Permalink to this headline">#</a></h3>
 <p>To perform decoding, we need a model that can learn some relations
 between <strong>X</strong> (the imaging data) and <strong>y</strong> the condition label. As a default,
 Nilearn uses <a class="reference external" href="http://scikit-learn.org/stable/modules/svm.html">Support Vector Classifier</a> (or SVC) with a
@@ -791,7 +801,7 @@ variety of problems.</p>
 </div>
 </section>
 <section id="decoding-made-easy">
-<h3>Decoding made easy<a class="headerlink" href="#decoding-made-easy" title="Permalink to this headline">¶</a></h3>
+<h3>Decoding made easy<a class="headerlink" href="#decoding-made-easy" title="Permalink to this headline">#</a></h3>
 <p>Nilearn makes it easy to train a model with a principled pipeline using the
 <a class="reference internal" href="../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.decoding.Decoder</span></code></a> object. Using the mask we defined before
 and an SVC estimator as we already introduced, we can create a pipeline in
@@ -811,13 +821,13 @@ Be careful though, as we warned you, predicting on images that were used to
 <cite>fit</cite> your model should never be done.</p>
 </section>
 <section id="measuring-prediction-performance">
-<h3>Measuring prediction performance<a class="headerlink" href="#measuring-prediction-performance" title="Permalink to this headline">¶</a></h3>
+<h3>Measuring prediction performance<a class="headerlink" href="#measuring-prediction-performance" title="Permalink to this headline">#</a></h3>
 <p>One of the most common interests of decoding is to measure how well we can learn
 to predict various targets from our images to have a sense of which information
 is really contained in a given region of the brain. To do this, we need ways to
 measure the errors we make when we do prediction.</p>
 <section id="cross-validation">
-<h4>Cross-validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">¶</a></h4>
+<h4>Cross-validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">#</a></h4>
 <p>We cannot measure prediction error on the same set of data that we have
 used to fit the estimator: it would be much easier than on new data, and
 the result would be meaningless. We need to use a technique called
@@ -836,7 +846,7 @@ the prediction “score” it got in each fold.</p>
 </div>
 </section>
 <section id="choosing-a-good-cross-validation-strategy">
-<h4>Choosing a good cross-validation strategy<a class="headerlink" href="#choosing-a-good-cross-validation-strategy" title="Permalink to this headline">¶</a></h4>
+<h4>Choosing a good cross-validation strategy<a class="headerlink" href="#choosing-a-good-cross-validation-strategy" title="Permalink to this headline">#</a></h4>
 <p>There are many cross-validation strategies possible, including K-Fold or
 leave-one-out. When choosing a strategy, keep in mind that the test set should
 be as little correlated as possible with the train set and have enough samples
@@ -863,7 +873,7 @@ groups=`session_labels` will use one session as test set.</p>
 </div>
 </section>
 <section id="choice-of-the-prediction-accuracy-measure">
-<h4>Choice of the prediction accuracy measure<a class="headerlink" href="#choice-of-the-prediction-accuracy-measure" title="Permalink to this headline">¶</a></h4>
+<h4>Choice of the prediction accuracy measure<a class="headerlink" href="#choice-of-the-prediction-accuracy-measure" title="Permalink to this headline">#</a></h4>
 <p>Once you have a prediction about new data and its real label (the <em>ground truth</em>)
 there are different ways to measure a <em>score</em> that summarizes its performance.</p>
 <p>The default metric used for measuring errors is the accuracy score, i.e.
@@ -879,7 +889,7 @@ choosing the dominant class can achieve a low number of errors.</p>
 </div>
 </section>
 <section id="prediction-accuracy-at-chance-using-simple-strategies">
-<h4>Prediction accuracy at chance using simple strategies<a class="headerlink" href="#prediction-accuracy-at-chance-using-simple-strategies" title="Permalink to this headline">¶</a></h4>
+<h4>Prediction accuracy at chance using simple strategies<a class="headerlink" href="#prediction-accuracy-at-chance-using-simple-strategies" title="Permalink to this headline">#</a></h4>
 <p>When performing decoding, prediction performance of a model can be checked against
 null distributions or random predictions. For this, we guess a chance level score using
 simple strategies while predicting condition <strong>y</strong> with <strong>X</strong> imaging data.</p>
@@ -899,22 +909,22 @@ over masks and categories and Python dictionaries to store the
 scores.</p>
 </div>
 <figure class="align-left" id="id5">
-<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_haxby_masks.html"><img alt="auto_examples/01_plotting/images/sphx_glr_plot_haxby_masks_001.png" src="auto_examples/01_plotting/images/sphx_glr_plot_haxby_masks_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_haxby_masks.html"><img alt="../_images/sphx_glr_plot_haxby_masks_001.png" src="../_images/sphx_glr_plot_haxby_masks_001.png" style="width: 220.00000000000003px; height: 297.0px;"/></a>
 <figcaption>
-<p><span class="caption-text">Masks</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Masks</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-left">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_full_analysis.html"><img alt="auto_examples/02_decoding/images/sphx_glr_plot_haxby_full_analysis_001.png" src="auto_examples/02_decoding/images/sphx_glr_plot_haxby_full_analysis_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_full_analysis.html"><img alt="../_images/sphx_glr_plot_haxby_full_analysis_001.png" src="../_images/sphx_glr_plot_haxby_full_analysis_001.png" style="width: 448.0px; height: 336.0px;"/></a>
 </figure>
 </section>
 </section>
 <section id="visualizing-the-decoder-s-weights">
-<h3>Visualizing the decoder’s weights<a class="headerlink" href="#visualizing-the-decoder-s-weights" title="Permalink to this headline">¶</a></h3>
+<h3>Visualizing the decoder’s weights<a class="headerlink" href="#visualizing-the-decoder-s-weights" title="Permalink to this headline">#</a></h3>
 <p>During <cite>fit</cite> step, the <a class="reference internal" href="../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.decoding.Decoder</span></code></a> object retains the
 coefficients of best models for each class in <cite>decoder.coef_img_</cite>.</p>
 <figure class="align-default">
-<a class="reference external image-reference" href="../auto_examples/plot_decoding_tutorial.html"><img alt="auto_examples/02_decoding/images/sphx_glr_plot_haxby_anova_svm_001.png" src="auto_examples/02_decoding/images/sphx_glr_plot_haxby_anova_svm_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/plot_decoding_tutorial.html"><img alt="../_images/sphx_glr_plot_haxby_anova_svm_001.png" src="../_images/sphx_glr_plot_haxby_anova_svm_001.png" style="width: 474.5px; height: 169.0px;"/></a>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -930,9 +940,9 @@ coefficients of best models for each class in <cite>decoder.coef_img_</cite>.</p
 </section>
 </section>
 <section id="decoding-without-a-mask-anova-svm">
-<h2>Decoding without a mask: Anova-SVM<a class="headerlink" href="#decoding-without-a-mask-anova-svm" title="Permalink to this headline">¶</a></h2>
+<h2>Decoding without a mask: Anova-SVM<a class="headerlink" href="#decoding-without-a-mask-anova-svm" title="Permalink to this headline">#</a></h2>
 <section id="dimension-reduction-with-feature-selection">
-<h3>Dimension reduction with feature selection<a class="headerlink" href="#dimension-reduction-with-feature-selection" title="Permalink to this headline">¶</a></h3>
+<h3>Dimension reduction with feature selection<a class="headerlink" href="#dimension-reduction-with-feature-selection" title="Permalink to this headline">#</a></h3>
 <p>If we do not start from a mask of the relevant regions, there is a very
 large number of voxels and not all are useful for
 face vs cat prediction. We thus add a <a class="reference external" href="http://scikit-learn.org/stable/modules/feature_selection.html">feature selection</a>
@@ -979,7 +989,7 @@ argument. To keep the 10% most correlated voxels, just create us this parameter 
 </div>
 </section>
 <section id="visualizing-the-results">
-<h3>Visualizing the results<a class="headerlink" href="#visualizing-the-results" title="Permalink to this headline">¶</a></h3>
+<h3>Visualizing the results<a class="headerlink" href="#visualizing-the-results" title="Permalink to this headline">#</a></h3>
 <p>To visualize the results, <a class="reference internal" href="../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.decoding.Decoder</span></code></a> handles two main steps for you :</p>
 <ul class="simple">
 <li><p>first get the support vectors of the SVC and inverse the feature selection mechanism</p></li>
@@ -1004,7 +1014,7 @@ position and plot</p></li>
 </pre></div>
 </div>
 <figure class="align-default">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_anova_svm.html"><img alt="auto_examples/02_decoding/images/sphx_glr_plot_haxby_anova_svm_001.png" src="auto_examples/02_decoding/images/sphx_glr_plot_haxby_anova_svm_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_anova_svm.html"><img alt="../_images/sphx_glr_plot_haxby_anova_svm_001.png" src="../_images/sphx_glr_plot_haxby_anova_svm_001.png" style="width: 474.5px; height: 169.0px;"/></a>
 </figure>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -1055,11 +1065,21 @@ position and plot</p></li>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

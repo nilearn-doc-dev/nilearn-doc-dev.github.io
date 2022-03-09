@@ -4,25 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="nilearn.glm.Contrast" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/modules/generated/nilearn.glm.Contrast.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:image" content="https://nilearn.github.io/_static/nilearn-logo.png" />
-  <meta property="og:image:alt" content="Nilearn" />
+<meta property="og:title" content="nilearn.glm.Contrast" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/modules/generated/nilearn.glm.Contrast.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="Examples using nilearn.glm.Contrast: Example of surface-based first-level analysis Example of surface-based first-level analysis Surface-based dataset first and second level analysis of a dataset S..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_localizer_surface_analysis_thumb.png" />
+  
+<meta property="og:image:alt" content="Example of surface-based first-level analysis" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.glm.FContrastResults" href="nilearn.glm.FContrastResults.html" /><link rel="prev" title="nilearn.glm: Generalized Linear Models" href="../glm.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>nilearn.glm.Contrast - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -35,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -56,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -75,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -97,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -105,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -149,7 +154,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -613,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -620,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -629,7 +640,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -642,10 +653,10 @@ signature, and not how to use it. Please refer to the
 <a class="reference internal" href="../../user_guide.html#user-guide"><span class="std std-ref">user guide</span></a> for the big picture.</p>
 </div>
 <section id="nilearn-glm-contrast">
-<h1>nilearn.glm.Contrast<a class="headerlink" href="#nilearn-glm-contrast" title="Permalink to this headline">¶</a></h1>
+<h1>nilearn.glm.Contrast<a class="headerlink" href="#nilearn-glm-contrast" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="nilearn.glm.Contrast">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nilearn.glm.</span></span><span class="sig-name descname"><span class="pre">Contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">effect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiny</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L143"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nilearn.glm.</span></span><span class="sig-name descname"><span class="pre">Contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">effect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiny</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L143"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast" title="Permalink to this definition">#</a></dt>
 <dd><p>The contrast class handles the estimation of statistical contrasts
 on a given model: student (t) or Fisher (F).
 The important feature is that it supports addition,
@@ -655,7 +666,7 @@ and could be enhanced in the future on the computational side
 (high-dimensional F contrasts may lead to memory breakage).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.Contrast.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">effect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiny</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L154"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">effect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiny</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L154"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.__init__" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -688,19 +699,19 @@ It may change in any future release of Nilearn.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.Contrast.effect_size">
-<span class="sig-name descname"><span class="pre">effect_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L213"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.effect_size" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">effect_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L213"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.effect_size" title="Permalink to this definition">#</a></dt>
 <dd><p>Make access to summary statistics more straightforward when
 computing contrasts</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.Contrast.effect_variance">
-<span class="sig-name descname"><span class="pre">effect_variance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L218"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.effect_variance" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">effect_variance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L218"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.effect_variance" title="Permalink to this definition">#</a></dt>
 <dd><p>Make access to summary statistics more straightforward when
 computing contrasts</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.Contrast.stat">
-<span class="sig-name descname"><span class="pre">stat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L223"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.stat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L223"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.stat" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the decision statistic associated with the test of the
 null hypothesis: (H0) ‘contrast equals baseline’</p>
 <dl class="field-list simple">
@@ -721,7 +732,7 @@ Default=0.0.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.Contrast.p_value">
-<span class="sig-name descname"><span class="pre">p_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L254"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.p_value" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">p_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L254"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.p_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a parametric estimate of the p-value associated with
 the null hypothesis (H0): ‘contrast equals baseline’,
 using the survival function</p>
@@ -743,7 +754,7 @@ Default=0.0.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.Contrast.one_minus_pvalue">
-<span class="sig-name descname"><span class="pre">one_minus_pvalue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L284"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.one_minus_pvalue" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">one_minus_pvalue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L284"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.one_minus_pvalue" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a parametric estimate of the 1 - p-value associated with
 the null hypothesis (H0): ‘contrast equals baseline’,
 using the cumulative distribution function,
@@ -766,7 +777,7 @@ Default=0.0.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.Contrast.z_score">
-<span class="sig-name descname"><span class="pre">z_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L315"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.z_score" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">z_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/4499dcca/nilearn/glm/contrasts.py#L315"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.Contrast.z_score" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a parametric estimation of the z-score associated
 with the null hypothesis: (H0) ‘contrast equals baseline’</p>
 <dl class="field-list simple">
@@ -786,7 +797,16 @@ Default=0.0.</p>
 </dl>
 </dd></dl>
 </dd></dl>
-<div style="clear:both"></div></section>
+<section id="examples-using-nilearn-glm-contrast">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.glm.Contrast</span></code><a class="headerlink" href="#examples-using-nilearn-glm-contrast" title="Permalink to this headline">#</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="A full step-by-step example of fitting a GLM to experimental data sampled on the cortical surfa..."><img alt="Example of surface-based first-level analysis" src="../../_images/sphx_glr_plot_localizer_surface_analysis_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html#sphx-glr-auto-examples-04-glm-first-level-plot-localizer-surface-analysis-py"><span class="std std-ref">Example of surface-based first-level analysis</span></a></p>
+<div class="sphx-glr-thumbnail-title">Example of surface-based first-level analysis</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM (first and second level analysis) in a 10-subjects ..."><img alt="Surface-based dataset first and second level analysis of a dataset" src="../../_images/sphx_glr_plot_surface_bids_analysis_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html#sphx-glr-auto-examples-07-advanced-plot-surface-bids-analysis-py"><span class="std std-ref">Surface-based dataset first and second level analysis of a dataset</span></a></p>
+<div class="sphx-glr-thumbnail-title">Surface-based dataset first and second level analysis of a dataset</div>
+</div><div style="clear:both"></div></section>
+</section>
 
         </article>
       </div>
@@ -814,17 +834,46 @@ Default=0.0.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">nilearn.glm.Contrast</a><ul>
+<li><a class="reference internal" href="#examples-using-nilearn-glm-contrast">Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.glm.Contrast</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

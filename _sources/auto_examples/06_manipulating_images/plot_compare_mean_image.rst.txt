@@ -39,6 +39,12 @@ Fetching 2 subject movie watching brain development fmri datasets.
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 19-20
 
 Print basic information on the adhd subjects resting state datasets.
@@ -49,6 +55,19 @@ Print basic information on the adhd subjects resting state datasets.
 
     print('Subject 1 resting state dataset at: %s' % dataset.func[0])
     print('Subject 2 resting state dataset at: %s' % dataset.func[1])
+
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Subject 1 resting state dataset at: /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+    Subject 2 resting state dataset at: /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar001_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+
 
 
 
@@ -71,11 +90,22 @@ Comparing the means of the 2 movie watching datasets.
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_compare_mean_image_001.png
+   :alt: plot compare mean image
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_compare_mean_image_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  7.358 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  934 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_compare_mean_image.py:

@@ -81,6 +81,12 @@ First, we retrieve data from nilearn provided (general-purpose) datasets
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 60-62
 
 Now, we show from here how to visualize the retrieved datasets using plotting
@@ -92,6 +98,12 @@ tools from nilearn.
 
 
     from nilearn import plotting
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 66-77
@@ -118,6 +130,23 @@ By default the ``colorbar`` argument is set to ``True`` in
                            title="display_mode='ortho', cut_coords=[36, -27, 60]")
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_001.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61aa4ce050>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 83-93
 
 Visualizing in - single view 'axial' with number of cuts=5
@@ -140,6 +169,23 @@ automatically.
                            title="display_mode='z', cut_coords=5")
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_002.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f61af5cd900>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 98-105
 
 Visualizing in - single view 'sagittal' with only two slices
@@ -158,6 +204,23 @@ integers.
     plotting.plot_stat_map(stat_img, display_mode='x',
                            cut_coords=[-36, 36],
                            title="display_mode='x', cut_coords=[-36, 36]")
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_003.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.XSlicer object at 0x7f61ad44e860>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 111-118
@@ -179,6 +242,23 @@ again, selected automatically.
                            title="display_mode='y', cut_coords=1")
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_004.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_004.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.YSlicer object at 0x7f61af5ce4d0>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 123-128
 
 Visualizing without a colorbar on the right side
@@ -195,6 +275,23 @@ a colorbar on the right side.
     plotting.plot_stat_map(stat_img, display_mode='z',
                            cut_coords=1, colorbar=False,
                            title="display_mode='z', cut_coords=1, colorbar=False")
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_005.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_005.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f61ace68670>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 134-144
@@ -220,6 +317,23 @@ slices to be displayed.
                            title="display_mode='xz', cut_coords=[36, 60]")
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_006.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_006.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.XZSlicer object at 0x7f61aff07ca0>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 150-157
 
 Changing the views to 'coronal', 'sagittal' views with coordinates
@@ -240,6 +354,23 @@ The coordinates will be assigned in the order of direction as [x, y, z].
                            title="display_mode='yx', cut_coords=[-27, 36]")
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_007.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_007.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.YXSlicer object at 0x7f61b1a682b0>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 163-169
 
 Now, views are changed to 'coronal' and 'axial' views with coordinates
@@ -257,6 +388,23 @@ object.
     plotting.plot_stat_map(stat_img, display_mode='yz',
                            cut_coords=[-27, 60],
                            title="display_mode='yz', cut_coords=[-27, 60]")
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_008.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_008.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.YZSlicer object at 0x7f6213b828f0>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 175-182
@@ -279,6 +427,23 @@ a :class:`~nilearn.plotting.displays.TiledSlicer` object.
                            title="display_mode='tiled'")
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_009.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_009.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.TiledSlicer object at 0x7f61af993c10>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 188-196
 
 Visualizing three views along multiple rows and columns
@@ -297,6 +462,23 @@ In addition, we show here the default option ``cut_coords=None``.
 
     plotting.plot_stat_map(stat_img, display_mode='mosaic',
                            title="display_mode='mosaic' default cut_coords")
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_010.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_010.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.MosaicSlicer object at 0x7f61b1c3a1a0>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 201-207
@@ -318,6 +500,23 @@ an integer, i.e. ``cut_coords=3``.
                            title="display_mode='mosaic' with cut_coords=3")
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_011.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_011.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.MosaicSlicer object at 0x7f61ad44e110>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 213-219
 
 Now, another way of limiting the number of slices along rows and columns
@@ -335,6 +534,23 @@ we specify the number of slices as a tuple of length 3.
     plotting.plot_stat_map(stat_img, display_mode='mosaic',
                            cut_coords=(5, 4, 10),
                            title="display_mode='mosaic' with cut_coords as tuple")
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_012.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_012.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.MosaicSlicer object at 0x7f6213b835b0>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 225-232
@@ -358,6 +574,12 @@ for further interpretation.
     # Compute voxel-wise mean functional image across time dimension. Now we have
     # functional image in 3D assigned in mean_haxby_img
     mean_haxby_img = image.mean_img(haxby_func_filename)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 241-257
@@ -386,6 +608,17 @@ the ``color`` argument.
 
     display = plotting.plot_anat(mean_haxby_img, title="add_edges")
     display.add_edges(haxby_anat_filename, color='r')
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_013.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_013.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 262-282
@@ -422,6 +655,17 @@ We also specify ``colors='r'`` to display edges in red (See function
     display.add_contours(haxby_mask_filename, levels=[0.5], colors='r')
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_014.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_014.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 289-299
 
 Here, we plot the outline of the mask (in blue) with color fillings using
@@ -446,6 +690,26 @@ that ``filled`` should be ``True``).
 
     display.add_contours(haxby_mask_filename, filled=True, alpha=0.7,
                          levels=[0.5], colors='b')
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_015.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_015.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+    No contour levels were found within the data range.
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 308-319
@@ -473,6 +737,17 @@ color of the sphere (in this case yellow 'y'). The third argument
     display.add_markers(coords, marker_color='y', marker_size=100)
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_016.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_016.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 326-333
 
 Annotating plots
@@ -495,6 +770,17 @@ right of each view:
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_017.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_017.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 341-344
 
 Further configuration can be achieved by setting ``scale_*`` keyword args.
@@ -510,6 +796,17 @@ scale bar size.
                                  title="adding a scale bar",
                                  cut_coords=[-34, -39, -9])
     display.annotate(scalebar=True, scale_size=25, scale_units='mm')
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_018.png
+   :alt: plot demo more plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_more_plotting_018.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 351-360
@@ -534,6 +831,12 @@ a string (supported extensions are .png, .pdf, .svg).
                            output_file='plot_stat_map.png')
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 366-369
 
 A second way to save plots is by using the method
@@ -556,11 +859,17 @@ object returned.
     plotting.show()
 
 
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  50.263 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  884 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_demo_more_plotting.py:

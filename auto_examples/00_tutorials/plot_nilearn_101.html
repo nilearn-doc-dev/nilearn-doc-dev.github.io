@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Basic nilearn example: manipulating and looking at data" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/auto_examples/00_tutorials/plot_nilearn_101.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="A simple example showing how to load an existing Nifti file and use basic nilearn functionalities. A first step: looking at our data: Let’s quickly plot this file: This is not a very pretty plot. W..." />
-  <meta property="og:image" content="https://nilearn.github.io/_static/nilearn-logo.png" />
-  <meta property="og:image:alt" content="Nilearn" />
+<meta property="og:title" content="Basic nilearn example: manipulating and looking at data" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/auto_examples/00_tutorials/plot_nilearn_101.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="A simple example showing how to load an existing Nifti file and use basic nilearn functionalities. A first step: looking at our data: Let’s quickly plot this file: This is not a very pretty plot. W..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/_static/nilearn-logo.png" />
+  
+<meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="3D and 4D niimgs: handling and visualizing" href="plot_3d_and_4d_niimg.html" /><link rel="prev" title="Basic numerics and plotting with Python" href="plot_python_101.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Basic nilearn example: manipulating and looking at data - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -642,21 +652,29 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="basic-nilearn-example-manipulating-and-looking-at-data">
-<span id="sphx-glr-auto-examples-00-tutorials-plot-nilearn-101-py"></span><h1>Basic nilearn example: manipulating and looking at data<a class="headerlink" href="#basic-nilearn-example-manipulating-and-looking-at-data" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-examples-00-tutorials-plot-nilearn-101-py"></span><h1>Basic nilearn example: manipulating and looking at data<a class="headerlink" href="#basic-nilearn-example-manipulating-and-looking-at-data" title="Permalink to this headline">#</a></h1>
 <p>A simple example showing how to load an existing Nifti file and use
 basic nilearn functionalities.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let us use a Nifti file that is shipped with nilearn</span>
-<span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">MNI152_FILE_PATH</span>
+<span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">MNI152_FILE_PATH</span></a>
 
 <span class="c1"># Note that the variable MNI152_FILE_PATH is just a path to a Nifti file</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Path to MNI152 template: </span><span class="si">%r</span><span class="s1">'</span> <span class="o">%</span> <span class="n">MNI152_FILE_PATH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Path to MNI152 template: </span><span class="si">%r</span><span class="s1">'</span> <span class="o">%</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">MNI152_FILE_PATH</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/alexis/singbrain/repo/nilearn/nilearn/datasets/__init__.py:93: FutureWarning: Fetchers from the nilearn.datasets module will be updated in version 0.9 to return python strings instead of bytes and Pandas dataframes instead of Numpy arrays.
+  warn("Fetchers from the nilearn.datasets module will be "
+Path to MNI152 template: '/home/alexis/singbrain/repo/nilearn/nilearn/datasets/data/mni_icbm152_t1_tal_nlin_sym_09a_converted.nii.gz'
 </pre></div>
 </div>
 <section id="a-first-step-looking-at-our-data">
-<h2>A first step: looking at our data<a class="headerlink" href="#a-first-step-looking-at-our-data" title="Permalink to this headline">¶</a></h2>
+<h2>A first step: looking at our data<a class="headerlink" href="#a-first-step-looking-at-our-data" title="Permalink to this headline">#</a></h2>
 <p>Let’s quickly plot this file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
-<a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_img</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">MNI152_FILE_PATH</span><span class="p">)</span>
+<a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_img</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">MNI152_FILE_PATH</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="plot nilearn 101" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_nilearn_101_001.png" srcset="../../_images/sphx_glr_plot_nilearn_101_001.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61f1892530&gt;
 </pre></div>
 </div>
 <p>This is not a very pretty plot. We just used the simplest possible
@@ -668,39 +686,48 @@ a nifti image. You can replace it with a string pointing to a file on
 your disk. Note that it should be a 3D volume, and not a 4D volume.</p>
 </section>
 <section id="simple-image-manipulation-smoothing">
-<h2>Simple image manipulation: smoothing<a class="headerlink" href="#simple-image-manipulation-smoothing" title="Permalink to this headline">¶</a></h2>
+<h2>Simple image manipulation: smoothing<a class="headerlink" href="#simple-image-manipulation-smoothing" title="Permalink to this headline">#</a></h2>
 <p>Let’s use an image-smoothing function from nilearn:
 <a class="reference internal" href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.image.smooth_img</span></code></a></p>
 <p>Functions containing ‘img’ can take either a filename or an image as input.</p>
 <p>Here we give as inputs the image filename and the smoothing value in mm</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
-<span class="n">smooth_anat_img</span> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">smooth_img</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">MNI152_FILE_PATH</span><span class="p">,</span> <span class="n">fwhm</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">smooth_anat_img</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">smooth_img</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">MNI152_FILE_PATH</span></a><span class="p">,</span> <span class="n">fwhm</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="c1"># While we are giving a file name as input, the function returns</span>
 <span class="c1"># an in-memory object:</span>
-<span class="n">smooth_anat_img</span>
+<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">smooth_anat_img</span></a>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nibabel.nifti1.Nifti1Image object at 0x7f61fa04a500&gt;
 </pre></div>
 </div>
 <p>This is an in-memory object. We can pass it to nilearn function, for
 instance to look at it</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_img</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">smooth_anat_img</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_img</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">smooth_anat_img</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="plot nilearn 101" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_nilearn_101_002.png" srcset="../../_images/sphx_glr_plot_nilearn_101_002.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61f1939a20&gt;
 </pre></div>
 </div>
 <p>We could also pass it to the smoothing function</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">more_smooth_anat_img</span> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">smooth_img</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">smooth_anat_img</span><span class="p">,</span> <span class="n">fwhm</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_img</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">more_smooth_anat_img</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">more_smooth_anat_img</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">smooth_img</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">smooth_anat_img</span></a><span class="p">,</span> <span class="n">fwhm</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_img</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">more_smooth_anat_img</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="plot nilearn 101" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_nilearn_101_003.png" srcset="../../_images/sphx_glr_plot_nilearn_101_003.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61f17d8af0&gt;
 </pre></div>
 </div>
 </section>
 <section id="saving-results-to-a-file">
-<h2>Saving results to a file<a class="headerlink" href="#saving-results-to-a-file" title="Permalink to this headline">¶</a></h2>
+<h2>Saving results to a file<a class="headerlink" href="#saving-results-to-a-file" title="Permalink to this headline">#</a></h2>
 <p>We can save any in-memory object as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">more_smooth_anat_img</span><span class="o">.</span><span class="n">to_filename</span><span class="p">(</span><span class="s1">'more_smooth_anat_img.nii.gz'</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://nipy.org/nibabel/reference/nibabel.filebasedimages.html#nibabel.filebasedimages.FileBasedImage.to_filename" title="nibabel.filebasedimages.FileBasedImage.to_filename" class="sphx-glr-backref-module-nibabel-filebasedimages sphx-glr-backref-type-py-method"><span class="n">more_smooth_anat_img</span><span class="o">.</span><span class="n">to_filename</span></a><span class="p">(</span><span class="s1">'more_smooth_anat_img.nii.gz'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Finally, calling plotting.show() is necessary to display the figure
 when running as a script outside IPython</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">show</span></a></a></a></a></a></a></a></a></a></a><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -710,8 +737,8 @@ when running as a script outside IPython</p>
 <p>To recap, all the nilearn tools can take data as filenames or in-memory
 objects, and return brain volumes as in-memory objects. These can be
 passed on to other nilearn tools, or saved to disk.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  0 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.023 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  224 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-00-tutorials-plot-nilearn-101-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/00_tutorials/plot_nilearn_101.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px"/></a>
@@ -753,11 +780,21 @@ passed on to other nilearn tools, or saved to disk.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

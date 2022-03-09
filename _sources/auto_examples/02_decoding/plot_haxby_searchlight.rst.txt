@@ -52,6 +52,19 @@ Load Haxby dataset
     session = labels['chunks']
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Anatomical nifti image (3D) is located at: /home/alexis/nilearn_data/haxby2001/mask.nii.gz
+    Functional nifti image (4D) is located at: /home/alexis/nilearn_data/haxby2001/subj2/bold.nii.gz
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 Restrict to faces and houses
@@ -66,6 +79,12 @@ Restrict to faces and houses
 
     fmri_img = index_img(fmri_filename, condition_mask)
     y, session = y[condition_mask], session[condition_mask]
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-47
@@ -92,6 +111,12 @@ Prepare masks
     process_mask[..., :picked_slice] = 0
     process_mask[:, 30:] = 0
     process_mask_img = new_img_like(mask_img, process_mask)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 60-62
@@ -126,6 +151,23 @@ Searchlight computation
     searchlight.fit(fmri_img, y)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    Job #1, processed 0/739 voxels (0.00%, 319 seconds remaining)    Job #1, processed 10/739 voxels (1.35%, 25 seconds remaining)    Job #1, processed 20/739 voxels (2.71%, 26 seconds remaining)    Job #1, processed 30/739 voxels (4.06%, 26 seconds remaining)    Job #1, processed 40/739 voxels (5.41%, 26 seconds remaining)    Job #1, processed 50/739 voxels (6.77%, 26 seconds remaining)    Job #1, processed 60/739 voxels (8.12%, 26 seconds remaining)    Job #1, processed 70/739 voxels (9.47%, 26 seconds remaining)    Job #1, processed 80/739 voxels (10.83%, 26 seconds remaining)    Job #1, processed 90/739 voxels (12.18%, 25 seconds remaining)    Job #1, processed 100/739 voxels (13.53%, 25 seconds remaining)    Job #1, processed 110/739 voxels (14.88%, 25 seconds remaining)    Job #1, processed 120/739 voxels (16.24%, 25 seconds remaining)    Job #1, processed 130/739 voxels (17.59%, 24 seconds remaining)    Job #1, processed 140/739 voxels (18.94%, 24 seconds remaining)    Job #1, processed 150/739 voxels (20.30%, 23 seconds remaining)    Job #1, processed 160/739 voxels (21.65%, 23 seconds remaining)    Job #1, processed 170/739 voxels (23.00%, 23 seconds remaining)    Job #1, processed 180/739 voxels (24.36%, 22 seconds remaining)    Job #1, processed 190/739 voxels (25.71%, 22 seconds remaining)    Job #1, processed 200/739 voxels (27.06%, 22 seconds remaining)    Job #1, processed 210/739 voxels (28.42%, 21 seconds remaining)    Job #1, processed 220/739 voxels (29.77%, 21 seconds remaining)    Job #1, processed 230/739 voxels (31.12%, 20 seconds remaining)    Job #1, processed 240/739 voxels (32.48%, 20 seconds remaining)    Job #1, processed 250/739 voxels (33.83%, 20 seconds remaining)    Job #1, processed 260/739 voxels (35.18%, 19 seconds remaining)    Job #1, processed 270/739 voxels (36.54%, 19 seconds remaining)    Job #1, processed 280/739 voxels (37.89%, 18 seconds remaining)    Job #1, processed 290/739 voxels (39.24%, 18 seconds remaining)    Job #1, processed 300/739 voxels (40.60%, 18 seconds remaining)    Job #1, processed 310/739 voxels (41.95%, 17 seconds remaining)    Job #1, processed 320/739 voxels (43.30%, 17 seconds remaining)    Job #1, processed 330/739 voxels (44.65%, 16 seconds remaining)    Job #1, processed 340/739 voxels (46.01%, 16 seconds remaining)    Job #1, processed 350/739 voxels (47.36%, 16 seconds remaining)    Job #1, processed 360/739 voxels (48.71%, 15 seconds remaining)    Job #1, processed 370/739 voxels (50.07%, 15 seconds remaining)    Job #1, processed 380/739 voxels (51.42%, 14 seconds remaining)    Job #1, processed 390/739 voxels (52.77%, 14 seconds remaining)    Job #1, processed 400/739 voxels (54.13%, 13 seconds remaining)    Job #1, processed 410/739 voxels (55.48%, 13 seconds remaining)    Job #1, processed 420/739 voxels (56.83%, 13 seconds remaining)    Job #1, processed 430/739 voxels (58.19%, 12 seconds remaining)    Job #1, processed 440/739 voxels (59.54%, 12 seconds remaining)    Job #1, processed 450/739 voxels (60.89%, 11 seconds remaining)    Job #1, processed 460/739 voxels (62.25%, 11 seconds remaining)    Job #1, processed 470/739 voxels (63.60%, 11 seconds remaining)    Job #1, processed 480/739 voxels (64.95%, 10 seconds remaining)    Job #1, processed 490/739 voxels (66.31%, 10 seconds remaining)    Job #1, processed 500/739 voxels (67.66%, 9 seconds remaining)    Job #1, processed 510/739 voxels (69.01%, 9 seconds remaining)    Job #1, processed 520/739 voxels (70.37%, 9 seconds remaining)    Job #1, processed 530/739 voxels (71.72%, 8 seconds remaining)    Job #1, processed 540/739 voxels (73.07%, 8 seconds remaining)    Job #1, processed 550/739 voxels (74.42%, 7 seconds remaining)    Job #1, processed 560/739 voxels (75.78%, 7 seconds remaining)    Job #1, processed 570/739 voxels (77.13%, 6 seconds remaining)    Job #1, processed 580/739 voxels (78.48%, 6 seconds remaining)    Job #1, processed 590/739 voxels (79.84%, 6 seconds remaining)    Job #1, processed 600/739 voxels (81.19%, 5 seconds remaining)    Job #1, processed 610/739 voxels (82.54%, 5 seconds remaining)    Job #1, processed 620/739 voxels (83.90%, 4 seconds remaining)    Job #1, processed 630/739 voxels (85.25%, 4 seconds remaining)    Job #1, processed 640/739 voxels (86.60%, 4 seconds remaining)    Job #1, processed 650/739 voxels (87.96%, 3 seconds remaining)    Job #1, processed 660/739 voxels (89.31%, 3 seconds remaining)    Job #1, processed 670/739 voxels (90.66%, 2 seconds remaining)    Job #1, processed 680/739 voxels (92.02%, 2 seconds remaining)    Job #1, processed 690/739 voxels (93.37%, 2 seconds remaining)    Job #1, processed 700/739 voxels (94.72%, 1 seconds remaining)    Job #1, processed 710/739 voxels (96.08%, 1 seconds remaining)    Job #1, processed 720/739 voxels (97.43%, 0 seconds remaining)    Job #1, processed 730/739 voxels (98.78%, 0 seconds remaining)    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:   30.2s finished
+
+    SearchLight(cv=KFold(n_splits=4, random_state=None, shuffle=False),
+                mask_img=<nibabel.nifti1.Nifti1Image object at 0x7f61af990250>,
+                process_mask_img=<nibabel.nifti1.Nifti1Image object at 0x7f61bbb01d20>,
+                radius=5.6, verbose=1)
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 85-87
 
 F-scores computation
@@ -148,6 +190,21 @@ F-scores computation
     p_values = -np.log10(p_values)
     p_values[p_values > 10] = 10
     p_unmasked = get_data(nifti_masker.inverse_transform(p_values))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/helpers.py:145: FutureWarning:
+
+    The parameter "sessions" will be removed in 0.9.0 release of Nilearn. Please use the parameter "runs" instead.
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 102-105
@@ -183,11 +240,34 @@ Use the fmri mean image as a surrogate of anatomical data
     show()
 
 
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/02_decoding/images/sphx_glr_plot_haxby_searchlight_001.png
+         :alt: plot haxby searchlight
+         :srcset: /auto_examples/02_decoding/images/sphx_glr_plot_haxby_searchlight_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/02_decoding/images/sphx_glr_plot_haxby_searchlight_002.png
+         :alt: plot haxby searchlight
+         :srcset: /auto_examples/02_decoding/images/sphx_glr_plot_haxby_searchlight_002.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  43.640 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  916 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_haxby_searchlight.py:

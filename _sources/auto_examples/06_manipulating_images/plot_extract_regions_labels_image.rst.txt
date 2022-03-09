@@ -58,6 +58,23 @@ The original Yeo atlas
                       cut_coords=(8, -4, 9), colorbar=True, cmap='Paired')
 
 
+
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_regions_labels_image_001.png
+   :alt: plot extract regions labels image
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_regions_labels_image_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf84910>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 38-43
 
 The original Yeo atlas has 7 labels, that is indicated in the colorbar.
@@ -82,6 +99,12 @@ of the Yeo atlas into separated regions
     region_labels = connected_label_regions(atlas_yeo)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 54-55
 
 Plotting the new regions
@@ -92,6 +115,23 @@ Plotting the new regions
 
     plotting.plot_roi(region_labels, title='Relabeled Yeo atlas',
                       cut_coords=(8, -4, 9), colorbar=True, cmap='Paired')
+
+
+
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_regions_labels_image_002.png
+   :alt: plot extract regions labels image
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_regions_labels_image_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf894e0>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 59-72
@@ -124,6 +164,12 @@ You can save the new atlas to a nifti file using to_filename method.
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 82-87
 
 Different connectivity modes
@@ -143,6 +189,23 @@ that are connected only along the diagonal.
     plotting.plot_roi(region_labels_not_diag,
                       title='Relabeling and connect_diag=False',
                       cut_coords=(8, -4, 9), colorbar=True, cmap='Paired')
+
+
+
+
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_regions_labels_image_003.png
+   :alt: plot extract regions labels image
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_regions_labels_image_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf33100>
 
 
 
@@ -175,11 +238,22 @@ regions larger than 100mm^3.
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_regions_labels_image_004.png
+   :alt: plot extract regions labels image
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_regions_labels_image_004.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  52.804 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  727 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_extract_regions_labels_image.py:

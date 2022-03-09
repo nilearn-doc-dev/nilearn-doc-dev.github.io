@@ -50,6 +50,21 @@ BOLD activity estimate divided by the uncertainty about this estimate.
     from nilearn import plotting
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning:
+
+    Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 30-34
 
 Estimate second level model
@@ -67,6 +82,12 @@ and fit it.
                                  columns=['intercept'])
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 40-41
 
 Model specification and fit
@@ -81,6 +102,12 @@ Model specification and fit
                                                 design_matrix=design_matrix)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 47-49
 
 To estimate the contrast is very simple. We can just provide the column
@@ -91,6 +118,12 @@ name of the design matrix.
 .. code-block:: default
 
     z_map = second_level_model.compute_contrast(output_type='z_score')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 52-53
@@ -122,11 +155,34 @@ We threshold the second level contrast at uncorrected p < 0.001 and plot
     plotting.show()
 
 
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_proportion_activated_voxels_001.png
+         :alt: plot proportion activated voxels
+         :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_proportion_activated_voxels_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_proportion_activated_voxels_002.png
+         :alt: plot proportion activated voxels
+         :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_proportion_activated_voxels_002.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  16.956 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_proportion_activated_voxels.py:

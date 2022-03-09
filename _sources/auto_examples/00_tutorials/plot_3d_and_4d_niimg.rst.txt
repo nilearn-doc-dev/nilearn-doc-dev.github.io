@@ -40,6 +40,18 @@ Let's first check where the data is downloaded on our disk:
     print('Datasets are stored in: %r' % datasets.get_data_dirs())
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Datasets are stored in: ['/home/alexis/nilearn_data']
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 19-20
 
 Let's now retrieve a motor contrast from a Neurovault repository
@@ -52,6 +64,18 @@ Let's now retrieve a motor contrast from a Neurovault repository
     motor_images.images
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    ['/home/alexis/nilearn_data/neurovault/collection_658/image_10426.nii.gz']
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 24-25
 
 motor_images is a list of filenames. We need to take the first one
@@ -61,6 +85,12 @@ motor_images is a list of filenames. We need to take the first one
 .. code-block:: default
 
     tmap_filename = motor_images.images[0]
+
+
+
+
+
+
 
 
 
@@ -80,6 +110,25 @@ statistical map:
     plotting.plot_stat_map(tmap_filename)
 
 
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_001.png
+   :alt: plot 3d and 4d niimg
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/img_plotting.py:340: FutureWarning: Default resolution of the MNI template will change from 2mm to 1mm in version 0.10.0
+      anat_img = load_mni152_template()
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61f16b6080>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 38-39
 
 Visualizing works better with a threshold
@@ -89,6 +138,23 @@ Visualizing works better with a threshold
 .. code-block:: default
 
     plotting.plot_stat_map(tmap_filename, threshold=3)
+
+
+
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_002.png
+   :alt: plot 3d and 4d niimg
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61f1910c40>
 
 
 
@@ -108,6 +174,18 @@ correspondence between rest and task
     rsn
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    '/home/alexis/nilearn_data/smith_2009/PNAS_Smith09_rsn10.nii.gz'
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 52-54
 
 It is a 4D nifti file. We load it into the memory to print its
@@ -119,6 +197,18 @@ shape.
 
     from nilearn import image
     print(image.load_img(rsn).shape)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    (91, 109, 91, 10)
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-59
@@ -133,6 +223,18 @@ We can retrieve the first volume (note that Python indexing starts at 0):
     print(first_rsn.shape)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    (91, 109, 91)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 63-66
 
 first_rsn is a 3D image.
@@ -144,6 +246,23 @@ We can then plot it
 .. code-block:: default
 
     plotting.plot_stat_map(first_rsn)
+
+
+
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_003.png
+   :alt: plot 3d and 4d niimg
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61f1913880>
 
 
 
@@ -169,6 +288,85 @@ compact display.
 
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_004.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_005.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_005.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_006.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_006.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_007.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_007.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_008.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_008.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_009.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_009.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_010.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_010.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_011.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_011.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_012.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_012.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_013.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_013.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 85-93
 
 Looping through selected volumes in a 4D file
@@ -187,6 +385,12 @@ formula as before.
     selected_volumes = image.index_img(rsn, slice(3, 5))
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 96-99
 
 If you're new to Python, one thing to note is that the slice constructor
@@ -203,6 +407,29 @@ to the previous plot above.
 
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_014.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_014.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_015.png
+         :alt: plot 3d and 4d niimg
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_3d_and_4d_niimg_015.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 105-107
 
 plotting.show is useful to force the display of figures when running
@@ -213,6 +440,12 @@ outside IPython
 .. code-block:: default
 
     plotting.show()
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-128
@@ -239,9 +472,9 @@ image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  21.876 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  127 MB
 
 
 .. _sphx_glr_download_auto_examples_00_tutorials_plot_3d_and_4d_niimg.py:

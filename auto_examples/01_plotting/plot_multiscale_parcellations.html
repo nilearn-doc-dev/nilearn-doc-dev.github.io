@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Visualizing multiscale functional brain parcellations" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/auto_examples/01_plotting/plot_multiscale_parcellations.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="This example shows how to download and fetch brain parcellations of multiple networks using nilearn.datasets.fetch_atlas_basc_multiscale_2015 and visualize them using plotting function nilearn.plot..." />
-  <meta property="og:image" content="https://nilearn.github.io/_static/nilearn-logo.png" />
-  <meta property="og:image:alt" content="Nilearn" />
+<meta property="og:title" content="Visualizing multiscale functional brain parcellations" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/auto_examples/01_plotting/plot_multiscale_parcellations.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="This example shows how to download and fetch brain parcellations of multiple networks using nilearn.datasets.fetch_atlas_basc_multiscale_2015 and visualize them using plotting function nilearn.plot..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/_static/nilearn-logo.png" />
+  
+<meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Matplotlib colormaps in Nilearn" href="plot_colormaps.html" /><link rel="prev" title="Basic Atlas plotting" href="plot_atlas.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Visualizing multiscale functional brain parcellations - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -642,7 +652,7 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="visualizing-multiscale-functional-brain-parcellations">
-<span id="sphx-glr-auto-examples-01-plotting-plot-multiscale-parcellations-py"></span><h1>Visualizing multiscale functional brain parcellations<a class="headerlink" href="#visualizing-multiscale-functional-brain-parcellations" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-examples-01-plotting-plot-multiscale-parcellations-py"></span><h1>Visualizing multiscale functional brain parcellations<a class="headerlink" href="#visualizing-multiscale-functional-brain-parcellations" title="Permalink to this headline">#</a></h1>
 <p>This example shows how to download and fetch brain parcellations of
 multiple networks using <a class="reference internal" href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_atlas_basc_multiscale_2015</span></code></a>
 and visualize them using plotting function <a class="reference internal" href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.plotting.plot_roi</span></code></a>.</p>
@@ -650,40 +660,45 @@ and visualize them using plotting function <a class="reference internal" href=".
 details about different versions and different networks, please refer to its
 documentation.</p>
 <section id="retrieving-multiscale-group-brain-parcellations">
-<h2>Retrieving multiscale group brain parcellations<a class="headerlink" href="#retrieving-multiscale-group-brain-parcellations" title="Permalink to this headline">¶</a></h2>
+<h2>Retrieving multiscale group brain parcellations<a class="headerlink" href="#retrieving-multiscale-group-brain-parcellations" title="Permalink to this headline">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import datasets module and use `fetch_atlas_basc_multiscale_2015` function</span>
 <span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 
-<span class="n">parcellations</span> <span class="o">=</span> <a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_basc_multiscale_2015</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s1">'sym'</span><span class="p">)</span>
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">parcellations</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.datasets.fetch_atlas_basc_multiscale_2015.html#nilearn.datasets.fetch_atlas_basc_multiscale_2015" title="nilearn.datasets.fetch_atlas_basc_multiscale_2015" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_basc_multiscale_2015</span></a><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s1">'sym'</span><span class="p">)</span>
 
 <span class="c1"># We show here networks of 64, 197, 444</span>
-<span class="n">networks_64</span> <span class="o">=</span> <span class="n">parcellations</span><span class="p">[</span><span class="s1">'scale064'</span><span class="p">]</span>
-<span class="n">networks_197</span> <span class="o">=</span> <span class="n">parcellations</span><span class="p">[</span><span class="s1">'scale197'</span><span class="p">]</span>
-<span class="n">networks_444</span> <span class="o">=</span> <span class="n">parcellations</span><span class="p">[</span><span class="s1">'scale444'</span><span class="p">]</span>
+<a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">networks_64</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">parcellations</span></a><span class="p">[</span><span class="s1">'scale064'</span><span class="p">]</span>
+<a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">networks_197</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">parcellations</span></a><span class="p">[</span><span class="s1">'scale197'</span><span class="p">]</span>
+<a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">networks_444</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">parcellations</span></a><span class="p">[</span><span class="s1">'scale444'</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
 <section id="visualizing-brain-parcellations">
-<h2>Visualizing brain parcellations<a class="headerlink" href="#visualizing-brain-parcellations" title="Permalink to this headline">¶</a></h2>
+<h2>Visualizing brain parcellations<a class="headerlink" href="#visualizing-brain-parcellations" title="Permalink to this headline">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import plotting module and use `plot_roi` function, since the maps are in 3D</span>
 <span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
 
 <span class="c1"># The coordinates of all plots are selected automatically by itself</span>
 <span class="c1"># We manually change the colormap of our choice</span>
-<a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">networks_64</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plotting</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bwr</span><span class="p">,</span>
+<a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">networks_64</span></a><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">plotting</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bwr</span></a><span class="p">,</span>
                   <span class="n">title</span><span class="o">=</span><span class="s1">'64 regions of brain clusters'</span><span class="p">)</span>
 
-<a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">networks_197</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plotting</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bwr</span><span class="p">,</span>
+<a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">networks_197</span></a><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">plotting</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bwr</span></a><span class="p">,</span>
                   <span class="n">title</span><span class="o">=</span><span class="s1">'197 regions of brain clusters'</span><span class="p">)</span>
 
-<a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span></a></a></a></a></a></a></a></a></a></a><span class="p">(</span><span class="n">networks_444</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plotting</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bwr_r</span><span class="p">,</span>
+<a href="../../modules/generated/nilearn.plotting.plot_roi.html#nilearn.plotting.plot_roi" title="nilearn.plotting.plot_roi" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">networks_444</span></a><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">plotting</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bwr_r</span></a><span class="p">,</span>
                   <span class="n">title</span><span class="o">=</span><span class="s1">'444 regions of brain clusters'</span><span class="p">)</span>
 
-<a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">show</span></a></a></a></a></a></a></a></a></a></a><span class="p">()</span>
+<a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  0 MB</p>
+<ul class="sphx-glr-horizontal">
+<li><img alt="plot multiscale parcellations" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_multiscale_parcellations_001.png" srcset="../../_images/sphx_glr_plot_multiscale_parcellations_001.png"/></li>
+<li><img alt="plot multiscale parcellations" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_multiscale_parcellations_002.png" srcset="../../_images/sphx_glr_plot_multiscale_parcellations_002.png"/></li>
+<li><img alt="plot multiscale parcellations" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_multiscale_parcellations_003.png" srcset="../../_images/sphx_glr_plot_multiscale_parcellations_003.png"/></li>
+</ul>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.955 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-01-plotting-plot-multiscale-parcellations-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/01_plotting/plot_multiscale_parcellations.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo1.svg" width="150px"/></a>
@@ -725,11 +740,21 @@ documentation.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

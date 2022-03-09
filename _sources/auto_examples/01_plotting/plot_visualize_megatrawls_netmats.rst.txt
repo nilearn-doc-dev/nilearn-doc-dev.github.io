@@ -47,6 +47,12 @@ timeseries method 'eigen regression'
     partial_correlation = netmats.correlation_matrices
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 25-29
 
 Visualization
@@ -66,11 +72,22 @@ correlation matrices
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_visualize_megatrawls_netmats_001.png
+   :alt: plot visualize megatrawls netmats
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_visualize_megatrawls_netmats_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  0.600 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_visualize_megatrawls_netmats.py:

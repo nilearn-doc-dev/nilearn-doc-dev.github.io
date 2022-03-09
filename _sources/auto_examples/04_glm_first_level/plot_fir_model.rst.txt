@@ -53,6 +53,12 @@ At first, we grab the localizer data.
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 32-41
 
 Next solution is to try Finite Impulse Response (:term:`FIR`) models: we just
@@ -77,6 +83,23 @@ t_r] seconds interval.
     first_level_model = first_level_model.fit(fmri_img, events=events)
     design_matrix = first_level_model.design_matrices_[0]
     plot_design_matrix(design_matrix)
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_fir_model_001.png
+   :alt: plot fir model
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_fir_model_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <AxesSubplot:label='conditions', ylabel='scan number'>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 51-54
@@ -132,6 +155,12 @@ sorry, but this is the price to pay for flexibility...
     }
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 97-98
 
 Take a look at the contrasts.
@@ -141,6 +170,23 @@ Take a look at the contrasts.
 .. code-block:: default
 
     plot_contrast_matrix(contrasts['left-right'], design_matrix)
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_fir_model_002.png
+   :alt: plot fir model
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_fir_model_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <AxesSubplot:label='conditions'>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 101-104
@@ -168,6 +214,17 @@ We can now  proceed by estimating the contrasts and displaying them.
     plt.show()
 
 
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_fir_model_003.png
+   :alt: plot fir model
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_fir_model_003.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 119-123
 
 The result is acceptable. Note that we're asking a lot of questions
@@ -178,9 +235,9 @@ conditions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  19.128 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  261 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_fir_model.py:

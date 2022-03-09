@@ -39,6 +39,12 @@ Retrieve data from Internet
     stat_img = motor_images.images[0]
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 19-21
 
 Glass brain plotting: whole brain sagittal cuts
@@ -52,6 +58,23 @@ Glass brain plotting: whole brain sagittal cuts
     from nilearn import plotting
 
     plotting.plot_glass_brain(stat_img, threshold=3)
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_001.png
+   :alt: plot demo glass brain
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f61bf392b60>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 27-31
@@ -70,6 +93,23 @@ the z view (option "display_mode").
         black_bg=True, display_mode='xz', threshold=3)
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_002.png
+   :alt: plot demo glass brain
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.XZProjector object at 0x7f61e9411420>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 36-38
 
 Glass brain plotting: Hemispheric sagittal cuts
@@ -86,11 +126,22 @@ Glass brain plotting: Hemispheric sagittal cuts
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_003.png
+   :alt: plot demo glass brain
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_003.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  3.475 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  15 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_demo_glass_brain.py:

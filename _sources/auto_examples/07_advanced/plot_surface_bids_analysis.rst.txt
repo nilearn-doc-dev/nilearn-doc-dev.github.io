@@ -59,6 +59,12 @@ confounds.tsv files.
     data_dir, _ = fetch_language_localizer_demo_dataset()
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 39-40
 
 Here is the location of the dataset on disk.
@@ -68,6 +74,18 @@ Here is the location of the dataset on disk.
 .. code-block:: default
 
     print(data_dir)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/nilearn_data/fMRI-language-localizer-demo-dataset
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-51
@@ -93,6 +111,21 @@ and the task_label as specified in the file names.
             img_filters=[('desc', 'preproc')])
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:894: UserWarning:
+
+    SliceTimingRef not found in file /home/alexis/nilearn_data/fMRI-language-localizer-demo-dataset/derivatives/sub-01/func/sub-01_task-languagelocalizer_desc-preproc_bold.json. It will be assumed that the slice timing reference is 0.0 percent of the repetition time. If it is not the case it will need to be set manually in the generated list of models
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 59-61
 
 We also need to get the TR information. For that we use the json sidecar file
@@ -110,6 +143,12 @@ of the dataset's functional images.
         t_r = json.load(f)['RepetitionTime']
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 69-70
 
 Project fMRI data to the surface: First get fsaverage5.
@@ -120,6 +159,12 @@ Project fMRI data to the surface: First get fsaverage5.
 
     from nilearn.datasets import fetch_surf_fsaverage
     fsaverage = fetch_surf_fsaverage(mesh='fsaverage5')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 74-76
@@ -136,6 +181,12 @@ Note that those correspond spatially, as they are both in MNI space.
     from nilearn.glm.first_level import make_first_level_design_matrix
     from nilearn.glm.first_level import run_glm
     from nilearn.glm.contrasts import compute_contrast
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 83-84
@@ -186,6 +237,12 @@ Empty lists in which we are going to store activation values.
         z_scores_left.append(contrast.z_score())
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 124-127
 
 Individual activation maps have been accumulated in the z_score_left
@@ -210,6 +267,12 @@ We directly do that on the value arrays.
     t_right, pval_right = ttest_1samp(np.array(z_scores_right), 0)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 140-141
 
 What we have so far are p-values: we convert them to z-values for plotting.
@@ -220,6 +283,12 @@ What we have so far are p-values: we convert them to z-values for plotting.
 
     z_val_left = norm.isf(pval_left)
     z_val_right = norm.isf(pval_right)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 145-146
@@ -235,6 +304,23 @@ Plot the resulting maps, at first on the left hemipshere.
         fsaverage.infl_left, z_val_left, hemi='left',
         title="language-string, left hemisphere", colorbar=True,
         threshold=3., bg_map=fsaverage.sulc_left)
+
+
+
+.. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_surface_bids_analysis_001.png
+   :alt: language-string, left hemisphere
+   :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_surface_bids_analysis_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <Figure size 470x400 with 2 Axes>
+
+
 
 .. GENERATED FROM PYTHON SOURCE LINES 152-153
 
@@ -252,11 +338,22 @@ Next, on the right hemisphere.
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_surface_bids_analysis_002.png
+   :alt: language-string, right hemisphere
+   :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_surface_bids_analysis_002.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 2 minutes  24.316 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  502 MB
 
 
 .. _sphx_glr_download_auto_examples_07_advanced_plot_surface_bids_analysis.py:

@@ -53,6 +53,18 @@ Let us first see where the data will be downloaded and stored on our disk:
     print('Datasets shipped with nilearn are stored in: %r' % datasets.get_data_dirs())
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Datasets shipped with nilearn are stored in: ['/home/alexis/nilearn_data']
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 33-35
 
 Let us now retrieve a motor task contrast map
@@ -67,6 +79,18 @@ Let us now retrieve a motor task contrast map
     stat_img = motor_images.images[0]
     # stat_img is just the name of the file that we downloaded
     stat_img
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    '/home/alexis/nilearn_data/neurovault/collection_658/image_10426.nii.gz'
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 42-51
@@ -94,6 +118,23 @@ a :class:`~nilearn.plotting.displays.OrthoProjector` is returned.
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_001.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f61aacaaf80>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 60-62
 
 The same figure, with a colorbar, can be produced by
@@ -105,6 +146,23 @@ setting ``colorbar=True``.
 
 
     plot_glass_brain(stat_img, threshold=3, colorbar=True)
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_002.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f61afc6c340>
 
 
 
@@ -126,6 +184,23 @@ axial projections by setting ``display_mode='xz'``, which returns a
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_003.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.XZProjector object at 0x7f61bb6b0520>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 78-82
 
 We can also plot the sign of the activation by setting ``plot_abs=False``.
@@ -144,6 +219,23 @@ Additionally, we only visualize coronal and axial projections by setting
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_004.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_004.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.YZProjector object at 0x7f61af030190>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 89-91
 
 Setting ``plot_abs=True`` and ``display_mode='yx'`` (returns a
@@ -157,6 +249,23 @@ Setting ``plot_abs=True`` and ``display_mode='yx'`` (returns a
     plot_glass_brain(
         stat_img, threshold=3, colorbar=True, plot_abs=False, display_mode='yx'
     )
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_005.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_005.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.YXProjector object at 0x7f61af093af0>
 
 
 
@@ -184,6 +293,23 @@ enables an hemispheric sagittal view. The display object returned is then a
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_006.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_006.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.LZRProjector object at 0x7f61afa29360>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 115-117
 
 ``display_mode='lyrz'`` returns a
@@ -199,6 +325,23 @@ enables an hemispheric sagittal view. The display object returned is then a
         title='plot_glass_brain with display_mode="lyrz"',
         plot_abs=False, display_mode='lyrz'
     )
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_007.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_007.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.LYRZProjector object at 0x7f61af0b8220>
 
 
 
@@ -221,6 +364,23 @@ If you are only interested in single projections, you can set
         stat_img, threshold=0, colorbar=True, title='display_mode="x"',
         plot_abs=False, display_mode='x'
     )
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_008.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_008.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.XProjector object at 0x7f61af0324a0>
 
 
 
@@ -255,6 +415,17 @@ want an empty glass brain to plot the statistical maps with
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_009.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_009.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 165-167
 
 We can fill the contours by setting ``filled=True``. Note that we are not
@@ -270,6 +441,17 @@ specifying levels here
     display.add_contours(stat_img, filled=True)
     # and add a title
     display.title('Same map but with fillings in the contours')
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_010.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_010.png
+   :class: sphx-glr-single-img
+
+
 
 
 
@@ -293,6 +475,17 @@ We set the threshold using a parameter of method
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_011.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_011.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 189-191
 
 Plotting with same demonstration but fill the contours (by setting
@@ -306,6 +499,17 @@ Plotting with same demonstration but fill the contours (by setting
     display = plot_glass_brain(None, display_mode='lzry')
     display.add_contours(stat_img, filled=True, levels=[3.], colors='r')
     display.title('Same demonstration but using fillings inside contours')
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_012.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_012.png
+   :class: sphx-glr-single-img
+
+
 
 
 
@@ -326,6 +530,17 @@ through :func:`~nilearn.plotting.plot_glass_brain`.
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_013.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_013.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 208-209
 
 Black background plotting with filled in contours.
@@ -338,6 +553,17 @@ Black background plotting with filled in contours.
     display = plot_glass_brain(None, black_bg=True)
     display.add_contours(stat_img, filled=True, levels=[3.], colors='g')
     display.title('Glass brain with black background and filled in contours')
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_014.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_014.png
+   :class: sphx-glr-single-img
+
+
 
 
 
@@ -361,6 +587,17 @@ Here, we set ``display_mode='lr'`` for both hemispheric plots. Note that a
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_015.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_015.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 229-230
 
 Filled contours in both hemispheric plotting, by adding ``filled=True``.
@@ -373,6 +610,17 @@ Filled contours in both hemispheric plotting, by adding ``filled=True``.
     display = plot_glass_brain(None, display_mode='lr')
     display.add_contours(stat_img, filled=True, levels=[3.], colors='r')
     display.title('Filled contours on glass brain only "l" "r" hemispheres')
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_016.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_016.png
+   :class: sphx-glr-single-img
+
+
 
 
 
@@ -397,6 +645,17 @@ specify ``display_mode='lyr'`` which returns a
 
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_017.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_017.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 251-253
 
 Now, adding ``filled=True`` to get positive and negative sign activations
@@ -412,6 +671,17 @@ with fillings in the contours.
     display.title(
         "Filled contours with both sign of activations without threshold"
     )
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_018.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_018.png
+   :class: sphx-glr-single-img
+
+
 
 
 
@@ -439,6 +709,17 @@ enough so that same value is used for both contours.
         stat_img, levels=[-2.8, 3.], colors=['b', 'r'], linewidths=4.
     )
     display.title('Contours with sign of activations with threshold')
+
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_019.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_019.png
+   :class: sphx-glr-single-img
+
+
 
 
 
@@ -472,11 +753,22 @@ Next, using the same display object, we plot positive sign of activation.
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_020.png
+   :alt: plot demo glass brain extensive
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_demo_glass_brain_extensive_020.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  36.136 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_demo_glass_brain_extensive.py:

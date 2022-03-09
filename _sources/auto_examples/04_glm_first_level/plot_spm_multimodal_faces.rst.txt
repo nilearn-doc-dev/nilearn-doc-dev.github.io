@@ -47,6 +47,12 @@ sampled in different positions (encoded by different affine functions).
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 28-29
 
 Fetch the SPM multimodal_faces data.
@@ -57,6 +63,12 @@ Fetch the SPM multimodal_faces data.
 
     from nilearn.datasets import fetch_spm_multimodal_fmri
     subject_data = fetch_spm_multimodal_fmri()
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-34
@@ -72,6 +84,12 @@ Specfiy timing and design matrix parameters.
     drift_model = 'Cosine'  # We use a discrete cosine transform to model signal drifts.
     high_pass = .01  # The cutoff for the drift model is 0.01 Hz.
     hrf_model = 'spm + derivative'  # The hemodynamic response function is the SPM canonical one.
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-44
@@ -97,6 +115,18 @@ This is achieved by the concat_imgs function of Nilearn.
     fmri_img[1] = resample_img(fmri_img[1], affine, shape[:3])
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Resampling the second image (this takes time)...
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 57-58
 
 Let's create mean image for display purposes.
@@ -106,6 +136,12 @@ Let's create mean image for display purposes.
 .. code-block:: default
 
     mean_image = mean_img(fmri_img)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 61-62
@@ -120,6 +156,12 @@ Make the design matrices.
     import pandas as pd
     from nilearn.glm.first_level import make_first_level_design_matrix
     design_matrices = []
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 68-69
@@ -149,6 +191,12 @@ Loop over the two sessions.
         design_matrices.append(design_matrix)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 88-90
 
 We can specify basic contrasts (to get beta maps).
@@ -161,6 +209,12 @@ We start by specifying canonical contrast that isolate design matrix columns.
     contrast_matrix = np.eye(design_matrix.shape[1])
     basic_contrasts = dict([(column, contrast_matrix[i])
                             for i, column in enumerate(design_matrix.columns)])
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 95-100
@@ -184,6 +238,12 @@ spanning the two conditions.
         }
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 109-111
 
 Fit the GLM for the 2 sessions by specifying a FirstLevelModel and then
@@ -197,6 +257,18 @@ fitting it.
     print('Fitting a GLM')
     fmri_glm = FirstLevelModel()
     fmri_glm = fmri_glm.fit(fmri_img, design_matrices=design_matrices)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Fitting a GLM
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 117-119
@@ -226,6 +298,61 @@ them.
         plotting.show()
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_spm_multimodal_faces_001.png
+         :alt: plot spm multimodal faces
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_spm_multimodal_faces_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_spm_multimodal_faces_002.png
+         :alt: plot spm multimodal faces
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_spm_multimodal_faces_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_spm_multimodal_faces_003.png
+         :alt: plot spm multimodal faces
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_spm_multimodal_faces_003.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Computing contrasts
+            contrast id: faces-scrambled
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:650: UserWarning:
+
+    One contrast given, assuming it for all 2 runs
+
+            contrast id: scrambled-faces
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:650: UserWarning:
+
+    One contrast given, assuming it for all 2 runs
+
+            contrast id: effects_of_interest
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:650: UserWarning:
+
+    One contrast given, assuming it for all 2 runs
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/contrasts.py:352: UserWarning:
+
+    Running approximate fixed effects on F statistics.
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 137-143
 
 Based on the resulting maps we observe that the analysis results in
@@ -238,9 +365,9 @@ also displays some responses in the frontal lobe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 1 minutes  39.182 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  937 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_spm_multimodal_faces.py:

@@ -46,6 +46,12 @@ We study only 60 subjects from the dataset, to save computation time.
     development_dataset = datasets.fetch_development_fmri(n_subjects=60)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 25-26
 
 We use probabilistic regions of interest (ROIs) from the MSDL atlas.
@@ -65,6 +71,21 @@ We use probabilistic regions of interest (ROIs) from the MSDL atlas.
     masked_data = [masker.transform(func, confounds) for
                    (func, confounds) in zip(
                        development_dataset.func, development_dataset.confounds)]
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning:
+
+    Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-44
@@ -99,6 +120,12 @@ compare the different kinds of connectivity matrices.
     ]
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 64-67
 
 We use random splits of the subjects into training/testing sets.
@@ -121,6 +148,18 @@ test set.
     gs.fit(masked_data, classes)
     mean_scores = gs.cv_results_['mean_test_score']
     scores_std = gs.cv_results_['std_test_score']
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Fitting 30 folds for each of 4 candidates, totalling 120 fits
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 81-82
@@ -146,6 +185,17 @@ display the results
 
 
 
+
+
+.. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_age_group_prediction_cross_val_001.png
+   :alt: plot age group prediction cross val
+   :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_age_group_prediction_cross_val_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 97-104
 
 This is a small example to showcase nilearn features. In practice such
@@ -164,11 +214,17 @@ kind should be preferred.
     plt.show()
 
 
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 2 minutes  40.460 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  1030 MB
 
 
 .. _sphx_glr_download_auto_examples_07_advanced_plot_age_group_prediction_cross_val.py:

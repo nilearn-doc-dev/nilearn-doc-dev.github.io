@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Building your own neuroimaging machine-learning pipeline" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/building_blocks/manual_pipeline.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="Nilearn comes with code to simplify the use of scikit-learn when dealing with neuroimaging data. For the moment, nilearn is focused on functional MRI data. Before using a machine learning tool, we ..." />
-  <meta property="og:image" content="https://nilearn.github.io/images/niimgs.jpg" />
-  <meta property="og:image:alt" content="niimgs" />
+<meta property="og:title" content="Building your own neuroimaging machine-learning pipeline" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/building_blocks/manual_pipeline.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="Nilearn comes with code to simplify the use of scikit-learn when dealing with neuroimaging data. For the moment, nilearn is focused on functional MRI data. Before using a machine learning tool, we ..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/images/niimgs.jpg" />
+  
+<meta property="og:image:alt" content="niimgs" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Downloading statistical maps from the Neurovault repository" href="neurovault.html" /><link rel="prev" title="Advanced usage: manual pipelines and scaling up" href="index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Building your own neuroimaging machine-learning pipeline - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -637,7 +647,7 @@
         </div>
         <article role="main">
           <section id="building-your-own-neuroimaging-machine-learning-pipeline">
-<span id="manual-pipeline"></span><h1>Building your own neuroimaging machine-learning pipeline<a class="headerlink" href="#building-your-own-neuroimaging-machine-learning-pipeline" title="Permalink to this headline">¶</a></h1>
+<span id="manual-pipeline"></span><h1>Building your own neuroimaging machine-learning pipeline<a class="headerlink" href="#building-your-own-neuroimaging-machine-learning-pipeline" title="Permalink to this headline">#</a></h1>
 <p>Nilearn comes with code to simplify the use of scikit-learn when dealing
 with neuroimaging data. For the moment, nilearn is focused on functional MRI
 data.</p>
@@ -655,9 +665,9 @@ normalization</p></li>
 </ol>
 </div></blockquote>
 <section id="data-loading-and-preprocessing">
-<span id="data-loading"></span><h2>Data loading and preprocessing<a class="headerlink" href="#data-loading-and-preprocessing" title="Permalink to this headline">¶</a></h2>
+<span id="data-loading"></span><h2>Data loading and preprocessing<a class="headerlink" href="#data-loading-and-preprocessing" title="Permalink to this headline">#</a></h2>
 <section id="downloading-the-data">
-<h3>Downloading the data<a class="headerlink" href="#downloading-the-data" title="Permalink to this headline">¶</a></h3>
+<h3>Downloading the data<a class="headerlink" href="#downloading-the-data" title="Permalink to this headline">#</a></h3>
 <p>To run demos, data are retrieved using a function provided by nilearn
 which downloads a dataset and returns a bunch of paths to the dataset
 files (more details in <a class="reference internal" href="../manipulating_images/input_output.html#loading-data"><span class="std std-ref">Inputing data: file names or image objects</span></a>). We can then proceed
@@ -683,7 +693,7 @@ example, we can download the data from the
 <a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#datasets-ref" title="(in scikit-learn v1.0)"><span class="xref std std-ref">reference documentation for the datasets</span></a>.</p>
 </section>
 <section id="loading-non-image-data-experiment-description">
-<h3>Loading non image data: experiment description<a class="headerlink" href="#loading-non-image-data-experiment-description" title="Permalink to this headline">¶</a></h3>
+<h3>Loading non image data: experiment description<a class="headerlink" href="#loading-non-image-data-experiment-description" title="Permalink to this headline">#</a></h3>
 <p>An experiment may need additional information about subjects, sessions or
 experiments. In the Haxby experiment, fMRI data are acquired while
 presenting different category of pictures to the subject (face, cat, …)
@@ -711,7 +721,7 @@ section.</p>
 </div>
 </section>
 <section id="masking-the-data-from-4d-image-to-2d-array">
-<span id="masking"></span><h3>Masking the data: from 4D image to 2D array<a class="headerlink" href="#masking-the-data-from-4d-image-to-2d-array" title="Permalink to this headline">¶</a></h3>
+<span id="masking"></span><h3>Masking the data: from 4D image to 2D array<a class="headerlink" href="#masking-the-data-from-4d-image-to-2d-array" title="Permalink to this headline">#</a></h3>
 <p>While functional neuroimaging data consist in 4D images, positioned in a
 coordinate space (which we will call <a class="reference internal" href="../manipulating_images/input_output.html#niimg"><span class="std std-ref">Niimgs</span></a>). For use with
 the scikit-learn, they need to be converted into 2D arrays of
@@ -721,7 +731,7 @@ samples and features.</p>
 (i.e. voxels over time). For this purpose, we use the
 <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> object, a very powerful data loading tool.</p>
 <section id="applying-a-mask">
-<h4>Applying a mask<a class="headerlink" href="#applying-a-mask" title="Permalink to this headline">¶</a></h4>
+<h4>Applying a mask<a class="headerlink" href="#applying-a-mask" title="Permalink to this headline">#</a></h4>
 <figure class="align-right">
 <a class="reference external image-reference" href="../auto_examples/plot_decoding_tutorial.html"><img alt="auto_examples/images/sphx_glr_plot_decoding_tutorial_001.png" src="auto_examples/images/sphx_glr_plot_decoding_tutorial_001.png"/></a>
 </figure>
@@ -748,7 +758,7 @@ data to mask it in a similar way as the data that was used during the
 fit.</p>
 </section>
 <section id="automatically-computing-a-mask">
-<h4>Automatically computing a mask<a class="headerlink" href="#automatically-computing-a-mask" title="Permalink to this headline">¶</a></h4>
+<h4>Automatically computing a mask<a class="headerlink" href="#automatically-computing-a-mask" title="Permalink to this headline">#</a></h4>
 <p>If your dataset does not provide a mask, the Nifti masker will compute
 one for you in the <cite>fit</cite> step. The generated mask can be accessed via the
 <cite>mask_img_</cite> attribute.</p>
@@ -758,7 +768,7 @@ one for you in the <cite>fit</cite> step. The generated mask can be accessed via
 </section>
 </section>
 <section id="applying-a-scikit-learn-machine-learning-method">
-<h2>Applying a scikit-learn machine learning method<a class="headerlink" href="#applying-a-scikit-learn-machine-learning-method" title="Permalink to this headline">¶</a></h2>
+<h2>Applying a scikit-learn machine learning method<a class="headerlink" href="#applying-a-scikit-learn-machine-learning-method" title="Permalink to this headline">#</a></h2>
 <p>Now that we have a 2D array, we can apply any estimator from the
 scikit-learn, using its <cite>fit</cite>, <cite>predict</cite> or <cite>transform</cite> methods.</p>
 <p>Here, we use scikit-learn Support Vector Classification to learn how to
@@ -777,7 +787,7 @@ predict the category of picture seen by the subject:</p>
 <a class="reference external" href="http://scikit-learn.org/stable/modules/svm.html#classification">scikit-learn documentation</a></p>
 </section>
 <section id="unmasking-inverse-transform">
-<h2>Unmasking (inverse_transform)<a class="headerlink" href="#unmasking-inverse-transform" title="Permalink to this headline">¶</a></h2>
+<h2>Unmasking (inverse_transform)<a class="headerlink" href="#unmasking-inverse-transform" title="Permalink to this headline">#</a></h2>
 <p>Unmasking data is as easy as masking it! This can be done by using
 method <cite>inverse_transform</cite> on your processed data. As you may want to
 unmask several kinds of data (not only the data that you previously
@@ -791,7 +801,7 @@ can take data of dimension 1D (resp. 2D) to convert it back to 3D
 <p>Here we want to see the discriminating weights of some voxels.</p>
 </section>
 <section id="visualizing-results">
-<h2>Visualizing results<a class="headerlink" href="#visualizing-results" title="Permalink to this headline">¶</a></h2>
+<h2>Visualizing results<a class="headerlink" href="#visualizing-results" title="Permalink to this headline">#</a></h2>
 <p>Again the visualization code is simple. We can use an fMRI slice as a
 background and plot the weights. Brighter points have a higher
 discriminating weight.</p>
@@ -804,11 +814,11 @@ discriminating weight.</p>
 </pre></div>
 </div>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/plot_decoding_tutorial.html"><img alt="auto_examples/02_decoding/images/sphx_glr_plot_haxby_anova_svm_001.png" src="auto_examples/02_decoding/images/sphx_glr_plot_haxby_anova_svm_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/plot_decoding_tutorial.html"><img alt="../_images/sphx_glr_plot_haxby_anova_svm_001.png" src="../_images/sphx_glr_plot_haxby_anova_svm_001.png" style="width: 365.0px; height: 130.0px;"/></a>
 </figure>
 </section>
 <section id="going-further">
-<h2>Going further<a class="headerlink" href="#going-further" title="Permalink to this headline">¶</a></h2>
+<h2>Going further<a class="headerlink" href="#going-further" title="Permalink to this headline">#</a></h2>
 <p>The <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> is a very powerful object and we have only
 scratched the surface of its possibilities. It is described in more
 details in the section <a class="reference internal" href="../manipulating_images/masker_objects.html#nifti-masker"><span class="std std-ref">NiftiMasker: applying a mask to load time-series</span></a>. Also, simple functions that
@@ -843,11 +853,21 @@ are described in <a class="reference internal" href="../manipulating_images/mani
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

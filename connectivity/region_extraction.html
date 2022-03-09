@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Region Extraction for better brain parcellations" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/connectivity/region_extraction.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="Page summary: This section shows how to use RegionExtractor to extract connected regions/components into a separate brain region and also shows how to learn functional connectivity interactions bet..." />
-  <meta property="og:image" content="https://nilearn.github.io/auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png" />
-  <meta property="og:image:alt" content="dict-maps" />
+<meta property="og:title" content="Region Extraction for better brain parcellations" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/connectivity/region_extraction.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="Page summary: This section shows how to use RegionExtractor to extract connected regions/components into a separate brain region and also shows how to learn functional connectivity interactions bet..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png" />
+  
+<meta property="og:image:alt" content="dict-maps" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Clustering to parcellate the brain in regions" href="parcellating.html" /><link rel="prev" title="Extracting functional brain networks: ICA and related" href="resting_state_networks.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Region Extraction for better brain parcellations - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -637,7 +647,7 @@
         </div>
         <article role="main">
           <section id="region-extraction-for-better-brain-parcellations">
-<span id="region-extraction"></span><h1>Region Extraction for better brain parcellations<a class="headerlink" href="#region-extraction-for-better-brain-parcellations" title="Permalink to this headline">¶</a></h1>
+<span id="region-extraction"></span><h1>Region Extraction for better brain parcellations<a class="headerlink" href="#region-extraction-for-better-brain-parcellations" title="Permalink to this headline">#</a></h1>
 <div class="topic">
 <p class="topic-title"><strong>Page summary</strong></p>
 <p>This section shows how to use <a class="reference internal" href="../modules/generated/nilearn.regions.RegionExtractor.html#nilearn.regions.RegionExtractor" title="nilearn.regions.RegionExtractor"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegionExtractor</span></code></a>
@@ -654,7 +664,7 @@ Sep 2014</a></p></li>
 </ul>
 </div>
 <section id="fetching-movie-watching-based-functional-datasets">
-<h2>Fetching movie-watching based functional datasets<a class="headerlink" href="#fetching-movie-watching-based-functional-datasets" title="Permalink to this headline">¶</a></h2>
+<h2>Fetching movie-watching based functional datasets<a class="headerlink" href="#fetching-movie-watching-based-functional-datasets" title="Permalink to this headline">#</a></h2>
 <p>We use a naturalistic stimuli based movie-watching functional connectivity dataset
 of 20 subjects, which is already preprocessed, downsampled to 4mm isotropic resolution, and publicly available at
 <a class="reference external" href="https://osf.io/5hju4/files/">https://osf.io/5hju4/files/</a>. We use utilities
@@ -670,11 +680,11 @@ dataset.</p>
 </div>
 </section>
 <section id="brain-maps-using-dictionary-learning">
-<h2>Brain maps using <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a><a class="headerlink" href="#brain-maps-using-dictionary-learning" title="Permalink to this headline">¶</a></h2>
+<h2>Brain maps using <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a><a class="headerlink" href="#brain-maps-using-dictionary-learning" title="Permalink to this headline">#</a></h2>
 <p>Here, we use object <a class="reference internal" href="../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictLearning</span></code></a>, a multi subject model to decompose multi
 subjects <a class="reference internal" href="../glossary.html#term-fMRI"><span class="xref std std-term">fMRI</span></a> datasets into functionally defined maps. We do this by setting
 the parameters and calling <a class="reference internal" href="../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning.fit" title="nilearn.decomposition.DictLearning.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DictLearning.fit</span></code></a> on the filenames of datasets without
-necessarily converting each file to <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="(in NiBabel v3.2.1+100.g9fdf5e3e)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Nifti1Image</span></code></a> object.</p>
+necessarily converting each file to <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="(in NiBabel v3.2.2+146.ga20f13ad)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Nifti1Image</span></code></a> object.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.decomposition</span> <span class="kn">import</span> <span class="n">DictLearning</span>
 
 <span class="c1"># Initialize DictLearning object</span>
@@ -690,7 +700,7 @@ necessarily converting each file to <a class="reference external" href="https://
 </div>
 </section>
 <section id="visualization-of-dictionary-learning-maps">
-<h2>Visualization of <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> maps<a class="headerlink" href="#visualization-of-dictionary-learning-maps" title="Permalink to this headline">¶</a></h2>
+<h2>Visualization of <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> maps<a class="headerlink" href="#visualization-of-dictionary-learning-maps" title="Permalink to this headline">#</a></h2>
 <p>Showing maps stored in <code class="docutils literal notranslate"><span class="pre">components_img</span></code> using nilearn plotting utilities.
 Here, we use <a class="reference internal" href="../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_prob_atlas</span></code></a> for easy visualization of 4D atlas maps
 onto the anatomical standard template. Each map is displayed in different
@@ -703,9 +713,9 @@ color and colors are random and automatically picked.</p>
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dict-maps" src="auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png"/></a></strong></p></section>
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dict-maps" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png" style="width: 528.0px; height: 208.0px;"/></a></strong></p></section>
 <section id="region-extraction-with-dictionary-learning-maps">
-<h2>Region Extraction with <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> maps<a class="headerlink" href="#region-extraction-with-dictionary-learning-maps" title="Permalink to this headline">¶</a></h2>
+<h2>Region Extraction with <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> maps<a class="headerlink" href="#region-extraction-with-dictionary-learning-maps" title="Permalink to this headline">#</a></h2>
 <p>We use object <a class="reference internal" href="../modules/generated/nilearn.regions.RegionExtractor.html#nilearn.regions.RegionExtractor" title="nilearn.regions.RegionExtractor"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegionExtractor</span></code></a> for extracting brain connected regions
 from dictionary maps into separated brain activation regions with automatic
 thresholding strategy selected as <code class="docutils literal notranslate"><span class="pre">thresholding_strategy='ratio_n_voxels'</span></code>.
@@ -740,7 +750,7 @@ units to adapt well to the resolution of the image. Please see the documentation
 </div>
 </section>
 <section id="visualization-of-region-extraction-results">
-<h2>Visualization of Region Extraction results<a class="headerlink" href="#visualization-of-region-extraction-results" title="Permalink to this headline">¶</a></h2>
+<h2>Visualization of Region Extraction results<a class="headerlink" href="#visualization-of-region-extraction-results" title="Permalink to this headline">#</a></h2>
 <p>Showing region extraction results. The same function <a class="reference internal" href="../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_prob_atlas</span></code></a> is used
 for visualizing extracted regions on a standard template. Each extracted brain
 region is assigned a color and as you can see that visual cortex area is extracted
@@ -754,9 +764,9 @@ quite nicely into each hemisphere.</p>
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dict" src="auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_002.png"/></a></strong></p></section>
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dict" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_002.png" style="width: 528.0px; height: 208.0px;"/></a></strong></p></section>
 <section id="computing-functional-connectivity-matrices">
-<h2>Computing functional connectivity matrices<a class="headerlink" href="#computing-functional-connectivity-matrices" title="Permalink to this headline">¶</a></h2>
+<h2>Computing functional connectivity matrices<a class="headerlink" href="#computing-functional-connectivity-matrices" title="Permalink to this headline">#</a></h2>
 <p>Here, we use the object called <a class="reference internal" href="../modules/generated/nilearn.connectome.ConnectivityMeasure.html#nilearn.connectome.ConnectivityMeasure" title="nilearn.connectome.ConnectivityMeasure"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectivityMeasure</span></code></a> to compute
 functional connectivity measured between each extracted brain regions. Many different
 kinds of measures exists in nilearn such as “correlation”, “partial correlation”, “tangent”,
@@ -791,7 +801,7 @@ The third step, we compute the mean correlation across all subjects.</p>
 </div>
 </section>
 <section id="visualization-of-functional-connectivity-matrices">
-<h2>Visualization of functional connectivity matrices<a class="headerlink" href="#visualization-of-functional-connectivity-matrices" title="Permalink to this headline">¶</a></h2>
+<h2>Visualization of functional connectivity matrices<a class="headerlink" href="#visualization-of-functional-connectivity-matrices" title="Permalink to this headline">#</a></h2>
 <p>Showing mean of correlation matrices computed between each extracted brain regions.
 At this point, we make use of nilearn image and plotting utilities to find
 automatically the coordinates required, for plotting connectome relations.
@@ -814,9 +824,9 @@ connectivity relations to brain regions plotted using <a class="reference intern
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="matrix" src="auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_003.png"/></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="connectome" src="auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_004.png"/></a></strong></p></section>
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="matrix" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_003.png" style="width: 420.0px; height: 300.0px;"/></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="connectome" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_004.png" style="width: 396.0px; height: 156.0px;"/></a></strong></p></section>
 <section id="validating-results">
-<h2>Validating results<a class="headerlink" href="#validating-results" title="Permalink to this headline">¶</a></h2>
+<h2>Validating results<a class="headerlink" href="#validating-results" title="Permalink to this headline">#</a></h2>
 <p>Showing only one specific network regions before and after region extraction. The first image displays the regions of one specific functional network without region extraction.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
 
@@ -828,7 +838,7 @@ connectivity relations to brain regions plotted using <a class="reference intern
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dmn" src="auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_005.png"/></a></strong></p><p>The second image displays the regions split apart after region extraction. Here, we can
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dmn" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_005.png" style="width: 528.0px; height: 208.0px;"/></a></strong></p><p>The second image displays the regions split apart after region extraction. Here, we can
 validate that regions are nicely separated identified by each extracted region in different
 color.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regions_indices_of_map3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">regions_index</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
@@ -846,7 +856,7 @@ color.</p>
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dmn_reg" src="auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_006.png"/></a></strong></p><div class="admonition seealso">
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dmn_reg" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_006.png" style="width: 528.0px; height: 208.0px;"/></a></strong></p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>The full code can be found as an example:
 <a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html#sphx-glr-auto-examples-03-connectivity-plot-extract-regions-dictlearning-maps-py"><span class="std std-ref">Regions extraction using Dictionary learning and functional connectomes</span></a></p>
@@ -880,11 +890,21 @@ color.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

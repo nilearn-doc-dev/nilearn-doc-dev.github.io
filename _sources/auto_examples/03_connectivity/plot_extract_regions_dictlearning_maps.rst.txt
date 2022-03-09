@@ -56,6 +56,12 @@ We use nilearn's datasets downloading utilities
     confounds = rest_dataset.confounds
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 36-43
 
 Extract functional networks with :term:`Dictionary learning`
@@ -87,6 +93,31 @@ functional datasets
 
     plotting.plot_prob_atlas(components_img, view_type='filled_contours',
                              title='Dictionary Learning maps')
+
+
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png
+   :alt: plot extract regions dictlearning maps
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+    linewidths is ignored by contourf
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+    No contour levels were found within the data range.
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61ab50fb50>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-70
@@ -127,6 +158,35 @@ more intense non-voxels will be survived.
                              title=title)
 
 
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_002.png
+   :alt: plot extract regions dictlearning maps
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/ma/core.py:2826: UserWarning:
+
+    Warning: converting a masked element to nan.
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+    No contour levels were found within the data range.
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+    linewidths is ignored by contourf
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61ac3fec20>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 93-102
 
 Compute correlation coefficients
@@ -162,6 +222,12 @@ To estimate correlation matrices we import connectome utilities from nilearn.
                                                               n_regions_extracted)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 121-128
 
 Plot resulting connectomes
@@ -191,6 +257,35 @@ connectome relations.
                              edge_threshold='90%', title=title)
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_003.png
+         :alt: plot extract regions dictlearning maps
+         :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_004.png
+         :alt: plot extract regions dictlearning maps
+         :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_004.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f61ad238910>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 143-148
 
 Plot regions extracted for only one specific network
@@ -209,6 +304,17 @@ region extraction (left plot).
     coords = plotting.find_xyz_cut_coords(img)
     display = plotting.plot_stat_map(img, cut_coords=coords, colorbar=False,
                                      title='Showing one specific network')
+
+
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_005.png
+   :alt: plot extract regions dictlearning maps
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_005.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 156-162
@@ -238,11 +344,31 @@ network given as 4.
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_006.png
+   :alt: plot extract regions dictlearning maps
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_006.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/ma/core.py:2826: UserWarning:
+
+    Warning: converting a masked element to nan.
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 2 minutes  51.605 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  983 MB
 
 
 .. _sphx_glr_download_auto_examples_03_connectivity_plot_extract_regions_dictlearning_maps.py:

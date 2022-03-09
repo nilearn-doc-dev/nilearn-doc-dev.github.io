@@ -58,6 +58,12 @@ acquisition of a fast event-related dataset.
     fmri_img = data.epi_img
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 38-67
 
 Define the paradigm that will be used. Here, we just need to get the provided
@@ -102,6 +108,111 @@ This task comprises 10 conditions:
     events
 
 
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>trial_type</th>
+          <th>onset</th>
+          <th>duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>0</th>
+          <td>visual_computation</td>
+          <td>0.000000</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td>visual_computation</td>
+          <td>2.400000</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>horizontal_checkerboard</td>
+          <td>8.700000</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>audio_right_hand_button_press</td>
+          <td>11.400000</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>sentence_listening</td>
+          <td>15.000000</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>...</th>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <th>75</th>
+          <td>sentence_listening</td>
+          <td>284.399994</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>76</th>
+          <td>sentence_reading</td>
+          <td>288.000000</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>77</th>
+          <td>visual_right_hand_button_press</td>
+          <td>291.000000</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>78</th>
+          <td>sentence_listening</td>
+          <td>293.399994</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>79</th>
+          <td>sentence_listening</td>
+          <td>296.700012</td>
+          <td>1.0</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>80 rows × 3 columns</p>
+    </div>
+    </div>
+    <br />
+    <br />
+
 .. GENERATED FROM PYTHON SOURCE LINES 75-82
 
 Running a basic model
@@ -122,6 +233,12 @@ matrix and the beta maps.
     design_matrix = first_level_model.design_matrices_[0]
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 88-91
 
 Let us take a look at the design matrix: it has 10 main columns corresponding
@@ -136,6 +253,17 @@ signals (drifts) and a constant regressor.
     plot_design_matrix(design_matrix)
     import matplotlib.pyplot as plt
     plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_001.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_001.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 97-102
@@ -199,6 +327,12 @@ specification when we change the design matrix.
         return contrasts
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 151-158
 
 Let's look at these computed contrasts:
@@ -220,6 +354,43 @@ Let's look at these computed contrasts:
         plt.suptitle(key)
 
     plt.show()
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_002.png
+         :alt: left - right button press
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_003.png
+         :alt: audio - visual
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_004.png
+         :alt: computation - sentences
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_005.png
+         :alt: horizontal-vertical
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_005.png
+         :class: sphx-glr-multi-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 167-173
@@ -253,6 +424,12 @@ fitting and plotting in a function that we call when needed.
                 axes=ax, cut_coords=1)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 191-192
 
 Let's run the model and look at the outcome.
@@ -264,6 +441,17 @@ Let's run the model and look at the outcome.
 
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_006.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_006.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 197-211
@@ -294,6 +482,23 @@ drifts in the data.
     plot_design_matrix(design_matrix)
 
 
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_007.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_007.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <AxesSubplot:label='conditions', ylabel='scan number'>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 218-219
 
 Does the model perform worse or better ?
@@ -305,6 +510,17 @@ Does the model perform worse or better ?
 
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_008.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_008.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 224-228
@@ -325,6 +541,29 @@ useless. This is done by setting drift_model to None.
     plot_design_matrix(design_matrix)
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_009.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_009.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_010.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_010.png
+         :class: sphx-glr-multi-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 237-244
@@ -349,6 +588,29 @@ Let's take a basis of 5 polynomials.
     plot_design_matrix(design_matrix)
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_011.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_011.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_012.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_012.png
+         :class: sphx-glr-multi-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 254-255
@@ -378,6 +640,29 @@ so-called Glover hrf) for the so-called canonical model of SPM
     plot_design_matrix(design_matrix)
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_013.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_013.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_014.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_014.png
+         :class: sphx-glr-multi-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 275-276
@@ -411,6 +696,29 @@ the effect. Is that the case?
     plt.show()
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_015.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_015.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_016.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_016.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 298-304
 
 Not a huge effect, but rather positive overall. We could keep that one.
@@ -435,6 +743,29 @@ the time derivative regressors.
     plt.show()
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_017.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_017.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_018.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_018.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 315-319
 
 There seems to be something here. Maybe we could adjust the
@@ -455,6 +786,17 @@ acquisition, but the middle of it.
         z_map, display_mode='z', threshold=3.0,
         title='effect of time derivatives after model shift')
     plt.show()
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_019.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_019.png
+   :class: sphx-glr-single-img
+
+
+
+
 
 .. GENERATED FROM PYTHON SOURCE LINES 329-330
 
@@ -479,6 +821,29 @@ This is done by specifying `hrf_model='spm + derivative + dispersion'`.
     plot_design_matrix(design_matrix)
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_020.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_020.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_021.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_021.png
+         :class: sphx-glr-multi-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 346-348
@@ -516,6 +881,17 @@ the noise model to be ar(1).
 
 
 
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_022.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_022.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 373-375
 
 Next we change the noise model to ols and observe the difference
@@ -532,6 +908,17 @@ relative to the ar(1) model.
     first_level_model = first_level_model.fit(fmri_img, events=events)
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_023.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_023.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 384-389
@@ -553,6 +940,17 @@ account for greater temporal complexity in the noise structure.
     first_level_model = first_level_model.fit(fmri_img, events=events)
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_024.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_024.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 398-401
@@ -598,6 +996,29 @@ routine of Nilearn.
     plt.show()
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_025.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_025.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_026.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_026.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 433-439
 
 Note the five additional columns in the design matrix.
@@ -631,6 +1052,29 @@ gains.  We use a mild smoothing of 5mm
     plot_design_matrix(design_matrix)
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_027.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_027.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_028.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_028.png
+         :class: sphx-glr-multi-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 461-463
@@ -673,6 +1117,17 @@ data.
     plt.show()
 
 
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_029.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_029.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 493-496
 
 For the sake of time saving, we resample icbm_mask to our data.
@@ -686,6 +1141,12 @@ We use interpolation = 'nearest' to keep the mask as a binary image.
     from nilearn.image import resample_to_img
     resampled_icbm_mask = resample_to_img(icbm_mask, data_mask,
                                           interpolation='nearest')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 501-502
@@ -706,6 +1167,29 @@ Impact on the first-level model.
     plt.show()
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_030.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_030.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_031.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_031.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 512-513
 
 Note that it removed spurious spots in the white matter.
@@ -724,9 +1208,9 @@ are specific to this dataset and may vary with other ones.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 6 minutes  20.763 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  258 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_first_level_details.py:

@@ -41,6 +41,12 @@ Fetching the smith ICA 10 RSN by importing datasets utilities
     atlas_networks = smith_atlas.rsn10
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 20-21
 
 Import region extractor to extract atlas networks
@@ -58,6 +64,12 @@ Import region extractor to extract atlas networks
     # Just call fit() to execute region extraction procedure
     extraction.fit()
     regions_img = extraction.regions_img_
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 32-34
@@ -95,11 +107,85 @@ Show region extraction results by importing image & plotting utilities
     plotting.show()
 
 
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_001.png
+         :alt: plot extract rois smith atlas
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_002.png
+         :alt: plot extract rois smith atlas
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_003.png
+         :alt: plot extract rois smith atlas
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_004.png
+         :alt: plot extract rois smith atlas
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_005.png
+         :alt: plot extract rois smith atlas
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_005.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_006.png
+         :alt: plot extract rois smith atlas
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_006.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_007.png
+         :alt: plot extract rois smith atlas
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_007.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_008.png
+         :alt: plot extract rois smith atlas
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_smith_atlas_008.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+    No contour levels were found within the data range.
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 4 minutes  29.871 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  550 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_extract_rois_smith_atlas.py:

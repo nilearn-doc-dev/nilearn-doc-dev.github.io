@@ -47,6 +47,12 @@ Load Haxby dataset
     session = labels['chunks']
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 27-29
 
 Restrict to faces and houses
@@ -61,6 +67,12 @@ Restrict to faces and houses
 
     fmri_img = index_img(fmri_filename, condition_mask)
     y, session = y[condition_mask], session[condition_mask]
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-38
@@ -95,6 +107,12 @@ Surface bold response
     adjacency = nn.fit(coords).radius_neighbors_graph(coords).tolil()
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 61-63
 
 Searchlight computation
@@ -121,6 +139,12 @@ Searchlight computation
     scores = search_light(X, y, estimator, adjacency, cv=cv, n_jobs=1)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 80-82
 
 Visualization
@@ -139,11 +163,22 @@ Visualization
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/02_decoding/images/sphx_glr_plot_haxby_searchlight_surface_001.png
+   :alt: Accuracy map, left hemisphere
+   :srcset: /auto_examples/02_decoding/images/sphx_glr_plot_haxby_searchlight_surface_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 1 minutes  28.340 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  914 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_haxby_searchlight_surface.py:

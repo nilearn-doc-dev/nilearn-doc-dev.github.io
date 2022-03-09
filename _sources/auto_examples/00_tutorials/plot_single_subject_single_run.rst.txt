@@ -72,6 +72,18 @@ Retrieving the data
     subject_data.func  # print the list of names of functional images
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    ['/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_004.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_005.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_006.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_007.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_008.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_009.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_010.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_011.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_012.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_013.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_014.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_015.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_016.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_017.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_018.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_019.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_020.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_021.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_022.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_023.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_024.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_025.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_026.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_027.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_028.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_029.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_030.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_031.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_032.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_033.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_034.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_035.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_036.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_037.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_038.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_039.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_040.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_041.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_042.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_043.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_044.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_045.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_046.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_047.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_048.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_049.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_050.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_051.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_052.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_053.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_054.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_055.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_056.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_057.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_058.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_059.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_060.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_061.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_062.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_063.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_064.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_065.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_066.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_067.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_068.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_069.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_070.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_071.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_072.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_073.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_074.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_075.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_076.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_077.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_078.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_079.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_080.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_081.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_082.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_083.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_084.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_085.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_086.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_087.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_088.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_089.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_090.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_091.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_092.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_093.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_094.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_095.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_096.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_097.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_098.img', '/home/alexis/nilearn_data/spm_auditory/sub001/fM00223/fM00223_099.img']
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 52-53
 
 We can display the first functional image and the subject's anatomy:
@@ -83,6 +95,35 @@ We can display the first functional image and the subject's anatomy:
     from nilearn.plotting import plot_stat_map, plot_anat, plot_img
     plot_img(subject_data.func[0])
     plot_anat(subject_data.anat)
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_001.png
+         :alt: plot single subject single run
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_002.png
+         :alt: plot single subject single run
+         :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_002.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61f1893d60>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-61
@@ -99,6 +140,12 @@ image that will be used to display the activations:
     from nilearn.image import concat_imgs, mean_img
     fmri_img = concat_imgs(subject_data.func)
     mean_img = mean_img(fmri_img)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 67-74
@@ -120,6 +167,140 @@ provided in the dataset.
     events
 
 
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>onset</th>
+          <th>duration</th>
+          <th>trial_type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>0</th>
+          <td>0.0</td>
+          <td>42.0</td>
+          <td>rest</td>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td>42.0</td>
+          <td>42.0</td>
+          <td>active</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>84.0</td>
+          <td>42.0</td>
+          <td>rest</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>126.0</td>
+          <td>42.0</td>
+          <td>active</td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>168.0</td>
+          <td>42.0</td>
+          <td>rest</td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>210.0</td>
+          <td>42.0</td>
+          <td>active</td>
+        </tr>
+        <tr>
+          <th>6</th>
+          <td>252.0</td>
+          <td>42.0</td>
+          <td>rest</td>
+        </tr>
+        <tr>
+          <th>7</th>
+          <td>294.0</td>
+          <td>42.0</td>
+          <td>active</td>
+        </tr>
+        <tr>
+          <th>8</th>
+          <td>336.0</td>
+          <td>42.0</td>
+          <td>rest</td>
+        </tr>
+        <tr>
+          <th>9</th>
+          <td>378.0</td>
+          <td>42.0</td>
+          <td>active</td>
+        </tr>
+        <tr>
+          <th>10</th>
+          <td>420.0</td>
+          <td>42.0</td>
+          <td>rest</td>
+        </tr>
+        <tr>
+          <th>11</th>
+          <td>462.0</td>
+          <td>42.0</td>
+          <td>active</td>
+        </tr>
+        <tr>
+          <th>12</th>
+          <td>504.0</td>
+          <td>42.0</td>
+          <td>rest</td>
+        </tr>
+        <tr>
+          <th>13</th>
+          <td>546.0</td>
+          <td>42.0</td>
+          <td>active</td>
+        </tr>
+        <tr>
+          <th>14</th>
+          <td>588.0</td>
+          <td>42.0</td>
+          <td>rest</td>
+        </tr>
+        <tr>
+          <th>15</th>
+          <td>630.0</td>
+          <td>42.0</td>
+          <td>active</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
 .. GENERATED FROM PYTHON SOURCE LINES 79-83
 
 Performing the GLM analysis
@@ -133,6 +314,12 @@ It is now time to create and estimate a ``FirstLevelModel`` object, that will ge
 
 
     from nilearn.glm.first_level import FirstLevelModel
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 87-95
@@ -158,6 +345,12 @@ Parameters of the first-level model
                                high_pass=.01)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 103-104
 
 Now that we have specified the model, we can run it on the :term:`fMRI` image
@@ -167,6 +360,12 @@ Now that we have specified the model, we can run it on the :term:`fMRI` image
 .. code-block:: default
 
     fmri_glm = fmri_glm.fit(fmri_img, events)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 107-109
@@ -179,6 +378,12 @@ columns contain the predictors).
 .. code-block:: default
 
     design_matrix = fmri_glm.design_matrices_[0]
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 112-114
@@ -194,6 +399,17 @@ implictily meant to for multiple runs.
     plot_design_matrix(design_matrix)
     import matplotlib.pyplot as plt
     plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_003.png
+   :alt: plot single subject single run
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_003.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 120-122
@@ -216,6 +432,12 @@ first create a directory where you want to write the images
         design_matrix, output_file=join(outdir, 'design_matrix.png'))
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 133-136
 
 The first column contains the expected response profile of regions which are
@@ -231,6 +453,17 @@ Let's plot this first column
     plt.xlabel('scan')
     plt.title('Expected Auditory Response')
     plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_004.png
+   :alt: Expected Auditory Response
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_004.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 143-154
@@ -261,6 +494,12 @@ then a :term:`contrast` that makes the difference between these conditions.
     }
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 164-166
 
 We can then compare the two conditions 'active' and 'rest' by
@@ -272,6 +511,12 @@ defining the corresponding :term:`contrast`:
 
 
     active_minus_rest = conditions['active'] - conditions['rest']
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 170-172
@@ -286,6 +531,23 @@ the names of the columns of the design matrix.
 
     from nilearn.plotting import plot_contrast_matrix
     plot_contrast_matrix(active_minus_rest, design_matrix=design_matrix)
+
+
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_005.png
+   :alt: plot single subject single run
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_005.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <AxesSubplot:label='conditions'>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 177-180
@@ -303,6 +565,12 @@ account the associated variance.
                                         output_type='effect_size')
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 185-189
 
 In order to get statistical significance, we form a t-statistic, and
@@ -317,6 +585,12 @@ variance=1), across voxels, if there were no effects in the data.
 
     z_map = fmri_glm.compute_contrast(active_minus_rest,
                                       output_type='z_score')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 194-202
@@ -339,6 +613,17 @@ axial views, with display_mode='z' and cut_coords=3.
                   display_mode='z', cut_coords=3, black_bg=True,
                   title='Active minus Rest (Z>3)')
     plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_006.png
+   :alt: plot single subject single run
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_006.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 209-216
@@ -365,6 +650,23 @@ of declaring an inactive :term:`voxel`, active.
     plt.show()
 
 
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_007.png
+   :alt: plot single subject single run
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_007.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Uncorrected p<0.001 threshold: 3.291
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 226-231
 
 The problem is that with this you expect 0.001 * n_voxels to show up
@@ -387,6 +689,23 @@ i.e. the probability of making only one false detection, say at
     plt.show()
 
 
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_008.png
+   :alt: plot single subject single run
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_008.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Bonferroni-corrected, p<0.05 threshold: 4.934
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 241-245
 
 This is quite conservative indeed!  A popular alternative is to
@@ -405,6 +724,23 @@ discovery rate.
                   display_mode='z', cut_coords=3, black_bg=True,
                   title='Active minus Rest (fdr=0.05)')
     plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_009.png
+   :alt: plot single subject single run
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_009.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    False Discovery rate = 0.05 threshold: 2.904
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 254-259
@@ -430,6 +766,17 @@ will be discarded.
 
 
 
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_010.png
+   :alt: plot single subject single run
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_010.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 270-271
 
 We can save the effect and zscore maps to the disk.
@@ -440,6 +787,12 @@ We can save the effect and zscore maps to the disk.
 
     z_map.to_filename(join(outdir, 'active_vs_rest_z_map.nii.gz'))
     eff_map.to_filename(join(outdir, 'active_vs_rest_eff_map.nii.gz'))
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 275-276
@@ -457,6 +810,54 @@ We can furthermore extract and report the found positions in a table.
     table
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/reporting/_get_clusters_table.py:208: UserWarning: Attention: No clusters with stat higher than 2.903531892142391
+      warnings.warn(
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>Cluster ID</th>
+          <th>X</th>
+          <th>Y</th>
+          <th>Z</th>
+          <th>Peak Stat</th>
+          <th>Cluster Size (mm3)</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
 .. GENERATED FROM PYTHON SOURCE LINES 283-284
 
 This table can be saved for future use.
@@ -467,6 +868,12 @@ This table can be saved for future use.
 
 
     table.to_csv(join(outdir, 'table.csv'))
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 288-297
@@ -501,6 +908,17 @@ contrasts.
                                       output_type='z_score')
 
 
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_011.png
+   :alt: plot single subject single run
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_011.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 312-314
 
 Note that the statistic has been converted to a z-variable, which
@@ -519,6 +937,17 @@ makes it easier to represent it.
     plt.show()
 
 
+
+
+.. image-sg:: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_012.png
+   :alt: plot single subject single run
+   :srcset: /auto_examples/00_tutorials/images/sphx_glr_plot_single_subject_single_run_012.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 323-324
 
 Oops, there is a lot of non-neural signal in there (ventricles, arteries)...
@@ -526,9 +955,9 @@ Oops, there is a lot of non-neural signal in there (ventricles, arteries)...
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  24.231 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  311 MB
 
 
 .. _sphx_glr_download_auto_examples_00_tutorials_plot_single_subject_single_run.py:

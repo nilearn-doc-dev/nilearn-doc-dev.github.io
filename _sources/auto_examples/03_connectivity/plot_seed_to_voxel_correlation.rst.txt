@@ -42,6 +42,12 @@ See also :ref:`for a similar example using cortical surface input data
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 22-24
 
 Getting the data
@@ -62,6 +68,12 @@ Getting the data
     confound_filename = dataset.confounds[0]
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 35-37
 
 Note that func_filename and confound_filename are strings pointing to
@@ -73,6 +85,19 @@ files on your hard drive.
 
     print(func_filename)
     print(confound_filename)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+    /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_desc-reducedConfounds_regressors.tsv
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-50
@@ -92,6 +117,12 @@ We will be working with one seed sphere in the Posterior Cingulate Cortex
 .. code-block:: default
 
     pcc_coords = [(0, -52, 18)]
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-60
@@ -116,6 +147,12 @@ This will create a NiftiSpheresMasker object.
         memory='nilearn_cache', memory_level=1, verbose=0)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 68-71
 
 Then we extract the mean time series within the seed region while
@@ -128,6 +165,12 @@ can be found in the dataset's csv file
 
     seed_time_series = seed_masker.fit_transform(func_filename,
                                                  confounds=[confound_filename])
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 75-78
@@ -148,6 +191,12 @@ arguments as in the seed_masker in addition to smoothing with a 6 mm kernel
         memory='nilearn_cache', memory_level=1, verbose=0)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 86-88
 
 Then we extract the brain-wide voxel-wise time series while regressing
@@ -159,6 +208,12 @@ out the confounds as before
 
     brain_time_series = brain_masker.fit_transform(func_filename,
                                                    confounds=[confound_filename])
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 92-95
@@ -174,6 +229,19 @@ series** is an array with shape n_volumes, 1), while the
 
     print("Seed time series shape: (%s, %s)" % seed_time_series.shape)
     print("Brain time series shape: (%s, %s)" % brain_time_series.shape)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Seed time series shape: (168, 1)
+    Brain time series shape: (168, 32504)
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 100-101
@@ -194,6 +262,17 @@ We can plot the **seed time series**.
     plt.tight_layout()
 
 
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_seed_to_voxel_correlation_001.png
+   :alt: Seed time series (Posterior cingulate cortex)
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_seed_to_voxel_correlation_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 111-113
 
 Exemplarily, we can also select 5 random voxels from the **brain-wide
@@ -209,6 +288,17 @@ data** and plot the time series from.
     plt.xlabel('Scan number')
     plt.ylabel('Normalized signal')
     plt.tight_layout()
+
+
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_seed_to_voxel_correlation_002.png
+   :alt: Time series from 5 random voxels
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_seed_to_voxel_correlation_002.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 121-131
@@ -235,6 +325,12 @@ series.
                                   )
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 138-142
 
 The resulting array will contain a value representing the correlation
@@ -250,6 +346,19 @@ values can potentially range between -1 and 1.
           seed_to_voxel_correlations.shape)
     print("Seed-to-voxel correlation: min = %.3f; max = %.3f" % (
         seed_to_voxel_correlations.min(), seed_to_voxel_correlations.max()))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Seed-to-voxel correlation shape: (32504, 1)
+    Seed-to-voxel correlation: min = -0.646; max = 0.960
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 148-155
@@ -281,6 +390,17 @@ set the cross to the center of the seed region of interest.
     display.savefig('pcc_seed_correlation.pdf')
 
 
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_seed_to_voxel_correlation_003.png
+   :alt: plot seed to voxel correlation
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_seed_to_voxel_correlation_003.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 170-174
 
 Fisher-z transformation and save nifti
@@ -307,11 +427,23 @@ The transformed array can now have values more extreme than +/- 1.
         'pcc_seed_correlation_z.nii.gz')
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Seed-to-voxel correlation Fisher-z transformed: min = -0.768; max = 1.941
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  16.280 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  587 MB
 
 
 .. _sphx_glr_download_auto_examples_03_connectivity_plot_seed_to_voxel_correlation.py:

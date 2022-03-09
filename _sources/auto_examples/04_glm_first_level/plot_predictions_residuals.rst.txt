@@ -60,6 +60,12 @@ Import modules
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 41-47
 
 Fit model
@@ -85,6 +91,12 @@ original data in `fmri_img`.
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 59-61
 
 Calculate and plot contrast
@@ -99,6 +111,23 @@ Calculate and plot contrast
     z_map = fmri_glm.compute_contrast('active - rest')
 
     plotting.plot_stat_map(z_map, bg_img=mean_img, threshold=3.1)
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_001.png
+   :alt: plot predictions residuals
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61af76b820>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 68-70
@@ -124,6 +153,12 @@ Extract the largest clusters
     masker = NiftiSpheresMasker(coords)
     real_timeseries = masker.fit_transform(fmri_img)
     predicted_timeseries = masker.fit_transform(fmri_glm.predicted[0])
+
+
+
+
+
+
 
 
 
@@ -158,6 +193,17 @@ Plot predicted and actual time series for 6 most significant clusters
 
 
 
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_002.png
+   :alt: Cluster peak [-60.  -6.  42.] , Cluster peak [60.  0. 36.] , Cluster peak [57. -6. 36.] , Cluster peak [-48. -15.  39.] , Cluster peak [57. 36. 27.] , Cluster peak [51. 30. 30.] 
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_002.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 111-113
 
 Get residuals
@@ -168,6 +214,21 @@ Get residuals
 .. code-block:: default
 
     resid = masker.fit_transform(fmri_glm.residuals[0])
+
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/regression.py:42: FutureWarning:
+
+    'resid' has been deprecated in version 0.7.0 and will be removed in version 0.9.0. Please use 'residuals' instead.
+
+
 
 
 
@@ -190,6 +251,28 @@ Note that residuals are not really distributed normally.
 
     fig2.set_size_inches(12, 7)
     fig2.tight_layout()
+
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_003.png
+   :alt: Cluster peak [-60.  -6.  42.] , Cluster peak [60.  0. 36.] , Cluster peak [57. -6. 36.] , Cluster peak [-48. -15.  39.] , Cluster peak [57. 36. 27.] , Cluster peak [51. 30. 30.] 
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Mean residuals: 1.2138438402568378e-14
+    Mean residuals: -0.054243690993344064
+    Mean residuals: 0.0035701487678381216
+    Mean residuals: -0.007370668280535009
+    Mean residuals: 0.025737648853185153
+    Mean residuals: 0.02466644889284934
+
 
 
 
@@ -216,6 +299,23 @@ we can use an F-test as shown in the next section.
 
     plotting.plot_stat_map(fmri_glm.r_square[0], bg_img=mean_img, threshold=.1,
                            display_mode='z', cut_coords=7)
+
+
+
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_004.png
+   :alt: plot predictions residuals
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_004.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f61acc73190>
 
 
 
@@ -253,11 +353,28 @@ all the other columns in the design matrix such as drift and motion.
                            display_mode='z', cut_coords=7)
 
 
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_005.png
+   :alt: plot predictions residuals
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_005.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f61aaf0ce20>
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  44.751 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  561 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_predictions_residuals.py:

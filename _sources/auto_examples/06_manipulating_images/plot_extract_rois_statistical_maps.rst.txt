@@ -47,6 +47,12 @@ utilities
     tmap_filename = localizer.images[0]
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 26-27
 
 Threshold the t-statistic image by importing threshold function
@@ -65,6 +71,12 @@ Threshold the t-statistic image by importing threshold function
     # Type 2: threshold strategy used will be based on image intensity
     # Here, threshold value should be within the limits i.e. less than max value.
     threshold_value_img = threshold_img(tmap_filename, threshold=3.0, copy=False)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-41
@@ -87,6 +99,35 @@ Showing thresholding results by importing plotting modules and its utilities
                            title='Threshold image with intensity value', colorbar=False)
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_statistical_maps_001.png
+         :alt: plot extract rois statistical maps
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_statistical_maps_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_statistical_maps_002.png
+         :alt: plot extract rois statistical maps
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_statistical_maps_002.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f61c3fd94e0>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 52-53
 
 Extracting the regions by importing connected regions function
@@ -102,6 +143,12 @@ Extracting the regions by importing connected regions function
 
     regions_value_img, index = connected_regions(threshold_value_img,
                                                  min_region_size=1500)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-63
@@ -125,11 +172,43 @@ Visualizing region extraction results
     plotting.show()
 
 
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_statistical_maps_003.png
+         :alt: plot extract rois statistical maps
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_statistical_maps_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_statistical_maps_004.png
+         :alt: plot extract rois statistical maps
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_extract_rois_statistical_maps_004.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+
+    No contour levels were found within the data range.
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  18.584 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_extract_rois_statistical_maps.py:

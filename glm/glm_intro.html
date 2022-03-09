@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="An introduction to GLMs in fMRI statistical analysis" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/glm/glm_intro.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="A primer on BOLD-fMRI data analysis: What is fMRI ?: Functional magnetic resonance imaging ( fMRI) is based on the fact that when local neural activity increases, increases in metabolism and blood ..." />
-  <meta property="og:image" content="https://nilearn.github.io/_images/stimulation-time-diagram.png" />
-  <meta property="og:image:alt" content="Nilearn" />
+<meta property="og:title" content="An introduction to GLMs in fMRI statistical analysis" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/glm/glm_intro.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="A primer on BOLD-fMRI data analysis: What is fMRI ?: Functional magnetic resonance imaging ( fMRI) is based on the fact that when local neural activity increases, increases in metabolism and blood ..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/_images/stimulation-time-diagram.png" />
+  
+<meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="First level models" href="first_level_model.html" /><link rel="prev" title="Analyzing fMRI using GLMs" href="index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>An introduction to GLMs in fMRI statistical analysis - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -637,11 +647,11 @@
         </div>
         <article role="main">
           <section id="an-introduction-to-glms-in-fmri-statistical-analysis">
-<span id="glm-intro"></span><h1>An introduction to GLMs in fMRI statistical analysis<a class="headerlink" href="#an-introduction-to-glms-in-fmri-statistical-analysis" title="Permalink to this headline">¶</a></h1>
+<span id="glm-intro"></span><h1>An introduction to GLMs in fMRI statistical analysis<a class="headerlink" href="#an-introduction-to-glms-in-fmri-statistical-analysis" title="Permalink to this headline">#</a></h1>
 <section id="a-primer-on-bold-fmri-data-analysis">
-<h2>A primer on BOLD-fMRI data analysis<a class="headerlink" href="#a-primer-on-bold-fmri-data-analysis" title="Permalink to this headline">¶</a></h2>
+<h2>A primer on BOLD-fMRI data analysis<a class="headerlink" href="#a-primer-on-bold-fmri-data-analysis" title="Permalink to this headline">#</a></h2>
 <section id="what-is-fmri">
-<h3>What is fMRI ?<a class="headerlink" href="#what-is-fmri" title="Permalink to this headline">¶</a></h3>
+<h3>What is fMRI ?<a class="headerlink" href="#what-is-fmri" title="Permalink to this headline">#</a></h3>
 <p>Functional magnetic resonance imaging (<a class="reference internal" href="../glossary.html#term-fMRI"><span class="xref std std-term">fMRI</span></a>) is based on the fact that when local neural activity increases, increases in metabolism and blood flow lead to fluctuations of the relative concentrations of oxyhaemoglobin (the red cells in the blood that carry oxygen) and deoxyhaemoglobin (the same red cells after they have delivered the oxygen). Oxyhaemoglobin and deoxyhaemoglobin have different magnetic properties (diamagnetic and paramagnetic, respectively), and they affect the local magnetic field in different ways. The signal picked up by the MRI scanner is sensitive to these modifications of the local magnetic field. To record cerebral activity during functional sessions, the scanner is tuned to detect this “Blood Oxygen Level Dependent” (<a class="reference internal" href="../glossary.html#term-BOLD"><span class="xref std std-term">BOLD</span></a>) signal.</p>
 <p>Brain activity is measured in sessions that span several minutes, during which the participant performs some cognitive task and the scanner acquires brain images, typically every 2 or 3 seconds (the time between two successive image acquisition is called the Repetition time, or <a class="reference internal" href="../glossary.html#term-TR"><span class="xref std std-term">TR</span></a>).</p>
 <p>A cerebral MR image provides a 3D image of the brain that can be decomposed into <a class="reference external" href="https://en.wikipedia.org/wiki/Voxel">voxels</a> (the equivalent of pixels, but in 3 dimensions). The series of images acquired during a functional session provides, in each voxel, a time series of positive real number representing the MRI signal, sampled at the <a class="reference internal" href="../glossary.html#term-TR"><span class="xref std std-term">TR</span></a>.</p>
@@ -651,7 +661,7 @@
 </div>
 </section>
 <section id="fmri-data-modelling">
-<h3>fMRI data modelling<a class="headerlink" href="#fmri-data-modelling" title="Permalink to this headline">¶</a></h3>
+<h3>fMRI data modelling<a class="headerlink" href="#fmri-data-modelling" title="Permalink to this headline">#</a></h3>
 <p>One way to analyze times series consists in comparing them to a <em>model</em> built from our knowledge of the events that occurred during the functional session. Events can correspond to actions of the participant (e.g. button presses), presentations of sensory stimui (e.g. sound, images), or hypothesized internal processes (e.g. memorization of a stimulus), …</p>
 <blockquote>
 <div><figure class="align-default">
@@ -686,7 +696,7 @@
 </ol>
 </section>
 <section id="fmri-statistical-analysis">
-<h3>fMRI statistical analysis<a class="headerlink" href="#fmri-statistical-analysis" title="Permalink to this headline">¶</a></h3>
+<h3>fMRI statistical analysis<a class="headerlink" href="#fmri-statistical-analysis" title="Permalink to this headline">#</a></h3>
 <p>As explained in the previous section, the basic statistical analysis of fMRI is conceptually a correlation analysis, where one identifies whether a certain combination (contrast) of columns of the design matrix fits a significant proportion of the fMRI signal at a given location.</p>
 <p>It can be shown that this is equivalent to studying whether the estimated contrast effect is large with respect to the uncertainty about its exact value. Concretely, we compute the effect size estimate and the uncertainty about its value and divide the two. The resulting number has no physical dimension, it is a statistic – a Student or t-statistic, which we denote by <cite>t</cite>. Next, based on <cite>t</cite>, we want to decide whether the true effect was indeed greater than zero or not.</p>
 <p><cite>t</cite> would not necessarily be 0 if the true effect were zero: by chance, noise in the data may be partly explained by the contrast of interest. However, if we assume that the noise is Gaussian and that the model is correctly specified, then we know that <cite>t</cite> should follow a Student distribution with <cite>dof</cite> degrees of freedom, where <cite>dof</cite> is the number of free parameters in the model: in practice, the number of observations (i.e. the number of time points), <cite>n_scans</cite> minus the number of effects modelled (i.e. the number of columns <cite>n_columns</cite>) of the design matrix:</p>
@@ -709,7 +719,7 @@
 </div>
 </section>
 <section id="multiple-comparisons">
-<span id="id1"></span><h3>Multiple Comparisons<a class="headerlink" href="#multiple-comparisons" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3>Multiple Comparisons<a class="headerlink" href="#multiple-comparisons" title="Permalink to this headline">#</a></h3>
 <dl class="simple">
 <dt>A well-known issue that arises here is that of multiple comparisons:</dt><dd><p>when a statistical tests is repeated a large number times, say one for each voxel, i.e. <cite>n_voxels</cite> times, then one can expect that, in the absence of any effect, the number of detections – false detections since there is no effect – will be roughly <img alt="n\_voxels*\alpha" class="math" src="../_images/math/84e4cbe974a8f43192aa21fee564a713f5d1b1df.png"/>. If <img alt="\alpha=.001" class="math" src="../_images/math/befff685f3ad4a25fe6d0faf8a48e18183d470f6.png"/> and <img alt="n=10^5" class="math" src="../_images/math/3b29057dd09798d2669a9a5782924b36b16b6d91.png"/>, the number of false detections will be about 100. The danger is that one may no longer trust the detections, i.e. values of <cite>z</cite> larger than the <img alt="(1-\alpha)" class="math" src="../_images/math/c87d80a9ca1dd2540182b6d20843ecc568241c87.png"/>-quantile of the standard normal distribution.</p>
 </dd>
@@ -751,11 +761,21 @@
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

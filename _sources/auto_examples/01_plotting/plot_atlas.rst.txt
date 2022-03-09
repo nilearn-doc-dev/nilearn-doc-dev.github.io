@@ -45,6 +45,121 @@ Retrieving the atlas data
     print('Atlas ROIs are located at: %s' % atlas_ju_filename)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Atlas ROIs are located at: <class 'nibabel.nifti1.Nifti1Image'>
+    data shape (91, 109, 91)
+    affine: 
+    [[   2.    0.    0.  -90.]
+     [   0.    2.    0. -126.]
+     [   0.    0.    2.  -72.]
+     [   0.    0.    0.    1.]]
+    metadata:
+    <class 'nibabel.nifti1.Nifti1Header'> object, endian='<'
+    sizeof_hdr      : 348
+    data_type       : b''
+    db_name         : b''
+    extents         : 0
+    session_error   : 0
+    regular         : b''
+    dim_info        : 0
+    dim             : [  3  91 109  91   1   1   1   1]
+    intent_p1       : 0.0
+    intent_p2       : 0.0
+    intent_p3       : 0.0
+    intent_code     : none
+    datatype        : uint8
+    bitpix          : 8
+    slice_start     : 0
+    pixdim          : [1. 2. 2. 2. 1. 1. 1. 1.]
+    vox_offset      : 0.0
+    scl_slope       : nan
+    scl_inter       : nan
+    slice_end       : 0
+    slice_code      : unknown
+    xyzt_units      : 0
+    cal_max         : 0.0
+    cal_min         : 0.0
+    slice_duration  : 0.0
+    toffset         : 0.0
+    glmax           : 0
+    glmin           : 0
+    descrip         : b''
+    aux_file        : b''
+    qform_code      : unknown
+    sform_code      : aligned
+    quatern_b       : 0.0
+    quatern_c       : 0.0
+    quatern_d       : 0.0
+    qoffset_x       : -90.0
+    qoffset_y       : -126.0
+    qoffset_z       : -72.0
+    srow_x          : [  2.   0.   0. -90.]
+    srow_y          : [   0.    2.    0. -126.]
+    srow_z          : [  0.   0.   2. -72.]
+    intent_name     : b''
+    magic           : b'n+1'
+    Atlas ROIs are located at: <class 'nibabel.nifti1.Nifti1Image'>
+    data shape (182, 218, 182)
+    affine: 
+    [[   1.    0.    0.  -91.]
+     [   0.    1.    0. -126.]
+     [   0.    0.    1.  -72.]
+     [   0.    0.    0.    1.]]
+    metadata:
+    <class 'nibabel.nifti1.Nifti1Header'> object, endian='<'
+    sizeof_hdr      : 348
+    data_type       : b''
+    db_name         : b''
+    extents         : 0
+    session_error   : 0
+    regular         : b''
+    dim_info        : 0
+    dim             : [  3 182 218 182   1   1   1   1]
+    intent_p1       : 0.0
+    intent_p2       : 0.0
+    intent_p3       : 0.0
+    intent_code     : none
+    datatype        : uint8
+    bitpix          : 8
+    slice_start     : 0
+    pixdim          : [1. 1. 1. 1. 1. 1. 1. 1.]
+    vox_offset      : 0.0
+    scl_slope       : nan
+    scl_inter       : nan
+    slice_end       : 0
+    slice_code      : unknown
+    xyzt_units      : 0
+    cal_max         : 0.0
+    cal_min         : 0.0
+    slice_duration  : 0.0
+    toffset         : 0.0
+    glmax           : 0
+    glmin           : 0
+    descrip         : b''
+    aux_file        : b''
+    qform_code      : unknown
+    sform_code      : aligned
+    quatern_b       : 0.0
+    quatern_c       : 0.0
+    quatern_d       : 0.0
+    qoffset_x       : -91.0
+    qoffset_y       : -126.0
+    qoffset_z       : -72.0
+    srow_x          : [  1.   0.   0. -91.]
+    srow_y          : [   0.    1.    0. -126.]
+    srow_z          : [  0.   0.   1. -72.]
+    intent_name     : b''
+    magic           : b'n+1'
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 24-26
 
 Visualizing the Harvard-Oxford atlas
@@ -60,6 +175,23 @@ Visualizing the Harvard-Oxford atlas
     plotting.plot_roi(atlas_ho_filename, title="Harvard Oxford atlas")
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_atlas_001.png
+   :alt: plot atlas
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_atlas_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61f16b5c90>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 Visualizing the Juelich atlas
@@ -71,6 +203,23 @@ Visualizing the Juelich atlas
 
 
     plotting.plot_roi(atlas_ju_filename, title="Juelich atlas")
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_atlas_002.png
+   :alt: plot atlas
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_atlas_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61bf489540>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 38-40
@@ -87,6 +236,24 @@ Visualizing the Harvard-Oxford atlas with contours
     plotting.show()
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_atlas_003.png
+   :alt: plot atlas
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_atlas_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning: No contour levels were found within the data range.
+      im = getattr(ax, type)(data_2d.copy(),
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 45-47
 
 Visualizing the Juelich atlas with contours
@@ -101,11 +268,29 @@ Visualizing the Juelich atlas with contours
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_atlas_004.png
+   :alt: plot atlas
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_atlas_004.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning: No contour levels were found within the data range.
+      im = getattr(ax, type)(data_2d.copy(),
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 1 minutes  17.225 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  147 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_atlas.py:

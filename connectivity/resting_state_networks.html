@@ -4,26 +4,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Extracting functional brain networks: ICA and related" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nilearn.github.io/connectivity/resting_state_networks.html" />
-  <meta property="og:site_name" content="Nilearn" />
-  <meta property="og:description" content="Page summary: This page demonstrates the use of multi-subject decompositions models to extract brain-networks from fMRI data in a data-driven way. Specifically, we will apply Independent Component ..." />
-  <meta property="og:image" content="https://nilearn.github.io/auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_001.png" />
-  <meta property="og:image:alt" content="Nilearn" />
+<meta property="og:title" content="Extracting functional brain networks: ICA and related" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://nilearn.github.io/connectivity/resting_state_networks.html" />
+  
+<meta property="og:site_name" content="Nilearn" />
+  
+<meta property="og:description" content="Page summary: This page demonstrates the use of multi-subject decompositions models to extract brain-networks from fMRI data in a data-driven way. Specifically, we will apply Independent Component ..." />
+  
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_compare_decomposition_001.png" />
+  
+<meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Region Extraction for better brain parcellations" href="region_extraction.html" /><link rel="prev" title="Group-sparse covariance estimation" href="../developers/group_sparse_covariance.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Extracting functional brain networks: ICA and related - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -36,16 +42,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+      }
     }
   }
 </style></head>
@@ -57,17 +65,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -76,14 +80,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -98,7 +102,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -106,7 +110,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -614,6 +618,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -621,8 +626,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -637,7 +647,7 @@
         </div>
         <article role="main">
           <section id="extracting-functional-brain-networks-ica-and-related">
-<span id="extracting-rsn"></span><h1>Extracting functional brain networks: ICA and related<a class="headerlink" href="#extracting-functional-brain-networks-ica-and-related" title="Permalink to this headline">¶</a></h1>
+<span id="extracting-rsn"></span><h1>Extracting functional brain networks: ICA and related<a class="headerlink" href="#extracting-functional-brain-networks-ica-and-related" title="Permalink to this headline">#</a></h1>
 <div class="topic">
 <p class="topic-title"><strong>Page summary</strong></p>
 <p>This page demonstrates the use of multi-subject decompositions models
@@ -647,7 +657,7 @@ implements a multivariate random effects model across subjects. We will
 then compare <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> to a newer technique, based on dictionary learning.</p>
 </div>
 <section id="multi-subject-ica-canica">
-<h2>Multi-subject ICA: CanICA<a class="headerlink" href="#multi-subject-ica-canica" title="Permalink to this headline">¶</a></h2>
+<h2>Multi-subject ICA: CanICA<a class="headerlink" href="#multi-subject-ica-canica" title="Permalink to this headline">#</a></h2>
 <div class="topic">
 <p class="topic-title"><strong>References</strong></p>
 <ul class="simple">
@@ -656,7 +666,7 @@ fMRI datasets”, <a class="reference external" href="http://www.sciencedirect.c
 </ul>
 </div>
 <section id="objective">
-<h3>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h3>
+<h3>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h3>
 <p><a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> is a useful approach for finding independent sources from <a class="reference internal" href="../glossary.html#term-fMRI"><span class="xref std std-term">fMRI</span></a>
 images. <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> and similar techniques can be therefore used to define
 regions or networks that share similar <a class="reference internal" href="../glossary.html#term-BOLD"><span class="xref std std-term">BOLD</span></a> signal across time. The
@@ -672,7 +682,7 @@ filenames (<a class="reference internal" href="../manipulating_images/input_outp
 </div>
 </section>
 <section id="fitting-canica-model-with-nilearn">
-<h3>Fitting CanICA model with nilearn<a class="headerlink" href="#fitting-canica-model-with-nilearn" title="Permalink to this headline">¶</a></h3>
+<h3>Fitting CanICA model with nilearn<a class="headerlink" href="#fitting-canica-model-with-nilearn" title="Permalink to this headline">#</a></h3>
 <p><a class="reference internal" href="../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanICA</span></code></a> is a ready-to-use object that can be applied to
 multi-subject Nifti data, for instance presented as filenames, and will
 perform a multi-subject <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> decomposition following the <a class="reference internal" href="../glossary.html#term-CanICA"><span class="xref std std-term">CanICA</span></a> model.
@@ -684,14 +694,14 @@ components can be accessed as a 4D Nifti object using the
 <code class="docutils literal notranslate"><span class="pre">components_img_</span></code> attribute.</p>
 </section>
 <section id="visualizing-results">
-<h3>Visualizing results<a class="headerlink" href="#visualizing-results" title="Permalink to this headline">¶</a></h3>
+<h3>Visualizing results<a class="headerlink" href="#visualizing-results" title="Permalink to this headline">#</a></h3>
 <p>We can visualize each component outlined over the brain:</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_001.png" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="../_images/sphx_glr_plot_compare_decomposition_001.png" src="../_images/sphx_glr_plot_compare_decomposition_001.png"/></a>
 </figure>
 <p>We can also plot the map for different components separately:</p>
 <p class="centered">
-<strong><a class="reference internal" href="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_002.png"><img alt="ic1" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_002.png" style="width: 23%;"/></a> <a class="reference internal" href="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_003.png"><img alt="ic2" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_003.png" style="width: 23%;"/></a> <a class="reference internal" href="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_004.png"><img alt="ic3" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_004.png" style="width: 23%;"/></a> <a class="reference internal" href="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_005.png"><img alt="ic4" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_005.png" style="width: 23%;"/></a></strong></p><div class="admonition seealso">
+<strong><a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_002.png"><img alt="ic1" src="../_images/sphx_glr_plot_compare_decomposition_002.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_003.png"><img alt="ic2" src="../_images/sphx_glr_plot_compare_decomposition_003.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_004.png"><img alt="ic3" src="../_images/sphx_glr_plot_compare_decomposition_004.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_005.png"><img alt="ic4" src="../_images/sphx_glr_plot_compare_decomposition_005.png" style="width: 23%;"/></a></strong></p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>The full code can be found as an example:
 <a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html#sphx-glr-auto-examples-03-connectivity-plot-compare-decomposition-py"><span class="std std-ref">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</span></a></p>
@@ -705,7 +715,7 @@ investigate which one resemble those displayed above.</p>
 </div>
 </section>
 <section id="interpreting-such-components">
-<h3>Interpreting such components<a class="headerlink" href="#interpreting-such-components" title="Permalink to this headline">¶</a></h3>
+<h3>Interpreting such components<a class="headerlink" href="#interpreting-such-components" title="Permalink to this headline">#</a></h3>
 <p><a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a>, and related algorithms, extract patterns that coactivate in the
 signal. As a result, it finds functional networks, but also patterns of
 non neural activity, ie confounding signals. Both are visible in the
@@ -713,7 +723,7 @@ plots of the components.</p>
 </section>
 </section>
 <section id="an-alternative-to-ica-dictionary-learning">
-<h2>An alternative to <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a>: <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a><a class="headerlink" href="#an-alternative-to-ica-dictionary-learning" title="Permalink to this headline">¶</a></h2>
+<h2>An alternative to <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a>: <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a><a class="headerlink" href="#an-alternative-to-ica-dictionary-learning" title="Permalink to this headline">#</a></h2>
 <p>Recent work has shown that <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> based techniques
 outperform <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> in term of stability and constitutes a better first
 step in a statistical analysis pipeline.
@@ -734,16 +744,16 @@ a larger alpha yields sparser maps.</p>
 <a class="reference internal" href="../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.plotting.plot_prob_atlas</span></code></a>) offers an efficient way to
 compare both resulting outputs.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_022.png" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_022.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="../_images/sphx_glr_plot_compare_decomposition_022.png" src="../_images/sphx_glr_plot_compare_decomposition_022.png"/></a>
 </figure>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_001.png" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="../_images/sphx_glr_plot_compare_decomposition_001.png" src="../_images/sphx_glr_plot_compare_decomposition_001.png"/></a>
 </figure>
 <p>Maps obtained with <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> are often easier to exploit as they are
 more contrasted than <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> maps, with blobs usually better defined. Typically,
 <em>smoothing can be lower than when doing ICA</em>.</p>
 <p class="centered">
-<strong><a class="reference internal" href="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_023.png"><img alt="dl1" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_023.png" style="width: 23%;"/></a> <a class="reference internal" href="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_024.png"><img alt="dl2" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_024.png" style="width: 23%;"/></a> <a class="reference internal" href="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_025.png"><img alt="dl3" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_025.png" style="width: 23%;"/></a> <a class="reference internal" href="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_026.png"><img alt="dl4" src="auto_examples/03_connectivity/images/sphx_glr_plot_compare_decomposition_026.png" style="width: 23%;"/></a></strong></p><p>While <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> computation time is comparable to
+<strong><a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_023.png"><img alt="dl1" src="../_images/sphx_glr_plot_compare_decomposition_023.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_024.png"><img alt="dl2" src="../_images/sphx_glr_plot_compare_decomposition_024.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_025.png"><img alt="dl3" src="../_images/sphx_glr_plot_compare_decomposition_025.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_026.png"><img alt="dl4" src="../_images/sphx_glr_plot_compare_decomposition_026.png" style="width: 23%;"/></a></strong></p><p>While <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> computation time is comparable to
 <a class="reference internal" href="../glossary.html#term-CanICA"><span class="xref std std-term">CanICA</span></a>, obtained atlases have been shown to outperform <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a>
 in a variety of classification tasks.</p>
 <div class="admonition seealso">
@@ -786,11 +796,21 @@ in a variety of classification tasks.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; The nilearn developers 2010-2021 |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; The nilearn developers 2010-2021
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

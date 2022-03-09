@@ -83,6 +83,19 @@ Load the Haxby dataset
     session = labels['chunks'][condition_mask]
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Mask nifti image (3D) is located at: /home/alexis/nilearn_data/haxby2001/mask.nii.gz
+    Functional nifti image (4D) are located at: /home/alexis/nilearn_data/haxby2001/subj2/bold.nii.gz
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 63-72
 
 ANOVA pipeline with :class:`nilearn.decoding.Decoder` object
@@ -105,6 +118,12 @@ on nested cross-validation.
     decoder = Decoder(estimator='svc', cv=5, mask=mask_img,
                       smoothing_fwhm=4, standardize=True,
                       screening_percentile=2)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 80-89
@@ -131,6 +150,22 @@ First we fit the Decoder
               param, cv_score))
     # Output the prediction with Decoder
     y_pred = decoder.predict(fmri_niimgs)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Fold 1 | Best SVM parameter: 100.0 with score: 0.901
+    Fold 2 | Best SVM parameter: 100.0 with score: 0.918
+    Fold 3 | Best SVM parameter: 1.0 with score: 0.738
+    Fold 4 | Best SVM parameter: 100.0 with score: 0.749
+    Fold 5 | Best SVM parameter: 100.0 with score: 0.736
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 99-101
@@ -160,6 +195,35 @@ Compute prediction scores with different values of screening percentile
         y_pred = decoder.predict(index_img(fmri_niimgs, session == 10))
         val_scores.append(np.mean(y_pred == y[session == 10]))
         print("Validation score: %.4f" % val_scores[-1])
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Sreening Percentile: 2.000
+    Mean CV score: 0.8107
+    Validation score: 0.6111
+    Sreening Percentile: 4.000
+    Mean CV score: 0.8493
+    Validation score: 0.3889
+    Sreening Percentile: 8.000
+    Mean CV score: 0.8437
+    Validation score: 0.4444
+    Sreening Percentile: 16.000
+    Mean CV score: 0.8389
+    Validation score: 0.5000
+    Sreening Percentile: 32.000
+    Mean CV score: 0.8059
+    Validation score: 0.4444
+    Sreening Percentile: 64.000
+    Mean CV score: 0.8141
+    Validation score: 0.4444
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 121-125
@@ -195,6 +259,18 @@ pipeline.
     print("Nested CV score: %.4f" % np.mean(nested_cv_scores))
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Nested CV score: 0.5880
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 147-149
 
 Plot the prediction scores using matplotlib
@@ -223,11 +299,22 @@ Plot the prediction scores using matplotlib
     show()
 
 
+
+.. image-sg:: /auto_examples/02_decoding/images/sphx_glr_plot_haxby_grid_search_001.png
+   :alt: plot haxby grid search
+   :srcset: /auto_examples/02_decoding/images/sphx_glr_plot_haxby_grid_search_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 1 minutes  56.888 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  913 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_haxby_grid_search.py:

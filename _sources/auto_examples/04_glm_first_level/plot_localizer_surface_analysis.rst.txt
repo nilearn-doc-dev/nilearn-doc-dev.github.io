@@ -61,6 +61,12 @@ Prepare the timing parameters.
     slice_time_ref = 0.5
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 41-43
 
 Prepare the data.
@@ -75,6 +81,12 @@ First, the volume-based fMRI data.
     fmri_img = data.epi_img
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 48-49
 
 Second, the experimental paradigm.
@@ -86,6 +98,12 @@ Second, the experimental paradigm.
     events_file = data.events
     import pandas as pd
     events = pd.read_table(events_file)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 54-60
@@ -106,6 +124,12 @@ so-called fsaverage5 template from the FreeSurfer software.
     fsaverage = nilearn.datasets.fetch_surf_fsaverage()
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 65-67
 
 The projection function simply takes the fMRI data and the mesh.
@@ -117,6 +141,12 @@ Note that those correspond spatially, are they are both in MNI space.
 
     from nilearn import surface
     texture = surface.vol_to_surf(fmri_img, fsaverage.pial_right)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 71-76
@@ -137,6 +167,12 @@ We start by specifying the timing of fMRI frames.
     frame_times = t_r * (np.arange(n_scans) + .5)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 82-86
 
 Create the design matrix.
@@ -153,6 +189,12 @@ The drift model is implicitly a cosine basis with a period cutoff at 128s.
                                                    events=events,
                                                    hrf_model='glover + derivative'
                                                    )
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 93-99
@@ -173,6 +215,12 @@ We keep them for later contrast computation.
     labels, estimates = run_glm(texture.T, design_matrix.values)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 104-110
 
 Estimate contrasts
@@ -189,6 +237,12 @@ the number of columns of the design matrix.
     contrast_matrix = np.eye(design_matrix.shape[1])
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 113-114
 
 At first, we create basic contrasts.
@@ -199,6 +253,12 @@ At first, we create basic contrasts.
 
     basic_contrasts = dict([(column, contrast_matrix[i])
                             for i, column in enumerate(design_matrix.columns)])
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 118-120
@@ -232,6 +292,12 @@ one contrast adding all conditions with some auditory parts.
                                     + basic_contrasts['sentence_reading'])
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 142-149
 
 Finally, we create a dictionary of more relevant contrasts
@@ -259,6 +325,12 @@ Of course, we could define other contrasts, but we keep only 3 for simplicity.
                                     basic_contrasts['sentences']
         )
     }
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 164-165
@@ -289,6 +361,44 @@ Let's estimate the contrasts by iterating over them.
             threshold=3., bg_map=fsaverage.sulc_right)
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_001.png
+         :alt: left - right button press
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_002.png
+         :alt: audio - visual
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_003.png
+         :alt: computation - sentences
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_003.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+      Contrast  1 out of 3: left - right button press, right hemisphere
+      Contrast  2 out of 3: audio - visual, right hemisphere
+      Contrast  3 out of 3: computation - sentences, right hemisphere
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 185-190
 
 Analysing the left hemisphere
@@ -308,6 +418,12 @@ We project the fMRI data to the mesh.
     texture = surface.vol_to_surf(fmri_img, fsaverage.pial_left)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 196-197
 
 Then we estimate the General Linear Model.
@@ -317,6 +433,12 @@ Then we estimate the General Linear Model.
 .. code-block:: default
 
     labels, estimates = run_glm(texture.T, design_matrix.values)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 200-201
@@ -343,11 +465,49 @@ Finally, we create contrast-specific maps and plot them.
     plotting.show()
 
 
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_004.png
+         :alt: left - right button press
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_005.png
+         :alt: audio - visual
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_005.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_006.png
+         :alt: computation - sentences
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_localizer_surface_analysis_006.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+      Contrast  1 out of 3: left - right button press, left hemisphere
+      Contrast  2 out of 3: audio - visual, left hemisphere
+      Contrast  3 out of 3: computation - sentences, left hemisphere
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  19.469 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  244 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_localizer_surface_analysis.py:

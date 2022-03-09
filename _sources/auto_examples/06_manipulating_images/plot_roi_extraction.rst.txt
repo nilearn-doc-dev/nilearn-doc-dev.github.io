@@ -60,6 +60,12 @@ using them for visualization.
     cut_coords = [sagittal, coronal, axial]
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 39-46
 
 Loading the data
@@ -96,6 +102,20 @@ we process data using paths of the Nifti images.
     session_target = pd.read_csv(haxby_dataset.session_target[0], sep=" ")
     # Now, we have the labels and will be useful while computing student's t-test
     haxby_labels = session_target['labels']
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    First subject anatomical nifti image (3D) located is at: /home/alexis/nilearn_data/haxby2001/subj2/anat.nii.gz
+    First subject functional nifti image (4D) is located at: /home/alexis/nilearn_data/haxby2001/subj2/bold.nii.gz
+    Labels of haxby dataset (text file) is located at: /home/alexis/nilearn_data/haxby2001/subj2/labels.txt
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 70-73
@@ -144,6 +164,23 @@ also use file names as input parameters.
     plot_epi(mean_img, title='Smoothed mean EPI', cut_coords=cut_coords)
 
 
+
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_001.png
+   :alt: plot roi extraction
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b0c91e10>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 108-113
 
 Given the smoothed functional data stored in variable 'fmri_img', we then
@@ -169,6 +206,18 @@ statistics can help reducing the number of voxels.
     fmri_data = get_data(fmri_img)
     # number of voxels being x*y*z, samples in 4th dimension
     fmri_data.shape
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    (40, 64, 64, 1452)
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 127-134
@@ -222,6 +271,23 @@ interesting to discriminate the condition.
                   title="p-values", cut_coords=cut_coords)
 
 
+
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_002.png
+   :alt: plot roi extraction
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61c46e0ee0>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 171-174
 
 **Selecting features using f_classif**: Feature selection method is also
@@ -255,6 +321,23 @@ array.
     plot_stat_map(log_p_values_img, mean_img,
                   title='Thresholded p-values', annotate=False,
                   colorbar=False, cut_coords=cut_coords)
+
+
+
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_003.png
+   :alt: plot roi extraction
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf6bfa0>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 198-201
@@ -306,6 +389,23 @@ intersection of this provided mask with our self-computed mask.
              title='Intersection with ventral temporal mask')
 
 
+
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_004.png
+   :alt: plot roi extraction
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_004.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b0c92c50>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 239-245
 
 **Dilation** - Thresholded functional brain images often contain scattered
@@ -337,6 +437,23 @@ such operations can fill "holes" in masked voxel representations.
     plot_roi(dil_bin_p_values_and_vt_img, mean_img,
              title='Dilated mask', cut_coords=cut_coords,
              annotate=False)
+
+
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_005.png
+   :alt: plot roi extraction
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_005.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf6a6e0>
+
+
 
 .. GENERATED FROM PYTHON SOURCE LINES 264-267
 
@@ -372,6 +489,35 @@ integer label to each one of them.
     # Visualization goes here with second roi image and cut_coords are default with
     # coordinates selected automatically pointed on the data
     plot_roi(second_roi_img, mean_img, title='Connected components: second ROI')
+
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_006.png
+         :alt: plot roi extraction
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_006.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_007.png
+         :alt: plot roi extraction
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_007.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b25530a0>
 
 
 
@@ -418,6 +564,12 @@ Use the new ROIs, to extract data maps in both ROIs
     condition_names[np.where(condition_names == 'scrambledpix')] = 'scrambled'
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 329-330
 
 save the ROI 'atlas' to a Nifti file
@@ -427,6 +579,12 @@ save the ROI 'atlas' to a Nifti file
 .. code-block:: default
 
     new_img_like(fmri_img, labels).to_filename('mask_atlas.nii.gz')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 333-334
@@ -450,11 +608,22 @@ Plot the average in the different condition names
     show()
 
 
+
+.. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_008.png
+   :alt: Boxplots of data in ROI1 per condition, Boxplots of data in ROI2 per condition
+   :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_roi_extraction_008.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  58.133 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  2215 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_roi_extraction.py:

@@ -46,6 +46,12 @@ We study only 30 subjects from the dataset, to save computation time.
     development_dataset = datasets.fetch_development_fmri(n_subjects=30)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 25-26
 
 We use probabilistic regions of interest (ROIs) from the MSDL atlas.
@@ -59,6 +65,23 @@ We use probabilistic regions of interest (ROIs) from the MSDL atlas.
     n_regions = len(msdl_coords)
     print('MSDL has {0} ROIs, part of the following networks :\n{1}.'.format(
         n_regions, msdl_data.networks))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning:
+
+    Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+
+    MSDL has 39 ROIs, part of the following networks :
+    [b'Aud', b'Aud', b'Striate', b'DMN', b'DMN', b'DMN', b'DMN', b'Occ post', b'Motor', b'R V Att', b'R V Att', b'R V Att', b'R V Att', b'Basal', b'L V Att', b'L V Att', b'L V Att', b'D Att', b'D Att', b'Vis Sec', b'Vis Sec', b'Vis Sec', b'Salience', b'Salience', b'Salience', b'Temporal', b'Temporal', b'Language', b'Language', b'Language', b'Language', b'Language', b'Cereb', b'Dors PCC', b'Cing-Ins', b'Cing-Ins', b'Cing-Ins', b'Ant IPS', b'Ant IPS'].
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-38
@@ -78,6 +101,12 @@ file name to it, as well as filtering band-width and detrending option.
     masker = NiftiMapsMasker(
         msdl_data.maps, resampling_target="data", t_r=2, detrend=True,
         low_pass=.1, high_pass=.01, memory='nilearn_cache', memory_level=1).fit()
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 45-46
@@ -104,6 +133,18 @@ Then we compute region signals and extract useful phenotypic information.
     print('Data has {0} children.'.format(len(children)))
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Data has 24 children.
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 62-67
 
 ROI-to-ROI correlations of children
@@ -119,6 +160,12 @@ estimate it using :class:`nilearn.connectome.ConnectivityMeasure`.
     from nilearn.connectome import ConnectivityMeasure
 
     correlation_measure = ConnectivityMeasure(kind='correlation')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 72-74
@@ -137,6 +184,18 @@ From the list of ROIs time-series for children, the
           .format(correlation_matrices.shape))
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Correlations of children are stacked in an array of shape (24, 39, 39)
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 81-82
 
 as well as the average correlation across all fitted subjects.
@@ -147,6 +206,18 @@ as well as the average correlation across all fitted subjects.
 
     mean_correlation_matrix = correlation_measure.mean_
     print('Mean correlation has shape {0}.'.format(mean_correlation_matrix.shape))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Mean correlation has shape (39, 39).
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 86-87
@@ -165,6 +236,17 @@ We display the connectome matrices of the first 3 children
         plotting.plot_matrix(matrix, tri='lower', colorbar=False, axes=ax,
                              title='correlation, child {}'.format(i))
 
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_001.png
+   :alt: plot group level connectivity
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 95-96
 
 The blocks structure that reflect functional networks are visible.
@@ -179,6 +261,23 @@ Now we display as a connectome the mean correlation matrix over all children.
 
     plotting.plot_connectome(mean_correlation_matrix, msdl_coords,
                              title='mean correlation over all children')
+
+
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_002.png
+   :alt: plot group level connectivity
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f61b0aac610>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 103-107
@@ -197,6 +296,12 @@ coefficients. We just change the `ConnectivityMeasure` kind
         children)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 112-113
 
 Most of direct connections are weaker than full connections.
@@ -211,6 +316,17 @@ Most of direct connections are weaker than full connections.
         plotting.plot_matrix(matrix, tri='lower', colorbar=False, axes=ax,
                              title='partial correlation, child {}'.format(i))
 
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_003.png
+   :alt: plot group level connectivity
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_003.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 119-123
 
 .. code-block:: default
@@ -218,6 +334,23 @@ Most of direct connections are weaker than full connections.
     plotting.plot_connectome(
         partial_correlation_measure.mean_, msdl_coords,
         title='mean partial correlation over all children')
+
+
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_004.png
+   :alt: plot group level connectivity
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_004.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f61c12f0370>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 124-129
@@ -235,6 +368,12 @@ This is done by the tangent space embedding.
     tangent_measure = ConnectivityMeasure(kind='tangent')
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 132-135
 
 We fit our children group and get the group connectivity matrix stored as
@@ -246,6 +385,12 @@ from it.
 .. code-block:: default
 
     tangent_matrices = tangent_measure.fit_transform(children)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 138-143
@@ -264,6 +409,17 @@ coefficients can not be interpreted as anticorrelated regions.
     for i, (matrix, ax) in enumerate(zip(tangent_matrices, axes)):
         plotting.plot_matrix(matrix, tri='lower', colorbar=False, axes=ax,
                              title='tangent offset, child {}'.format(i))
+
+
+
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_005.png
+   :alt: plot group level connectivity
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_005.png
+   :class: sphx-glr-single-img
+
+
 
 
 
@@ -316,6 +472,12 @@ test set.
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 191-192
 
 display the results
@@ -341,6 +503,17 @@ display the results
 
 
 
+
+
+.. image-sg:: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_006.png
+   :alt: plot group level connectivity
+   :srcset: /auto_examples/03_connectivity/images/sphx_glr_plot_group_level_connectivity_006.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 209-216
 
 This is a small example to showcase nilearn features. In practice such
@@ -359,11 +532,17 @@ kind should be preferred.
     plotting.show()
 
 
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 1 minutes  43.560 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  1018 MB
 
 
 .. _sphx_glr_download_auto_examples_03_connectivity_plot_group_level_connectivity.py:

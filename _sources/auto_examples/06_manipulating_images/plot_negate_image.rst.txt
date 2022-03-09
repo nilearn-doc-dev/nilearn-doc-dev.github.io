@@ -33,6 +33,12 @@ We compute a negative image by multiplying its voxel values with -1.
     from nilearn import datasets, plotting, image
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 13-14
 
 Retrieve the data: the localizer dataset with contrast maps.
@@ -43,6 +49,12 @@ Retrieve the data: the localizer dataset with contrast maps.
 
     motor_images = datasets.fetch_neurovault_motor_task()
     stat_img = motor_images.images[0]
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 18-19
@@ -66,11 +78,34 @@ Multiply voxel values by -1.
     plotting.show()
 
 
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_negate_image_001.png
+         :alt: plot negate image
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_negate_image_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/06_manipulating_images/images/sphx_glr_plot_negate_image_002.png
+         :alt: plot negate image
+         :srcset: /auto_examples/06_manipulating_images/images/sphx_glr_plot_negate_image_002.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  7.208 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_negate_image.py:
