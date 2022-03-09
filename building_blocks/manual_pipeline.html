@@ -701,6 +701,13 @@ and the goal of this experiment is to predict which category is presented
 to the subjects from the brain activation.</p>
 <p>These conditions are presented as string into a CSV file. The <a class="reference external" href="http://pandas.pydata.org/">pandas</a> function
 <cite>read_csv</cite> is very useful to load this kind of data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># Load behavioral information</span>
+<span class="n">behavioral</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">session_target</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">behavioral</span><span class="p">)</span>
+
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <ul class="simple">
@@ -710,6 +717,10 @@ library to load CSV files and process their data</p></li>
 </div>
 <p>For example, we will now consider only the conditions <em>cat</em> and <em>face</em> from our dataset.
 This can be done as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">condition_mask</span> <span class="o">=</span> <span class="n">conditions</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'face'</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">])</span>
+
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are not comfortable with this kind of data processing, do not
@@ -733,7 +744,7 @@ samples and features.</p>
 <section id="applying-a-mask">
 <h4>Applying a mask<a class="headerlink" href="#applying-a-mask" title="Permalink to this headline">#</a></h4>
 <figure class="align-right">
-<a class="reference external image-reference" href="../auto_examples/plot_decoding_tutorial.html"><img alt="auto_examples/images/sphx_glr_plot_decoding_tutorial_001.png" src="auto_examples/images/sphx_glr_plot_decoding_tutorial_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/00_tutorials/plot_decoding_tutorial.html"><img alt="../_images/sphx_glr_plot_decoding_tutorial_001.png" src="../_images/sphx_glr_plot_decoding_tutorial_001.png" style="width: 198.0px; height: 78.0px;"/></a>
 </figure>
 <p>If your dataset provides a mask, the <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> can apply it
 automatically. All you have to do is to pass your mask as a parameter when
