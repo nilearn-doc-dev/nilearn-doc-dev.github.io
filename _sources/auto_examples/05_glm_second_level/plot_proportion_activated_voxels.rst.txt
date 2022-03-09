@@ -51,6 +51,12 @@ BOLD activity estimate divided by the uncertainty about this estimate.
     from nilearn import plotting
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 31-35
 
 Estimate second level model
@@ -68,6 +74,12 @@ and fit it.
                                  columns=['intercept'])
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 41-42
 
 Model specification and fit
@@ -82,6 +94,12 @@ Model specification and fit
                                                 design_matrix=design_matrix)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 48-50
 
 To estimate the contrast is very simple. We can just provide the column
@@ -92,6 +110,12 @@ name of the design matrix.
 .. code-block:: default
 
     z_map = second_level_model.compute_contrast(output_type='z_score')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-54
@@ -123,11 +147,34 @@ We threshold the second level contrast at uncorrected p < 0.001 and plot
     plotting.show()
 
 
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_proportion_activated_voxels_001.png
+         :alt: plot proportion activated voxels
+         :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_proportion_activated_voxels_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_proportion_activated_voxels_002.png
+         :alt: plot proportion activated voxels
+         :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_proportion_activated_voxels_002.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  16.871 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_proportion_activated_voxels.py:

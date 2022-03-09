@@ -45,6 +45,12 @@ This is a simple manually performed second level analysis.
     )
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 25-26
 
 Get the set of individual statstical maps (contrast estimates)
@@ -54,6 +60,12 @@ Get the set of individual statstical maps (contrast estimates)
 .. code-block:: default
 
     cmap_filenames = localizer_dataset.cmaps
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-34
@@ -72,6 +84,12 @@ First, we define a design matrix for the model. As the model is trivial
     design_matrix = pd.DataFrame([1] * n_samples, columns=['intercept'])
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 38-39
 
 Next, we specify and estimate the model.
@@ -85,6 +103,12 @@ Next, we specify and estimate the model.
         cmap_filenames, design_matrix=design_matrix)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 Compute the only possible contrast: the one-sample test. Since there
@@ -95,6 +119,12 @@ is only one possible contrast, we don't need to specify it in detail.
 .. code-block:: default
 
     z_map = second_level_model.compute_contrast(output_type='z_score')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 49-51
@@ -113,6 +143,12 @@ abs(z) > 3.29 (equivalent to p < 0.001), cluster size > 10 voxels.
         cluster_threshold=10,
         two_sided=True,
     )
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 60-62
@@ -134,6 +170,12 @@ false positive rate < .001, cluster size > 10 voxels.
     )
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 72-73
 
 Now use FDR <.05 (False Discovery Rate) and no cluster-level threshold.
@@ -145,6 +187,18 @@ Now use FDR <.05 (False Discovery Rate) and no cluster-level threshold.
     thresholded_map2, threshold2 = threshold_stats_img(
         z_map, alpha=.05, height_control='fdr')
     print('The FDR=.05 threshold is %.3g' % threshold2)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    The FDR=.05 threshold is 2.37
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 78-81
@@ -162,6 +216,18 @@ use a simple Bonferroni correction.
     print('The p<.05 Bonferroni-corrected threshold is %.3g' % threshold3)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    The p<.05 Bonferroni-corrected threshold is 4.88
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 86-90
 
 Visualize the results
@@ -175,6 +241,17 @@ First, the unthresholded map.
 
     from nilearn import plotting
     display = plotting.plot_stat_map(z_map, title='Raw z map')
+
+
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_001.png
+   :alt: plot thresholding
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_001.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 94-96
@@ -191,6 +268,23 @@ voxels).
         title='Thresholded z map, fpr <.001, clusters > 10 voxels')
 
 
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_002.png
+   :alt: plot thresholding
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9f30c8e0>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 101-102
 
 Third, the fdr-thresholded map.
@@ -204,6 +298,23 @@ Third, the fdr-thresholded map.
                            threshold=threshold2)
 
 
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_003.png
+   :alt: plot thresholding
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9f2d91e0>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 107-108
 
 Fourth, the Bonferroni-thresholded map.
@@ -215,6 +326,23 @@ Fourth, the Bonferroni-thresholded map.
     plotting.plot_stat_map(thresholded_map3, cut_coords=display.cut_coords,
                            title='Thresholded z map, expected fwer < .05',
                            threshold=threshold3)
+
+
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_004.png
+   :alt: plot thresholding
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_004.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d8b6ba620>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 113-119
@@ -234,11 +362,17 @@ positive voxels.
     plotting.show()
 
 
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  29.358 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_thresholding.py:

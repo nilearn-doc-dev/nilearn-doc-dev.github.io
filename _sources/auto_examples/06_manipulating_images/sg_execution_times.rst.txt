@@ -5,30 +5,30 @@
 
 Computation times
 =================
-**08:21.343** total execution time for **auto_examples_06_manipulating_images** files:
+**07:18.018** total execution time for **auto_examples_06_manipulating_images** files:
 
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_extract_rois_smith_atlas.py` (``plot_extract_rois_smith_atlas.py``)           | 04:29.871 | 550.2 MB  |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_extract_rois_smith_atlas.py` (``plot_extract_rois_smith_atlas.py``)           | 03:27.187 | 466.9 MB  |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_roi_extraction.py` (``plot_roi_extraction.py``)                               | 00:58.133 | 2215.2 MB |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_roi_extraction.py` (``plot_roi_extraction.py``)                               | 00:59.189 | 2185.3 MB |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_extract_regions_labels_image.py` (``plot_extract_regions_labels_image.py``)   | 00:52.804 | 727.1 MB  |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_extract_regions_labels_image.py` (``plot_extract_regions_labels_image.py``)   | 00:52.372 | 595.6 MB  |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_mask_computation.py` (``plot_mask_computation.py``)                           | 00:32.510 | 355.1 MB  |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_mask_computation.py` (``plot_mask_computation.py``)                           | 00:33.034 | 364.0 MB  |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_nifti_simple.py` (``plot_nifti_simple.py``)                                   | 00:23.886 | 555.7 MB  |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_nifti_simple.py` (``plot_nifti_simple.py``)                                   | 00:23.628 | 517.1 MB  |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_extract_rois_statistical_maps.py` (``plot_extract_rois_statistical_maps.py``) | 00:18.584 | 8.8 MB    |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_extract_rois_statistical_maps.py` (``plot_extract_rois_statistical_maps.py``) | 00:18.330 | 9.1 MB    |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_nifti_labels_simple.py` (``plot_nifti_labels_simple.py``)                     | 00:13.019 | 384.3 MB  |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_nifti_labels_simple.py` (``plot_nifti_labels_simple.py``)                     | 00:12.581 | 386.0 MB  |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_smooth_mean_image.py` (``plot_smooth_mean_image.py``)                         | 00:08.027 | 354.5 MB  |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_smooth_mean_image.py` (``plot_smooth_mean_image.py``)                         | 00:07.949 | 311.1 MB  |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_resample_to_template.py` (``plot_resample_to_template.py``)                   | 00:08.016 | 8.8 MB    |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_resample_to_template.py` (``plot_resample_to_template.py``)                   | 00:07.344 | 8.8 MB    |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_compare_mean_image.py` (``plot_compare_mean_image.py``)                       | 00:07.358 | 934.0 MB  |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_compare_mean_image.py` (``plot_compare_mean_image.py``)                       | 00:07.302 | 943.0 MB  |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_negate_image.py` (``plot_negate_image.py``)                                   | 00:07.208 | 8.7 MB    |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_negate_image.py` (``plot_negate_image.py``)                                   | 00:07.137 | 8.8 MB    |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_affine_transformation.py` (``plot_affine_transformation.py``)                 | 00:01.929 | 8.7 MB    |
+| :ref:`sphx_glr_auto_examples_06_manipulating_images_plot_affine_transformation.py` (``plot_affine_transformation.py``)                 | 00:01.966 | 8.8 MB    |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+

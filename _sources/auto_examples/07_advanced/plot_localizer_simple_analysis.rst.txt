@@ -43,6 +43,12 @@ variates.  The user can refer to the
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 25-26
 
 Load Localizer contrast
@@ -59,6 +65,12 @@ Load Localizer contrast
 
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 34-35
 
 Mask data
@@ -72,6 +84,12 @@ Mask data
         memory='nilearn_cache', memory_level=1)  # cache options
     cmap_filenames = localizer_dataset.cmaps
     fmri_masked = nifti_masker.fit_transform(cmap_filenames)
+
+
+
+
+
+
 
 
 
@@ -92,6 +110,21 @@ Anova (parametric F-scores)
     neg_log_pvals_anova = - np.log10(pvals_anova)
     neg_log_pvals_anova_unmasked = nifti_masker.inverse_transform(
         neg_log_pvals_anova)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/sklearn/utils/validation.py:993: DataConversionWarning:
+
+    A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 55-56
@@ -128,11 +161,22 @@ Visualization
     show()
 
 
+
+.. image-sg:: /auto_examples/07_advanced/images/sphx_glr_plot_localizer_simple_analysis_001.png
+   :alt: plot localizer simple analysis
+   :srcset: /auto_examples/07_advanced/images/sphx_glr_plot_localizer_simple_analysis_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  6.200 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  11 MB
 
 
 .. _sphx_glr_download_auto_examples_07_advanced_plot_localizer_simple_analysis.py:

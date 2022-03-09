@@ -36,6 +36,12 @@ is included in the model.
     #         Jerome-Alexis Chevalier, 2019
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 18-19
 
 At first, we need to load the Localizer contrasts.
@@ -52,6 +58,12 @@ At first, we need to load the Localizer contrasts.
     )
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 27-28
 
 Let's print basic information on the dataset.
@@ -64,6 +76,18 @@ Let's print basic information on the dataset.
           localizer_dataset.cmaps[0])
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    First contrast nifti image (3D) is located at: /home/alexis/nilearn_data/brainomics_localizer/brainomics_data/S01/cmaps_LeftAuditoryClick.nii.gz
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 32-33
 
 we also need to load the behavioral variable.
@@ -74,6 +98,29 @@ we also need to load the behavioral variable.
 
     tested_var = localizer_dataset.ext_vars['pseudo']
     print(tested_var)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    0     15.0
+    1     16.0
+    2     14.0
+    3     19.0
+    4     16.0
+          ... 
+    89    12.0
+    90    16.0
+    91    13.0
+    92    25.0
+    93    21.0
+    Name: pseudo, Length: 94, dtype: float64
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 37-38
@@ -95,6 +142,18 @@ It is worth to do a auality check and remove subjects with missing values.
     print("Actual number of subjects after quality check: %d" % n_samples)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Actual number of subjects after quality check: 89
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 49-53
 
 Estimate second level model
@@ -112,6 +171,12 @@ and fit it.
         columns=['fluency', 'intercept'])
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 59-60
 
 Fit of the second-level model
@@ -123,6 +188,18 @@ Fit of the second-level model
     from nilearn.glm.second_level import SecondLevelModel
     model = SecondLevelModel(smoothing_fwhm=5.0)
     model.fit(contrast_map_filenames, design_matrix=design_matrix)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    SecondLevelModel(smoothing_fwhm=5.0)
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 65-67
@@ -137,6 +214,12 @@ name of the design matrix.
     z_map = model.compute_contrast('fluency', output_type='z_score')
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 70-71
 
 We compute the fdr-corrected p = 0.05 threshold for these data
@@ -147,6 +230,12 @@ We compute the fdr-corrected p = 0.05 threshold for these data
 
     from nilearn.glm import threshold_stats_img
     _, threshold = threshold_stats_img(z_map, alpha=.05, height_control='fdr')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 75-76
@@ -164,6 +253,17 @@ Let us plot the second level contrast at the computed thresholds
         'and reading fluency (fdr=0.05)')
 
     plotting.show()
+
+
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_association_test_001.png
+   :alt: plot second level association test
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_association_test_001.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 85-87
@@ -184,6 +284,21 @@ non parametric test
     neg_log_pval = math_img("-np.log10(np.minimum(1, img * {}))"
                             .format(str(n_voxels)),
                             img=p_val)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    <string>:1: RuntimeWarning:
+
+    divide by zero encountered in log10
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 98-99
@@ -208,6 +323,26 @@ Let us plot the (corrected) negative log  p-values for the parametric test
     plotting.show()
 
 
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_association_test_002.png
+   :alt: plot second level association test
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_association_test_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/niimg.py:61: UserWarning:
+
+    Non-finite values detected. These values will be replaced with zeros.
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 113-114
 
 Computing the (corrected) negative log p-values with permutation test
@@ -224,6 +359,12 @@ Computing the (corrected) negative log p-values with permutation test
                                  model_intercept=True, n_perm=1000,
                                  two_sided_test=False, mask=None,
                                  smoothing_fwhm=5.0, n_jobs=1)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 124-125
@@ -247,11 +388,22 @@ Let us plot the (corrected) negative log  p-values
     # and is then more powerful than the usual parametric procedure.
 
 
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_association_test_003.png
+   :alt: plot second level association test
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_association_test_003.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 1 minutes  22.345 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_second_level_association_test.py:

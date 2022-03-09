@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.image.load_img: Searchlight analysis of face vs house recognition Searchlight analysis of face vs house recognition" />
+<meta property="og:description" content="Examples using nilearn.image.load_img: 3D and 4D niimgs: handling and visualizing 3D and 4D niimgs: handling and visualizing Searchlight analysis of face vs house recognition Searchlight analysis o..." />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_haxby_searchlight_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_3d_and_4d_niimg_thumb.png" />
   
-<meta property="og:image:alt" content="Searchlight analysis of face vs house recognition" />
+<meta property="og:image:alt" content="3D and 4D niimgs: handling and visualizing" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.image.math_img" href="nilearn.image.math_img.html" /><link rel="prev" title="nilearn.image.largest_connected_component_img" href="nilearn.image.largest_connected_component_img.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
@@ -656,7 +656,7 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.image.load_img<a class="headerlink" href="#nilearn-image-load-img" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.image.load_img">
-<span class="sig-prename descclassname"><span class="pre">nilearn.image.</span></span><span class="sig-name descname"><span class="pre">load_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wildcards</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/d3b2e0b2/nilearn/image/image.py#L1211"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.image.load_img" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.image.</span></span><span class="sig-name descname"><span class="pre">load_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wildcards</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/f2a7499e/nilearn/image/image.py#L1211"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.image.load_img" title="Permalink to this definition">#</a></dt>
 <dd><p>Load a Niimg-like object from filenames or list of filenames.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.2.5.</span></p>
@@ -696,9 +696,21 @@ nilearn.image.get_data returns its data.</p>
 </dd></dl>
 <section id="examples-using-nilearn-image-load-img">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.image.load_img</span></code><a class="headerlink" href="#examples-using-nilearn-image-load-img" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="Searchlight analysis requires fitting a classifier a large amount of times. As a result, it is ..."><img alt="Searchlight analysis of face vs house recognition" src="../../_images/sphx_glr_plot_haxby_searchlight_thumb.png"/>
+<div class="sphx-glr-thumbcontainer" tooltip="Here we discover how to work with 3D and 4D niimgs."><img alt="3D and 4D niimgs: handling and visualizing" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/00_tutorials/plot_3d_and_4d_niimg.html#sphx-glr-auto-examples-00-tutorials-plot-3d-and-4d-niimg-py"><span class="std std-ref">3D and 4D niimgs: handling and visualizing</span></a></p>
+<div class="sphx-glr-thumbnail-title">3D and 4D niimgs: handling and visualizing</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Searchlight analysis requires fitting a classifier a large amount of times. As a result, it is ..."><img alt="Searchlight analysis of face vs house recognition" src="../../_images/sphx_glr_plot_haxby_searchlight_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_searchlight.html#sphx-glr-auto-examples-02-decoding-plot-haxby-searchlight-py"><span class="std std-ref">Searchlight analysis of face vs house recognition</span></a></p>
 <div class="sphx-glr-thumbnail-title">Searchlight analysis of face vs house recognition</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="The goal of this example is to illustrate the use of the function nilearn.image.resample_to_img..."><img alt="Resample an image to a template" src="../../_images/sphx_glr_plot_resample_to_template_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/06_manipulating_images/plot_resample_to_template.html#sphx-glr-auto-examples-06-manipulating-images-plot-resample-to-template-py"><span class="std std-ref">Resample an image to a template</span></a></p>
+<div class="sphx-glr-thumbnail-title">Resample an image to a template</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows manual steps to create and further modify an ROI spatial mask. They represen..."><img alt="Computing a Region of Interest (ROI) mask manually" src="../../_images/sphx_glr_plot_roi_extraction_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/06_manipulating_images/plot_roi_extraction.html#sphx-glr-auto-examples-06-manipulating-images-plot-roi-extraction-py"><span class="std std-ref">Computing a Region of Interest (ROI) mask manually</span></a></p>
+<div class="sphx-glr-thumbnail-title">Computing a Region of Interest (ROI) mask manually</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to download statistical maps from NeuroVault"><img alt="NeuroVault meta-analysis of stop-go paradigm studies." src="../../_images/sphx_glr_plot_neurovault_meta_analysis_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/07_advanced/plot_neurovault_meta_analysis.html#sphx-glr-auto-examples-07-advanced-plot-neurovault-meta-analysis-py"><span class="std std-ref">NeuroVault meta-analysis of stop-go paradigm studies.</span></a></p>
+<div class="sphx-glr-thumbnail-title">NeuroVault meta-analysis of stop-go paradigm studies.</div>
 </div><div style="clear:both"></div></section>
 </section>
 

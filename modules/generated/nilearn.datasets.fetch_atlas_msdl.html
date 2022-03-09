@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.datasets.fetch_atlas_msdl: Visualizing 4D probabilistic atlas maps Visualizing 4D probabilistic atlas maps" />
+<meta property="og:description" content="Examples using nilearn.datasets.fetch_atlas_msdl: Visualizing a probabilistic atlas: the default mode in the MSDL atlas Visualizing a probabilistic atlas: the default mode in the MSDL atlas Visuali..." />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_prob_atlas_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_overlay_thumb.png" />
   
-<meta property="og:image:alt" content="Visualizing 4D probabilistic atlas maps" />
+<meta property="og:image:alt" content="Visualizing a probabilistic atlas: the default mode in the MSDL atlas" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.datasets.fetch_atlas_difumo" href="nilearn.datasets.fetch_atlas_difumo.html" /><link rel="prev" title="nilearn.datasets.fetch_atlas_juelich" href="nilearn.datasets.fetch_atlas_juelich.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
@@ -656,7 +656,7 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.datasets.fetch_atlas_msdl<a class="headerlink" href="#nilearn-datasets-fetch-atlas-msdl" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.datasets.fetch_atlas_msdl">
-<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_atlas_msdl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/d3b2e0b2/nilearn/datasets/atlas.py#L696"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_atlas_msdl" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_atlas_msdl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/f2a7499e/nilearn/datasets/atlas.py#L696"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_atlas_msdl" title="Permalink to this definition">#</a></dt>
 <dd><p>Download and load the MSDL brain <a class="reference internal" href="../../glossary.html#term-Probabilistic-atlas"><span class="xref std std-term">Probabilistic atlas</span></a>.</p>
 <p>It can be downloaded at <a class="footnote-reference brackets" href="#footcite-atlas-msdl" id="id1">1</a>, and cited
 using <a class="footnote-reference brackets" href="#footcite-varoquaux2011multisubject" id="id2">2</a>.
@@ -718,9 +718,27 @@ of the networks. There are 39 network names such that
 </dd></dl>
 <section id="examples-using-nilearn-datasets-fetch-atlas-msdl">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_atlas_msdl</span></code><a class="headerlink" href="#examples-using-nilearn-datasets-fetch-atlas-msdl" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="This example shows how to visualize probabilistic atlases made of 4D images. There are 3 differ..."><img alt="Visualizing 4D probabilistic atlas maps" src="../../_images/sphx_glr_plot_prob_atlas_thumb.png"/>
+<div class="sphx-glr-thumbcontainer" tooltip="Visualizing a probabilistic atlas requires visualizing the different maps that compose it."><img alt="Visualizing a probabilistic atlas: the default mode in the MSDL atlas" src="../../_images/sphx_glr_plot_overlay_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/01_plotting/plot_overlay.html#sphx-glr-auto-examples-01-plotting-plot-overlay-py"><span class="std std-ref">Visualizing a probabilistic atlas: the default mode in the MSDL atlas</span></a></p>
+<div class="sphx-glr-thumbnail-title">Visualizing a probabilistic atlas: the default mode in the MSDL atlas</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to visualize probabilistic atlases made of 4D images. There are 3 differ..."><img alt="Visualizing 4D probabilistic atlas maps" src="../../_images/sphx_glr_plot_prob_atlas_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/01_plotting/plot_prob_atlas.html#sphx-glr-auto-examples-01-plotting-plot-prob-atlas-py"><span class="std std-ref">Visualizing 4D probabilistic atlas maps</span></a></p>
 <div class="sphx-glr-thumbnail-title">Visualizing 4D probabilistic atlas maps</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example extracts the signal on regions defined via a probabilistic atlas, to construct a f..."><img alt="Extracting signals of a probabilistic atlas of functional regions" src="../../_images/sphx_glr_plot_probabilistic_atlas_extraction_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_probabilistic_atlas_extraction.html#sphx-glr-auto-examples-03-connectivity-plot-probabilistic-atlas-extraction-py"><span class="std std-ref">Extracting signals of a probabilistic atlas of functional regions</span></a></p>
+<div class="sphx-glr-thumbnail-title">Extracting signals of a probabilistic atlas of functional regions</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example constructs a functional connectome using the sparse inverse covariance."><img alt="Computing a connectome with sparse inverse covariance" src="../../_images/sphx_glr_plot_inverse_covariance_connectome_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html#sphx-glr-auto-examples-03-connectivity-plot-inverse-covariance-connectome-py"><span class="std std-ref">Computing a connectome with sparse inverse covariance</span></a></p>
+<div class="sphx-glr-thumbnail-title">Computing a connectome with sparse inverse covariance</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to estimate a connectome on a group of subjects using the group sparse i..."><img alt="Group Sparse inverse covariance for multi-subject connectome" src="../../_images/sphx_glr_plot_multi_subject_connectome_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_multi_subject_connectome.html#sphx-glr-auto-examples-03-connectivity-plot-multi-subject-connectome-py"><span class="std std-ref">Group Sparse inverse covariance for multi-subject connectome</span></a></p>
+<div class="sphx-glr-thumbnail-title">Group Sparse inverse covariance for multi-subject connectome</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example compares different kinds of functional connectivity between regions of interest : ..."><img alt="Classification of age groups using functional connectivity" src="../../_images/sphx_glr_plot_group_level_connectivity_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_group_level_connectivity.html#sphx-glr-auto-examples-03-connectivity-plot-group-level-connectivity-py"><span class="std std-ref">Classification of age groups using functional connectivity</span></a></p>
+<div class="sphx-glr-thumbnail-title">Classification of age groups using functional connectivity</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example compares different kinds of functional connectivity between regions of interest : ..."><img alt="Functional connectivity predicts age group" src="../../_images/sphx_glr_plot_age_group_prediction_cross_val_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html#sphx-glr-auto-examples-07-advanced-plot-age-group-prediction-cross-val-py"><span class="std std-ref">Functional connectivity predicts age group</span></a></p>
+<div class="sphx-glr-thumbnail-title">Functional connectivity predicts age group</div>
 </div><div style="clear:both"></div></section>
 </section>
 

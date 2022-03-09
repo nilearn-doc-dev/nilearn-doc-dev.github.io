@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.datasets.fetch_icbm152_brain_gm_mask: Voxel-Based Morphometry on Oasis dataset Voxel-Based Morphometry on Oasis dataset" />
+<meta property="og:description" content="Examples using nilearn.datasets.fetch_icbm152_brain_gm_mask: Understanding parameters of the first-level model Understanding parameters of the first-level model Voxel-Based Morphometry on Oasis dat..." />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_oasis_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_first_level_details_thumb.png" />
   
-<meta property="og:image:alt" content="Voxel-Based Morphometry on Oasis dataset" />
+<meta property="og:image:alt" content="Understanding parameters of the first-level model" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.datasets.fetch_localizer_button_task" href="nilearn.datasets.fetch_localizer_button_task.html" /><link rel="prev" title="nilearn.datasets.fetch_icbm152_2009" href="nilearn.datasets.fetch_icbm152_2009.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
@@ -656,7 +656,7 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.datasets.fetch_icbm152_brain_gm_mask<a class="headerlink" href="#nilearn-datasets-fetch-icbm152-brain-gm-mask" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.datasets.fetch_icbm152_brain_gm_mask">
-<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_icbm152_brain_gm_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/d3b2e0b2/nilearn/datasets/struct.py#L507"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_icbm152_brain_gm_mask" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_icbm152_brain_gm_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/f2a7499e/nilearn/datasets/struct.py#L507"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_icbm152_brain_gm_mask" title="Permalink to this definition">#</a></dt>
 <dd><p>Downloads ICBM152 template first, then loads the ‘gm’ mask.</p>
 <blockquote>
 <div><p>The default template of <a class="reference internal" href="../../glossary.html#term-fMRIPrep"><span class="xref std std-term">fMRIPrep</span></a> is the asymmetrical ICBM152 2009,
@@ -719,7 +719,10 @@ operation to more compact mask image.</p>
 </dd></dl>
 <section id="examples-using-nilearn-datasets-fetch-icbm152-brain-gm-mask">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_icbm152_brain_gm_mask</span></code><a class="headerlink" href="#examples-using-nilearn-datasets-fetch-icbm152-brain-gm-mask" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="This example uses Voxel-Based Morphometry (VBM) to study the relationship between aging, sex an..."><img alt="Voxel-Based Morphometry on Oasis dataset" src="../../_images/sphx_glr_plot_oasis_thumb.png"/>
+<div class="sphx-glr-thumbcontainer" tooltip="In this tutorial, we study how first-level models are parametrized for fMRI data analysis and c..."><img alt="Understanding parameters of the first-level model" src="../../_images/sphx_glr_plot_first_level_details_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_first_level_details.html#sphx-glr-auto-examples-04-glm-first-level-plot-first-level-details-py"><span class="std std-ref">Understanding parameters of the first-level model</span></a></p>
+<div class="sphx-glr-thumbnail-title">Understanding parameters of the first-level model</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example uses Voxel-Based Morphometry (VBM) to study the relationship between aging, sex an..."><img alt="Voxel-Based Morphometry on Oasis dataset" src="../../_images/sphx_glr_plot_oasis_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_oasis.html#sphx-glr-auto-examples-05-glm-second-level-plot-oasis-py"><span class="std std-ref">Voxel-Based Morphometry on Oasis dataset</span></a></p>
 <div class="sphx-glr-thumbnail-title">Voxel-Based Morphometry on Oasis dataset</div>
 </div><div style="clear:both"></div></section>

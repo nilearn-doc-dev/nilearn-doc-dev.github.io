@@ -51,6 +51,12 @@ observe some significant effects in these areas.
     import matplotlib.pyplot as plt
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 32-36
 
 Fetch dataset
@@ -76,6 +82,12 @@ localizer dataset.
     # the first image of both samples comes from subject S1, the second from subject S2 etc.
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 50-54
 
 Estimate second level models
@@ -90,6 +102,12 @@ and fit it.
     second_level_input = sample_vertical['cmaps'] + sample_horizontal['cmaps']
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 57-58
 
 Next, we model the effect of conditions (sample 1 vs sample 2).
@@ -100,6 +118,12 @@ Next, we model the effect of conditions (sample 1 vs sample 2).
 
     import numpy as np
     condition_effect = np.hstack(([1] * n_subjects, [- 1] * n_subjects))
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-64
@@ -113,6 +137,12 @@ For the paired test, we include an intercept for each subject.
 
     subject_effect = np.vstack((np.eye(n_subjects), np.eye(n_subjects)))
     subjects = [f'S{i:02d}' for i in range(1, n_subjects + 1)]
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 68-69
@@ -130,6 +160,12 @@ We then assemble those into design matrices
     paired_design_matrix = pd.DataFrame(
         np.hstack((condition_effect[:, np.newaxis], subject_effect)),
         columns=['vertical vs horizontal'] + subjects)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 78-79
@@ -150,6 +186,17 @@ and plot the designs.
     plotting.show()
 
 
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_001.png
+   :alt: unpaired design, paired design
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 89-90
 
 We specify the analysis models and fit them.
@@ -165,6 +212,12 @@ We specify the analysis models and fit them.
 
     second_level_model_paired = SecondLevelModel().fit(
         second_level_input, design_matrix=paired_design_matrix)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 99-103
@@ -187,6 +240,12 @@ variance, and z-score.
                                                     output_type='all')
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 112-115
 
 Plot the results
@@ -199,6 +258,18 @@ The two effect_size images are essentially identical
 
     (stat_maps_unpaired['effect_size'].get_fdata()
         - stat_maps_paired['effect_size'].get_fdata()).max()
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    8.881784197001252e-16
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 119-120
@@ -218,6 +289,29 @@ But the variance in the unpaired image is larger.
         title='vertical vs horizontal effect variance, paired')
 
     plotting.show()
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_002.png
+         :alt: plot second level two sample test
+         :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_003.png
+         :alt: plot second level two sample test
+         :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_003.png
+         :class: sphx-glr-multi-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 131-133
@@ -241,6 +335,29 @@ We threshold the second level contrast and plot it.
     plotting.show()
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_004.png
+         :alt: plot second level two sample test
+         :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_005.png
+         :alt: plot second level two sample test
+         :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_two_sample_test_005.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 145-147
 
 Unsurprisingly, we see activity in the primary visual cortex, both positive
@@ -249,9 +366,9 @@ and negative.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  38.504 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  16 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_second_level_two_sample_test.py:

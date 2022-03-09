@@ -71,7 +71,7 @@ The original Yeo atlas
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf84910>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d8faf0310>
 
 
 
@@ -130,7 +130,7 @@ Plotting the new regions
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf894e0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9f2eb4c0>
 
 
 
@@ -205,7 +205,7 @@ that are connected only along the diagonal.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf33100>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9f2a66b0>
 
 
 
@@ -251,9 +251,9 @@ regions larger than 100mm^3.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  52.804 seconds)
+   **Total running time of the script:** ( 0 minutes  52.372 seconds)
 
-**Estimated memory usage:**  727 MB
+**Estimated memory usage:**  596 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_extract_regions_labels_image.py:

@@ -245,7 +245,7 @@ Next, we compute and plot the statistics.
 
     Computing contrasts...
       Contrast  1 out of 8: SStSSp_minus_DStDSp
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:650: UserWarning:
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
@@ -314,7 +314,7 @@ Compute the statistics for the first session.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61ab556f50>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9cbf3610>
 
 
 
@@ -348,7 +348,7 @@ Compute the statistics for the second session.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b5f4ee30>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d898b8280>
 
 
 
@@ -383,7 +383,7 @@ Compute the Fixed effects statistics.
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:650: UserWarning:
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
@@ -427,7 +427,7 @@ and have the contrast, we can quickly create a summary report.
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:650: UserWarning:
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
@@ -461,7 +461,7 @@ We have several ways to access the report:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  25.680 seconds)
+   **Total running time of the script:** ( 1 minutes  25.134 seconds)
 
 **Estimated memory usage:**  367 MB
 

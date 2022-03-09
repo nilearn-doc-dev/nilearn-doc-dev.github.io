@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.image.index_img: Searchlight analysis of face vs house recognition Searchlight analysis of face vs house recognition Clustering methods to learn a brain parcellation from fMR..." />
+<meta property="og:description" content="Examples using nilearn.image.index_img: 3D and 4D niimgs: handling and visualizing 3D and 4D niimgs: handling and visualizing A introduction tutorial to fMRI decoding A introduction tutorial to fMR..." />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_haxby_searchlight_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_3d_and_4d_niimg_thumb.png" />
   
-<meta property="og:image:alt" content="Searchlight analysis of face vs house recognition" />
+<meta property="og:image:alt" content="3D and 4D niimgs: handling and visualizing" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.image.iter_img" href="nilearn.image.iter_img.html" /><link rel="prev" title="nilearn.image.high_variance_confounds" href="nilearn.image.high_variance_confounds.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
@@ -656,7 +656,7 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.image.index_img<a class="headerlink" href="#nilearn-image-index-img" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.image.index_img">
-<span class="sig-prename descclassname"><span class="pre">nilearn.image.</span></span><span class="sig-name descname"><span class="pre">index_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imgs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/d3b2e0b2/nilearn/image/image.py#L599"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.image.index_img" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.image.</span></span><span class="sig-name descname"><span class="pre">index_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imgs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/f2a7499e/nilearn/image/image.py#L599"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.image.index_img" title="Permalink to this definition">#</a></dt>
 <dd><p>Indexes into a 4D Niimg-like object in the fourth dimension.</p>
 <p>Common use cases include extracting a 3D image out of <cite>img</cite> or
 creating a 4D image whose data is a subset of <cite>img</cite> data.</p>
@@ -713,12 +713,60 @@ creating a 4D image whose data is a subset of <cite>img</cite> data.</p>
 </dd></dl>
 <section id="examples-using-nilearn-image-index-img">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.image.index_img</span></code><a class="headerlink" href="#examples-using-nilearn-image-index-img" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="Searchlight analysis requires fitting a classifier a large amount of times. As a result, it is ..."><img alt="Searchlight analysis of face vs house recognition" src="../../_images/sphx_glr_plot_haxby_searchlight_thumb.png"/>
+<div class="sphx-glr-thumbcontainer" tooltip="Here we discover how to work with 3D and 4D niimgs."><img alt="3D and 4D niimgs: handling and visualizing" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/00_tutorials/plot_3d_and_4d_niimg.html#sphx-glr-auto-examples-00-tutorials-plot-3d-and-4d-niimg-py"><span class="std std-ref">3D and 4D niimgs: handling and visualizing</span></a></p>
+<div class="sphx-glr-thumbnail-title">3D and 4D niimgs: handling and visualizing</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here is a simple tutorial on decoding with nilearn. It reproduces the Haxby 2001 study on a fac..."><img alt="A introduction tutorial to fMRI decoding" src="../../_images/sphx_glr_plot_decoding_tutorial_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/00_tutorials/plot_decoding_tutorial.html#sphx-glr-auto-examples-00-tutorials-plot-decoding-tutorial-py"><span class="std std-ref">A introduction tutorial to fMRI decoding</span></a></p>
+<div class="sphx-glr-thumbnail-title">A introduction tutorial to fMRI decoding</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Visualizing a probabilistic atlas requires visualizing the different maps that compose it."><img alt="Visualizing a probabilistic atlas: the default mode in the MSDL atlas" src="../../_images/sphx_glr_plot_overlay_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/01_plotting/plot_overlay.html#sphx-glr-auto-examples-01-plotting-plot-overlay-py"><span class="std std-ref">Visualizing a probabilistic atlas: the default mode in the MSDL atlas</span></a></p>
+<div class="sphx-glr-thumbnail-title">Visualizing a probabilistic atlas: the default mode in the MSDL atlas</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example uses fast ensembling of regularized models (FREM) to decode a face vs house discri..."><img alt="Decoding with FREM: face vs house object recognition" src="../../_images/sphx_glr_plot_haxby_frem_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_frem.html#sphx-glr-auto-examples-02-decoding-plot-haxby-frem-py"><span class="std std-ref">Decoding with FREM: face vs house object recognition</span></a></p>
+<div class="sphx-glr-thumbnail-title">Decoding with FREM: face vs house object recognition</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example does a simple but efficient decoding on the Haxby dataset: using a feature selecti..."><img alt="Decoding with ANOVA + SVM: face vs house in the Haxby dataset" src="../../_images/sphx_glr_plot_haxby_anova_svm_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_anova_svm.html#sphx-glr-auto-examples-02-decoding-plot-haxby-anova-svm-py"><span class="std std-ref">Decoding with ANOVA + SVM: face vs house in the Haxby dataset</span></a></p>
+<div class="sphx-glr-thumbnail-title">Decoding with ANOVA + SVM: face vs house in the Haxby dataset</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This is a demo for surface-based searchlight decoding, as described in: Chen, Y., Namburi, P., ..."><img alt="Cortical surface-based searchlight decoding" src="../../_images/sphx_glr_plot_haxby_searchlight_surface_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_searchlight_surface.html#sphx-glr-auto-examples-02-decoding-plot-haxby-searchlight-surface-py"><span class="std std-ref">Cortical surface-based searchlight decoding</span></a></p>
+<div class="sphx-glr-thumbnail-title">Cortical surface-based searchlight decoding</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Searchlight analysis requires fitting a classifier a large amount of times. As a result, it is ..."><img alt="Searchlight analysis of face vs house recognition" src="../../_images/sphx_glr_plot_haxby_searchlight_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_searchlight.html#sphx-glr-auto-examples-02-decoding-plot-haxby-searchlight-py"><span class="std std-ref">Searchlight analysis of face vs house recognition</span></a></p>
 <div class="sphx-glr-thumbnail-title">Searchlight analysis of face vs house recognition</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Full step-by-step example of fitting a GLM to perform a decoding experiment. We use the data fr..."><img alt="Decoding of a dataset after GLM fit for signal extraction" src="../../_images/sphx_glr_plot_haxby_glm_decoding_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_glm_decoding.html#sphx-glr-auto-examples-02-decoding-plot-haxby-glm-decoding-py"><span class="std std-ref">Decoding of a dataset after GLM fit for signal extraction</span></a></p>
+<div class="sphx-glr-thumbnail-title">Decoding of a dataset after GLM fit for signal extraction</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here we set the number of features selected in an Anova-SVC approach to maximize the cross-vali..."><img alt="Setting a parameter by cross-validation" src="../../_images/sphx_glr_plot_haxby_grid_search_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_grid_search.html#sphx-glr-auto-examples-02-decoding-plot-haxby-grid-search-py"><span class="std std-ref">Setting a parameter by cross-validation</span></a></p>
+<div class="sphx-glr-thumbnail-title">Setting a parameter by cross-validation</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip='In this script we reproduce the data analysis conducted by Haxby et al. in "Distributed and Ove...'><img alt="ROI-based decoding analysis in Haxby et al. dataset" src="../../_images/sphx_glr_plot_haxby_full_analysis_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_full_analysis.html#sphx-glr-auto-examples-02-decoding-plot-haxby-full-analysis-py"><span class="std std-ref">ROI-based decoding analysis in Haxby et al. dataset</span></a></p>
+<div class="sphx-glr-thumbnail-title">ROI-based decoding analysis in Haxby et al. dataset</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here we compare different classifiers on a visual object recognition decoding task."><img alt="Different classifiers in decoding the Haxby dataset" src="../../_images/sphx_glr_plot_haxby_different_estimators_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_different_estimators.html#sphx-glr-auto-examples-02-decoding-plot-haxby-different-estimators-py"><span class="std std-ref">Different classifiers in decoding the Haxby dataset</span></a></p>
+<div class="sphx-glr-thumbnail-title">Different classifiers in decoding the Haxby dataset</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use nilearn.regions.RegionExtractor to extract spatially constrained ..."><img alt="Regions extraction using :term:`Dictionary learning` and functional connectomes" src="../../_images/sphx_glr_plot_extract_regions_dictlearning_maps_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html#sphx-glr-auto-examples-03-connectivity-plot-extract-regions-dictlearning-maps-py"><span class="std std-ref">Regions extraction using Dictionary learning and functional connectomes</span></a></p>
+<div class="sphx-glr-thumbnail-title">Regions extraction using :term:`Dictionary learning` and functional connectomes</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="We use spatially-constrained Ward-clustering, KMeans, Hierarchical KMeans and Recursive Neighbo..."><img alt="Clustering methods to learn a brain parcellation from fMRI" src="../../_images/sphx_glr_plot_data_driven_parcellations_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_data_driven_parcellations.html#sphx-glr-auto-examples-03-connectivity-plot-data-driven-parcellations-py"><span class="std std-ref">Clustering methods to learn a brain parcellation from fMRI</span></a></p>
 <div class="sphx-glr-thumbnail-title">Clustering methods to learn a brain parcellation from fMRI</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This simple example shows how to extract regions from Smith atlas resting state networks."><img alt="Regions Extraction of Default Mode Networks using Smith Atlas" src="../../_images/sphx_glr_plot_extract_rois_smith_atlas_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/06_manipulating_images/plot_extract_rois_smith_atlas.html#sphx-glr-auto-examples-06-manipulating-images-plot-extract-rois-smith-atlas-py"><span class="std std-ref">Regions Extraction of Default Mode Networks using Smith Atlas</span></a></p>
+<div class="sphx-glr-thumbnail-title">Regions Extraction of Default Mode Networks using Smith Atlas</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here is a simple example of automatic mask computation using the nifti masker. The mask is comp..."><img alt="Simple example of NiftiMasker use" src="../../_images/sphx_glr_plot_nifti_simple_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/06_manipulating_images/plot_nifti_simple.html#sphx-glr-auto-examples-06-manipulating-images-plot-nifti-simple-py"><span class="std std-ref">Simple example of NiftiMasker use</span></a></p>
+<div class="sphx-glr-thumbnail-title">Simple example of NiftiMasker use</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, the Nifti masker is used to automatically compute a mask."><img alt="Understanding NiftiMasker and mask computation" src="../../_images/sphx_glr_plot_mask_computation_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/06_manipulating_images/plot_mask_computation.html#sphx-glr-auto-examples-06-manipulating-images-plot-mask-computation-py"><span class="std std-ref">Understanding NiftiMasker and mask computation</span></a></p>
+<div class="sphx-glr-thumbnail-title">Understanding NiftiMasker and mask computation</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" This example is meant to demonstrate nilearn as a low-level tools used to combine feature extr..."><img alt="Multivariate decompositions: Independent component analysis of fMRI" src="../../_images/sphx_glr_plot_ica_resting_state_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/07_advanced/plot_ica_resting_state.html#sphx-glr-auto-examples-07-advanced-plot-ica-resting-state-py"><span class="std std-ref">Multivariate decompositions: Independent component analysis of fMRI</span></a></p>
+<div class="sphx-glr-thumbnail-title">Multivariate decompositions: Independent component analysis of fMRI</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="A permuted Ordinary Least Squares algorithm is run at each voxel in order to determine whether ..."><img alt="Massively univariate analysis of face vs house recognition" src="../../_images/sphx_glr_plot_haxby_mass_univariate_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/07_advanced/plot_haxby_mass_univariate.html#sphx-glr-auto-examples-07-advanced-plot-haxby-mass-univariate-py"><span class="std std-ref">Massively univariate analysis of face vs house recognition</span></a></p>
+<div class="sphx-glr-thumbnail-title">Massively univariate analysis of face vs house recognition</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial opens the box of decoding pipelines to bridge integrated functionalities provided..."><img alt="Advanced decoding using scikit learn" src="../../_images/sphx_glr_plot_advanced_decoding_scikit_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/07_advanced/plot_advanced_decoding_scikit.html#sphx-glr-auto-examples-07-advanced-plot-advanced-decoding-scikit-py"><span class="std std-ref">Advanced decoding using scikit learn</span></a></p>
 <div class="sphx-glr-thumbnail-title">Advanced decoding using scikit learn</div>

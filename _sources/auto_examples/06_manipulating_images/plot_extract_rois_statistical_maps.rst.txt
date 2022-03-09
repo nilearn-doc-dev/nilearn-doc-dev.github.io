@@ -124,7 +124,7 @@ Showing thresholding results by importing plotting modules and its utilities
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f61c3fd94e0>
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f5d79c5fe20>
 
 
 
@@ -206,7 +206,7 @@ Visualizing region extraction results
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.584 seconds)
+   **Total running time of the script:** ( 0 minutes  18.330 seconds)
 
 **Estimated memory usage:**  9 MB
 

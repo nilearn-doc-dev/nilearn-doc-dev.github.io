@@ -57,13 +57,6 @@ Fetching probabilistic atlas - MSDL atlas
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
-      output = genfromtxt(fname, **kwargs)
-
 
 
 
@@ -177,9 +170,9 @@ Unlike :func:`nilearn.plotting.plot_stat_map` this works with 4D images
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.684 seconds)
+   **Total running time of the script:** ( 0 minutes  4.878 seconds)
 
-**Estimated memory usage:**  10 MB
+**Estimated memory usage:**  11 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_overlay.py:

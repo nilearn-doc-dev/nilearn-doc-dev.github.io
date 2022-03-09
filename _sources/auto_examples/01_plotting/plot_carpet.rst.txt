@@ -49,6 +49,20 @@ Fetching data from ADHD dataset
           adhd_dataset.func[0])  # 4D data
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/datasets/func.py:250: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+      phenotypic = np.genfromtxt(phenotypic, names=True, delimiter=',',
+    First subject functional nifti image (4D) is at: /home/alexis/nilearn_data/adhd/data/0010042/0010042_rest_tshift_RPI_voreg_mni.nii.gz
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 28-30
 
 Deriving a mask
@@ -62,6 +76,12 @@ Deriving a mask
 
     # Build an EPI-based mask because we have no anatomical data
     mask_img = masking.compute_epi_mask(adhd_dataset.func[0])
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-38
@@ -80,6 +100,17 @@ Visualizing global patterns over time
     display = plot_carpet(adhd_dataset.func[0], mask_img, t_r=t_r)
 
     display.show()
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_carpet_001.png
+   :alt: plot carpet
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_carpet_001.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 47-51
@@ -111,6 +142,12 @@ ICBM152 tissue probability maps.
     )
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 69-71
 
 Visualizing global patterns, separated by tissue type
@@ -137,11 +174,30 @@ Visualizing global patterns, separated by tissue type
     fig.show()
 
 
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_carpet_002.png
+   :alt: plot carpet
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_carpet_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/image/resampling.py:531: UserWarning: Casting data from int32 to float32
+      warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
+    Coercing atlas_values to <class 'int'>
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  16.284 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  1063 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_carpet.py:

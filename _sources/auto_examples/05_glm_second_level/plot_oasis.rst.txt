@@ -52,6 +52,12 @@ Note that more power would be obtained from using a larger sample of subjects.
     n_subjects = 100  # more subjects requires more memory
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 Load Oasis dataset
@@ -70,6 +76,12 @@ Load Oasis dataset
     age = oasis_dataset.ext_vars['age'].astype(float)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 43-44
 
 Sex is encoded as 'M' or 'F'. Hence, we make it a binary variable.
@@ -79,6 +91,12 @@ Sex is encoded as 'M' or 'F'. Hence, we make it a binary variable.
 .. code-block:: default
 
     sex = oasis_dataset.ext_vars['mf'] == 'F'
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 47-48
@@ -95,6 +113,19 @@ Print basic information on the dataset.
           oasis_dataset.white_matter_maps[0])  # 3D data
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    First gray-matter anatomy image (3D) is located at: /home/alexis/nilearn_data/oasis1/OAS1_0001_MR1/mwrc1OAS1_0001_MR1_mpr_anon_fslswapdim_bet.nii.gz
+    First white-matter anatomy image (3D) is located at: /home/alexis/nilearn_data/oasis1/OAS1_0001_MR1/mwrc2OAS1_0001_MR1_mpr_anon_fslswapdim_bet.nii.gz
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 54-55
 
 Get a mask image: A mask of the  cortex of the ICBM template.
@@ -104,6 +135,12 @@ Get a mask image: A mask of the  cortex of the ICBM template.
 .. code-block:: default
 
     gm_mask = datasets.fetch_icbm152_brain_gm_mask()
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-59
@@ -117,6 +154,12 @@ Resample the images, since this mask has a different resolution.
     from nilearn.image import resample_to_img
     mask_img = resample_to_img(
         gm_mask, gray_matter_map_filenames[0], interpolation='nearest')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 64-69
@@ -138,6 +181,12 @@ First, we create an adequate design matrix with three columns: 'age',
                                  columns=['age', 'sex', 'intercept'])
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 76-77
 
 Let's plot the design matrix.
@@ -151,6 +200,23 @@ Let's plot the design matrix.
     ax = plot_design_matrix(design_matrix)
     ax.set_title('Second level design matrix', fontsize=12)
     ax.set_ylabel('maps')
+
+
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_001.png
+   :alt: Second level design matrix
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    Text(29.0, 0.5, 'maps')
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 84-86
@@ -169,6 +235,19 @@ also smooth a little bit to improve statistical behavior.
                            design_matrix=design_matrix)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    SecondLevelModel(mask_img=<nibabel.nifti1.Nifti1Image object at 0x7f5d8b6b8760>,
+                     smoothing_fwhm=2.0)
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 93-95
 
 Estimating the contrast is very simple. We can just provide the column
@@ -180,6 +259,12 @@ name of the design matrix.
 
     z_map = second_level_model.compute_contrast(second_level_contrast=[1, 0, 0],
                                                 output_type='z_score')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 99-100
@@ -203,6 +288,23 @@ We threshold the second level contrast at uncorrected p < 0.001 and plot it.
     plotting.show()
 
 
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_002.png
+   :alt: plot oasis
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    The FDR=.05-corrected threshold is: 2.4
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 113-115
 
 We can also study the effect of sex by computing the contrast, thresholding
@@ -220,6 +322,23 @@ it and plot the resulting map.
     plotting.plot_stat_map(
         z_map, threshold=threshold, colorbar=True,
         title='sex effect on grey matter density (FDR = .05)')
+
+
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_003.png
+   :alt: plot oasis
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d8edc7070>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 125-127
@@ -250,6 +369,12 @@ which we do here.
                              )
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 145-146
 
 We have several ways to access the report:
@@ -264,11 +389,17 @@ We have several ways to access the report:
     # report.open_in_browser()
 
 
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 3 minutes  17.646 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  1092 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_oasis.py:

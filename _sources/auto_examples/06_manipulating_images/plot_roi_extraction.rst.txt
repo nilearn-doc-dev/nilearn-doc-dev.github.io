@@ -177,7 +177,7 @@ also use file names as input parameters.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b0c91e10>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d7a54c1f0>
 
 
 
@@ -284,7 +284,7 @@ interesting to discriminate the condition.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61c46e0ee0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9f3174c0>
 
 
 
@@ -336,7 +336,7 @@ array.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf6bfa0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9f2df190>
 
 
 
@@ -402,7 +402,7 @@ intersection of this provided mask with our self-computed mask.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b0c92c50>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d941ea980>
 
 
 
@@ -451,7 +451,7 @@ such operations can fill "holes" in masked voxel representations.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619cf6a6e0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d8b6b88e0>
 
 
 
@@ -517,7 +517,7 @@ integer label to each one of them.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b25530a0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9f3159f0>
 
 
 
@@ -621,9 +621,9 @@ Plot the average in the different condition names
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  58.133 seconds)
+   **Total running time of the script:** ( 0 minutes  59.189 seconds)
 
-**Estimated memory usage:**  2215 MB
+**Estimated memory usage:**  2185 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_roi_extraction.py:

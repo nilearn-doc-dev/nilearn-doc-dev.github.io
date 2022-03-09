@@ -331,17 +331,17 @@ them.
 
     Computing contrasts
             contrast id: faces-scrambled
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:650: UserWarning:
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
             contrast id: scrambled-faces
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:650: UserWarning:
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
             contrast id: effects_of_interest
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:650: UserWarning:
+    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
@@ -365,9 +365,9 @@ also displays some responses in the frontal lobe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  39.182 seconds)
+   **Total running time of the script:** ( 1 minutes  34.386 seconds)
 
-**Estimated memory usage:**  937 MB
+**Estimated memory usage:**  995 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_spm_multimodal_faces.py:

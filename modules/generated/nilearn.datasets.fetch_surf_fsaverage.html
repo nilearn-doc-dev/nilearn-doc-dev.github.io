@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.datasets.fetch_surf_fsaverage: Making a surface plot of a 3D statistical map Making a surface plot of a 3D statistical map" />
+<meta property="og:description" content="Examples using nilearn.datasets.fetch_surf_fsaverage: Seed-based connectivity on the surface Seed-based connectivity on the surface Loading and plotting of a cortical surface atlas Loading and plot..." />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_3d_map_to_surface_projection_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_surf_stat_map_thumb.png" />
   
-<meta property="og:image:alt" content="Making a surface plot of a 3D statistical map" />
+<meta property="og:image:alt" content="Seed-based connectivity on the surface" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.datasets.fetch_atlas_surf_destrieux" href="nilearn.datasets.fetch_atlas_surf_destrieux.html" /><link rel="prev" title="nilearn.datasets.fetch_surf_nki_enhanced" href="nilearn.datasets.fetch_surf_nki_enhanced.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
@@ -656,7 +656,7 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.datasets.fetch_surf_fsaverage<a class="headerlink" href="#nilearn-datasets-fetch-surf-fsaverage" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.datasets.fetch_surf_fsaverage">
-<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_surf_fsaverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fsaverage5'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/d3b2e0b2/nilearn/datasets/struct.py#L785"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_surf_fsaverage" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_surf_fsaverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fsaverage5'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/f2a7499e/nilearn/datasets/struct.py#L785"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_surf_fsaverage" title="Permalink to this definition">#</a></dt>
 <dd><p>Download a Freesurfer fsaverage surface.
 File names are subject to change and only attribute names
 are guaranteed to be stable across nilearn versions.
@@ -740,9 +740,24 @@ files are downloaded in home directory.</p>
 </dd></dl>
 <section id="examples-using-nilearn-datasets-fetch-surf-fsaverage">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_surf_fsaverage</span></code><a class="headerlink" href="#examples-using-nilearn-datasets-fetch-surf-fsaverage" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example, we will project a 3D statistical map onto a cortical mesh using vol_to_surf, d..."><img alt="Making a surface plot of a 3D statistical map" src="../../_images/sphx_glr_plot_3d_map_to_surface_projection_thumb.png"/>
+<div class="sphx-glr-thumbcontainer" tooltip="The dataset that is a subset of the enhanced NKI Rockland sample (http://fcon_1000.projects.nit..."><img alt="Seed-based connectivity on the surface" src="../../_images/sphx_glr_plot_surf_stat_map_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/01_plotting/plot_surf_stat_map.html#sphx-glr-auto-examples-01-plotting-plot-surf-stat-map-py"><span class="std std-ref">Seed-based connectivity on the surface</span></a></p>
+<div class="sphx-glr-thumbnail-title">Seed-based connectivity on the surface</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="The Destrieux parcellation (Destrieux et al, 2010) in fsaverage5 space as distributed with Free..."><img alt="Loading and plotting of a cortical surface atlas" src="../../_images/sphx_glr_plot_surf_atlas_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/01_plotting/plot_surf_atlas.html#sphx-glr-auto-examples-01-plotting-plot-surf-atlas-py"><span class="std std-ref">Loading and plotting of a cortical surface atlas</span></a></p>
+<div class="sphx-glr-thumbnail-title">Loading and plotting of a cortical surface atlas</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, we will project a 3D statistical map onto a cortical mesh using vol_to_surf, d..."><img alt="Making a surface plot of a 3D statistical map" src="../../_images/sphx_glr_plot_3d_map_to_surface_projection_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/01_plotting/plot_3d_map_to_surface_projection.html#sphx-glr-auto-examples-01-plotting-plot-3d-map-to-surface-projection-py"><span class="std std-ref">Making a surface plot of a 3D statistical map</span></a></p>
 <div class="sphx-glr-thumbnail-title">Making a surface plot of a 3D statistical map</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This is a demo for surface-based searchlight decoding, as described in: Chen, Y., Namburi, P., ..."><img alt="Cortical surface-based searchlight decoding" src="../../_images/sphx_glr_plot_haxby_searchlight_surface_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_searchlight_surface.html#sphx-glr-auto-examples-02-decoding-plot-haxby-searchlight-surface-py"><span class="std std-ref">Cortical surface-based searchlight decoding</span></a></p>
+<div class="sphx-glr-thumbnail-title">Cortical surface-based searchlight decoding</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="A full step-by-step example of fitting a GLM to experimental data sampled on the cortical surfa..."><img alt="Example of surface-based first-level analysis" src="../../_images/sphx_glr_plot_localizer_surface_analysis_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html#sphx-glr-auto-examples-04-glm-first-level-plot-localizer-surface-analysis-py"><span class="std std-ref">Example of surface-based first-level analysis</span></a></p>
+<div class="sphx-glr-thumbnail-title">Example of surface-based first-level analysis</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM (first and second level analysis) in a 10-subjects ..."><img alt="Surface-based dataset first and second level analysis of a dataset" src="../../_images/sphx_glr_plot_surface_bids_analysis_thumb.png"/>
+<p><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html#sphx-glr-auto-examples-07-advanced-plot-surface-bids-analysis-py"><span class="std std-ref">Surface-based dataset first and second level analysis of a dataset</span></a></p>
+<div class="sphx-glr-thumbnail-title">Surface-based dataset first and second level analysis of a dataset</div>
 </div><div style="clear:both"></div></section>
 </section>
 

@@ -49,6 +49,12 @@ Retrieve the data: the localizer dataset with contrast maps
     localizer_anat_filename = localizer_dataset.anat
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 29-31
 
 Plotting with enhancement of background image with dim=-.5
@@ -67,6 +73,23 @@ Plotting with enhancement of background image with dim=-.5
                            dim=-.5)
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_001.png
+   :alt: plot dim plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5dcf6567d0>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 40-42
 
 Plotting with no change of contrast in background image with dim=0
@@ -83,6 +106,23 @@ Plotting with no change of contrast in background image with dim=0
                            dim=0)
 
 
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_002.png
+   :alt: plot dim plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5dcf429f00>
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 49-51
 
 Plotting with decrease of contrast in background image with dim=.5
@@ -97,6 +137,23 @@ Plotting with decrease of contrast in background image with dim=.5
                            cut_coords=(36, -27, 66),
                            threshold=3, title="dim=.5",
                            dim=.5)
+
+
+
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_003.png
+   :alt: plot dim plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9d3ef160>
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-60
@@ -117,11 +174,22 @@ Plotting with more decrease in contrast with dim=1
     plotting.show()
 
 
+
+.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_004.png
+   :alt: plot dim plotting
+   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_004.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 0 minutes  8.257 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_dim_plotting.py:

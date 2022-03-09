@@ -56,6 +56,12 @@ estimate.
     )
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 36-41
 
 Display subject t_maps
@@ -81,6 +87,17 @@ subjects.
     plt.show()
 
 
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_001.png
+   :alt: subjects t_map left-right button press
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 54-58
 
 Estimate second level model
@@ -98,6 +115,12 @@ and fit it.
                                  columns=['intercept'])
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 Model specification and fit.
@@ -112,6 +135,12 @@ Model specification and fit.
                                                 design_matrix=design_matrix)
 
 
+
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 71-73
 
 To estimate the :term:`contrast` is very simple. We can just provide the column
@@ -122,6 +151,12 @@ name of the design matrix.
 .. code-block:: default
 
     z_map = second_level_model.compute_contrast(output_type='z_score')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 76-77
@@ -139,6 +174,17 @@ We threshold the second level contrast at uncorrected p < 0.001 and plot it.
         z_map, threshold=p001_unc, colorbar=True, display_mode='z', plot_abs=False,
         title='group left-right button press (unc p<0.001)')
     plotting.show()
+
+
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_002.png
+   :alt: plot second level one sample test
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_002.png
+   :class: sphx-glr-single-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 86-87
@@ -165,6 +211,21 @@ them with the results from a nonparametric test.
                             img=p_val)
 
 
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    <string>:1: RuntimeWarning:
+
+    divide by zero encountered in log10
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 102-103
 
 Let us plot the (corrected) negative log p-values for the parametric test.
@@ -188,6 +249,26 @@ Let us plot the (corrected) negative log p-values for the parametric test.
     plotting.show()
 
 
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_003.png
+   :alt: plot second level one sample test
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/niimg.py:61: UserWarning:
+
+    Non-finite values detected. These values will be replaced with zeros.
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 118-119
 
 Now, we compute the (corrected) p-values with a permutation test.
@@ -203,6 +284,12 @@ Now, we compute the (corrected) p-values with a permutation test.
                                  model_intercept=True, n_perm=1000,
                                  two_sided_test=False,
                                  smoothing_fwhm=8.0, n_jobs=1)
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 128-129
@@ -227,11 +314,22 @@ Let us plot the (corrected) negative log p-values for the nonparametric test.
     # the usual parametric procedure.
 
 
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_004.png
+   :alt: plot second level one sample test
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_004.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** ( 1 minutes  16.129 seconds)
 
-**Estimated memory usage:**  0 MB
+**Estimated memory usage:**  48 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_second_level_one_sample_test.py:
