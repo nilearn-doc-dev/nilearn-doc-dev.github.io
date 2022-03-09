@@ -100,23 +100,6 @@ Advanced statistical analysis of brain images
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the results obtained in a massively univariate analysis performed at the int...">
-
-.. only:: html
-
-  .. image:: /auto_examples/07_advanced/images/thumb/sphx_glr_plot_localizer_mass_univariate_methods_thumb.png
-    :alt: Massively univariate analysis of a motor task from the Localizer dataset
-
-  :ref:`sphx_glr_auto_examples_07_advanced_plot_localizer_mass_univariate_methods.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Massively univariate analysis of a motor task from the Localizer dataset</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM (first and second level analysis) in a 10-subjects ...">
 
 .. only:: html
@@ -129,6 +112,23 @@ Advanced statistical analysis of brain images
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Surface-based dataset first and second level analysis of a dataset</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the results obtained in a massively univariate analysis performed at the int...">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_advanced/images/thumb/sphx_glr_plot_localizer_mass_univariate_methods_thumb.png
+    :alt: Massively univariate analysis of a motor task from the Localizer dataset
+
+  :ref:`sphx_glr_auto_examples_07_advanced_plot_localizer_mass_univariate_methods.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Massively univariate analysis of a motor task from the Localizer dataset</div>
     </div>
 
 
@@ -196,8 +196,8 @@ Advanced statistical analysis of brain images
    /auto_examples/07_advanced/plot_bids_analysis
    /auto_examples/07_advanced/plot_age_group_prediction_cross_val
    /auto_examples/07_advanced/plot_neurovault_meta_analysis
-   /auto_examples/07_advanced/plot_localizer_mass_univariate_methods
    /auto_examples/07_advanced/plot_surface_bids_analysis
+   /auto_examples/07_advanced/plot_localizer_mass_univariate_methods
    /auto_examples/07_advanced/plot_ica_neurovault
    /auto_examples/07_advanced/plot_haxby_mass_univariate
    /auto_examples/07_advanced/plot_advanced_decoding_scikit

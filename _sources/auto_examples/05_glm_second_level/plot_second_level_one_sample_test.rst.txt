@@ -44,32 +44,19 @@ from a localizer dataset. Note that we fetch individual t-maps that represent
 the :term:`Bold<BOLD>` activity estimate divided by the uncertainty about this
 estimate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-33
+.. GENERATED FROM PYTHON SOURCE LINES 28-35
 
 .. code-block:: default
 
     from nilearn.datasets import fetch_localizer_contrasts
     n_subjects = 16
-    data = fetch_localizer_contrasts(["left vs right button press"], n_subjects,
-                                     get_tmaps=True)
+    data = fetch_localizer_contrasts(
+        ["left vs right button press"], n_subjects,
+        get_tmaps=True, legacy_format=False
+    )
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning:
-
-    Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 34-39
+.. GENERATED FROM PYTHON SOURCE LINES 36-41
 
 Display subject t_maps
 ----------------------
@@ -77,7 +64,7 @@ We plot a grid with all the subjects t-maps thresholded at t = 2 for simple
 visualization purposes. The button press effect is visible among all
 subjects.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-51
+.. GENERATED FROM PYTHON SOURCE LINES 41-53
 
 .. code-block:: default
 
@@ -94,25 +81,14 @@ subjects.
     plt.show()
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_001.png
-   :alt: subjects t_map left-right button press
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_001.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 52-56
+.. GENERATED FROM PYTHON SOURCE LINES 54-58
 
 Estimate second level model
 ---------------------------
 We define the input maps and the design matrix for the second level model
 and fit it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-61
+.. GENERATED FROM PYTHON SOURCE LINES 58-63
 
 .. code-block:: default
 
@@ -122,17 +98,11 @@ and fit it.
                                  columns=['intercept'])
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 62-63
+.. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 Model specification and fit.
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-68
+.. GENERATED FROM PYTHON SOURCE LINES 65-70
 
 .. code-block:: default
 
@@ -142,35 +112,23 @@ Model specification and fit.
                                                 design_matrix=design_matrix)
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 69-71
+.. GENERATED FROM PYTHON SOURCE LINES 71-73
 
 To estimate the :term:`contrast` is very simple. We can just provide the column
 name of the design matrix.
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-73
+.. GENERATED FROM PYTHON SOURCE LINES 73-75
 
 .. code-block:: default
 
     z_map = second_level_model.compute_contrast(output_type='z_score')
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 74-75
+.. GENERATED FROM PYTHON SOURCE LINES 76-77
 
 We threshold the second level contrast at uncorrected p < 0.001 and plot it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-83
+.. GENERATED FROM PYTHON SOURCE LINES 77-85
 
 .. code-block:: default
 
@@ -183,27 +141,16 @@ We threshold the second level contrast at uncorrected p < 0.001 and plot it.
     plotting.show()
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_002.png
-   :alt: plot second level one sample test
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_002.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 84-85
+.. GENERATED FROM PYTHON SOURCE LINES 86-87
 
 As expected, we find the motor cortex.
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-89
+.. GENERATED FROM PYTHON SOURCE LINES 89-91
 
 Next, we compute the (corrected) p-values with a parametric test to compare
 them with the results from a nonparametric test.
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-99
+.. GENERATED FROM PYTHON SOURCE LINES 91-101
 
 .. code-block:: default
 
@@ -218,26 +165,11 @@ them with the results from a nonparametric test.
                             img=p_val)
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <string>:1: RuntimeWarning:
-
-    divide by zero encountered in log10
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 100-101
+.. GENERATED FROM PYTHON SOURCE LINES 102-103
 
 Let us plot the (corrected) negative log p-values for the parametric test.
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-115
+.. GENERATED FROM PYTHON SOURCE LINES 103-117
 
 .. code-block:: default
 
@@ -256,31 +188,11 @@ Let us plot the (corrected) negative log p-values for the parametric test.
     plotting.show()
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_003.png
-   :alt: plot second level one sample test
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_003.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/niimg.py:61: UserWarning:
-
-    Non-finite values detected. These values will be replaced with zeros.
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 116-117
+.. GENERATED FROM PYTHON SOURCE LINES 118-119
 
 Now, we compute the (corrected) p-values with a permutation test.
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-125
+.. GENERATED FROM PYTHON SOURCE LINES 119-127
 
 .. code-block:: default
 
@@ -293,17 +205,11 @@ Now, we compute the (corrected) p-values with a permutation test.
                                  smoothing_fwhm=8.0, n_jobs=1)
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 126-127
+.. GENERATED FROM PYTHON SOURCE LINES 128-129
 
 Let us plot the (corrected) negative log p-values for the nonparametric test.
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-139
+.. GENERATED FROM PYTHON SOURCE LINES 129-141
 
 .. code-block:: default
 
@@ -321,22 +227,11 @@ Let us plot the (corrected) negative log p-values for the nonparametric test.
     # the usual parametric procedure.
 
 
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_004.png
-   :alt: plot second level one sample test
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_004.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  16.265 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  48 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_second_level_one_sample_test.py:

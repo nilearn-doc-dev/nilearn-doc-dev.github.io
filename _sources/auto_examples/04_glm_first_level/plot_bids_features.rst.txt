@@ -77,12 +77,6 @@ FSL analysis that we can employ for comparison with the Nilearn estimation.
     data_dir, _ = fetch_openneuro_dataset(urls=urls)
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 55-66
 
 Obtain FirstLevelModel objects automatically and fit arguments
@@ -111,21 +105,6 @@ case were produced by the :term:`fMRIPrep` :term:`BIDS` app.
                               derivatives_folder=derivatives_folder)
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:894: UserWarning:
-
-    SliceTimingRef not found in file /home/alexis/nilearn_data/ds000030/ds000030_R1.0.4/uncompressed/sub-10159/func/sub-10159_task-stopsignal_bold.json. It will be assumed that the slice timing reference is 0.0 percent of the repetition time. If it is not the case it will need to be set manually in the generated list of models
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 76-77
 
 Access the model and model arguments of the subject and process events.
@@ -139,17 +118,11 @@ Access the model and model arguments of the subject and process events.
     subject = 'sub-' + model.subject_label
 
     import os
-    from nilearn._utils.glm import get_design_from_fslmat
+    from nilearn.interfaces.fsl import get_design_from_fslmat
     fsl_design_matrix_path = os.path.join(
         data_dir, 'derivatives', 'task', subject, 'stopsignal.feat', 'design.mat')
     design_matrix = get_design_from_fslmat(
         fsl_design_matrix_path, column_names=None)
-
-
-
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 89-92
@@ -168,12 +141,6 @@ definition.
     design_matrix.columns = design_columns
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 98-101
 
 First level model estimation (one subject)
@@ -187,19 +154,6 @@ We fit the first level model for one subject.
     model.fit(imgs, design_matrices=[design_matrix])
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    FirstLevelModel(signal_scaling=True, smoothing_fwhm=5.0, subject_label='10159',
-                    t_r=2.0)
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 104-106
 
 Then we compute the StopSuccess - Go contrast. We can use the column names
@@ -210,12 +164,6 @@ of the design matrix.
 .. code-block:: default
 
     z_map = model.compute_contrast('StopSuccess - Go')
-
-
-
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 109-111
@@ -249,36 +197,6 @@ available in the dataset.
     plt.show()
 
 
-
-
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_001.png
-         :alt: plot bids features
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_001.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_002.png
-         :alt: plot bids features
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_002.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_003.png
-         :alt: Histogram of imgs values
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_003.png
-         :class: sphx-glr-multi-img
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 133-136
 
 Simple statistical report of thresholded contrast
@@ -297,29 +215,6 @@ We display the contrast plot and table with cluster information
     plt.show()
 
 
-
-
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_004.png
-         :alt: plot bids features
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_004.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_005.png
-         :alt: plot bids features
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_005.png
-         :class: sphx-glr-multi-img
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 144-146
 
 We can get a latex table from a Pandas Dataframe for display and publication
@@ -331,37 +226,6 @@ purposes
 
     from nilearn.reporting import get_clusters_table
     print(get_clusters_table(z_map, norm.isf(0.001), 10).to_latex())
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/singbrain/repo/nilearn/examples/04_glm_first_level/plot_bids_features.py:147: FutureWarning:
-
-    In future versions `DataFrame.to_latex` is expected to utilise the base implementation of `Styler.to_latex` for formatting and rendering. The arguments signature may therefore change. It is recommended instead to use `DataFrame.style.to_latex` which also contains additional functionality.
-
-    \begin{tabular}{llrrrrl}
-    \toprule
-    {} & Cluster ID &     X &     Y &     Z &  Peak Stat & Cluster Size (mm3) \\
-    \midrule
-    0 &          1 & -66.0 & -45.0 &  22.0 &   5.307532 &                108 \\
-    1 &          2 & -63.0 & -39.0 &  22.0 &   4.827078 &                972 \\
-    2 &          3 & -42.0 &   9.0 &  30.0 &   4.683343 &                324 \\
-    3 &          4 & -45.0 &  18.0 &  22.0 &   4.468989 &                612 \\
-    4 &          5 & -57.0 & -48.0 &  10.0 &   4.254210 &                792 \\
-    5 &         5a & -51.0 & -39.0 &  10.0 &   3.669244 &                    \\
-    6 &          6 &  33.0 &  42.0 &  34.0 &   3.906274 &                288 \\
-    7 &         6a &  30.0 &  42.0 &  26.0 &   3.734401 &                    \\
-    8 &          7 & -42.0 &  12.0 &  26.0 &   3.496939 &                 36 \\
-    \bottomrule
-    \end{tabular}
-
-
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 150-154
@@ -383,12 +247,6 @@ we can quickly create a summary report.
                              )
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 162-163
 
 We have several ways to access the report:
@@ -403,17 +261,11 @@ We have several ways to access the report:
     # report.open_in_browser()
 
 
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  43.433 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  526 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_bids_features.py:

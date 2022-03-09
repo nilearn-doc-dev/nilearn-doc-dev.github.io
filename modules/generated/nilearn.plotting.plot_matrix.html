@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.plotting.plot_matrix: Visualizing Megatrawls Network Matrices from Human Connectome Project Visualizing Megatrawls Network Matrices from Human Connectome Project The haxby da..." />
+<meta property="og:description" content="Examples using nilearn.plotting.plot_matrix: The haxby dataset: different multi-class strategies The haxby dataset: different multi-class strategies Extract signals on spheres and plot a connectome..." />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_visualize_megatrawls_netmats_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_haxby_multiclass_thumb.png" />
   
-<meta property="og:image:alt" content="Visualizing Megatrawls Network Matrices from Human Connectome Project" />
+<meta property="og:image:alt" content="The haxby dataset: different multi-class strategies" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.plotting.plot_roi" href="nilearn.plotting.plot_roi.html" /><link rel="prev" title="nilearn.plotting.plot_epi" href="nilearn.plotting.plot_epi.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
@@ -240,8 +240,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_data_driven_parcellations.html">Clustering methods to learn a brain parcellation from fMRI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_sphere_based_connectome.html">Extract signals on spheres and plot a connectome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_data_driven_parcellations.html">Clustering methods to learn a brain parcellation from fMRI</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/04_glm_first_level/index.html">GLM: First level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -290,8 +290,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
@@ -611,7 +611,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../nistats_migration.html">Migrating from Nistats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../maintenance.html">Maintenance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../whats_new.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes/whats_new.html">What’s new</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../authors.html">Team</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/nilearn/nilearn">GitHub Repository</a></li>
 </ul>
@@ -656,27 +656,33 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.plotting.plot_matrix<a class="headerlink" href="#nilearn-plotting-plot-matrix" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.plotting.plot_matrix">
-<span class="sig-prename descclassname"><span class="pre">nilearn.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap=&lt;matplotlib.colors.LinearSegmentedColormap</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tri='full'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_fit=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reorder=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/b57af2c7/nilearn/plotting/matrix_plotting.py#L40"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.plotting.plot_matrix" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap=&lt;matplotlib.colors.LinearSegmentedColormap</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tri='full'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_fit=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reorder=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/d3b2e0b2/nilearn/plotting/matrix_plotting.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.plotting.plot_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot the given matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>mat</strong><span class="classifier">2-D numpy array</span></dt><dd><p>Matrix to be plotted.</p>
+<dt><strong>mat</strong><span class="classifier">2-D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></span></dt><dd><p>Matrix to be plotted.</p>
 </dd>
 <dt><strong>title</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, or None, optional</span></dt><dd><p>The title displayed on the figure.
 Default=None.</p>
 </dd>
-<dt><strong>labels</strong><span class="classifier">list, ndarray of strings, empty list, False, or None, optional</span></dt><dd><p>The label of each row and column. Needs to be the same
+<dt><strong>labels</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a>, or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>,    or False, or None, optional</span></dt><dd><p>The label of each row and column. Needs to be the same
 length as rows/columns of mat. If False, None, or an
 empty list, no labels are plotted.</p>
 </dd>
-<dt><strong>figure</strong><span class="classifier">figure instance, figsize tuple, or None, optional</span></dt><dd><p>Sets the figure used. This argument can be either an existing
+<dt><strong>figure</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a>, figsize <a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code></a>,    or None, optional</span></dt><dd><p>Sets the figure used. This argument can be either an existing
 figure, or a pair (width, height) that gives the size of a
-newly-created figure.
-Specifying both axes and figure is not allowed.</p>
+newly-created figure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Specifying both axes and figure is not allowed.</p>
+</div>
 </dd>
-<dt><strong>axes</strong><span class="classifier">None or Axes, optional</span></dt><dd><p>Axes instance to be plotted on. Creates a new one if None.
-Specifying both axes and figure is not allowed.</p>
+<dt><strong>axes</strong><span class="classifier">None or <a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a>, optional</span></dt><dd><p>Axes instance to be plotted on. Creates a new one if None.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Specifying both axes and figure is not allowed.</p>
+</div>
 </dd>
 <dt><strong>colorbar</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, display a colorbar on the right of the plots.
 Default=True.</p>
@@ -685,12 +691,17 @@ Default=True.</p>
 a matplotlib colormap, or a matplotlib colormap object.
 Default=`plt.cm.RdBu_r`.</p>
 </dd>
-<dt><strong>tri</strong><span class="classifier">{‘full’, ‘lower’, ‘diag’}, optional</span></dt><dd><p>Which triangular part of the matrix to plot:
-‘lower’ is the lower part, ‘diag’ is the lower including
-diagonal, and ‘full’ is the full matrix.
-Default=’full’.</p>
+<dt><strong>tri</strong><span class="classifier">{‘full’, ‘lower’, ‘diag’}, optional</span></dt><dd><p>Which triangular part of the matrix to plot:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>‘lower’: Plot the lower part</p></li>
+<li><p>‘diag’: Plot the lower part with the diagonal</p></li>
+<li><p>‘full’: Plot the full matrix</p></li>
+</ul>
+</div></blockquote>
+<p>Default=’full’.</p>
 </dd>
-<dt><strong>auto_fit</strong><span class="classifier">boolean, optional</span></dt><dd><p>If auto_fit is True, the axes are dimensioned to give room
+<dt><strong>auto_fit</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional</span></dt><dd><p>If auto_fit is True, the axes are dimensioned to give room
 for the labels. This assumes that the labels are resting
 against the bottom and left edges of the figure.
 Default=True.</p>
@@ -698,7 +709,7 @@ Default=True.</p>
 <dt><strong>grid</strong><span class="classifier">color or False, optional</span></dt><dd><p>If not False, a grid is plotted to separate rows and columns
 using the given color. Default=False.</p>
 </dd>
-<dt><strong>reorder</strong><span class="classifier">boolean or {‘single’, ‘complete’, ‘average’}, optional</span></dt><dd><p>If not False, reorders the matrix into blocks of clusters.
+<dt><strong>reorder</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> or {‘single’, ‘complete’, ‘average’}, optional</span></dt><dd><p>If not False, reorders the matrix into blocks of clusters.
 Accepted linkage options for the clustering are ‘single’,
 ‘complete’, and ‘average’. True defaults to average linkage.
 Default=False.</p>
@@ -715,8 +726,8 @@ Default=False.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>display</strong><span class="classifier">instance of matplotlib</span></dt><dd><p>Axes image.</p>
+<dd class="field-even"><dl>
+<dt><strong>display</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a></span></dt><dd><p>Axes image.</p>
 </dd>
 </dl>
 </dd>
@@ -724,33 +735,9 @@ Default=False.</p>
 </dd></dl>
 <section id="examples-using-nilearn-plotting-plot-matrix">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.plotting.plot_matrix</span></code><a class="headerlink" href="#examples-using-nilearn-plotting-plot-matrix" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="This example shows how to fetch network matrices data from HCP beta-release of the Functional C..."><img alt="Visualizing Megatrawls Network Matrices from Human Connectome Project" src="../../_images/sphx_glr_plot_visualize_megatrawls_netmats_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/01_plotting/plot_visualize_megatrawls_netmats.html#sphx-glr-auto-examples-01-plotting-plot-visualize-megatrawls-netmats-py"><span class="std std-ref">Visualizing Megatrawls Network Matrices from Human Connectome Project</span></a></p>
-<div class="sphx-glr-thumbnail-title">Visualizing Megatrawls Network Matrices from Human Connectome Project</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="We compare one vs all and one vs one multi-class strategies: the overall cross-validated accura..."><img alt="The haxby dataset: different multi-class strategies" src="../../_images/sphx_glr_plot_haxby_multiclass_thumb.png"/>
+<div class="sphx-glr-thumbcontainer" tooltip="We compare one vs all and one vs one multi-class strategies: the overall cross-validated accura..."><img alt="The haxby dataset: different multi-class strategies" src="../../_images/sphx_glr_plot_haxby_multiclass_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_multiclass.html#sphx-glr-auto-examples-02-decoding-plot-haxby-multiclass-py"><span class="std std-ref">The haxby dataset: different multi-class strategies</span></a></p>
 <div class="sphx-glr-thumbnail-title">The haxby dataset: different multi-class strategies</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example extracts the signal on regions defined via a probabilistic atlas, to construct a f..."><img alt="Extracting signals of a probabilistic atlas of functional regions" src="../../_images/sphx_glr_plot_probabilistic_atlas_extraction_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_probabilistic_atlas_extraction.html#sphx-glr-auto-examples-03-connectivity-plot-probabilistic-atlas-extraction-py"><span class="std std-ref">Extracting signals of a probabilistic atlas of functional regions</span></a></p>
-<div class="sphx-glr-thumbnail-title">Extracting signals of a probabilistic atlas of functional regions</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example constructs a functional connectome using the sparse inverse covariance."><img alt="Computing a connectome with sparse inverse covariance" src="../../_images/sphx_glr_plot_inverse_covariance_connectome_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html#sphx-glr-auto-examples-03-connectivity-plot-inverse-covariance-connectome-py"><span class="std std-ref">Computing a connectome with sparse inverse covariance</span></a></p>
-<div class="sphx-glr-thumbnail-title">Computing a connectome with sparse inverse covariance</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows a comparison of graph lasso and group-sparse covariance estimation of connec..."><img alt="Connectivity structure estimation on simulated data" src="../../_images/sphx_glr_plot_simulated_connectome_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_simulated_connectome.html#sphx-glr-auto-examples-03-connectivity-plot-simulated-connectome-py"><span class="std std-ref">Connectivity structure estimation on simulated data</span></a></p>
-<div class="sphx-glr-thumbnail-title">Connectivity structure estimation on simulated data</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to estimate a connectome on a group of subjects using the group sparse i..."><img alt="Group Sparse inverse covariance for multi-subject connectome" src="../../_images/sphx_glr_plot_multi_subject_connectome_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_multi_subject_connectome.html#sphx-glr-auto-examples-03-connectivity-plot-multi-subject-connectome-py"><span class="std std-ref">Group Sparse inverse covariance for multi-subject connectome</span></a></p>
-<div class="sphx-glr-thumbnail-title">Group Sparse inverse covariance for multi-subject connectome</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use nilearn.regions.RegionExtractor to extract spatially constrained ..."><img alt="Regions extraction using :term:`Dictionary learning` and functional connectomes" src="../../_images/sphx_glr_plot_extract_regions_dictlearning_maps_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html#sphx-glr-auto-examples-03-connectivity-plot-extract-regions-dictlearning-maps-py"><span class="std std-ref">Regions extraction using Dictionary learning and functional connectomes</span></a></p>
-<div class="sphx-glr-thumbnail-title">Regions extraction using :term:`Dictionary learning` and functional connectomes</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example compares different kinds of functional connectivity between regions of interest : ..."><img alt="Classification of age groups using functional connectivity" src="../../_images/sphx_glr_plot_group_level_connectivity_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_group_level_connectivity.html#sphx-glr-auto-examples-03-connectivity-plot-group-level-connectivity-py"><span class="std std-ref">Classification of age groups using functional connectivity</span></a></p>
-<div class="sphx-glr-thumbnail-title">Classification of age groups using functional connectivity</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here we show how to extract signals from a brain parcellation and compute a correlation matrix."><img alt="Extracting signals from a brain parcellation" src="../../_images/sphx_glr_plot_signal_extraction_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_signal_extraction.html#sphx-glr-auto-examples-03-connectivity-plot-signal-extraction-py"><span class="std std-ref">Extracting signals from a brain parcellation</span></a></p>
-<div class="sphx-glr-thumbnail-title">Extracting signals from a brain parcellation</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract signals from spherical regions. We show how to build spheres ..."><img alt="Extract signals on spheres and plot a connectome" src="../../_images/sphx_glr_plot_sphere_based_connectome_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_sphere_based_connectome.html#sphx-glr-auto-examples-03-connectivity-plot-sphere-based-connectome-py"><span class="std std-ref">Extract signals on spheres and plot a connectome</span></a></p>
 <div class="sphx-glr-thumbnail-title">Extract signals on spheres and plot a connectome</div>
@@ -786,7 +773,7 @@ Default=False.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; The nilearn developers 2010-2021
+                Copyright &#169; The nilearn developers 2010-2022
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

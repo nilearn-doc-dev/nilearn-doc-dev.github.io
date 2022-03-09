@@ -44,19 +44,6 @@ Fetch data
           haxby_dataset.func[0])
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    First anatomical nifti image (3D) located is at: /home/alexis/nilearn_data/haxby2001/subj2/anat.nii.gz
-    First functional nifti image (4D) is located at: /home/alexis/nilearn_data/haxby2001/subj2/bold.nii.gz
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 23-25
 
 Visualization
@@ -73,24 +60,7 @@ Visualization
     mean_haxby = mean_img(func_filename)
 
     from nilearn.plotting import plot_epi, show
-    plot_epi(mean_haxby)
-
-
-
-
-.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_visualization_001.png
-   :alt: plot visualization
-   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_visualization_001.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61bf38c970>
-
+    plot_epi(mean_haxby, colorbar=True, cbar_tick_format="%i")
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 35-38
@@ -109,23 +79,6 @@ Simple computation of a mask from the fMRI data
     # Visualize it as an ROI
     from nilearn.plotting import plot_roi
     plot_roi(mask_img, mean_haxby)
-
-
-
-
-.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_visualization_002.png
-   :alt: plot visualization
-   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_visualization_002.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61bf424580>
-
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 46-48
@@ -155,22 +108,11 @@ Applying the mask to extract the corresponding time series
     show()
 
 
-
-.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_visualization_003.png
-   :alt: plot visualization
-   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_visualization_003.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  22.878 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  1359 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_visualization.py:

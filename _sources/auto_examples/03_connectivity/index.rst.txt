@@ -188,23 +188,6 @@ See :ref:`parcellating_brain`, :ref:`extracting_rsn` or
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="We use spatially-constrained Ward-clustering, KMeans, and Recursive Neighbor Agglomeration (ReN...">
-
-.. only:: html
-
-  .. image:: /auto_examples/03_connectivity/images/thumb/sphx_glr_plot_data_driven_parcellations_thumb.png
-    :alt: Clustering methods to learn a brain parcellation from fMRI
-
-  :ref:`sphx_glr_auto_examples_03_connectivity_plot_data_driven_parcellations.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Clustering methods to learn a brain parcellation from fMRI</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to extract signals from spherical regions. We show how to build spheres ...">
 
 .. only:: html
@@ -217,6 +200,23 @@ See :ref:`parcellating_brain`, :ref:`extracting_rsn` or
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Extract signals on spheres and plot a connectome</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="We use spatially-constrained Ward-clustering, KMeans, Hierarchical KMeans and Recursive Neighbo...">
+
+.. only:: html
+
+  .. image:: /auto_examples/03_connectivity/images/thumb/sphx_glr_plot_data_driven_parcellations_thumb.png
+    :alt: Clustering methods to learn a brain parcellation from fMRI
+
+  :ref:`sphx_glr_auto_examples_03_connectivity_plot_data_driven_parcellations.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Clustering methods to learn a brain parcellation from fMRI</div>
     </div>
 
 
@@ -238,6 +238,6 @@ See :ref:`parcellating_brain`, :ref:`extracting_rsn` or
    /auto_examples/03_connectivity/plot_atlas_comparison
    /auto_examples/03_connectivity/plot_group_level_connectivity
    /auto_examples/03_connectivity/plot_signal_extraction
-   /auto_examples/03_connectivity/plot_data_driven_parcellations
    /auto_examples/03_connectivity/plot_sphere_based_connectome
+   /auto_examples/03_connectivity/plot_data_driven_parcellations
 

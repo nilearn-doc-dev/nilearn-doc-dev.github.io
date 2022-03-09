@@ -32,7 +32,7 @@ from a 4D functional image.
 Fetching data from ADHD dataset
 -------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-23
+.. GENERATED FROM PYTHON SOURCE LINES 15-27
 
 .. code-block:: default
 
@@ -40,31 +40,21 @@ Fetching data from ADHD dataset
 
     adhd_dataset = datasets.fetch_adhd(n_subjects=1)
 
+    # plot_carpet can infer TR from the image header, but preprocessing can often
+    # overwrite that particular header field, so we will be explicit.
+    t_r = 2.
+
     # Print basic information on the dataset
     print('First subject functional nifti image (4D) is at: %s' %
           adhd_dataset.func[0])  # 4D data
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/singbrain/repo/nilearn/nilearn/datasets/func.py:243: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
-      phenotypic = np.genfromtxt(phenotypic, names=True, delimiter=',',
-    First subject functional nifti image (4D) is at: /home/alexis/nilearn_data/adhd/data/0010042/0010042_rest_tshift_RPI_voreg_mni.nii.gz
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 24-26
+.. GENERATED FROM PYTHON SOURCE LINES 28-30
 
 Deriving a mask
 ---------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-31
+.. GENERATED FROM PYTHON SOURCE LINES 30-35
 
 .. code-block:: default
 
@@ -74,18 +64,12 @@ Deriving a mask
     mask_img = masking.compute_epi_mask(adhd_dataset.func[0])
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 32-34
+.. GENERATED FROM PYTHON SOURCE LINES 36-38
 
 Visualizing global patterns over time
 -------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-42
+.. GENERATED FROM PYTHON SOURCE LINES 38-46
 
 .. code-block:: default
 
@@ -93,30 +77,19 @@ Visualizing global patterns over time
 
     from nilearn.plotting import plot_carpet
 
-    display = plot_carpet(adhd_dataset.func[0], mask_img)
+    display = plot_carpet(adhd_dataset.func[0], mask_img, t_r=t_r)
 
     display.show()
 
 
-
-
-.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_carpet_001.png
-   :alt: plot carpet
-   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_carpet_001.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 43-47
+.. GENERATED FROM PYTHON SOURCE LINES 47-51
 
 Deriving a label-based mask
 ---------------------------
 Create a gray matter/white matter/cerebrospinal fluid mask from
 ICBM152 tissue probability maps.
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-64
+.. GENERATED FROM PYTHON SOURCE LINES 51-68
 
 .. code-block:: default
 
@@ -138,18 +111,12 @@ ICBM152 tissue probability maps.
     )
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 65-67
+.. GENERATED FROM PYTHON SOURCE LINES 69-71
 
 Visualizing global patterns, separated by tissue type
 -----------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-81
+.. GENERATED FROM PYTHON SOURCE LINES 71-86
 
 .. code-block:: default
 
@@ -162,6 +129,7 @@ Visualizing global patterns, separated by tissue type
     display = plot_carpet(
         adhd_dataset.func[0],
         discrete_atlas_img,
+        t_r=t_r,
         mask_labels=map_labels,
         axes=ax,
     )
@@ -169,30 +137,11 @@ Visualizing global patterns, separated by tissue type
     fig.show()
 
 
-
-.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_carpet_002.png
-   :alt: plot carpet
-   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_carpet_002.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/singbrain/repo/nilearn/nilearn/image/resampling.py:531: UserWarning: Casting data from int32 to float32
-      warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-    Coercing atlas_values to <class 'int'>
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  16.199 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  1061 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_carpet.py:

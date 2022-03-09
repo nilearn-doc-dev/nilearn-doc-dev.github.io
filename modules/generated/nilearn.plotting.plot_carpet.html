@@ -240,8 +240,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_data_driven_parcellations.html">Clustering methods to learn a brain parcellation from fMRI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_sphere_based_connectome.html">Extract signals on spheres and plot a connectome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_data_driven_parcellations.html">Clustering methods to learn a brain parcellation from fMRI</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/04_glm_first_level/index.html">GLM: First level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -290,8 +290,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
@@ -611,7 +611,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../nistats_migration.html">Migrating from Nistats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../maintenance.html">Maintenance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../whats_new.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes/whats_new.html">What’s new</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../authors.html">Team</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/nilearn/nilearn">GitHub Repository</a></li>
 </ul>
@@ -656,7 +656,7 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.plotting.plot_carpet<a class="headerlink" href="#nilearn-plotting-plot-carpet" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.plotting.plot_carpet">
-<span class="sig-prename descclassname"><span class="pre">nilearn.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_carpet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_img=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_labels=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detrend=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap=&lt;matplotlib.colors.LinearSegmentedColormap</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/b57af2c7/nilearn/plotting/img_plotting.py#L1311"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.plotting.plot_carpet" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_carpet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_img=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_labels=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_r=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detrend=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap=&lt;matplotlib.colors.LinearSegmentedColormap</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/d3b2e0b2/nilearn/plotting/img_plotting.py#L1356"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.plotting.plot_carpet" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot an image representation of voxel intensities across time.</p>
 <p>This figure is also known as a “grayplot” or “Power plot”.</p>
 <dl class="field-list">
@@ -675,6 +675,19 @@ See <a class="reference external" href="http://nilearn.github.io/manipulating_im
 <dt><strong>mask_labels</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>, optional</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">mask_img</span></code> corresponds to an atlas, then this dictionary maps
 values from the <code class="docutils literal notranslate"><span class="pre">mask_img</span></code> to labels. Dictionary keys are labels
 and values are values within the atlas.</p>
+</dd>
+<dt><strong>t_r</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or None, optional</span></dt><dd><p>Repetition time, in seconds (sampling period).
+Set to <code class="docutils literal notranslate"><span class="pre">None</span></code> if not provided.
+Default=None.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">t_r</span></code> is not provided, it will be inferred from <code class="docutils literal notranslate"><span class="pre">img</span></code>’s
+header (<code class="docutils literal notranslate"><span class="pre">img.header.get_zooms()[-1]</span></code>).</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.9.1.dev: </span>Prior to this, <code class="docutils literal notranslate"><span class="pre">t_r</span></code> would be inferred from <code class="docutils literal notranslate"><span class="pre">img</span></code> without
+user input.</p>
+</div>
 </dd>
 <dt><strong>detrend</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional</span></dt><dd><p>Detrend and z-score the data prior to plotting. Default=True.</p>
 </dd>
@@ -702,7 +715,7 @@ Default=None.</p>
 a matplotlib colormap, or a matplotlib colormap object.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This argumeent is used only if an atlas is used.</p>
+<p>This argument is used only if an atlas is used.</p>
 </div>
 <p>Default=`plt.cm.gist_ncar`.</p>
 </dd>
@@ -764,7 +777,7 @@ to have fewer than 800 volumes before being plotted.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; The nilearn developers 2010-2021
+                Copyright &#169; The nilearn developers 2010-2022
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

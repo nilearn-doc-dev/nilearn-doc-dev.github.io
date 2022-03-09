@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.plotting.find_probabilistic_atlas_cut_coords: Group Sparse inverse covariance for multi-subject connectome Group Sparse inverse covariance for multi-subject connectome Region..." />
+<meta property="og:description" content="Examples using nilearn.plotting.find_probabilistic_atlas_cut_coords: Comparing connectomes on different reference atlases Comparing connectomes on different reference atlases" />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_multi_subject_connectome_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_atlas_comparison_thumb.png" />
   
-<meta property="og:image:alt" content="Group Sparse inverse covariance for multi-subject connectome" />
+<meta property="og:image:alt" content="Comparing connectomes on different reference atlases" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.plotting.plot_anat" href="nilearn.plotting.plot_anat.html" /><link rel="prev" title="nilearn.plotting.find_parcellation_cut_coords" href="nilearn.plotting.find_parcellation_cut_coords.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
@@ -240,8 +240,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_data_driven_parcellations.html">Clustering methods to learn a brain parcellation from fMRI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_sphere_based_connectome.html">Extract signals on spheres and plot a connectome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_data_driven_parcellations.html">Clustering methods to learn a brain parcellation from fMRI</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/04_glm_first_level/index.html">GLM: First level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -290,8 +290,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
@@ -611,7 +611,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../nistats_migration.html">Migrating from Nistats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../maintenance.html">Maintenance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../whats_new.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes/whats_new.html">What’s new</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../authors.html">Team</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/nilearn/nilearn">GitHub Repository</a></li>
 </ul>
@@ -656,7 +656,7 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.plotting.find_probabilistic_atlas_cut_coords<a class="headerlink" href="#nilearn-plotting-find-probabilistic-atlas-cut-coords" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.plotting.find_probabilistic_atlas_cut_coords">
-<span class="sig-prename descclassname"><span class="pre">nilearn.plotting.</span></span><span class="sig-name descname"><span class="pre">find_probabilistic_atlas_cut_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maps_img</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/b57af2c7/nilearn/plotting/find_cuts.py#L476"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.plotting.find_probabilistic_atlas_cut_coords" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.plotting.</span></span><span class="sig-name descname"><span class="pre">find_probabilistic_atlas_cut_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maps_img</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/d3b2e0b2/nilearn/plotting/find_cuts.py#L476"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.plotting.find_probabilistic_atlas_cut_coords" title="Permalink to this definition">#</a></dt>
 <dd><p>Return coordinates of center probabilistic atlas 4D image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -683,13 +683,7 @@ dimension.</p>
 </dd></dl>
 <section id="examples-using-nilearn-plotting-find-probabilistic-atlas-cut-coords">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.plotting.find_probabilistic_atlas_cut_coords</span></code><a class="headerlink" href="#examples-using-nilearn-plotting-find-probabilistic-atlas-cut-coords" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="This example shows how to estimate a connectome on a group of subjects using the group sparse i..."><img alt="Group Sparse inverse covariance for multi-subject connectome" src="../../_images/sphx_glr_plot_multi_subject_connectome_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_multi_subject_connectome.html#sphx-glr-auto-examples-03-connectivity-plot-multi-subject-connectome-py"><span class="std std-ref">Group Sparse inverse covariance for multi-subject connectome</span></a></p>
-<div class="sphx-glr-thumbnail-title">Group Sparse inverse covariance for multi-subject connectome</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use nilearn.regions.RegionExtractor to extract spatially constrained ..."><img alt="Regions extraction using :term:`Dictionary learning` and functional connectomes" src="../../_images/sphx_glr_plot_extract_regions_dictlearning_maps_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html#sphx-glr-auto-examples-03-connectivity-plot-extract-regions-dictlearning-maps-py"><span class="std std-ref">Regions extraction using Dictionary learning and functional connectomes</span></a></p>
-<div class="sphx-glr-thumbnail-title">Regions extraction using :term:`Dictionary learning` and functional connectomes</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This examples shows how to turn a parcellation into connectome for visualization. This requires..."><img alt="Comparing connectomes on different reference atlases" src="../../_images/sphx_glr_plot_atlas_comparison_thumb.png"/>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples shows how to turn a parcellation into connectome for visualization. This requires..."><img alt="Comparing connectomes on different reference atlases" src="../../_images/sphx_glr_plot_atlas_comparison_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_atlas_comparison.html#sphx-glr-auto-examples-03-connectivity-plot-atlas-comparison-py"><span class="std std-ref">Comparing connectomes on different reference atlases</span></a></p>
 <div class="sphx-glr-thumbnail-title">Comparing connectomes on different reference atlases</div>
 </div><div style="clear:both"></div></section>
@@ -724,7 +718,7 @@ dimension.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; The nilearn developers 2010-2021
+                Copyright &#169; The nilearn developers 2010-2022
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

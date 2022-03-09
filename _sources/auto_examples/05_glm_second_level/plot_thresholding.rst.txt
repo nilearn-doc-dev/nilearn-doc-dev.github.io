@@ -34,49 +34,29 @@ Prepare some images for a simple t test
 ----------------------------------------
 This is a simple manually performed second level analysis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-23
+.. GENERATED FROM PYTHON SOURCE LINES 18-24
 
 .. code-block:: default
 
     from nilearn import datasets
     n_samples = 20
     localizer_dataset = datasets.fetch_localizer_calculation_task(
-        n_subjects=n_samples)
+        n_subjects=n_samples, legacy_format=False
+    )
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning:
-
-    Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 24-25
+.. GENERATED FROM PYTHON SOURCE LINES 25-26
 
 Get the set of individual statstical maps (contrast estimates)
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-27
+.. GENERATED FROM PYTHON SOURCE LINES 26-28
 
 .. code-block:: default
 
     cmap_filenames = localizer_dataset.cmaps
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 28-33
+.. GENERATED FROM PYTHON SOURCE LINES 29-34
 
 Perform the second level analysis
 ----------------------------------
@@ -84,7 +64,7 @@ Perform the second level analysis
 First, we define a design matrix for the model. As the model is trivial
 (one-sample test), the design matrix is just one column with ones.
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-36
+.. GENERATED FROM PYTHON SOURCE LINES 34-37
 
 .. code-block:: default
 
@@ -92,17 +72,11 @@ First, we define a design matrix for the model. As the model is trivial
     design_matrix = pd.DataFrame([1] * n_samples, columns=['intercept'])
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 37-38
+.. GENERATED FROM PYTHON SOURCE LINES 38-39
 
 Next, we specify and estimate the model.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-42
+.. GENERATED FROM PYTHON SOURCE LINES 39-43
 
 .. code-block:: default
 
@@ -111,36 +85,24 @@ Next, we specify and estimate the model.
         cmap_filenames, design_matrix=design_matrix)
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 43-45
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 Compute the only possible contrast: the one-sample test. Since there
 is only one possible contrast, we don't need to specify it in detail.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-47
+.. GENERATED FROM PYTHON SOURCE LINES 46-48
 
 .. code-block:: default
 
     z_map = second_level_model.compute_contrast(output_type='z_score')
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 48-50
+.. GENERATED FROM PYTHON SOURCE LINES 49-51
 
 Threshold the resulting map without multiple comparisons correction,
 abs(z) > 3.29 (equivalent to p < 0.001), cluster size > 10 voxels.
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-58
+.. GENERATED FROM PYTHON SOURCE LINES 51-59
 
 .. code-block:: default
 
@@ -153,18 +115,12 @@ abs(z) > 3.29 (equivalent to p < 0.001), cluster size > 10 voxels.
     )
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 60-62
 
 This is equivalent to thresholding a z-statistic image with a
 false positive rate < .001, cluster size > 10 voxels.
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-70
+.. GENERATED FROM PYTHON SOURCE LINES 62-71
 
 .. code-block:: default
 
@@ -178,17 +134,11 @@ false positive rate < .001, cluster size > 10 voxels.
     )
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 71-72
+.. GENERATED FROM PYTHON SOURCE LINES 72-73
 
 Now use FDR <.05 (False Discovery Rate) and no cluster-level threshold.
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-76
+.. GENERATED FROM PYTHON SOURCE LINES 73-77
 
 .. code-block:: default
 
@@ -197,25 +147,13 @@ Now use FDR <.05 (False Discovery Rate) and no cluster-level threshold.
     print('The FDR=.05 threshold is %.3g' % threshold2)
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    The FDR=.05 threshold is 2.37
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 77-80
+.. GENERATED FROM PYTHON SOURCE LINES 78-81
 
 Now use FWER <.05 (Family-Wise Error Rate) and no cluster-level
 threshold. As the data has not been intensively smoothed, we can
 use a simple Bonferroni correction.
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-84
+.. GENERATED FROM PYTHON SOURCE LINES 81-85
 
 .. code-block:: default
 
@@ -224,26 +162,14 @@ use a simple Bonferroni correction.
     print('The p<.05 Bonferroni-corrected threshold is %.3g' % threshold3)
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    The p<.05 Bonferroni-corrected threshold is 4.88
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 85-89
+.. GENERATED FROM PYTHON SOURCE LINES 86-90
 
 Visualize the results
 ---------------------
 
 First, the unthresholded map.
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-92
+.. GENERATED FROM PYTHON SOURCE LINES 90-93
 
 .. code-block:: default
 
@@ -251,23 +177,12 @@ First, the unthresholded map.
     display = plotting.plot_stat_map(z_map, title='Raw z map')
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_001.png
-   :alt: plot thresholding
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_001.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 93-95
+.. GENERATED FROM PYTHON SOURCE LINES 94-96
 
 Second, the p<.001 uncorrected-thresholded map (with only clusters > 10
 voxels).
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-99
+.. GENERATED FROM PYTHON SOURCE LINES 96-100
 
 .. code-block:: default
 
@@ -276,28 +191,11 @@ voxels).
         title='Thresholded z map, fpr <.001, clusters > 10 voxels')
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_002.png
-   :alt: plot thresholding
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_002.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619c2c8c40>
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 100-101
+.. GENERATED FROM PYTHON SOURCE LINES 101-102
 
 Third, the fdr-thresholded map.
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-105
+.. GENERATED FROM PYTHON SOURCE LINES 102-106
 
 .. code-block:: default
 
@@ -306,28 +204,11 @@ Third, the fdr-thresholded map.
                            threshold=threshold2)
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_003.png
-   :alt: plot thresholding
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_003.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b5eb2110>
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 106-107
+.. GENERATED FROM PYTHON SOURCE LINES 107-108
 
 Fourth, the Bonferroni-thresholded map.
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-111
+.. GENERATED FROM PYTHON SOURCE LINES 108-112
 
 .. code-block:: default
 
@@ -336,24 +217,7 @@ Fourth, the Bonferroni-thresholded map.
                            threshold=threshold3)
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_004.png
-   :alt: plot thresholding
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_thresholding_004.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f619c549330>
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 112-118
+.. GENERATED FROM PYTHON SOURCE LINES 113-119
 
 These different thresholds correspond to different statistical
 guarantees: in the FWER-corrected image there is only a
@@ -362,7 +226,7 @@ FDR-corrected image, 5% of the voxels found are likely to be false
 positive. In the uncorrected image, one expects a few tens of false
 positive voxels.
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-120
+.. GENERATED FROM PYTHON SOURCE LINES 119-121
 
 .. code-block:: default
 
@@ -370,17 +234,11 @@ positive voxels.
     plotting.show()
 
 
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  29.519 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  9 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_thresholding.py:

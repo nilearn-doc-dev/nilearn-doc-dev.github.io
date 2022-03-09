@@ -12,7 +12,7 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.plotting.plot_contrast_matrix: Intro to GLM Analysis: a single-session, single-subject fMRI dataset Intro to GLM Analysis: a single-session, single-subject fMRI dataset Analy..." />
+<meta property="og:description" content="Examples using nilearn.plotting.plot_contrast_matrix: Intro to GLM Analysis: a single-session, single-subject fMRI dataset Intro to GLM Analysis: a single-session, single-subject fMRI dataset First..." />
   
 <meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_single_subject_single_run_thumb.png" />
   
@@ -240,8 +240,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_data_driven_parcellations.html">Clustering methods to learn a brain parcellation from fMRI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_sphere_based_connectome.html">Extract signals on spheres and plot a connectome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_data_driven_parcellations.html">Clustering methods to learn a brain parcellation from fMRI</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/04_glm_first_level/index.html">GLM: First level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -290,8 +290,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
@@ -611,7 +611,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../nistats_migration.html">Migrating from Nistats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../maintenance.html">Maintenance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../whats_new.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes/whats_new.html">What’s new</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../authors.html">Team</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/nilearn/nilearn">GitHub Repository</a></li>
 </ul>
@@ -656,29 +656,26 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.plotting.plot_contrast_matrix<a class="headerlink" href="#nilearn-plotting-plot-contrast-matrix" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.plotting.plot_contrast_matrix">
-<span class="sig-prename descclassname"><span class="pre">nilearn.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_contrast_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contrast_def</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">design_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/b57af2c7/nilearn/plotting/matrix_plotting.py#L238"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.plotting.plot_contrast_matrix" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_contrast_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contrast_def</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">design_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/d3b2e0b2/nilearn/plotting/matrix_plotting.py#L309"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.plotting.plot_contrast_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates plot for contrast definition.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>contrast_def</strong><span class="classifier">str or array of shape (n_col) or list of (string or</span></dt><dd><blockquote>
-<div><p>array of shape (n_col))</p>
-</div></blockquote>
-<p>where <code class="docutils literal notranslate"><span class="pre">n_col</span></code> is the number of columns of the design matrix, (one
+<dt><strong>contrast_def</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of shape (n_col),    or <a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of shape (n_col)</span></dt><dd><p>where <code class="docutils literal notranslate"><span class="pre">n_col</span></code> is the number of columns of the design matrix, (one
 array per run). If only one array is provided when there are several
 runs, it will be assumed that the same contrast is desired for all
 runs. The string can be a formula compatible with
-<cite>pandas.DataFrame.eval</cite>. Basically one can use the name of the
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.eval.html#pandas.DataFrame.eval" title="(in pandas v1.4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.eval</span></code></a>. Basically one can use the name of the
 conditions as they appear in the design matrix of the fitted model
 combined with operators +- and combined with numbers with operators
 +-<cite>*</cite>/.</p>
 </dd>
-<dt><strong>design_matrix</strong><span class="classifier">pandas DataFrame</span></dt><dd><p>Design matrix to use.</p>
+<dt><strong>design_matrix</strong><span class="classifier"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>Design matrix to use.</p>
 </dd>
 <dt><strong>colorbar</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, display a colorbar on the right of the plots.
 Default=False.</p>
 </dd>
-<dt><strong>ax</strong><span class="classifier">matplotlib Axes object, optional</span></dt><dd><p>Axis on which to plot the figure. If None, a new figure will be created.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a>, optional</span></dt><dd><p>Axis on which to plot the figure. If None, a new figure will be created.</p>
 </dd>
 <dt><strong>output_file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, or None, optional</span></dt><dd><p>The name of an image file to export the plot to. Valid extensions
 are .png, .pdf, .svg. If <code class="docutils literal notranslate"><span class="pre">output_file</span></code> is not None, the plot
@@ -687,8 +684,9 @@ is saved to a file, and the display is closed.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>Plot Axes object</dt><dd></dd>
+<dd class="field-even"><dl>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a></span></dt><dd><p>Figure object.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -698,15 +696,9 @@ is saved to a file, and the display is closed.</p>
 <div class="sphx-glr-thumbcontainer" tooltip="In this tutorial, we use a General Linear Model (:term:`GLM`) to compare the fMRI signal during..."><img alt="Intro to GLM Analysis: a single-session, single-subject fMRI dataset" src="../../_images/sphx_glr_plot_single_subject_single_run_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/00_tutorials/plot_single_subject_single_run.html#sphx-glr-auto-examples-00-tutorials-plot-single-subject-single-run-py"><span class="std std-ref">Intro to GLM Analysis: a single-session, single-subject fMRI dataset</span></a></p>
 <div class="sphx-glr-thumbnail-title">Intro to GLM Analysis: a single-session, single-subject fMRI dataset</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="FIR models are used to estimate the hemodyamic response non-parametrically. The example below s..."><img alt="Analysis of an fMRI dataset with a Finite Impule Response (FIR) model" src="../../_images/sphx_glr_plot_fir_model_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_fir_model.html#sphx-glr-auto-examples-04-glm-first-level-plot-fir-model-py"><span class="std std-ref">Analysis of an fMRI dataset with a Finite Impule Response (FIR) model</span></a></p>
-<div class="sphx-glr-thumbnail-title">Analysis of an fMRI dataset with a Finite Impule Response (FIR) model</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B..."><img alt="First level analysis of a complete BIDS dataset from openneuro" src="../../_images/sphx_glr_plot_bids_features_thumb.png"/>
 <p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html#sphx-glr-auto-examples-04-glm-first-level-plot-bids-features-py"><span class="std std-ref">First level analysis of a complete BIDS dataset from openneuro</span></a></p>
 <div class="sphx-glr-thumbnail-title">First level analysis of a complete BIDS dataset from openneuro</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this tutorial, we study how first-level models are parametrized for fMRI data analysis and c..."><img alt="Understanding parameters of the first-level model" src="../../_images/sphx_glr_plot_first_level_details_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_first_level_details.html#sphx-glr-auto-examples-04-glm-first-level-plot-first-level-details-py"><span class="std std-ref">Understanding parameters of the first-level model</span></a></p>
-<div class="sphx-glr-thumbnail-title">Understanding parameters of the first-level model</div>
 </div><div style="clear:both"></div></section>
 </section>
 
@@ -739,7 +731,7 @@ is saved to a file, and the display is closed.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; The nilearn developers 2010-2021
+                Copyright &#169; The nilearn developers 2010-2022
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

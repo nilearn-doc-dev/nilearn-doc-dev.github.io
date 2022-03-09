@@ -35,38 +35,26 @@ display ROIs on top of a background image.
 Retrieve the data: the localizer dataset with contrast maps
 ------------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-27
+.. GENERATED FROM PYTHON SOURCE LINES 19-28
 
 .. code-block:: default
 
 
     from nilearn import datasets
 
-    localizer_dataset = datasets.fetch_localizer_button_task()
+    localizer_dataset = datasets.fetch_localizer_button_task(legacy_format=False)
     # Contrast map of motor task
     localizer_tmap_filename = localizer_dataset.tmap
     # Subject specific anatomical image
     localizer_anat_filename = localizer_dataset.anat
 
 
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
-      output = genfromtxt(fname, **kwargs)
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 28-30
+.. GENERATED FROM PYTHON SOURCE LINES 29-31
 
 Plotting with enhancement of background image with dim=-.5
 --------------------------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-38
+.. GENERATED FROM PYTHON SOURCE LINES 31-39
 
 .. code-block:: default
 
@@ -79,29 +67,12 @@ Plotting with enhancement of background image with dim=-.5
                            dim=-.5)
 
 
-
-
-.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_001.png
-   :alt: plot dim plotting
-   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_001.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61e8e42b60>
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 39-41
+.. GENERATED FROM PYTHON SOURCE LINES 40-42
 
 Plotting with no change of contrast in background image with dim=0
 -------------------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-47
+.. GENERATED FROM PYTHON SOURCE LINES 42-48
 
 .. code-block:: default
 
@@ -112,29 +83,12 @@ Plotting with no change of contrast in background image with dim=0
                            dim=0)
 
 
-
-
-.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_002.png
-   :alt: plot dim plotting
-   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_002.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61bf49eef0>
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 48-50
+.. GENERATED FROM PYTHON SOURCE LINES 49-51
 
 Plotting with decrease of contrast in background image with dim=.5
 -------------------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-56
+.. GENERATED FROM PYTHON SOURCE LINES 51-57
 
 .. code-block:: default
 
@@ -145,29 +99,12 @@ Plotting with decrease of contrast in background image with dim=.5
                            dim=.5)
 
 
-
-
-.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_003.png
-   :alt: plot dim plotting
-   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_003.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61bf2d8220>
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 57-59
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 Plotting with more decrease in contrast with dim=1
 ---------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-66
+.. GENERATED FROM PYTHON SOURCE LINES 60-67
 
 .. code-block:: default
 
@@ -180,22 +117,11 @@ Plotting with more decrease in contrast with dim=1
     plotting.show()
 
 
-
-.. image-sg:: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_004.png
-   :alt: plot dim plotting
-   :srcset: /auto_examples/01_plotting/images/sphx_glr_plot_dim_plotting_004.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.549 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  9 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_dim_plotting.py:

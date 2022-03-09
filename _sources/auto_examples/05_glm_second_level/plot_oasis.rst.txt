@@ -52,65 +52,40 @@ Note that more power would be obtained from using a larger sample of subjects.
     n_subjects = 100  # more subjects requires more memory
 
 
-
-
-
-
-
-
 .. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 Load Oasis dataset
 ------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-40
+.. GENERATED FROM PYTHON SOURCE LINES 34-42
 
 .. code-block:: default
 
 
     from nilearn import datasets
-    oasis_dataset = datasets.fetch_oasis_vbm(n_subjects=n_subjects)
+    oasis_dataset = datasets.fetch_oasis_vbm(
+        n_subjects=n_subjects, legacy_format=False
+    )
     gray_matter_map_filenames = oasis_dataset.gray_matter_maps
     age = oasis_dataset.ext_vars['age'].astype(float)
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning:
-
-    Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 41-42
+.. GENERATED FROM PYTHON SOURCE LINES 43-44
 
 Sex is encoded as 'M' or 'F'. Hence, we make it a binary variable.
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-44
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 .. code-block:: default
 
-    sex = oasis_dataset.ext_vars['mf'] == b'F'
+    sex = oasis_dataset.ext_vars['mf'] == 'F'
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 45-46
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
 Print basic information on the dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-51
+.. GENERATED FROM PYTHON SOURCE LINES 48-53
 
 .. code-block:: default
 
@@ -120,41 +95,22 @@ Print basic information on the dataset.
           oasis_dataset.white_matter_maps[0])  # 3D data
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    First gray-matter anatomy image (3D) is located at: /home/alexis/nilearn_data/oasis1/OAS1_0001_MR1/mwrc1OAS1_0001_MR1_mpr_anon_fslswapdim_bet.nii.gz
-    First white-matter anatomy image (3D) is located at: /home/alexis/nilearn_data/oasis1/OAS1_0001_MR1/mwrc2OAS1_0001_MR1_mpr_anon_fslswapdim_bet.nii.gz
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 52-53
+.. GENERATED FROM PYTHON SOURCE LINES 54-55
 
 Get a mask image: A mask of the  cortex of the ICBM template.
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-55
+.. GENERATED FROM PYTHON SOURCE LINES 55-57
 
 .. code-block:: default
 
     gm_mask = datasets.fetch_icbm152_brain_gm_mask()
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 56-57
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
 Resample the images, since this mask has a different resolution.
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-61
+.. GENERATED FROM PYTHON SOURCE LINES 59-63
 
 .. code-block:: default
 
@@ -163,13 +119,7 @@ Resample the images, since this mask has a different resolution.
         gm_mask, gray_matter_map_filenames[0], interpolation='nearest')
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 62-67
+.. GENERATED FROM PYTHON SOURCE LINES 64-69
 
 Analyse data
 ------------
@@ -177,7 +127,7 @@ Analyse data
 First, we create an adequate design matrix with three columns: 'age',
 'sex', 'intercept'.
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-73
+.. GENERATED FROM PYTHON SOURCE LINES 69-75
 
 .. code-block:: default
 
@@ -188,17 +138,11 @@ First, we create an adequate design matrix with three columns: 'age',
                                  columns=['age', 'sex', 'intercept'])
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 74-75
+.. GENERATED FROM PYTHON SOURCE LINES 76-77
 
 Let's plot the design matrix.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-81
+.. GENERATED FROM PYTHON SOURCE LINES 77-83
 
 .. code-block:: default
 
@@ -209,29 +153,12 @@ Let's plot the design matrix.
     ax.set_ylabel('maps')
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_001.png
-   :alt: Second level design matrix
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_001.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    Text(29.0, 0.5, 'maps')
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 82-84
+.. GENERATED FROM PYTHON SOURCE LINES 84-86
 
 Next, we specify and fit the second-level model when loading the data and
 also smooth a little bit to improve statistical behavior.
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-90
+.. GENERATED FROM PYTHON SOURCE LINES 86-92
 
 .. code-block:: default
 
@@ -242,25 +169,12 @@ also smooth a little bit to improve statistical behavior.
                            design_matrix=design_matrix)
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    SecondLevelModel(mask_img=<nibabel.nifti1.Nifti1Image object at 0x7f61accf3970>,
-                     smoothing_fwhm=2.0)
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 91-93
+.. GENERATED FROM PYTHON SOURCE LINES 93-95
 
 Estimating the contrast is very simple. We can just provide the column
 name of the design matrix.
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-96
+.. GENERATED FROM PYTHON SOURCE LINES 95-98
 
 .. code-block:: default
 
@@ -268,17 +182,11 @@ name of the design matrix.
                                                 output_type='z_score')
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 97-98
+.. GENERATED FROM PYTHON SOURCE LINES 99-100
 
 We threshold the second level contrast at uncorrected p < 0.001 and plot it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-110
+.. GENERATED FROM PYTHON SOURCE LINES 100-112
 
 .. code-block:: default
 
@@ -295,29 +203,12 @@ We threshold the second level contrast at uncorrected p < 0.001 and plot it.
     plotting.show()
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_002.png
-   :alt: plot oasis
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_002.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    The FDR=.05-corrected threshold is: 2.4
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 111-113
+.. GENERATED FROM PYTHON SOURCE LINES 113-115
 
 We can also study the effect of sex by computing the contrast, thresholding
 it and plot the resulting map.
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-122
+.. GENERATED FROM PYTHON SOURCE LINES 115-124
 
 .. code-block:: default
 
@@ -331,29 +222,12 @@ it and plot the resulting map.
         title='sex effect on grey matter density (FDR = .05)')
 
 
-
-
-.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_003.png
-   :alt: plot oasis
-   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_oasis_003.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f61b5eda7d0>
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 123-125
+.. GENERATED FROM PYTHON SOURCE LINES 125-127
 
 Note that there does not seem to be any significant effect of sex on
 grey matter density on that dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-133
+.. GENERATED FROM PYTHON SOURCE LINES 129-135
 
 Generating a report
 -------------------
@@ -362,7 +236,7 @@ portable, ready-to-view report with most of the pertinent information.
 This is easy to do if you have a fitted model and the list of contrasts,
 which we do here.
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-142
+.. GENERATED FROM PYTHON SOURCE LINES 135-144
 
 .. code-block:: default
 
@@ -376,17 +250,11 @@ which we do here.
                              )
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 143-144
+.. GENERATED FROM PYTHON SOURCE LINES 145-146
 
 We have several ways to access the report:
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-148
+.. GENERATED FROM PYTHON SOURCE LINES 146-150
 
 .. code-block:: default
 
@@ -396,17 +264,11 @@ We have several ways to access the report:
     # report.open_in_browser()
 
 
-
-
-
-
-
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  15.733 seconds)
+   **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
-**Estimated memory usage:**  1210 MB
+**Estimated memory usage:**  0 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_oasis.py:
