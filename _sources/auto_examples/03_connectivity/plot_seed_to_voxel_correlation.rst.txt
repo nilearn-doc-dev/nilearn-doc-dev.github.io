@@ -33,34 +33,21 @@ numpy array, corresponding to the data inside the mask.
 See also :ref:`for a similar example using cortical surface input data
 <sphx_glr_auto_examples_01_plotting_plot_surf_stat_map.py>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-21
+Author: Franz Liem
 
-.. code-block:: default
-
-
-    # author: Franz Liem
-
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 22-24
+.. GENERATED FROM PYTHON SOURCE LINES 21-27
 
 Getting the data
 ----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-34
+We will work with the first subject of the brain development fmri data set.
+dataset.func is a list of filenames. We select the 1st (0-based)
+subject by indexing with [0]).
+
+.. GENERATED FROM PYTHON SOURCE LINES 27-33
 
 .. code-block:: default
 
-
-    # We will work with the first subject of the brain development fmri data set.
-    # dataset.func is a list of filenames. We select the 1st (0-based)
-    # subject by indexing with [0]).
     from nilearn import datasets
 
     dataset = datasets.fetch_development_fmri(n_subjects=1)
@@ -74,12 +61,12 @@ Getting the data
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-37
+.. GENERATED FROM PYTHON SOURCE LINES 34-36
 
 Note that func_filename and confound_filename are strings pointing to
 files on your hard drive.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-40
+.. GENERATED FROM PYTHON SOURCE LINES 36-39
 
 .. code-block:: default
 
@@ -100,7 +87,7 @@ files on your hard drive.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-50
+.. GENERATED FROM PYTHON SOURCE LINES 40-49
 
 Time series extraction
 ----------------------
@@ -112,7 +99,7 @@ interest**. Second, we will extract the **brain-wide voxel-wise time series**.
 We will be working with one seed sphere in the Posterior Cingulate Cortex
 (PCC), considered part of the Default Mode Network.
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-52
+.. GENERATED FROM PYTHON SOURCE LINES 49-51
 
 .. code-block:: default
 
@@ -125,7 +112,7 @@ We will be working with one seed sphere in the Posterior Cingulate Cortex
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-60
+.. GENERATED FROM PYTHON SOURCE LINES 52-59
 
 We use :class:`nilearn.maskers.NiftiSpheresMasker` to extract the
 **time series from the functional imaging within the sphere**. The
@@ -135,7 +122,7 @@ NiftiSpheresMasker function (here 8 mm).
 The extraction will also detrend, standardize, and bandpass filter the data.
 This will create a NiftiSpheresMasker object.
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-67
+.. GENERATED FROM PYTHON SOURCE LINES 59-66
 
 .. code-block:: default
 
@@ -153,13 +140,13 @@ This will create a NiftiSpheresMasker object.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-71
+.. GENERATED FROM PYTHON SOURCE LINES 67-70
 
 Then we extract the mean time series within the seed region while
 regressing out the confounds that
 can be found in the dataset's csv file
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-74
+.. GENERATED FROM PYTHON SOURCE LINES 70-73
 
 .. code-block:: default
 
@@ -173,13 +160,13 @@ can be found in the dataset's csv file
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-78
+.. GENERATED FROM PYTHON SOURCE LINES 74-77
 
 Next, we can proceed similarly for the **brain-wide voxel-wise time
 series**, using :class:`nilearn.maskers.NiftiMasker` with the same input
 arguments as in the seed_masker in addition to smoothing with a 6 mm kernel
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-85
+.. GENERATED FROM PYTHON SOURCE LINES 77-84
 
 .. code-block:: default
 
@@ -197,12 +184,12 @@ arguments as in the seed_masker in addition to smoothing with a 6 mm kernel
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-88
+.. GENERATED FROM PYTHON SOURCE LINES 85-87
 
 Then we extract the brain-wide voxel-wise time series while regressing
 out the confounds as before
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 87-90
 
 .. code-block:: default
 
@@ -216,13 +203,13 @@ out the confounds as before
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-95
+.. GENERATED FROM PYTHON SOURCE LINES 91-94
 
 We can now inspect the extracted time series. Note that the **seed time
 series** is an array with shape n_volumes, 1), while the
 **brain time series** is an array with shape (n_volumes, n_voxels).
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-99
+.. GENERATED FROM PYTHON SOURCE LINES 94-98
 
 .. code-block:: default
 
@@ -244,11 +231,11 @@ series** is an array with shape n_volumes, 1), while the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-101
+.. GENERATED FROM PYTHON SOURCE LINES 99-100
 
 We can plot the **seed time series**.
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-110
+.. GENERATED FROM PYTHON SOURCE LINES 100-109
 
 .. code-block:: default
 
@@ -273,12 +260,12 @@ We can plot the **seed time series**.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-113
+.. GENERATED FROM PYTHON SOURCE LINES 110-112
 
 Exemplarily, we can also select 5 random voxels from the **brain-wide
 data** and plot the time series from.
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-120
+.. GENERATED FROM PYTHON SOURCE LINES 112-119
 
 .. code-block:: default
 
@@ -301,7 +288,7 @@ data** and plot the time series from.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-131
+.. GENERATED FROM PYTHON SOURCE LINES 120-130
 
 Performing the seed-to-voxel correlation analysis
 -------------------------------------------------
@@ -314,7 +301,7 @@ been variance-standardized during extraction. To have them standardized to
 norm unit, we further have to divide the result by the length of the time
 series.
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-137
+.. GENERATED FROM PYTHON SOURCE LINES 130-136
 
 .. code-block:: default
 
@@ -331,14 +318,14 @@ series.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-142
+.. GENERATED FROM PYTHON SOURCE LINES 137-141
 
 The resulting array will contain a value representing the correlation
 values between the signal in the **seed region** of interest and **each
 voxel's signal**, and will be of shape (n_voxels, 1). The correlation
 values can potentially range between -1 and 1.
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-147
+.. GENERATED FROM PYTHON SOURCE LINES 141-146
 
 .. code-block:: default
 
@@ -361,7 +348,7 @@ values can potentially range between -1 and 1.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-155
+.. GENERATED FROM PYTHON SOURCE LINES 147-154
 
 Plotting the seed-to-voxel correlation map
 ------------------------------------------
@@ -371,7 +358,7 @@ we need to create an in memory Nifti image object.
 Furthermore, we can display the location of the seed with a sphere and
 set the cross to the center of the seed region of interest.
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-169
+.. GENERATED FROM PYTHON SOURCE LINES 154-168
 
 .. code-block:: default
 
@@ -401,14 +388,14 @@ set the cross to the center of the seed region of interest.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-174
+.. GENERATED FROM PYTHON SOURCE LINES 169-173
 
 Fisher-z transformation and save nifti
 --------------------------------------
 Finally, we can Fisher-z transform the data to achieve a normal distribution.
 The transformed array can now have values more extreme than +/- 1.
 
-.. GENERATED FROM PYTHON SOURCE LINES 174-187
+.. GENERATED FROM PYTHON SOURCE LINES 173-180
 
 .. code-block:: default
 
@@ -419,12 +406,6 @@ The transformed array can now have values more extreme than +/- 1.
              )
           )
 
-    # Finally, we can transform the correlation array back to a Nifti image
-    # object, that we can save.
-    seed_to_voxel_correlations_fisher_z_img = brain_masker.inverse_transform(
-        seed_to_voxel_correlations_fisher_z.T)
-    seed_to_voxel_correlations_fisher_z_img.to_filename(
-        'pcc_seed_correlation_z.nii.gz')
 
 
 
@@ -438,12 +419,32 @@ The transformed array can now have values more extreme than +/- 1.
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 181-183
+
+Eventually, we can transform the correlation array back to a Nifti image
+object, that we can save.
+
+.. GENERATED FROM PYTHON SOURCE LINES 183-187
+
+.. code-block:: default
+
+    seed_to_voxel_correlations_fisher_z_img = brain_masker.inverse_transform(
+        seed_to_voxel_correlations_fisher_z.T)
+    seed_to_voxel_correlations_fisher_z_img.to_filename(
+        'pcc_seed_correlation_z.nii.gz')
+
+
+
+
+
+
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.213 seconds)
+   **Total running time of the script:** ( 0 minutes  16.099 seconds)
 
-**Estimated memory usage:**  530 MB
+**Estimated memory usage:**  611 MB
 
 
 .. _sphx_glr_download_auto_examples_03_connectivity_plot_seed_to_voxel_correlation.py:

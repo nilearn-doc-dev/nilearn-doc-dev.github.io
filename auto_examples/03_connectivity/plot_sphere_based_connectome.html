@@ -12,7 +12,7 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="This example shows how to extract signals from spherical regions. We show how to build spheres around user-defined coordinates, as well as centered on coordinates from the Power-264 atlas [1], and ..." />
+<meta property="og:description" content="This example shows how to extract signals from spherical regions. We show how to build spheres around user-defined coordinates, as well as centered on coordinates from the Power-264 atlas 1, and th..." />
   
 <meta property="og:image" content="https://nilearn.github.io/_static/nilearn-logo.png" />
   
@@ -655,13 +655,9 @@ to download the full example code or to run this example in your browser via Bin
 <span id="sphx-glr-auto-examples-03-connectivity-plot-sphere-based-connectome-py"></span><h1>Extract signals on spheres and plot a connectome<a class="headerlink" href="#extract-signals-on-spheres-and-plot-a-connectome" title="Permalink to this headline">#</a></h1>
 <p>This example shows how to extract signals from spherical regions.
 We show how to build spheres around user-defined coordinates, as well as
-centered on coordinates from the Power-264 atlas [1], and the Dosenbach-160
-atlas [2].</p>
-<p><strong>References</strong></p>
-<p>[1] Power, Jonathan D., et al. “Functional network organization of the
-human brain.” Neuron 72.4 (2011): 665-678.</p>
-<p>[2] Dosenbach N.U., Nardos B., et al. “Prediction of individual brain maturity
-using fMRI.”, 2010, Science 329, 1358-1361.</p>
+centered on coordinates from the Power-264 atlas
+<a class="footnote-reference brackets" href="#footcite-power2011functional" id="id1">1</a>,
+and the Dosenbach-160 atlas <a class="footnote-reference brackets" href="#footcite-dosenbach20101358" id="id2">2</a></p>
 <p>We estimate connectomes using two different methods: <strong>sparse inverse
 covariance</strong> and <strong>partial_correlation</strong>, to recover the functional brain
 <strong>networks structure</strong>.</p>
@@ -691,7 +687,7 @@ connectivity dataset.</p>
     <span class="s1">'Left Temporoparietal junction'</span><span class="p">,</span>
     <span class="s1">'Right Temporoparietal junction'</span><span class="p">,</span>
     <span class="s1">'Medial prefrontal cortex'</span><span class="p">,</span>
-    <span class="p">]</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -699,12 +695,12 @@ connectivity dataset.</p>
 <h2>Extracts signal from sphere around DMN seeds<a class="headerlink" href="#extracts-signal-from-sphere-around-dmn-seeds" title="Permalink to this headline">#</a></h2>
 <p>We can compute the mean signal within <strong>spheres</strong> of a fixed radius
 around a sequence of (x, y, z) coordinates with the object
-<a class="reference internal" href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.maskers.NiftiSpheresMasker</span></code></a>.
+<code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.maskers.NiftiSpheresMasker</span></code>.
 The resulting signal is then prepared by the masker object: Detrended,
 band-pass filtered and <strong>standardized to 1 variance</strong>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class"><span class="n">NiftiSpheresMasker</span></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiSpheresMasker</span></a>
 
-<a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">masker</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class"><span class="n">NiftiSpheresMasker</span></a><span class="p">(</span>
+<span class="n">masker</span> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiSpheresMasker</span></a><span class="p">(</span>
     <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dmn_coords</span></a><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">detrend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">low_pass</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">high_pass</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">t_r</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="n">memory</span><span class="o">=</span><span class="s1">'nilearn_cache'</span><span class="p">,</span> <span class="n">memory_level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -715,14 +711,14 @@ band-pass filtered and <strong>standardized to 1 variance</strong>.</p>
 <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a> <span class="o">=</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span><span class="o">.</span><span class="n">func</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">confounds_filename</span></a> <span class="o">=</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span><span class="o">.</span><span class="n">confounds</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time_series</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker.fit_transform" title="nilearn.maskers.NiftiSpheresMasker.fit_transform" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-method"><span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">,</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time_series</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin.fit_transform" title="sklearn.base.TransformerMixin.fit_transform" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-method"><span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">,</span>
                                    <span class="n">confounds</span><span class="o">=</span><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">confounds_filename</span></a><span class="p">])</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>________________________________________________________________________________
 [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
 _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz',
-&lt;nilearn.maskers.nifti_spheres_masker._ExtractionFunctor object at 0x7f5d8c2e6680&gt;,
+&lt;nilearn.maskers.nifti_spheres_masker._ExtractionFunctor object at 0x7ff22573afb0&gt;,
 { 'allow_overlap': False,
   'detrend': True,
   'dtype': None,
@@ -739,7 +735,7 @@ _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri
 [NiftiSpheresMasker.transform_single_imgs] Loading data from /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
 [NiftiSpheresMasker.transform_single_imgs] Extracting region signals
 [NiftiSpheresMasker.transform_single_imgs] Cleaning extracted signals
-_______________________________________________filter_and_extract - 1.9s, 0.0min
+_______________________________________________filter_and_extract - 2.1s, 0.0min
 </pre></div>
 </div>
 </section>
@@ -780,7 +776,7 @@ partial correlations.</p>
                          <span class="n">title</span><span class="o">=</span><span class="s2">"Default Mode Network Connectivity"</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="plot sphere based connectome" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_sphere_based_connectome_002.png" srcset="../../_images/sphx_glr_plot_sphere_based_connectome_002.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f5d889d8220&gt;
+<img alt="plot sphere based connectome" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_sphere_based_connectome_002.png" srcset="../../_images/sphx_glr_plot_sphere_based_connectome_002.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff225a38400&gt;
 </pre></div>
 </div>
 <p>Display connectome with hemispheric projections.
@@ -1213,11 +1209,11 @@ not included in nilearn, using
 </pre></div>
 </div>
 <p>and define spheres masker, with small enough radius to avoid regions overlap.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">spheres_masker</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class"><span class="n">NiftiSpheresMasker</span></a><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spheres_masker</span> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiSpheresMasker</span></a><span class="p">(</span>
     <span class="n">seeds</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">coords</span></a><span class="p">,</span> <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">5.</span><span class="p">,</span>
     <span class="n">detrend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">low_pass</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">high_pass</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">t_r</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">timeseries</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker.fit_transform" title="nilearn.maskers.NiftiSpheresMasker.fit_transform" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-method"><span class="n">spheres_masker</span><span class="o">.</span><span class="n">fit_transform</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">,</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">timeseries</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin.fit_transform" title="sklearn.base.TransformerMixin.fit_transform" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-method"><span class="n">spheres_masker</span><span class="o">.</span><span class="n">fit_transform</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">,</span>
                                           <span class="n">confounds</span><span class="o">=</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">confounds_filename</span></a><span class="p">)</span>
 </pre></div>
 </div>
@@ -1248,17 +1244,17 @@ estimator captures well the covariance <strong>structure</strong>.</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    4.4s finished
-[GraphicalLassoCV] Done refinement  1 out of 4:   4s
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    2.0s finished
+[GraphicalLassoCV] Done refinement  1 out of 4:   2s
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:   13.8s finished
-[GraphicalLassoCV] Done refinement  2 out of 4:  18s
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    5.7s finished
+[GraphicalLassoCV] Done refinement  2 out of 4:   7s
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:   29.8s finished
-[GraphicalLassoCV] Done refinement  3 out of 4:  48s
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    8.8s finished
+[GraphicalLassoCV] Done refinement  3 out of 4:  16s
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:   47.2s finished
-[GraphicalLassoCV] Done refinement  4 out of 4:  95s
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    9.3s finished
+[GraphicalLassoCV] Done refinement  4 out of 4:  25s
 /home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/numpy/core/_methods.py:232: RuntimeWarning:
 
 invalid value encountered in subtract
@@ -1294,7 +1290,7 @@ and display the graph of connections with <cite>nilearn.plotting.plot_connectome
 <li><img alt="plot sphere based connectome" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_sphere_based_connectome_004.png" srcset="../../_images/sphx_glr_plot_sphere_based_connectome_004.png"/></li>
 <li><img alt="plot sphere based connectome" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_sphere_based_connectome_005.png" srcset="../../_images/sphx_glr_plot_sphere_based_connectome_005.png"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f5d8d387250&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff223cc7e50&gt;
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1317,7 +1313,7 @@ aggregating edge strength from the graph would help. Use the function
 <span class="p">)</span>
 </pre></div>
 </div>
-<img alt="plot sphere based connectome" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_sphere_based_connectome_006.png" srcset="../../_images/sphx_glr_plot_sphere_based_connectome_006.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f5d8918e170&gt;
+<img alt="plot sphere based connectome" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_sphere_based_connectome_006.png" srcset="../../_images/sphx_glr_plot_sphere_based_connectome_006.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff2247ce470&gt;
 </pre></div>
 </div>
 <p>From the correlation matrix, we observe that there is a positive and negative
@@ -1358,7 +1354,7 @@ the negative structure.</p>
 <li><img alt="plot sphere based connectome" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_sphere_based_connectome_007.png" srcset="../../_images/sphx_glr_plot_sphere_based_connectome_007.png"/></li>
 <li><img alt="plot sphere based connectome" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_sphere_based_connectome_008.png" srcset="../../_images/sphx_glr_plot_sphere_based_connectome_008.png"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f5d8d2b4460&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff22454b2e0&gt;
 </pre></div>
 </div>
 </section>
@@ -1373,11 +1369,11 @@ the negative structure.</p>
     <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dosenbach</span><span class="o">.</span><span class="n">rois</span></a><span class="p">[</span><span class="s1">'z'</span><span class="p">],</span>
 <span class="p">))</span><span class="o">.</span><span class="n">T</span>
 
-<a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">spheres_masker</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker" title="nilearn.maskers.NiftiSpheresMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class"><span class="n">NiftiSpheresMasker</span></a><span class="p">(</span>
+<span class="n">spheres_masker</span> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiSpheresMasker</span></a><span class="p">(</span>
     <span class="n">seeds</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">coords</span></a><span class="p">,</span> <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">4.5</span><span class="p">,</span>
     <span class="n">detrend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">low_pass</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">high_pass</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">t_r</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">timeseries</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.maskers.NiftiSpheresMasker.html#nilearn.maskers.NiftiSpheresMasker.fit_transform" title="nilearn.maskers.NiftiSpheresMasker.fit_transform" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-method"><span class="n">spheres_masker</span><span class="o">.</span><span class="n">fit_transform</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">,</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">timeseries</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin.fit_transform" title="sklearn.base.TransformerMixin.fit_transform" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-method"><span class="n">spheres_masker</span><span class="o">.</span><span class="n">fit_transform</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">,</span>
                                           <span class="n">confounds</span><span class="o">=</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">confounds_filename</span></a><span class="p">)</span>
 
 <a href="https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLassoCV.html#sklearn.covariance.GraphicalLassoCV" title="sklearn.covariance.GraphicalLassoCV" class="sphx-glr-backref-module-sklearn-covariance sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">covariance_estimator</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLassoCV.html#sklearn.covariance.GraphicalLassoCV" title="sklearn.covariance.GraphicalLassoCV" class="sphx-glr-backref-module-sklearn-covariance sphx-glr-backref-type-py-class"><span class="n">GraphicalLassoCV</span></a><span class="p">()</span>
@@ -1440,7 +1436,7 @@ the negative structure.</p>
 invalid value encountered in subtract
 
 
-&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f5d8fbbfc10&gt;
+&lt;nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff23af3bd90&gt;
 </pre></div>
 </div>
 <p>We can easily identify the Dosenbach’s networks from the matrix blocks.</p>
@@ -1453,15 +1449,31 @@ invalid value encountered in subtract
  'sensorimotor']
 </pre></div>
 </div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<ul class="simple">
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><p id="id3"><dl class="footnote brackets">
+<dt class="label" id="footcite-power2011functional"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Jonathan D. Power, Alexander L. Cohen, Steven M. Nelson, Gagan S. Wig, Kelly Anne Barnes, Jessica A. Church, Alecia C. Vogel, Timothy O. Laumann, Fran M. Miezin, Bradley L. Schlaggar, and Steven E. Petersen. Functional network organization of the human brain. <em>Neuron</em>, 72(4):665–678, Nov 2011. URL: <a class="reference external" href="https://doi.org/10.1016/j.neuron.2011.09.006">https://doi.org/10.1016/j.neuron.2011.09.006</a>, <a class="reference external" href="https://doi.org/10.1016/j.neuron.2011.09.006">doi:10.1016/j.neuron.2011.09.006</a>.</p>
+</dd>
+<dt class="label" id="footcite-dosenbach20101358"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Nico U. F. Dosenbach, Binyam Nardos, Alexander L. Cohen, Damien A. Fair, Jonathan D. Power, Jessica A. Church, Steven M. Nelson, Gagan S. Wig, Alecia C. Vogel, Christina N. Lessov-Schlaggar, Kelly Anne Barnes, Joseph W. Dubis, Eric Feczko, Rebecca S. Coalson, John R. Pruett, Deanna M. Barch, Steven E. Petersen, and Bradley L. Schlaggar. Prediction of individual brain maturity using fmri. <em>Science</em>, 329(5997):1358–1361, 2010. URL: <a class="reference external" href="https://science.sciencemag.org/content/329/5997/1358">https://science.sciencemag.org/content/329/5997/1358</a>, <a class="reference external" href="https://arxiv.org/abs/https://science.sciencemag.org/content/329/5997/1358.full.pdf">arXiv:https://science.sciencemag.org/content/329/5997/1358.full.pdf</a>, <a class="reference external" href="https://doi.org/10.1126/science.1194144">doi:10.1126/science.1194144</a>.</p>
+</dd>
+</dl>
+</p>
+</div></blockquote>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><ul class="simple">
 <li><p><a class="reference internal" href="plot_atlas_comparison.html#sphx-glr-auto-examples-03-connectivity-plot-atlas-comparison-py"><span class="std std-ref">Comparing connectomes on different reference atlases</span></a></p></li>
 <li><p><a class="reference internal" href="plot_multi_subject_connectome.html#sphx-glr-auto-examples-03-connectivity-plot-multi-subject-connectome-py"><span class="std std-ref">Group Sparse inverse covariance for multi-subject connectome</span></a></p></li>
 </ul>
-</div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 4 minutes  9.791 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  393 MB</p>
+</div></blockquote>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  21.211 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  388 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-03-connectivity-plot-sphere-based-connectome-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/03_connectivity/plot_sphere_based_connectome.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo3.svg" width="150px"/></a>
@@ -1547,6 +1559,8 @@ invalid value encountered in subtract
 <li><a class="reference internal" href="#estimate-correlations">Estimate correlations</a></li>
 <li><a class="reference internal" href="#plot-matrix-graph-and-strength">Plot matrix, graph, and strength</a></li>
 <li><a class="reference internal" href="#connectome-extracted-from-dosenbach-s-atlas">Connectome extracted from Dosenbach’s atlas</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+<li><a class="reference internal" href="#see-also">See also</a></li>
 </ul>
 </li>
 </ul>

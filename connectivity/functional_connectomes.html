@@ -666,7 +666,7 @@ connectomes across subjects”, NeuroImage 2013</a>.</p></li>
 <section id="brain-parcellations">
 <h3>Brain parcellations<a class="headerlink" href="#brain-parcellations" title="Permalink to this headline">#</a></h3>
 <p>Regions used to extract the signal can be defined by a “hard”
-parcellation. For instance, the <a class="reference internal" href="../modules/reference.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a> has functions to
+parcellation. For instance, the <a class="reference internal" href="../modules/datasets.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a> has functions to
 download atlases forming reference parcellation, e.g.,
 <a class="reference internal" href="../modules/generated/nilearn.datasets.fetch_atlas_craddock_2012.html#nilearn.datasets.fetch_atlas_craddock_2012" title="nilearn.datasets.fetch_atlas_craddock_2012"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_atlas_craddock_2012</span></code></a>, <a class="reference internal" href="../modules/generated/nilearn.datasets.fetch_atlas_harvard_oxford.html#nilearn.datasets.fetch_atlas_harvard_oxford" title="nilearn.datasets.fetch_atlas_harvard_oxford"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_atlas_harvard_oxford</span></code></a>,
 <a class="reference internal" href="../modules/generated/nilearn.datasets.fetch_atlas_yeo_2011.html#nilearn.datasets.fetch_atlas_yeo_2011" title="nilearn.datasets.fetch_atlas_yeo_2011"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_atlas_yeo_2011</span></code></a>.</p>
@@ -695,7 +695,7 @@ at 2mm, and with a threshold of a probability of 0.25:</p>
 <section id="extracting-signals-on-a-parcellation">
 <h3>Extracting signals on a parcellation<a class="headerlink" href="#extracting-signals-on-a-parcellation" title="Permalink to this headline">#</a></h3>
 <p>To extract signal on the parcellation, the easiest option is to use the
-<a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker" title="nilearn.maskers.NiftiLabelsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code></a>. As any “maskers” in
+<code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code>. As any “maskers” in
 nilearn, it is a processing object that is created by specifying all
 the important parameters, but not the data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <span class="n">NiftiLabelsMasker</span>
@@ -703,7 +703,7 @@ the important parameters, but not the data:</p>
 </pre></div>
 </div>
 <p>The Nifti data can then be turned to time-series by calling the
-<a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker.fit_transform" title="nilearn.maskers.NiftiLabelsMasker.fit_transform"><code class="xref py py-meth docutils literal notranslate"><span class="pre">NiftiLabelsMasker.fit_transform</span></code></a> method, that takes either
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">NiftiLabelsMasker.fit_transform</span></code> method, that takes either
 filenames or <a class="reference external" href="http://nipy.org/nibabel/nibabel_images.html">NiftiImage objects</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time_series</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">frmi_files</span><span class="p">,</span>
                                    <span class="n">confounds</span><span class="o">=</span><span class="n">confounds_dataframe</span><span class="p">)</span>
@@ -778,7 +778,7 @@ of these maps, which requires accessing them with
 <h3>Extracting signals from a probabilistic atlas<a class="headerlink" href="#extracting-signals-from-a-probabilistic-atlas" title="Permalink to this headline">#</a></h3>
 <p>As with extraction of signals on a parcellation, extracting signals from
 a probabilistic atlas can be done with a “masker” object:  the
-<a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a>. It is created by
+<code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code>. It is created by
 specifying the important parameters, in particular the atlas:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <span class="n">NiftiMapsMasker</span>
 <span class="n">masker</span> <span class="o">=</span> <span class="n">NiftiMapsMasker</span><span class="p">(</span><span class="n">maps_img</span><span class="o">=</span><span class="n">atlas_filename</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -788,7 +788,7 @@ specifying the important parameters, in particular the atlas:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time_series</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">frmi_files</span><span class="p">,</span> <span class="n">confounds</span><span class="o">=</span><span class="n">csv_file</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The procedure is the same as with <a class="reference external" href="parcellation_time_series">brain parcellations</a> but using the <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a>, and
+<p>The procedure is the same as with <a class="reference external" href="parcellation_time_series">brain parcellations</a> but using the <code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code>, and
 the same considerations on using confounds regressors apply.</p>
 <a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_probabilistic_atlas_extraction.html"><img alt="../_images/sphx_glr_plot_probabilistic_atlas_extraction_001.png" src="../_images/sphx_glr_plot_probabilistic_atlas_extraction_001.png" style="width: 280.0px; height: 200.0px;"/></a>
 <div class="topic">

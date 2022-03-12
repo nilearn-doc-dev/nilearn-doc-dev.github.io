@@ -699,18 +699,18 @@ using the group sparse inverse covariance estimate.</p>
 </section>
 <section id="extracting-region-signals">
 <h2>Extracting region signals<a class="headerlink" href="#extracting-region-signals" title="Permalink to this headline">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class"><span class="n">NiftiMapsMasker</span></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiMapsMasker</span></a>
 
 <span class="c1"># A "memory" to avoid recomputation</span>
 <span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="joblib.Memory" class="sphx-glr-backref-module-joblib sphx-glr-backref-type-py-class"><span class="n">Memory</span></a>
 <a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="joblib.Memory" class="sphx-glr-backref-module-joblib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mem</span></a> <span class="o">=</span> <a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="joblib.Memory" class="sphx-glr-backref-module-joblib sphx-glr-backref-type-py-class"><span class="n">Memory</span></a><span class="p">(</span><span class="s1">'nilearn_cache'</span><span class="p">)</span>
 
-<a href="../../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">masker</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-class"><span class="n">NiftiMapsMasker</span></a><span class="p">(</span>
+<span class="n">masker</span> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiMapsMasker</span></a><span class="p">(</span>
     <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">msdl_atlas_dataset</span><span class="o">.</span><span class="n">maps</span></a><span class="p">,</span> <span class="n">resampling_target</span><span class="o">=</span><span class="s2">"maps"</span><span class="p">,</span> <span class="n">detrend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">high_variance_confounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">low_pass</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">high_pass</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
     <span class="n">t_r</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s1">'nilearn_cache'</span><span class="p">,</span> <span class="n">memory_level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a href="../../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker.fit" title="nilearn.maskers.NiftiMapsMasker.fit" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-method"><span class="n">masker</span><span class="o">.</span><span class="n">fit</span></a><span class="p">()</span>
+<span class="n">masker</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
 <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subject_time_series</span></a> <span class="o">=</span> <span class="p">[]</span>
 <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filenames</span></a> <span class="o">=</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rest_dataset</span><span class="o">.</span><span class="n">func</span></a>
@@ -719,7 +719,7 @@ using the group sparse inverse covariance estimate.</p>
                                             <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">confound_filenames</span></a><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Processing file </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">)</span>
 
-    <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">region_ts</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker.transform" title="nilearn.maskers.NiftiMapsMasker.transform" class="sphx-glr-backref-module-nilearn-maskers sphx-glr-backref-type-py-method"><span class="n">masker</span><span class="o">.</span><span class="n">transform</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">,</span>
+    <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">region_ts</span></a> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">,</span>
                                  <span class="n">confounds</span><span class="o">=</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">confound_filename</span></a><span class="p">)</span>
     <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subject_time_series</span></a><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">region_ts</span></a><span class="p">)</span>
 </pre></div>
@@ -733,7 +733,7 @@ __________________________________________high_variance_confounds - 1.0s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
 _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz',
-&lt;nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7f5d87621f00&gt;, { 'allow_overlap': True,
+&lt;nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7ff2262ccf10&gt;, { 'allow_overlap': True,
   'detrend': True,
   'dtype': None,
   'high_pass': 0.01,
@@ -758,7 +758,7 @@ _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri
 [NiftiMapsMasker.transform_single_imgs] Resampling images
 [NiftiMapsMasker.transform_single_imgs] Extracting region signals
 [NiftiMapsMasker.transform_single_imgs] Cleaning extracted signals
-_______________________________________________filter_and_extract - 6.4s, 0.1min
+_______________________________________________filter_and_extract - 6.2s, 0.1min
 Processing file /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar001_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
 ________________________________________________________________________________
 [Memory] Calling nilearn.image.image.high_variance_confounds...
@@ -767,7 +767,7 @@ __________________________________________high_variance_confounds - 0.9s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
 _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar001_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz',
-&lt;nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7f5d9b285030&gt;, { 'allow_overlap': True,
+&lt;nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7ff23e635b10&gt;, { 'allow_overlap': True,
   'detrend': True,
   'dtype': None,
   'high_pass': 0.01,
@@ -801,7 +801,7 @@ __________________________________________high_variance_confounds - 0.9s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
 _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar002_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz',
-&lt;nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7f5d8ec22290&gt;, { 'allow_overlap': True,
+&lt;nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7ff23e635b10&gt;, { 'allow_overlap': True,
   'detrend': True,
   'dtype': None,
   'high_pass': 0.01,
@@ -826,7 +826,7 @@ _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri
 [NiftiMapsMasker.transform_single_imgs] Resampling images
 [NiftiMapsMasker.transform_single_imgs] Extracting region signals
 [NiftiMapsMasker.transform_single_imgs] Cleaning extracted signals
-_______________________________________________filter_and_extract - 6.3s, 0.1min
+_______________________________________________filter_and_extract - 6.0s, 0.1min
 Processing file /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar003_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
 ________________________________________________________________________________
 [Memory] Calling nilearn.image.image.high_variance_confounds...
@@ -835,7 +835,7 @@ __________________________________________high_variance_confounds - 0.9s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
 _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar003_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz',
-&lt;nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7f5d9b285030&gt;, { 'allow_overlap': True,
+&lt;nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7ff23e635b10&gt;, { 'allow_overlap': True,
   'detrend': True,
   'dtype': None,
   'high_pass': 0.01,
@@ -860,7 +860,7 @@ _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri
 [NiftiMapsMasker.transform_single_imgs] Resampling images
 [NiftiMapsMasker.transform_single_imgs] Extracting region signals
 [NiftiMapsMasker.transform_single_imgs] Cleaning extracted signals
-_______________________________________________filter_and_extract - 6.3s, 0.1min
+_______________________________________________filter_and_extract - 5.9s, 0.1min
 </pre></div>
 </div>
 </section>
@@ -884,7 +884,7 @@ _______________________________________________filter_and_extract - 6.3s, 0.1min
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 2
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 7
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.5s remaining:    0.0s
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.4s remaining:    0.0s
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 2
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 2
@@ -894,14 +894,14 @@ _______________________________________________filter_and_extract - 6.3s, 0.1min
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 2
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 6
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    7.5s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    7.1s finished
 [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  1 out of 4
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 3
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 6
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.6s remaining:    0.0s
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.5s remaining:    0.0s
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 4
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 3
@@ -910,32 +910,32 @@ _______________________________________________filter_and_extract - 6.3s, 0.1min
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 3
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 6
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   12.7s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   12.1s finished
 [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  2 out of 4
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 5
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
-[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.5s remaining:    0.0s
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.4s remaining:    0.0s
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 9
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 10
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 5
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   14.0s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   13.4s finished
 [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  3 out of 4
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 6
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
-[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.9s remaining:    0.0s
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.8s remaining:    0.0s
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 10
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 11
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 5
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
 [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   11.5s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   11.0s finished
 [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  4 out of 4
 [GroupSparseCovarianceCV.fit] Final optimization
 [GroupSparseCovarianceCV.fit] tolerance reached at iteration number 19: 8.789e-04
@@ -949,7 +949,7 @@ _______________________________________________filter_and_extract - 6.3s, 0.1min
 [GraphicalLassoCV] Done refinement  2 out of 4:   1s
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
 ....[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.2s remaining:    0.0s
-................[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.8s finished
+................[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.9s finished
 [GraphicalLassoCV] Done refinement  3 out of 4:   2s
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
 ....[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.1s remaining:    0.0s
@@ -1007,8 +1007,8 @@ GraphicalLassoCV(verbose=2)
 <li><img alt="plot multi subject connectome" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_multi_subject_connectome_006.png" srcset="../../_images/sphx_glr_plot_multi_subject_connectome_006.png"/></li>
 <li><img alt="plot multi subject connectome" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_multi_subject_connectome_007.png" srcset="../../_images/sphx_glr_plot_multi_subject_connectome_007.png"/></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  33.359 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  436 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  30.041 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  427 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-03-connectivity-plot-multi-subject-connectome-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/03_connectivity/plot_multi_subject_connectome.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo3.svg" width="150px"/></a>

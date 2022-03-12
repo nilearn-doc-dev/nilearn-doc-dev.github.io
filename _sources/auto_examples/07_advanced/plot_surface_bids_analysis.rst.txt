@@ -33,14 +33,7 @@ More specifically:
 
 Notice that in this case the preprocessed :term:`bold<BOLD>` images were already normalized to the same :term:`MNI` space.
 
-To run this example, you must launch IPython via ``ipython
---matplotlib`` in a terminal, or use the Jupyter notebook.
-
-.. contents:: **Contents**
-    :local:
-    :depth: 1
-
-.. GENERATED FROM PYTHON SOURCE LINES 27-35
+.. GENERATED FROM PYTHON SOURCE LINES 19-27
 
 Fetch example BIDS dataset
 --------------------------
@@ -51,7 +44,7 @@ subject folders only contain bold.json and events.tsv files, while the
 derivatives folder includes the preprocessed files preproc.nii and the
 confounds.tsv files.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-38
+.. GENERATED FROM PYTHON SOURCE LINES 27-30
 
 .. code-block:: default
 
@@ -65,11 +58,11 @@ confounds.tsv files.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 31-32
 
 Here is the location of the dataset on disk.
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-42
+.. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 .. code-block:: default
 
@@ -88,7 +81,7 @@ Here is the location of the dataset on disk.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-51
+.. GENERATED FROM PYTHON SOURCE LINES 35-43
 
 Obtain automatically FirstLevelModel objects and fit arguments
 --------------------------------------------------------------
@@ -99,7 +92,7 @@ since in this case a confounds.tsv file is available in the :term:`BIDS` dataset
 To get the first level models we only have to specify the dataset directory
 and the task_label as specified in the file names.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-58
+.. GENERATED FROM PYTHON SOURCE LINES 43-50
 
 .. code-block:: default
 
@@ -126,12 +119,12 @@ and the task_label as specified in the file names.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 51-53
 
 We also need to get the TR information. For that we use the json sidecar file
 of the dataset's functional images.
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-68
+.. GENERATED FROM PYTHON SOURCE LINES 53-60
 
 .. code-block:: default
 
@@ -149,11 +142,11 @@ of the dataset's functional images.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-70
+.. GENERATED FROM PYTHON SOURCE LINES 61-62
 
 Project fMRI data to the surface: First get fsaverage5.
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-73
+.. GENERATED FROM PYTHON SOURCE LINES 62-65
 
 .. code-block:: default
 
@@ -167,12 +160,12 @@ Project fMRI data to the surface: First get fsaverage5.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-76
+.. GENERATED FROM PYTHON SOURCE LINES 66-68
 
 The projection function simply takes the fMRI data and the mesh.
 Note that those correspond spatially, as they are both in MNI space.
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-82
+.. GENERATED FROM PYTHON SOURCE LINES 68-74
 
 .. code-block:: default
 
@@ -189,11 +182,11 @@ Note that those correspond spatially, as they are both in MNI space.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-84
+.. GENERATED FROM PYTHON SOURCE LINES 75-76
 
 Empty lists in which we are going to store activation values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-123
+.. GENERATED FROM PYTHON SOURCE LINES 76-115
 
 .. code-block:: default
 
@@ -243,13 +236,13 @@ Empty lists in which we are going to store activation values.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-127
+.. GENERATED FROM PYTHON SOURCE LINES 116-119
 
 Individual activation maps have been accumulated in the z_score_left
 and az_scores_right lists respectively. We can now use them in a
 group study (one-sample study).
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-135
+.. GENERATED FROM PYTHON SOURCE LINES 121-127
 
 Group study
 -----------
@@ -258,7 +251,7 @@ Prepare figure for concurrent plot of individual maps
 compute population-level maps for left and right hemisphere
 We directly do that on the value arrays.
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-139
+.. GENERATED FROM PYTHON SOURCE LINES 127-131
 
 .. code-block:: default
 
@@ -273,11 +266,11 @@ We directly do that on the value arrays.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-141
+.. GENERATED FROM PYTHON SOURCE LINES 132-133
 
 What we have so far are p-values: we convert them to z-values for plotting.
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-144
+.. GENERATED FROM PYTHON SOURCE LINES 133-136
 
 .. code-block:: default
 
@@ -291,11 +284,11 @@ What we have so far are p-values: we convert them to z-values for plotting.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-146
+.. GENERATED FROM PYTHON SOURCE LINES 137-138
 
 Plot the resulting maps, at first on the left hemipshere.
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-151
+.. GENERATED FROM PYTHON SOURCE LINES 138-143
 
 .. code-block:: default
 
@@ -322,11 +315,11 @@ Plot the resulting maps, at first on the left hemipshere.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-153
+.. GENERATED FROM PYTHON SOURCE LINES 144-145
 
 Next, on the right hemisphere.
 
-.. GENERATED FROM PYTHON SOURCE LINES 153-159
+.. GENERATED FROM PYTHON SOURCE LINES 145-151
 
 .. code-block:: default
 
@@ -351,9 +344,9 @@ Next, on the right hemisphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  25.505 seconds)
+   **Total running time of the script:** ( 2 minutes  22.204 seconds)
 
-**Estimated memory usage:**  496 MB
+**Estimated memory usage:**  476 MB
 
 
 .. _sphx_glr_download_auto_examples_07_advanced_plot_surface_bids_analysis.py:

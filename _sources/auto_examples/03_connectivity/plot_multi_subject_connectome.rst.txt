@@ -144,7 +144,7 @@ Extracting region signals
     ________________________________________________________________________________
     [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
     _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz', 
-    <nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7f5d87621f00>, { 'allow_overlap': True,
+    <nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7ff2262ccf10>, { 'allow_overlap': True,
       'detrend': True,
       'dtype': None,
       'high_pass': 0.01,
@@ -169,7 +169,7 @@ Extracting region signals
     [NiftiMapsMasker.transform_single_imgs] Resampling images
     [NiftiMapsMasker.transform_single_imgs] Extracting region signals
     [NiftiMapsMasker.transform_single_imgs] Cleaning extracted signals
-    _______________________________________________filter_and_extract - 6.4s, 0.1min
+    _______________________________________________filter_and_extract - 6.2s, 0.1min
     Processing file /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar001_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
     ________________________________________________________________________________
     [Memory] Calling nilearn.image.image.high_variance_confounds...
@@ -178,7 +178,7 @@ Extracting region signals
     ________________________________________________________________________________
     [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
     _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar001_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz', 
-    <nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7f5d9b285030>, { 'allow_overlap': True,
+    <nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7ff23e635b10>, { 'allow_overlap': True,
       'detrend': True,
       'dtype': None,
       'high_pass': 0.01,
@@ -212,7 +212,7 @@ Extracting region signals
     ________________________________________________________________________________
     [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
     _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar002_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz', 
-    <nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7f5d8ec22290>, { 'allow_overlap': True,
+    <nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7ff23e635b10>, { 'allow_overlap': True,
       'detrend': True,
       'dtype': None,
       'high_pass': 0.01,
@@ -237,7 +237,7 @@ Extracting region signals
     [NiftiMapsMasker.transform_single_imgs] Resampling images
     [NiftiMapsMasker.transform_single_imgs] Extracting region signals
     [NiftiMapsMasker.transform_single_imgs] Cleaning extracted signals
-    _______________________________________________filter_and_extract - 6.3s, 0.1min
+    _______________________________________________filter_and_extract - 6.0s, 0.1min
     Processing file /home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar003_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
     ________________________________________________________________________________
     [Memory] Calling nilearn.image.image.high_variance_confounds...
@@ -246,7 +246,7 @@ Extracting region signals
     ________________________________________________________________________________
     [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
     _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar003_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz', 
-    <nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7f5d9b285030>, { 'allow_overlap': True,
+    <nilearn.maskers.nifti_maps_masker._ExtractionFunctor object at 0x7ff23e635b10>, { 'allow_overlap': True,
       'detrend': True,
       'dtype': None,
       'high_pass': 0.01,
@@ -271,7 +271,7 @@ Extracting region signals
     [NiftiMapsMasker.transform_single_imgs] Resampling images
     [NiftiMapsMasker.transform_single_imgs] Extracting region signals
     [NiftiMapsMasker.transform_single_imgs] Cleaning extracted signals
-    _______________________________________________filter_and_extract - 6.3s, 0.1min
+    _______________________________________________filter_and_extract - 5.9s, 0.1min
 
 
 
@@ -311,7 +311,7 @@ Computing group-sparse precision matrices
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 2
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 7
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.5s remaining:    0.0s
+    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.4s remaining:    0.0s
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 2
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 2
@@ -321,14 +321,14 @@ Computing group-sparse precision matrices
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 2
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 6
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    7.5s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    7.1s finished
     [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  1 out of 4
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 3
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 6
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.6s remaining:    0.0s
+    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.5s remaining:    0.0s
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 4
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 3
@@ -337,32 +337,32 @@ Computing group-sparse precision matrices
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 3
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 6
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   12.7s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   12.1s finished
     [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  2 out of 4
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 5
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
-    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.5s remaining:    0.0s
+    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.4s remaining:    0.0s
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 9
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 10
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 5
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   14.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   13.4s finished
     [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  3 out of 4
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 6
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 1
-    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.9s remaining:    0.0s
+    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    1.8s remaining:    0.0s
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 10
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 11
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 5
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
     [GroupSparseCovarianceCV.fit] Log-likelihood on test set is decreasing. Stopping at iteration 0
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   11.5s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   11.0s finished
     [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  4 out of 4
     [GroupSparseCovarianceCV.fit] Final optimization
     [GroupSparseCovarianceCV.fit] tolerance reached at iteration number 19: 8.789e-04
@@ -376,7 +376,7 @@ Computing group-sparse precision matrices
     [GraphicalLassoCV] Done refinement  2 out of 4:   1s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
     ....[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.2s remaining:    0.0s
-    ................[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.8s finished
+    ................[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.9s finished
     [GraphicalLassoCV] Done refinement  3 out of 4:   2s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
     ....[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.1s remaining:    0.0s
@@ -492,9 +492,9 @@ Displaying results
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  33.359 seconds)
+   **Total running time of the script:** ( 1 minutes  30.041 seconds)
 
-**Estimated memory usage:**  436 MB
+**Estimated memory usage:**  427 MB
 
 
 .. _sphx_glr_download_auto_examples_03_connectivity_plot_multi_subject_connectome.py:

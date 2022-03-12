@@ -89,7 +89,7 @@ Visualization
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5dcf42ac20>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff23b282d70>
 
 
 
@@ -124,7 +124,7 @@ Simple computation of a mask from the fMRI data
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f5d9d536020>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff2390a1ed0>
 
 
 
@@ -168,9 +168,9 @@ Applying the mask to extract the corresponding time series
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  22.763 seconds)
+   **Total running time of the script:** ( 0 minutes  28.668 seconds)
 
-**Estimated memory usage:**  1323 MB
+**Estimated memory usage:**  1341 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_visualization.py:

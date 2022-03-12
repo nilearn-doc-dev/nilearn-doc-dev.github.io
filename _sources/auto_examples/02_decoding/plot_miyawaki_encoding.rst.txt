@@ -460,7 +460,7 @@ set of regression coefficients.
  .. code-block:: none
 
 
-    <matplotlib.colorbar.Colorbar object at 0x7f5d8f7f03d0>
+    <matplotlib.colorbar.Colorbar object at 0x7ff229df2170>
 
 
 
@@ -475,9 +475,9 @@ its location in the brain.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  37.555 seconds)
+   **Total running time of the script:** ( 0 minutes  38.860 seconds)
 
-**Estimated memory usage:**  441 MB
+**Estimated memory usage:**  463 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_miyawaki_encoding.py:

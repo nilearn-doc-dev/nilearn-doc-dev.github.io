@@ -740,17 +740,17 @@ samples and features.</p>
 <p class="centered">
 <strong><a class="reference internal" href="../_images/niimgs.jpg"><img alt="niimgs" src="../_images/niimgs.jpg" style="width: 367.0px; height: 163.5px;"/></a> <span style="padding: .5em; font-size: 400%">→</span> <a class="reference internal" href="../_images/feature_array.jpg"><img alt="arrays" src="../_images/feature_array.jpg" style="width: 115.14999999999999px; height: 167.29999999999998px;"/></a></strong></p><p>We use masking to convert 4D data (i.e. 3D volume over time) into 2D data
 (i.e. voxels over time). For this purpose, we use the
-<a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> object, a very powerful data loading tool.</p>
+<code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code> object, a very powerful data loading tool.</p>
 <section id="applying-a-mask">
 <h4>Applying a mask<a class="headerlink" href="#applying-a-mask" title="Permalink to this headline">#</a></h4>
 <figure class="align-right">
 <a class="reference external image-reference" href="../auto_examples/00_tutorials/plot_decoding_tutorial.html"><img alt="../_images/sphx_glr_plot_decoding_tutorial_001.png" src="../_images/sphx_glr_plot_decoding_tutorial_001.png" style="width: 198.0px; height: 78.0px;"/></a>
 </figure>
-<p>If your dataset provides a mask, the <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> can apply it
+<p>If your dataset provides a mask, the <code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code> can apply it
 automatically. All you have to do is to pass your mask as a parameter when
 creating your masker. Here we use the mask of the ventral stream,
 provided with the Haxby dataset.</p>
-<p>The <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> can be seen as a <em>tube</em> that transforms data
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code> can be seen as a <em>tube</em> that transforms data
 from 4D images to 2D arrays, but first it needs to ‘fit’ this data in
 order to learn simple parameters from it, such as its shape:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># We first create a masker, giving it the options that we care</span>
@@ -830,7 +830,7 @@ discriminating weight.</p>
 </section>
 <section id="going-further">
 <h2>Going further<a class="headerlink" href="#going-further" title="Permalink to this headline">#</a></h2>
-<p>The <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code></a> is a very powerful object and we have only
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMasker</span></code> is a very powerful object and we have only
 scratched the surface of its possibilities. It is described in more
 details in the section <a class="reference internal" href="../manipulating_images/masker_objects.html#nifti-masker"><span class="std std-ref">NiftiMasker: applying a mask to load time-series</span></a>. Also, simple functions that
 can be used to perform elementary operations such as masking or filtering

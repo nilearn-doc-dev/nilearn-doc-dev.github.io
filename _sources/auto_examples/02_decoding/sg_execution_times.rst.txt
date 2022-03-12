@@ -5,38 +5,38 @@
 
 Computation times
 =================
-**32:30.895** total execution time for **auto_examples_02_decoding** files:
+**28:44.311** total execution time for **auto_examples_02_decoding** files:
 
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_oasis_vbm_space_net.py` (``plot_oasis_vbm_space_net.py``)               | 05:45.757 | 2074.6 MB |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_oasis_vbm_space_net.py` (``plot_oasis_vbm_space_net.py``)               | 05:23.346 | 2059.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_full_analysis.py` (``plot_haxby_full_analysis.py``)               | 05:09.218 | 1324.1 MB |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_different_estimators.py` (``plot_haxby_different_estimators.py``) | 04:25.903 | 1331.5 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_different_estimators.py` (``plot_haxby_different_estimators.py``) | 04:35.780 | 1315.6 MB |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_full_analysis.py` (``plot_haxby_full_analysis.py``)               | 03:42.680 | 1355.5 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_glm_decoding.py` (``plot_haxby_glm_decoding.py``)                 | 03:04.636 | 1103.9 MB |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_glm_decoding.py` (``plot_haxby_glm_decoding.py``)                 | 03:02.168 | 1143.1 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_frem.py` (``plot_haxby_frem.py``)                                 | 02:50.762 | 1343.6 MB |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_frem.py` (``plot_haxby_frem.py``)                                 | 02:12.643 | 1392.1 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_grid_search.py` (``plot_haxby_grid_search.py``)                   | 02:04.475 | 916.1 MB  |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_grid_search.py` (``plot_haxby_grid_search.py``)                   | 01:54.856 | 916.1 MB  |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_miyawaki_reconstruction.py` (``plot_miyawaki_reconstruction.py``)       | 01:32.544 | 516.1 MB  |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_miyawaki_reconstruction.py` (``plot_miyawaki_reconstruction.py``)       | 01:37.764 | 513.3 MB  |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_mixed_gambles_frem.py` (``plot_mixed_gambles_frem.py``)                 | 01:31.488 | 1711.5 MB |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_searchlight_surface.py` (``plot_haxby_searchlight_surface.py``)   | 01:21.962 | 916.1 MB  |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_oasis_vbm.py` (``plot_oasis_vbm.py``)                                   | 01:30.579 | 1976.3 MB |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_oasis_vbm.py` (``plot_oasis_vbm.py``)                                   | 01:21.227 | 1870.7 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_searchlight_surface.py` (``plot_haxby_searchlight_surface.py``)   | 01:27.329 | 916.2 MB  |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_mixed_gambles_frem.py` (``plot_mixed_gambles_frem.py``)                 | 00:51.545 | 1762.6 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_multiclass.py` (``plot_haxby_multiclass.py``)                     | 00:51.765 | 2694.8 MB |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_multiclass.py` (``plot_haxby_multiclass.py``)                     | 00:44.687 | 2562.9 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_searchlight.py` (``plot_haxby_searchlight.py``)                   | 00:43.149 | 916.1 MB  |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_searchlight.py` (``plot_haxby_searchlight.py``)                   | 00:41.870 | 915.1 MB  |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_miyawaki_encoding.py` (``plot_miyawaki_encoding.py``)                   | 00:37.555 | 441.2 MB  |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_miyawaki_encoding.py` (``plot_miyawaki_encoding.py``)                   | 00:38.860 | 463.2 MB  |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_anova_svm.py` (``plot_haxby_anova_svm.py``)                       | 00:29.117 | 914.1 MB  |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_anova_svm.py` (``plot_haxby_anova_svm.py``)                       | 00:29.244 | 916.3 MB  |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_simulated_data.py` (``plot_simulated_data.py``)                         | 00:09.683 | 13.5 MB   |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_simulated_data.py` (``plot_simulated_data.py``)                         | 00:09.084 | 54.8 MB   |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_stimuli.py` (``plot_haxby_stimuli.py``)                           | 00:07.058 | 32.3 MB   |
+| :ref:`sphx_glr_auto_examples_02_decoding_plot_haxby_stimuli.py` (``plot_haxby_stimuli.py``)                           | 00:06.472 | 32.2 MB   |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+-----------+

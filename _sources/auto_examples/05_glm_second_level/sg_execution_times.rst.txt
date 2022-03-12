@@ -5,20 +5,20 @@
 
 Computation times
 =================
-**07:23.287** total execution time for **auto_examples_05_glm_second_level** files:
+**07:09.336** total execution time for **auto_examples_05_glm_second_level** files:
 
 +-------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_oasis.py` (``plot_oasis.py``)                                                 | 03:17.646 | 1091.7 MB |
+| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_oasis.py` (``plot_oasis.py``)                                                 | 03:10.497 | 1038.7 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_association_test.py` (``plot_second_level_association_test.py``) | 01:22.345 | 8.8 MB    |
+| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_association_test.py` (``plot_second_level_association_test.py``) | 01:22.663 | 56.6 MB   |
 +-------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_one_sample_test.py` (``plot_second_level_one_sample_test.py``)   | 01:16.129 | 48.0 MB   |
+| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_one_sample_test.py` (``plot_second_level_one_sample_test.py``)   | 01:08.791 | 47.4 MB   |
 +-------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_two_sample_test.py` (``plot_second_level_two_sample_test.py``)   | 00:38.504 | 15.9 MB   |
+| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_two_sample_test.py` (``plot_second_level_two_sample_test.py``)   | 00:33.954 | 16.2 MB   |
 +-------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_thresholding.py` (``plot_thresholding.py``)                                   | 00:29.358 | 8.8 MB    |
+| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_thresholding.py` (``plot_thresholding.py``)                                   | 00:32.503 | 8.7 MB    |
 +-------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_proportion_activated_voxels.py` (``plot_proportion_activated_voxels.py``)     | 00:16.871 | 9.4 MB    |
+| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_proportion_activated_voxels.py` (``plot_proportion_activated_voxels.py``)     | 00:18.276 | 9.4 MB    |
 +-------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_design_matrix.py` (``plot_second_level_design_matrix.py``)       | 00:02.434 | 9.0 MB    |
+| :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_design_matrix.py` (``plot_second_level_design_matrix.py``)       | 00:02.652 | 8.8 MB    |
 +-------------------------------------------------------------------------------------------------------------------------------------+-----------+-----------+

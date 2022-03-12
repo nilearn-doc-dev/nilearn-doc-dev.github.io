@@ -131,7 +131,7 @@ a :class:`~nilearn.plotting.displays.OrthoProjector` is returned.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f5d8ee492d0>
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff225431570>
 
 
 
@@ -162,7 +162,7 @@ setting ``colorbar=True``.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f5d8f78fe20>
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff22a8e8070>
 
 
 
@@ -197,7 +197,7 @@ axial projections by setting ``display_mode='xz'``, which returns a
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.XZProjector object at 0x7f5d980ef520>
+    <nilearn.plotting.displays._projectors.XZProjector object at 0x7ff226814c10>
 
 
 
@@ -232,7 +232,7 @@ Additionally, we only visualize coronal and axial projections by setting
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.YZProjector object at 0x7f5d885ee770>
+    <nilearn.plotting.displays._projectors.YZProjector object at 0x7ff228c16140>
 
 
 
@@ -265,7 +265,7 @@ Setting ``plot_abs=True`` and ``display_mode='yx'`` (returns a
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.YXProjector object at 0x7f5d8ba3ae00>
+    <nilearn.plotting.displays._projectors.YXProjector object at 0x7ff2291b6fb0>
 
 
 
@@ -306,7 +306,7 @@ enables an hemispheric sagittal view. The display object returned is then a
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.LZRProjector object at 0x7f5d89882860>
+    <nilearn.plotting.displays._projectors.LZRProjector object at 0x7ff2292dd0f0>
 
 
 
@@ -341,7 +341,7 @@ enables an hemispheric sagittal view. The display object returned is then a
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.LYRZProjector object at 0x7f5d8fb11420>
+    <nilearn.plotting.displays._projectors.LYRZProjector object at 0x7ff228c43c10>
 
 
 
@@ -380,7 +380,7 @@ If you are only interested in single projections, you can set
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.XProjector object at 0x7f5d8dfea770>
+    <nilearn.plotting.displays._projectors.XProjector object at 0x7ff229579690>
 
 
 
@@ -766,7 +766,7 @@ Next, using the same display object, we plot positive sign of activation.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  35.961 seconds)
+   **Total running time of the script:** ( 0 minutes  35.825 seconds)
 
 **Estimated memory usage:**  9 MB
 

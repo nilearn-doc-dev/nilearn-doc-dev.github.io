@@ -660,28 +660,11 @@ analysis.</p>
 features in the analysis and inspect the outcome, i.e. the resulting brain
 maps.</p>
 <p>Readers without prior experience in fMRI data analysis should first run the
-<span class="xref std std-ref">sphx_glr_auto_examples_plot_single_subject_single_run.py</span> tutorial to get
-a bit more familiar with the base concepts, and only then run this tutorial
-example.</p>
-<p>To run this example, you must launch IPython via <code class="docutils literal notranslate"><span class="pre">ipython</span> <span class="pre">--matplotlib</span></code> in a
-terminal, or use <code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span></code>.</p>
-<div class="contents local topic" id="contents">
-<p class="topic-title"><strong>Contents</strong></p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#retrieving-the-data" id="id1">Retrieving the data</a></p></li>
-<li><p><a class="reference internal" href="#running-a-basic-model" id="id2">Running a basic model</a></p></li>
-<li><p><a class="reference internal" href="#a-first-contrast-estimation-and-plotting" id="id3">A first contrast estimation and plotting</a></p></li>
-<li><p><a class="reference internal" href="#changing-the-drift-model" id="id4">Changing the drift model</a></p></li>
-<li><p><a class="reference internal" href="#changing-the-hemodynamic-response-model" id="id5">Changing the hemodynamic response model</a></p></li>
-<li><p><a class="reference internal" href="#the-noise-model-ar-1-ols-or-higher-order-ar" id="id6">The noise model: ar(1), ols, or higher order ar?</a></p></li>
-<li><p><a class="reference internal" href="#removing-confounds" id="id7">Removing confounds</a></p></li>
-<li><p><a class="reference internal" href="#smoothing" id="id8">Smoothing</a></p></li>
-<li><p><a class="reference internal" href="#masking" id="id9">Masking</a></p></li>
-<li><p><a class="reference internal" href="#conclusion" id="id10">Conclusion</a></p></li>
-</ul>
-</div>
+<a class="reference internal" href="../00_tutorials/plot_single_subject_single_run.html#sphx-glr-auto-examples-00-tutorials-plot-single-subject-single-run-py"><span class="std std-ref">Intro to GLM Analysis: a single-session, single-subject fMRI dataset</span></a>
+tutorial to get a bit more familiar with the base concepts,
+and only then run this tutorial example.</p>
 <section id="retrieving-the-data">
-<h2><a class="toc-backref" href="#id1">Retrieving the data</a><a class="headerlink" href="#retrieving-the-data" title="Permalink to this headline">#</a></h2>
+<h2>Retrieving the data<a class="headerlink" href="#retrieving-the-data" title="Permalink to this headline">#</a></h2>
 <p>We use a so-called localizer dataset, which consists in a 5-minutes
 acquisition of a fast event-related dataset.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">func</span>
@@ -821,7 +804,7 @@ that the experimental tasks were understood and followed correctly.</p>
 <br/>
 <br/></section>
 <section id="running-a-basic-model">
-<h2><a class="toc-backref" href="#id2">Running a basic model</a><a class="headerlink" href="#running-a-basic-model" title="Permalink to this headline">#</a></h2>
+<h2>Running a basic model<a class="headerlink" href="#running-a-basic-model" title="Permalink to this headline">#</a></h2>
 <p>First we specify a linear model.
 The .fit() functionality of FirstLevelModel function creates the design
 matrix and the beta maps.</p>
@@ -917,7 +900,7 @@ specification when we change the design matrix.</p>
 </ul>
 </section>
 <section id="a-first-contrast-estimation-and-plotting">
-<h2><a class="toc-backref" href="#id3">A first contrast estimation and plotting</a><a class="headerlink" href="#a-first-contrast-estimation-and-plotting" title="Permalink to this headline">#</a></h2>
+<h2>A first contrast estimation and plotting<a class="headerlink" href="#a-first-contrast-estimation-and-plotting" title="Permalink to this headline">#</a></h2>
 <p>As this script will be repeated several times, we encapsulate model
 fitting and plotting in a function that we call when needed.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
@@ -945,7 +928,7 @@ fitting and plotting in a function that we call when needed.</p>
 </div>
 <img alt="plot first level details" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_first_level_details_006.png" srcset="../../_images/sphx_glr_plot_first_level_details_006.png"/></section>
 <section id="changing-the-drift-model">
-<h2><a class="toc-backref" href="#id4">Changing the drift model</a><a class="headerlink" href="#changing-the-drift-model" title="Permalink to this headline">#</a></h2>
+<h2>Changing the drift model<a class="headerlink" href="#changing-the-drift-model" title="Permalink to this headline">#</a></h2>
 <p>The drift model is a set of slow oscillating functions
 (Discrete Cosine transform) with a cut-off frequency. To remove
 spurious low-frequency effects related to heart rate, breathing and
@@ -1007,7 +990,7 @@ Let’s take a basis of 5 polynomials.</p>
 <p>Is it good? No better, no worse. Let’s turn to another parameter.</p>
 </section>
 <section id="changing-the-hemodynamic-response-model">
-<h2><a class="toc-backref" href="#id5">Changing the hemodynamic response model</a><a class="headerlink" href="#changing-the-hemodynamic-response-model" title="Permalink to this headline">#</a></h2>
+<h2>Changing the hemodynamic response model<a class="headerlink" href="#changing-the-hemodynamic-response-model" title="Permalink to this headline">#</a></h2>
 <p>This is the filter used to convert the event sequence into a
 reference BOLD signal for the design matrix.</p>
 <p>The first thing that we can do is to change the default model (the
@@ -1104,7 +1087,7 @@ can drop that one.</p>
 </section>
 </section>
 <section id="the-noise-model-ar-1-ols-or-higher-order-ar">
-<h2><a class="toc-backref" href="#id6">The noise model: ar(1), ols, or higher order ar?</a><a class="headerlink" href="#the-noise-model-ar-1-ols-or-higher-order-ar" title="Permalink to this headline">#</a></h2>
+<h2>The noise model: ar(1), ols, or higher order ar?<a class="headerlink" href="#the-noise-model-ar-1-ols-or-higher-order-ar" title="Permalink to this headline">#</a></h2>
 <p>So far,we have implicitly used a lag-1 autoregressive model—aka
 ar(1)—for the temporal structure of the noise. An alternative
 choice is to use an ordinary least squares model (ols) that assumes
@@ -1149,7 +1132,7 @@ However, as the difference is not obvious you may wish to stick to the
 ar(1) model, which is computationally more efficient.</p>
 </section>
 <section id="removing-confounds">
-<h2><a class="toc-backref" href="#id7">Removing confounds</a><a class="headerlink" href="#removing-confounds" title="Permalink to this headline">#</a></h2>
+<h2>Removing confounds<a class="headerlink" href="#removing-confounds" title="Permalink to this headline">#</a></h2>
 <p>A problematic feature of fMRI is the presence of uncontrolled
 confounds in the data, due to scanner instabilities (spikes) or
 physiological phenomena, such as motion, heart and
@@ -1183,7 +1166,7 @@ other hand, some of the maps become cleaner (horizontal-vertical,
 computation) after this addition.</p>
 </section>
 <section id="smoothing">
-<h2><a class="toc-backref" href="#id8">Smoothing</a><a class="headerlink" href="#smoothing" title="Permalink to this headline">#</a></h2>
+<h2>Smoothing<a class="headerlink" href="#smoothing" title="Permalink to this headline">#</a></h2>
 <p>Smoothing is a regularization of the model. It has two benefits:
 decrease the noise level in images, and reduce the discrepancy
 between individuals. The drawback is that it biases the shape and
@@ -1206,7 +1189,7 @@ gains.  We use a mild smoothing of 5mm
 <p>The design is unchanged but the maps are smoother and more contrasted.</p>
 </section>
 <section id="masking">
-<h2><a class="toc-backref" href="#id9">Masking</a><a class="headerlink" href="#masking" title="Permalink to this headline">#</a></h2>
+<h2>Masking<a class="headerlink" href="#masking" title="Permalink to this headline">#</a></h2>
 <p>Masking consists in selecting the region of the image on which the
 model is run: it is useless to run it outside of the brain.</p>
 <p>The approach taken by FirstLeveModel is to estimate it from the fMRI
@@ -1256,14 +1239,14 @@ We use interpolation = ‘nearest’ to keep the mask as a binary image.</p>
 <p>Note that it removed spurious spots in the white matter.</p>
 </section>
 <section id="conclusion">
-<h2><a class="toc-backref" href="#id10">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>Interestingly, the model used here seems quite resilient to
 manipulation of modeling parameters: this is reassuring. It shows
 that Nilearn defaults (‘cosine’ drift, cutoff=128s, ‘glover’ hrf,
 ar(1) model) are actually reasonable.  Note that these conclusions
 are specific to this dataset and may vary with other ones.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 6 minutes  21.235 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  195 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 6 minutes  17.513 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  196 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-04-glm-first-level-plot-first-level-details-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_first_level_details.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo4.svg" width="150px"/></a>
