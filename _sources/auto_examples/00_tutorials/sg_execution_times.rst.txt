@@ -5,16 +5,16 @@
 
 Computation times
 =================
-**02:05.041** total execution time for **auto_examples_00_tutorials** files:
+**02:26.021** total execution time for **auto_examples_00_tutorials** files:
 
 +----------------------------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_00_tutorials_plot_decoding_tutorial.py` (``plot_decoding_tutorial.py``)                 | 00:57.404 | 925.7 MB |
+| :ref:`sphx_glr_auto_examples_00_tutorials_plot_decoding_tutorial.py` (``plot_decoding_tutorial.py``)                 | 01:09.453 | 933.2 MB |
 +----------------------------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_00_tutorials_plot_single_subject_single_run.py` (``plot_single_subject_single_run.py``) | 00:30.254 | 311.6 MB |
+| :ref:`sphx_glr_auto_examples_00_tutorials_plot_3d_and_4d_niimg.py` (``plot_3d_and_4d_niimg.py``)                     | 00:33.219 | 159.5 MB |
 +----------------------------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_00_tutorials_plot_3d_and_4d_niimg.py` (``plot_3d_and_4d_niimg.py``)                     | 00:29.264 | 160.6 MB |
+| :ref:`sphx_glr_auto_examples_00_tutorials_plot_single_subject_single_run.py` (``plot_single_subject_single_run.py``) | 00:32.164 | 310.9 MB |
 +----------------------------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_00_tutorials_plot_nilearn_101.py` (``plot_nilearn_101.py``)                             | 00:07.679 | 231.8 MB |
+| :ref:`sphx_glr_auto_examples_00_tutorials_plot_nilearn_101.py` (``plot_nilearn_101.py``)                             | 00:10.679 | 231.9 MB |
 +----------------------------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_00_tutorials_plot_python_101.py` (``plot_python_101.py``)                               | 00:00.442 | 9.5 MB   |
+| :ref:`sphx_glr_auto_examples_00_tutorials_plot_python_101.py` (``plot_python_101.py``)                               | 00:00.506 | 9.4 MB   |
 +----------------------------------------------------------------------------------------------------------------------+-----------+----------+

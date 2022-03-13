@@ -135,7 +135,7 @@ band-pass filtered and **standardized to 1 variance**.
     ________________________________________________________________________________
     [Memory] Calling nilearn.maskers.base_masker._filter_and_extract...
     _filter_and_extract('/home/alexis/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz', 
-    <nilearn.maskers.nifti_spheres_masker._ExtractionFunctor object at 0x7ff22573afb0>, 
+    <nilearn.maskers.nifti_spheres_masker._ExtractionFunctor object at 0x7f621edc1ff0>, 
     { 'allow_overlap': False,
       'detrend': True,
       'dtype': None,
@@ -249,7 +249,7 @@ We display the graph of connections with
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff225a38400>
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f621899c130>
 
 
 
@@ -865,10 +865,10 @@ We just fit our regions signals into the `GraphicalLassoCV` object
  .. code-block:: none
 
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    2.0s finished
-    [GraphicalLassoCV] Done refinement  1 out of 4:   2s
+    [Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    1.9s finished
+    [GraphicalLassoCV] Done refinement  1 out of 4:   1s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    5.7s finished
+    [Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    5.6s finished
     [GraphicalLassoCV] Done refinement  2 out of 4:   7s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
     [Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    8.8s finished
@@ -958,7 +958,7 @@ and display the graph of connections with `nilearn.plotting.plot_connectome`.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff223cc7e50>
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f6215a6f460>
 
 
 
@@ -1006,7 +1006,7 @@ aggregating edge strength from the graph would help. Use the function
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff2247ce470>
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f6216832440>
 
 
 
@@ -1077,7 +1077,7 @@ the negative structure.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff22454b2e0>
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f6215a6d210>
 
 
 
@@ -1205,7 +1205,7 @@ We repeat the same steps for Dosenbach's atlas.
     invalid value encountered in subtract
 
 
-    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7ff23af3bd90>
+    <nilearn.plotting.displays._projectors.OrthoProjector object at 0x7f621ef33cd0>
 
 
 
@@ -1240,7 +1240,7 @@ We can easily identify the Dosenbach's networks from the matrix blocks.
 References
 ----------
 
- .. footbibliography::
+.. footbibliography::
 
 See also
 --------
@@ -1252,9 +1252,9 @@ See also
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  21.211 seconds)
+   **Total running time of the script:** ( 1 minutes  20.719 seconds)
 
-**Estimated memory usage:**  388 MB
+**Estimated memory usage:**  389 MB
 
 
 .. _sphx_glr_download_auto_examples_03_connectivity_plot_sphere_based_connectome.py:

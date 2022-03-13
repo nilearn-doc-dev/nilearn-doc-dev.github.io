@@ -5,42 +5,42 @@
 
 Computation times
 =================
-**08:58.387** total execution time for **auto_examples_01_plotting** files:
+**09:05.555** total execution time for **auto_examples_01_plotting** files:
 
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_prob_atlas.py` (``plot_prob_atlas.py``)                                       | 03:44.579 | 1121.3 MB |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_prob_atlas.py` (``plot_prob_atlas.py``)                                       | 03:43.667 | 1157.7 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_atlas.py` (``plot_atlas.py``)                                                 | 01:23.245 | 71.1 MB   |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_atlas.py` (``plot_atlas.py``)                                                 | 01:18.236 | 129.2 MB  |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_demo_more_plotting.py` (``plot_demo_more_plotting.py``)                       | 00:50.353 | 915.6 MB  |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_demo_more_plotting.py` (``plot_demo_more_plotting.py``)                       | 01:02.692 | 897.3 MB  |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_demo_glass_brain_extensive.py` (``plot_demo_glass_brain_extensive.py``)       | 00:35.825 | 8.7 MB    |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_demo_glass_brain_extensive.py` (``plot_demo_glass_brain_extensive.py``)       | 00:42.568 | 8.8 MB    |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_3d_map_to_surface_projection.py` (``plot_3d_map_to_surface_projection.py``)   | 00:30.960 | 652.6 MB  |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_3d_map_to_surface_projection.py` (``plot_3d_map_to_surface_projection.py``)   | 00:33.742 | 618.2 MB  |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_visualization.py` (``plot_visualization.py``)                                 | 00:28.668 | 1340.7 MB |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_visualization.py` (``plot_visualization.py``)                                 | 00:24.146 | 1364.5 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_demo_plotting.py` (``plot_demo_plotting.py``)                                 | 00:18.063 | 940.2 MB  |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_demo_plotting.py` (``plot_demo_plotting.py``)                                 | 00:17.221 | 919.6 MB  |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_carpet.py` (``plot_carpet.py``)                                               | 00:15.199 | 1096.4 MB |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_carpet.py` (``plot_carpet.py``)                                               | 00:15.756 | 1117.3 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_dim_plotting.py` (``plot_dim_plotting.py``)                                   | 00:09.651 | 9.3 MB    |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_surf_stat_map.py` (``plot_surf_stat_map.py``)                                 | 00:08.182 | 92.2 MB   |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_surf_stat_map.py` (``plot_surf_stat_map.py``)                                 | 00:07.935 | 57.2 MB   |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_dim_plotting.py` (``plot_dim_plotting.py``)                                   | 00:08.055 | 9.2 MB    |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_surf_atlas.py` (``plot_surf_atlas.py``)                                       | 00:07.073 | 40.1 MB   |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_surf_atlas.py` (``plot_surf_atlas.py``)                                       | 00:07.024 | 40.4 MB   |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_haxby_masks.py` (``plot_haxby_masks.py``)                                     | 00:06.984 | 916.2 MB  |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_haxby_masks.py` (``plot_haxby_masks.py``)                                     | 00:06.445 | 916.2 MB  |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_overlay.py` (``plot_overlay.py``)                                             | 00:05.466 | 10.5 MB   |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_overlay.py` (``plot_overlay.py``)                                             | 00:05.044 | 10.5 MB   |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_multiscale_parcellations.py` (``plot_multiscale_parcellations.py``)           | 00:04.419 | 8.7 MB    |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_demo_glass_brain.py` (``plot_demo_glass_brain.py``)                           | 00:04.149 | 15.6 MB   |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_demo_glass_brain.py` (``plot_demo_glass_brain.py``)                           | 00:04.381 | 15.8 MB   |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_multiscale_parcellations.py` (``plot_multiscale_parcellations.py``)           | 00:03.865 | 8.8 MB    |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_colormaps.py` (``plot_colormaps.py``)                                         | 00:03.173 | 15.3 MB   |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_colormaps.py` (``plot_colormaps.py``)                                         | 00:02.422 | 15.4 MB   |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_surface_projection_strategies.py` (``plot_surface_projection_strategies.py``) | 00:01.635 | 9.3 MB    |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_surface_projection_strategies.py` (``plot_surface_projection_strategies.py``) | 00:01.593 | 9.3 MB    |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+
-| :ref:`sphx_glr_auto_examples_01_plotting_plot_visualize_megatrawls_netmats.py` (``plot_visualize_megatrawls_netmats.py``)   | 00:00.780 | 8.7 MB    |
+| :ref:`sphx_glr_auto_examples_01_plotting_plot_visualize_megatrawls_netmats.py` (``plot_visualize_megatrawls_netmats.py``)   | 00:00.747 | 8.8 MB    |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+-----------+

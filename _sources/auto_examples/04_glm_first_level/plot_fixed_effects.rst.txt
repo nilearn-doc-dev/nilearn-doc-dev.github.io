@@ -176,7 +176,7 @@ Statistics for the first session
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff227446a40>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f621473e170>
 
 
 
@@ -211,7 +211,7 @@ Statistics for the second session
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff22710ed40>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6213594a30>
 
 
 
@@ -250,7 +250,7 @@ Fixed effects statistics
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff226968970>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f621473c2e0>
 
 
 
@@ -278,9 +278,9 @@ t statistic (not a z statistic)
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.859 seconds)
+   **Total running time of the script:** ( 0 minutes  20.695 seconds)
 
-**Estimated memory usage:**  470 MB
+**Estimated memory usage:**  553 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_fixed_effects.py:

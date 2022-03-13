@@ -312,7 +312,7 @@ Plot the prediction scores using matplotlib
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  54.856 seconds)
+   **Total running time of the script:** ( 2 minutes  1.593 seconds)
 
 **Estimated memory usage:**  916 MB
 
