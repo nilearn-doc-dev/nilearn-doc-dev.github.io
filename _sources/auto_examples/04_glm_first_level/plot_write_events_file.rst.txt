@@ -293,15 +293,11 @@ Take a look at the new DataFrame
 
 Export them to a tsv file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-95
+.. GENERATED FROM PYTHON SOURCE LINES 87-91
 
 .. code-block:: default
 
-    import os
-    outdir = 'results'
-    if not os.path.exists(outdir):
-        os.mkdir(outdir)
-    tsvfile = outdir + '/localizer_events.tsv'
+    tsvfile = 'localizer_events.tsv'
     events.to_csv(tsvfile, sep='\t', index=False)
     print(f'The event information has been saved to {tsvfile}')
 
@@ -313,17 +309,17 @@ Export them to a tsv file.
 
  .. code-block:: none
 
-    The event information has been saved to results/localizer_events.tsv
+    The event information has been saved to localizer_events.tsv
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-98
+.. GENERATED FROM PYTHON SOURCE LINES 92-94
 
 Optionally, the events can be visualized using the
 :func:`~nilearn.plotting.plot_event` function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-103
+.. GENERATED FROM PYTHON SOURCE LINES 94-99
 
 .. code-block:: default
 
@@ -347,7 +343,7 @@ Optionally, the events can be visualized using the
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.345 seconds)
+   **Total running time of the script:** ( 0 minutes  4.394 seconds)
 
 **Estimated memory usage:**  9 MB
 

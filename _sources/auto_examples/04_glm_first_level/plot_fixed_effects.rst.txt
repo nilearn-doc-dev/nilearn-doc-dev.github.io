@@ -26,26 +26,26 @@ have to be fit separately.
 
 For details on the data, please see:
 
-    Dehaene-Lambertz G, Dehaene S, Anton JL, Campagne A, Ciuciu P, Dehaene
-        G, Denghien I, Jobert A, LeBihan D, Sigman M, Pallier C, Poline
-        JB. Functional segregation of cortical language areas by sentence
-        repetition. Hum Brain Mapp. 2006: 27:360--371.
-        http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2653076#R11
+Dehaene-Lambertz G, Dehaene S, Anton JL, Campagne A, Ciuciu P, Dehaene
+G, Denghien I, Jobert A, LeBihan D, Sigman M, Pallier C, Poline
+JB. Functional segregation of cortical language areas by sentence
+repetition. Hum Brain Mapp. 2006: 27:360--371.
+http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2653076#R11
 
-Please see
-:ref:`sphx_glr_auto_examples_04_glm_first_level_plot_fiac_analysis.py`
-for details.  The main difference is that
+Please see `Simple example of two-session :term:`fMRI` model fitting
+<https://nistats.github.io/auto_examples/02_first_levels/plot_fiac_analysis.html>`_
+example for details.  The main difference is that
 the fixed-effects model is run explicitly here,
 after GLM fitting on two sessions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-28
+.. GENERATED FROM PYTHON SOURCE LINES 25-29
 
 Prepare data and analysis parameters
 --------------------------------------
 
 Inspecting 'data', we note that there are two sessions
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-33
+.. GENERATED FROM PYTHON SOURCE LINES 29-34
 
 .. code-block:: default
 
@@ -61,11 +61,11 @@ Inspecting 'data', we note that there are two sessions
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-35
+.. GENERATED FROM PYTHON SOURCE LINES 35-36
 
 Create a mean image for plotting purpose
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-38
+.. GENERATED FROM PYTHON SOURCE LINES 36-39
 
 .. code-block:: default
 
@@ -79,12 +79,12 @@ Create a mean image for plotting purpose
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-41
+.. GENERATED FROM PYTHON SOURCE LINES 40-42
 
 The design matrices were pre-computed, we simply put them in a list of
 DataFrames
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-46
+.. GENERATED FROM PYTHON SOURCE LINES 42-47
 
 .. code-block:: default
 
@@ -100,14 +100,14 @@ DataFrames
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-51
+.. GENERATED FROM PYTHON SOURCE LINES 48-52
 
 GLM estimation
 ----------------------------------
 GLM specification. Note that the mask was provided in the dataset.
 So we use it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-56
+.. GENERATED FROM PYTHON SOURCE LINES 52-57
 
 .. code-block:: default
 
@@ -123,12 +123,12 @@ So we use it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-59
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 Compute fixed effects of the two runs and compute related images
 For this, we first define the contrasts as we would do for a single session
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-62
+.. GENERATED FROM PYTHON SOURCE LINES 60-63
 
 .. code-block:: default
 
@@ -142,11 +142,11 @@ For this, we first define the contrasts as we would do for a single session
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-64
+.. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 Statistics for the first session
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-76
+.. GENERATED FROM PYTHON SOURCE LINES 65-77
 
 .. code-block:: default
 
@@ -176,15 +176,15 @@ Statistics for the first session
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f621473e170>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e492c3c40>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-78
+.. GENERATED FROM PYTHON SOURCE LINES 78-79
 
 Statistics for the second session
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-87
+.. GENERATED FROM PYTHON SOURCE LINES 79-88
 
 .. code-block:: default
 
@@ -211,15 +211,15 @@ Statistics for the second session
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6213594a30>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e3a61b550>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-89
+.. GENERATED FROM PYTHON SOURCE LINES 89-90
 
 Fixed effects statistics
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-102
+.. GENERATED FROM PYTHON SOURCE LINES 90-103
 
 .. code-block:: default
 
@@ -250,11 +250,11 @@ Fixed effects statistics
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f621473c2e0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e492c2cb0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-108
+.. GENERATED FROM PYTHON SOURCE LINES 104-109
 
 Not unexpectedly, the fixed effects version displays higher peaks than the
 input sessions. Computing fixed effects enhances the signal-to-noise ratio of
@@ -262,7 +262,7 @@ the resulting brain maps
 Note however that, technically, the output maps of the fixed effects map is a
 t statistic (not a z statistic)
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-110
+.. GENERATED FROM PYTHON SOURCE LINES 109-111
 
 .. code-block:: default
 
@@ -278,9 +278,9 @@ t statistic (not a z statistic)
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  20.695 seconds)
+   **Total running time of the script:** ( 0 minutes  21.610 seconds)
 
-**Estimated memory usage:**  553 MB
+**Estimated memory usage:**  554 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_fixed_effects.py:

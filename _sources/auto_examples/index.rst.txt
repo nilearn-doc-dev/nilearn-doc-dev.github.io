@@ -959,9 +959,8 @@ See :ref:`parcellating_brain`, :ref:`extracting_rsn` or
 
     </div>
 
-=========================
-GLM: First level analysis
-=========================
+GLM: First level analysis examples
+-----------------------------------
 
 These are examples focused on showcasing first level models functionality and single subject analysis.
 
@@ -1182,9 +1181,8 @@ See :ref:`glm` for more details.
 
     </div>
 
-===========================
-GLM : Second level analysis
-===========================
+GLM : Second level analysis examples
+-------------------------------------
 
 These are examples focused on showcasing second level models functionality and group level analysis.
 
@@ -1320,9 +1318,8 @@ See :ref:`glm` for more details.
 
     </div>
 
-================================
 Manipulating brain image volumes
-================================
+--------------------------------
 
 See :ref:`data_manipulation` for more details.
 
@@ -1541,9 +1538,8 @@ See :ref:`data_manipulation` for more details.
 
     </div>
 
-=============================================
 Advanced statistical analysis of brain images
-=============================================
+---------------------------------------------
 
 
 

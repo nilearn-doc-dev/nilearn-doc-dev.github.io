@@ -2,9 +2,8 @@
 
 .. _sphx_glr_auto_examples_05_glm_second_level:
 
-===========================
-GLM : Second level analysis
-===========================
+GLM : Second level analysis examples
+-------------------------------------
 
 These are examples focused on showcasing second level models functionality and group level analysis.
 

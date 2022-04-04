@@ -1,8 +1,12 @@
 .. _maintenance_process:
 
-===========
-Maintenance
-===========
+============================
+Nilearn maintenance process
+============================
+
+.. contents::
+    :depth: 2
+    :local:
 
 Project Organization
 ====================

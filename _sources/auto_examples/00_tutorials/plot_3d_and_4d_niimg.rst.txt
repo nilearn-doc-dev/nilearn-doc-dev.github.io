@@ -122,10 +122,10 @@ statistical map:
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/img_plotting.py:348: FutureWarning: Default resolution of the MNI template will change from 2mm to 1mm in version 0.10.0
+    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/img_plotting.py:300: FutureWarning: Default resolution of the MNI template will change from 2mm to 1mm in version 0.10.0
       anat_img = load_mni152_template()
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f62589c5ed0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e824666b0>
 
 
 
@@ -154,7 +154,7 @@ Visualizing works better with a threshold
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258a82c50>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e826cacb0>
 
 
 
@@ -262,7 +262,7 @@ We can then plot it
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258a83e50>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e826ca320>
 
 
 
@@ -472,9 +472,9 @@ image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  33.219 seconds)
+   **Total running time of the script:** ( 0 minutes  24.113 seconds)
 
-**Estimated memory usage:**  160 MB
+**Estimated memory usage:**  135 MB
 
 
 .. _sphx_glr_download_auto_examples_00_tutorials_plot_3d_and_4d_niimg.py:

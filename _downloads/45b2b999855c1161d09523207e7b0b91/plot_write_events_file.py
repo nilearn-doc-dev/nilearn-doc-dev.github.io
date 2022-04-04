@@ -84,11 +84,7 @@ events
 
 #########################################################################
 # Export them to a tsv file.
-import os
-outdir = 'results'
-if not os.path.exists(outdir):
-    os.mkdir(outdir)
-tsvfile = outdir + '/localizer_events.tsv'
+tsvfile = 'localizer_events.tsv'
 events.to_csv(tsvfile, sep='\t', index=False)
 print(f'The event information has been saved to {tsvfile}')
 

@@ -5,9 +5,13 @@
     >>> if _compare_version(np.__version__, '>=', '1.14'):
     ...     np.set_printoptions(legacy='1.13')
 
-============
-Introduction
-============
+=====================================
+Introduction: nilearn in a nutshell
+=====================================
+
+.. contents:: **Contents**
+    :local:
+    :depth: 1
 
 
 What is nilearn: MVPA, decoding, predictive models, functional connectivity
@@ -85,72 +89,8 @@ Why is machine learning relevant to NeuroImaging? A few examples!
 Installing nilearn
 ====================
 
-.. tab-set::
-
-  .. tab-item:: Pip install
-
-      **1. Download and install 64-bit Anaconda**
-
-      We recommend that you install a complete
-      64-bit scientific Python distribution like
-      `Anaconda <https://www.anaconda.com/download/>`_ (or `PythonXY <http://python-xy.github.io/>`_).
-
-      Nilearn requires a Python installation and the following
-      dependencies: ipython, scipy, scikit-learn, joblib, matplotlib,
-      nibabel and pandas.
-
-      Once conda is installed, create and activte
-      a new python environment with:
-
-      .. code-block::
-
-         conda create -n nilearn-test python=3.9
-         conda activate nilearn-test
-
-      **2. Install nilearn with pip**
-
-      Execute the following command in the command prompt / terminal
-      in the proper conda environment:
-
-      .. code-block::
-
-         python -m pip install -U --user nilearn
-
-      **3. Check installation**
-
-      Try importing nilearn in a python / ipython session:
-
-      .. code-block:: python
-
-         import nilearn
-
-      If no error is raised, you have installed nilearn correctly.
-
-  .. tab-item:: Install from source
-
-      In order to access the development version of nilearn,
-      simply clone and go to the repo:
-
-      .. code-block::
-
-         git clone https://github.com/nilearn/nilearn.git
-         cd nilearn
-
-      Install the package in the proper conda environment with
-
-      .. code-block::
-
-         python -m pip install -r requirements-dev.txt
-         python -m pip install -e .
-
-      To check your install, try importing nilearn in a python session:
-
-      .. code-block:: python
-
-        import nilearn
-
-      If no error is raised, you have installed nilearn correctly.
-
+.. raw:: html
+   :file: install_doc_component.html
 
 .. _quick_start:
 
@@ -304,9 +244,9 @@ To loop over each individual volume of a 4D image, use :func:`image.iter_img`::
    The two following tutorials may be useful to get familiar with data
    representation in nilearn:
 
-   * :ref:`sphx_glr_auto_examples_00_tutorials_plot_nilearn_101.py`
+   * :ref:`sphx_glr_auto_examples_plot_nilearn_101.py`
 
-   * :ref:`sphx_glr_auto_examples_00_tutorials_plot_3d_and_4d_niimg.py`
+   * :ref:`sphx_glr_auto_examples_plot_3d_and_4d_niimg.py`
 
    More tutorials can be found :ref:`here <tutorial_examples>`
 
@@ -356,8 +296,8 @@ Basic numerics
 
 :Plotting and figures:
 
- .. figure:: auto_examples/00_tutorials/images/sphx_glr_plot_python_101_001.png
-   :target: auto_examples/00_tutorials/plot_python_101.html
+ .. figure:: auto_examples/images/sphx_glr_plot_python_101_001.png
+   :target: auto_examples/plot_python_101.html
    :align: right
    :scale: 30
 
