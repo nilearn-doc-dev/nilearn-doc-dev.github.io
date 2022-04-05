@@ -143,7 +143,7 @@ By default the ``colorbar`` argument is set to ``True`` in
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e3cc75a80>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6218847280>
 
 
 
@@ -182,7 +182,7 @@ automatically.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f9e2e26be20>
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f6216b8a1d0>
 
 
 
@@ -219,7 +219,7 @@ integers.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.XSlicer object at 0x7f9e3dfbb6d0>
+    <nilearn.plotting.displays._slicers.XSlicer object at 0x7f6217654700>
 
 
 
@@ -255,7 +255,7 @@ again, selected automatically.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.YSlicer object at 0x7f9e2e26af20>
+    <nilearn.plotting.displays._slicers.YSlicer object at 0x7f6216b89420>
 
 
 
@@ -290,7 +290,7 @@ a colorbar on the right side.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f9e427811e0>
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f6224b2c400>
 
 
 
@@ -330,7 +330,7 @@ slices to be displayed.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.XZSlicer object at 0x7f9e3d55f610>
+    <nilearn.plotting.displays._slicers.XZSlicer object at 0x7f6216b88430>
 
 
 
@@ -367,7 +367,7 @@ The coordinates will be assigned in the order of direction as [x, y, z].
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.YXSlicer object at 0x7f9e420e38b0>
+    <nilearn.plotting.displays._slicers.YXSlicer object at 0x7f6217656560>
 
 
 
@@ -403,7 +403,7 @@ object.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.YZSlicer object at 0x7f9e4204e230>
+    <nilearn.plotting.displays._slicers.YZSlicer object at 0x7f6214b63b20>
 
 
 
@@ -440,7 +440,7 @@ a :class:`~nilearn.plotting.displays.TiledSlicer` object.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.TiledSlicer object at 0x7f9e42de2380>
+    <nilearn.plotting.displays._slicers.TiledSlicer object at 0x7f6216af89a0>
 
 
 
@@ -477,7 +477,7 @@ In addition, we show here the default option ``cut_coords=None``.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.MosaicSlicer object at 0x7f9e3d7a8460>
+    <nilearn.plotting.displays._slicers.MosaicSlicer object at 0x7f6218d335e0>
 
 
 
@@ -513,7 +513,7 @@ an integer, i.e. ``cut_coords=3``.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.MosaicSlicer object at 0x7f9e42783f40>
+    <nilearn.plotting.displays._slicers.MosaicSlicer object at 0x7f6217656c20>
 
 
 
@@ -549,7 +549,7 @@ we specify the number of slices as a tuple of length 3.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.MosaicSlicer object at 0x7f9e3d55de10>
+    <nilearn.plotting.displays._slicers.MosaicSlicer object at 0x7f6214b61b70>
 
 
 
@@ -867,9 +867,9 @@ object returned.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  51.903 seconds)
+   **Total running time of the script:** ( 1 minutes  2.692 seconds)
 
-**Estimated memory usage:**  906 MB
+**Estimated memory usage:**  897 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_demo_more_plotting.py:

@@ -2,8 +2,9 @@
 
 .. _sphx_glr_auto_examples_06_manipulating_images:
 
+================================
 Manipulating brain image volumes
---------------------------------
+================================
 
 See :ref:`data_manipulation` for more details.
 

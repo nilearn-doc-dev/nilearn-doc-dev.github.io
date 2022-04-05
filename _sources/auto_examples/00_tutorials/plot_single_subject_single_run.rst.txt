@@ -118,7 +118,7 @@ We can display the first functional image and the subject's anatomy:
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e824f9690>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258c5b1c0>
 
 
 
@@ -813,7 +813,7 @@ We can furthermore extract and report the found positions in a table.
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/reporting/_get_clusters_table.py:212: UserWarning: Attention: No clusters with stat higher than 2.903531892142391
+    /home/alexis/singbrain/repo/nilearn/nilearn/reporting/_get_clusters_table.py:208: UserWarning: Attention: No clusters with stat higher than 2.903531892142391
       warnings.warn(
 
 
@@ -951,9 +951,9 @@ Oops, there is a lot of non-neural signal in there (ventricles, arteries)...
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  28.699 seconds)
+   **Total running time of the script:** ( 0 minutes  32.164 seconds)
 
-**Estimated memory usage:**  316 MB
+**Estimated memory usage:**  311 MB
 
 
 .. _sphx_glr_download_auto_examples_00_tutorials_plot_single_subject_single_run.py:

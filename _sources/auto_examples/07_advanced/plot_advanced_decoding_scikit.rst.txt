@@ -35,11 +35,7 @@ face and cat images.
       and Objects in Ventral Temporal Cortex", Science vol 293 (2001), p
       2425.-2430.
 
-.. contents:: **Contents**
-    :local:
-    :depth: 1
-
-.. GENERATED FROM PYTHON SOURCE LINES 26-32
+.. GENERATED FROM PYTHON SOURCE LINES 21-27
 
 Retrieve and load the fMRI data from the Haxby study
 ------------------------------------------------------
@@ -48,7 +44,7 @@ First download the data
 ........................
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-45
+.. GENERATED FROM PYTHON SOURCE LINES 27-40
 
 .. code-block:: default
 
@@ -159,11 +155,11 @@ First download the data
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-47
+.. GENERATED FROM PYTHON SOURCE LINES 41-42
 
 We keep only a images from a pair of conditions(cats versus faces).
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-56
+.. GENERATED FROM PYTHON SOURCE LINES 42-51
 
 .. code-block:: default
 
@@ -183,12 +179,12 @@ We keep only a images from a pair of conditions(cats versus faces).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-59
+.. GENERATED FROM PYTHON SOURCE LINES 52-54
 
 Performing decoding with scikit-learn
 --------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-68
+.. GENERATED FROM PYTHON SOURCE LINES 54-63
 
 .. code-block:: default
 
@@ -208,7 +204,7 @@ Performing decoding with scikit-learn
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-75
+.. GENERATED FROM PYTHON SOURCE LINES 64-70
 
 Masking the data
 ...................................
@@ -217,7 +213,7 @@ data using a :class:`nilearn.maskers.NiftiMasker` to extract only the
 voxels inside the mask of interest, and transform 4D input fMRI data to
 2D arrays(`shape=(n_timepoints, n_voxels)`) that estimators can work on.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-81
+.. GENERATED FROM PYTHON SOURCE LINES 70-76
 
 .. code-block:: default
 
@@ -234,7 +230,7 @@ voxels inside the mask of interest, and transform 4D input fMRI data to
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-87
+.. GENERATED FROM PYTHON SOURCE LINES 77-82
 
 Cross-validation with scikit-learn
 ...................................
@@ -242,7 +238,7 @@ To train and test the model in a meaningful way we use cross-validation with
 the function :func:`sklearn.model_selection.cross_val_score` that computes
 for you the score for the different folds of cross-validation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-93
+.. GENERATED FROM PYTHON SOURCE LINES 82-88
 
 .. code-block:: default
 
@@ -265,7 +261,7 @@ for you the score for the different folds of cross-validation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-105
+.. GENERATED FROM PYTHON SOURCE LINES 89-100
 
 Tuning cross-validation parameters
 ...................................
@@ -279,7 +275,7 @@ You can change many parameters of the cross_validation here, for example:
 * use a different scoring function, as a keyword or imported from
   scikit-learn : scoring = 'roc_auc'
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-111
+.. GENERATED FROM PYTHON SOURCE LINES 100-106
 
 .. code-block:: default
 
@@ -302,7 +298,7 @@ You can change many parameters of the cross_validation here, for example:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-118
+.. GENERATED FROM PYTHON SOURCE LINES 107-113
 
 Measuring the chance level
 ------------------------------------
@@ -311,12 +307,12 @@ simplest way to measure prediction performance at chance. A more controlled
 way, but slower, is to do permutation testing on the labels, with
 :func:`sklearn.model_selection.permutation_test_score`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-122
+.. GENERATED FROM PYTHON SOURCE LINES 115-117
 
 Dummy estimator
 ...................................
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-128
+.. GENERATED FROM PYTHON SOURCE LINES 117-123
 
 .. code-block:: default
 
@@ -339,12 +335,12 @@ Dummy estimator
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-131
+.. GENERATED FROM PYTHON SOURCE LINES 124-126
 
 Permutation test
 ...................................
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-136
+.. GENERATED FROM PYTHON SOURCE LINES 126-131
 
 .. code-block:: default
 
@@ -366,7 +362,7 @@ Permutation test
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-144
+.. GENERATED FROM PYTHON SOURCE LINES 132-139
 
 Decoding without a mask: Anova-SVM in scikit-lean
 --------------------------------------------------
@@ -376,7 +372,7 @@ the :mod:`sklearn.feature_selection` module and use
 :func:`sklearn.feature_selection.f_classif`, a simple F-score
 based feature selection (a.k.a. `Anova <https://en.wikipedia.org/wiki/Analysis_of_variance#The_F-test>`_),
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-160
+.. GENERATED FROM PYTHON SOURCE LINES 139-155
 
 .. code-block:: default
 
@@ -409,12 +405,12 @@ based feature selection (a.k.a. `Anova <https://en.wikipedia.org/wiki/Analysis_o
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 161-163
+.. GENERATED FROM PYTHON SOURCE LINES 156-158
 
 Visualize the ANOVA + SVC's discriminating weights
 ...................................................
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-182
+.. GENERATED FROM PYTHON SOURCE LINES 158-177
 
 .. code-block:: default
 
@@ -453,23 +449,23 @@ Visualize the ANOVA + SVC's discriminating weights
     After feature selection, the SVC is trained only on 47 features
     After inverting feature selection, we have 464 features back
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e2c88f610>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6279c9d930>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-185
+.. GENERATED FROM PYTHON SOURCE LINES 178-180
 
 Going further with scikit-learn
 ------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 187-191
+.. GENERATED FROM PYTHON SOURCE LINES 182-186
 
 Changing the prediction engine
 ...............................
 To change the prediction engine, we just need to import it and use in our
 pipeline instead of the SVC. We can try Fisher's `Linear Discriminant Analysis (LDA) <http://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_vs_lda.html>`_
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-209
+.. GENERATED FROM PYTHON SOURCE LINES 186-204
 
 .. code-block:: default
 
@@ -506,14 +502,14 @@ pipeline instead of the SVC. We can try Fisher's `Linear Discriminant Analysis (
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 210-214
+.. GENERATED FROM PYTHON SOURCE LINES 205-209
 
 Changing the feature selection
 ...........................................
 Let's say that you want a more sophisticated feature selection, for example a
 Recursive Feature Elimination(RFE) before a svc. We follows the same principle.
 
-.. GENERATED FROM PYTHON SOURCE LINES 214-227
+.. GENERATED FROM PYTHON SOURCE LINES 209-222
 
 .. code-block:: default
 
@@ -540,7 +536,7 @@ Recursive Feature Elimination(RFE) before a svc. We follows the same principle.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  27.069 seconds)
+   **Total running time of the script:** ( 0 minutes  25.373 seconds)
 
 **Estimated memory usage:**  916 MB
 

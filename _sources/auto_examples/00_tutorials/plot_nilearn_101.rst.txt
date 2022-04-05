@@ -76,7 +76,7 @@ Let's quickly plot this file:
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e826a4250>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258ba1ea0>
 
 
 
@@ -123,7 +123,7 @@ Here we give as inputs the image filename and the smoothing value in mm
  .. code-block:: none
 
 
-    <nibabel.nifti1.Nifti1Image object at 0x7f9ea51884f0>
+    <nibabel.nifti1.Nifti1Image object at 0x7f6234770bb0>
 
 
 
@@ -152,7 +152,7 @@ instance to look at it
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e826a51e0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258c5afe0>
 
 
 
@@ -181,7 +181,7 @@ We could also pass it to the smoothing function
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f9e82589090>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258ae05b0>
 
 
 
@@ -236,9 +236,9 @@ passed on to other nilearn tools, or saved to disk.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.553 seconds)
+   **Total running time of the script:** ( 0 minutes  10.679 seconds)
 
-**Estimated memory usage:**  218 MB
+**Estimated memory usage:**  232 MB
 
 
 .. _sphx_glr_download_auto_examples_00_tutorials_plot_nilearn_101.py:
