@@ -28,12 +28,14 @@ then inspect.
 Also, the predicted time series can be extracted, which is useful to assess the
 quality of the model fit.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-18
+.. include:: ../../../examples/masker_note.rst
+
+.. GENERATED FROM PYTHON SOURCE LINES 18-20
 
 Import modules
 --------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-40
+.. GENERATED FROM PYTHON SOURCE LINES 20-42
 
 .. code-block:: default
 
@@ -66,7 +68,7 @@ Import modules
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-47
+.. GENERATED FROM PYTHON SOURCE LINES 43-49
 
 Fit model
 ---------
@@ -75,7 +77,7 @@ stores the residuals.
 `signal_scaling` is set to False, so we keep the same scaling as the
 original data in `fmri_img`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-58
+.. GENERATED FROM PYTHON SOURCE LINES 49-60
 
 .. code-block:: default
 
@@ -97,12 +99,12 @@ original data in `fmri_img`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 61-63
 
 Calculate and plot contrast
 ---------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-67
+.. GENERATED FROM PYTHON SOURCE LINES 63-69
 
 .. code-block:: default
 
@@ -126,16 +128,16 @@ Calculate and plot contrast
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6211222860>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff9026ef3d0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-70
+.. GENERATED FROM PYTHON SOURCE LINES 70-72
 
 Extract the largest clusters
 ----------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-86
+.. GENERATED FROM PYTHON SOURCE LINES 72-88
 
 .. code-block:: default
 
@@ -162,12 +164,12 @@ Extract the largest clusters
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-89
+.. GENERATED FROM PYTHON SOURCE LINES 89-91
 
 Plot predicted and actual time series for 6 most significant clusters
 ---------------------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-110
+.. GENERATED FROM PYTHON SOURCE LINES 91-112
 
 .. code-block:: default
 
@@ -196,7 +198,7 @@ Plot predicted and actual time series for 6 most significant clusters
 
 
 .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_002.png
-   :alt: Cluster peak [-60.  -6.  42.] , Cluster peak [60.  0. 36.] , Cluster peak [57. -6. 36.] , Cluster peak [-48. -15.  39.] , Cluster peak [57. 36. 27.] , Cluster peak [51. 30. 30.] 
+   :alt: Cluster peak [-60.  -6.  42.] , Cluster peak [60.  0. 36.] , Cluster peak [30. -9. 12.] , Cluster peak [-27.  -3.  15.] , Cluster peak [57. 21. 75.] , Cluster peak [39. 33. 51.] 
    :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_002.png
    :class: sphx-glr-single-img
 
@@ -204,12 +206,12 @@ Plot predicted and actual time series for 6 most significant clusters
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-113
+.. GENERATED FROM PYTHON SOURCE LINES 113-115
 
 Get residuals
 -------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-116
+.. GENERATED FROM PYTHON SOURCE LINES 115-118
 
 .. code-block:: default
 
@@ -224,7 +226,7 @@ Get residuals
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/regression.py:42: FutureWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/regression.py:42: FutureWarning:
 
     'resid' has been deprecated in version 0.7.0 and will be removed in version 0.9.0. Please use 'residuals' instead.
 
@@ -232,13 +234,13 @@ Get residuals
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-120
+.. GENERATED FROM PYTHON SOURCE LINES 119-122
 
 Plot distribution of residuals
 ------------------------------
 Note that residuals are not really distributed normally.
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-131
+.. GENERATED FROM PYTHON SOURCE LINES 122-133
 
 .. code-block:: default
 
@@ -257,7 +259,7 @@ Note that residuals are not really distributed normally.
 
 
 .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_003.png
-   :alt: Cluster peak [-60.  -6.  42.] , Cluster peak [60.  0. 36.] , Cluster peak [57. -6. 36.] , Cluster peak [-48. -15.  39.] , Cluster peak [57. 36. 27.] , Cluster peak [51. 30. 30.] 
+   :alt: Cluster peak [-60.  -6.  42.] , Cluster peak [60.  0. 36.] , Cluster peak [30. -9. 12.] , Cluster peak [-27.  -3.  15.] , Cluster peak [57. 21. 75.] , Cluster peak [39. 33. 51.] 
    :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_predictions_residuals_003.png
    :class: sphx-glr-single-img
 
@@ -266,17 +268,17 @@ Note that residuals are not really distributed normally.
 
  .. code-block:: none
 
-    Mean residuals: 1.2138438402568378e-14
-    Mean residuals: -0.054243690993344064
-    Mean residuals: 0.0035701487678381216
-    Mean residuals: -0.007370668280535009
-    Mean residuals: 0.025737648853185153
-    Mean residuals: 0.02466644889284934
+    Mean residuals: 1.805962786723588e-14
+    Mean residuals: -0.05424369099330876
+    Mean residuals: 0.0023122829555553004
+    Mean residuals: 0.011694403952939969
+    Mean residuals: 0.0023763001785765217
+    Mean residuals: -0.004645997877151124
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-146
+.. GENERATED FROM PYTHON SOURCE LINES 134-148
 
 Plot R-squared
 --------------
@@ -293,7 +295,7 @@ because the voxel/region fits the noise factors (such as drift or motion)
 that could be present in the GLM. To isolate the influence of the experiment,
 we can use an F-test as shown in the next section.
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-150
+.. GENERATED FROM PYTHON SOURCE LINES 148-152
 
 .. code-block:: default
 
@@ -315,11 +317,11 @@ we can use an F-test as shown in the next section.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f6211055ff0>
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7ff8ed2ee290>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-157
+.. GENERATED FROM PYTHON SOURCE LINES 153-159
 
 Calculate and Plot F-test
 -------------------------
@@ -328,7 +330,7 @@ active and rest conditions together. This is different from R-squared, which
 tells you how well the overall GLM fits the data, including active, rest and
 all the other columns in the design matrix such as drift and motion.
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-176
+.. GENERATED FROM PYTHON SOURCE LINES 159-178
 
 .. code-block:: default
 
@@ -365,44 +367,39 @@ all the other columns in the design matrix such as drift and motion.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f621186fc40>
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7ff8f2bb4c10>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  45.731 seconds)
+   **Total running time of the script:** ( 0 minutes  26.022 seconds)
 
-**Estimated memory usage:**  559 MB
+**Estimated memory usage:**  579 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_predictions_residuals.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_predictions_residuals.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_predictions_residuals.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_predictions_residuals.py <plot_predictions_residuals.py>`
 
-     :download:`Download Python source code: plot_predictions_residuals.py <plot_predictions_residuals.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_predictions_residuals.ipynb <plot_predictions_residuals.ipynb>`
+      :download:`Download Jupyter notebook: plot_predictions_residuals.ipynb <plot_predictions_residuals.ipynb>`
 
 
 .. only:: html

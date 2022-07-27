@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Decoding with ANOVA + SVM: face vs house in the Haxby dataset" href="plot_haxby_anova_svm.html" /><link rel="prev" title="Decoding with FREM: face vs house object recognition" href="plot_haxby_frem.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Voxel-Based Morphometry on Oasis dataset with Space-Net prior - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -652,40 +658,40 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="voxel-based-morphometry-on-oasis-dataset-with-space-net-prior">
-<span id="sphx-glr-auto-examples-02-decoding-plot-oasis-vbm-space-net-py"></span><h1>Voxel-Based Morphometry on Oasis dataset with Space-Net prior<a class="headerlink" href="#voxel-based-morphometry-on-oasis-dataset-with-space-net-prior" title="Permalink to this headline">#</a></h1>
+<span id="sphx-glr-auto-examples-02-decoding-plot-oasis-vbm-space-net-py"></span><h1>Voxel-Based Morphometry on Oasis dataset with Space-Net prior<a class="headerlink" href="#voxel-based-morphometry-on-oasis-dataset-with-space-net-prior" title="Permalink to this heading">#</a></h1>
 <p>Predicting age from gray-matter concentration maps from OASIS
 dataset. Note that age is a continuous variable, we use the regressor
 here, and not the classification object.</p>
 <p>See also the documentation: <a class="reference internal" href="../../decoding/space_net.html#space-net"><span class="std std-ref">SpaceNet: decoding with spatial structure for better maps</span></a>.</p>
 <section id="load-the-oasis-vbm-dataset">
-<h2>Load the Oasis VBM dataset<a class="headerlink" href="#load-the-oasis-vbm-dataset" title="Permalink to this headline">#</a></h2>
+<h2>Load the Oasis VBM dataset<a class="headerlink" href="#load-the-oasis-vbm-dataset" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_subjects</span></a> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># increase this number if you have more RAM on your box</span>
-<a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">dataset_files</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.datasets.fetch_oasis_vbm.html#nilearn.datasets.fetch_oasis_vbm" title="nilearn.datasets.fetch_oasis_vbm" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_oasis_vbm</span></a><span class="p">(</span>
-    <a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_subjects</span></a><span class="o">=</span><a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_subjects</span></a><span class="p">,</span> <span class="n">legacy_format</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">n_subjects</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># increase this number if you have more RAM on your box</span>
+<span class="n">dataset_files</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_oasis_vbm</span><span class="p">(</span>
+    <span class="n">n_subjects</span><span class="o">=</span><span class="n">n_subjects</span><span class="p">,</span> <span class="n">legacy_format</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset_files</span><span class="o">.</span><span class="n">ext_vars</span></a><span class="p">[</span><span class="s1">'age'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age</span></a><span class="p">)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">gm_imgs</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset_files</span><span class="o">.</span><span class="n">gray_matter_maps</span></a><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">dataset_files</span><span class="o">.</span><span class="n">ext_vars</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<span class="n">gm_imgs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dataset_files</span><span class="o">.</span><span class="n">gray_matter_maps</span><span class="p">)</span>
 
 
 <span class="c1"># Split data into training set and test set</span>
-<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.check_random_state.html#sklearn.utils.check_random_state" title="sklearn.utils.check_random_state" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">check_random_state</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split" title="sklearn.model_selection.train_test_split" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">train_test_split</span></a>
-<a href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="numpy.random.RandomState" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rng</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.check_random_state.html#sklearn.utils.check_random_state" title="sklearn.utils.check_random_state" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">check_random_state</span></a><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">gm_imgs_train</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">gm_imgs_test</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age_train</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age_test</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split" title="sklearn.model_selection.train_test_split" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">train_test_split</span></a><span class="p">(</span>
-    <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">gm_imgs</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age</span></a><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">.6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="numpy.random.RandomState" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rng</span></a><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">check_random_state</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">check_random_state</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">gm_imgs_train</span><span class="p">,</span> <span class="n">gm_imgs_test</span><span class="p">,</span> <span class="n">age_train</span><span class="p">,</span> <span class="n">age_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">gm_imgs</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">.6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
 
 <span class="c1"># Sort test data for better visualization (trend, etc.)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">perm</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.argsort.html#numpy.argsort" title="numpy.argsort" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">argsort</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age_test</span></a><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age_test</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age_test</span></a><span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">perm</span></a><span class="p">]</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">gm_imgs_test</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">gm_imgs_test</span></a><span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">perm</span></a><span class="p">]</span>
+<span class="n">perm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">age_test</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">age_test</span> <span class="o">=</span> <span class="n">age_test</span><span class="p">[</span><span class="n">perm</span><span class="p">]</span>
+<span class="n">gm_imgs_test</span> <span class="o">=</span> <span class="n">gm_imgs_test</span><span class="p">[</span><span class="n">perm</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
 <section id="fit-the-spacenet-and-predict-with-it">
-<h2>Fit the SpaceNet and predict with it<a class="headerlink" href="#fit-the-spacenet-and-predict-with-it" title="Permalink to this headline">#</a></h2>
+<h2>Fit the SpaceNet and predict with it<a class="headerlink" href="#fit-the-spacenet-and-predict-with-it" title="Permalink to this heading">#</a></h2>
 <p>To save time (because these are anat images with many voxels), we include
 only the 5-percent voxels most correlated with the age variable to fit.
 Also, we set memory_level=2 so that more of the intermediate computations
@@ -693,14 +699,14 @@ are cached. We used a graph-net penalty here but more beautiful results can
 be obtained using the TV-l1 penalty, at the expense of longer runtimes.
 Also, you may pass and n_jobs=&lt;some_high_value&gt; to the
 SpaceNetRegressor class, to take advantage of a multi-core system.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.decoding</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.decoding.SpaceNetRegressor.html#nilearn.decoding.SpaceNetRegressor" title="nilearn.decoding.SpaceNetRegressor" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class"><span class="n">SpaceNetRegressor</span></a>
-<a href="../../modules/generated/nilearn.decoding.SpaceNetRegressor.html#nilearn.decoding.SpaceNetRegressor" title="nilearn.decoding.SpaceNetRegressor" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">decoder</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.decoding.SpaceNetRegressor.html#nilearn.decoding.SpaceNetRegressor" title="nilearn.decoding.SpaceNetRegressor" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class"><span class="n">SpaceNetRegressor</span></a><span class="p">(</span><span class="n">memory</span><span class="o">=</span><span class="s2">"nilearn_cache"</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s2">"graph-net"</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.decoding</span> <span class="kn">import</span> <span class="n">SpaceNetRegressor</span>
+<span class="n">decoder</span> <span class="o">=</span> <span class="n">SpaceNetRegressor</span><span class="p">(</span><span class="n">memory</span><span class="o">=</span><span class="s2">&quot;nilearn_cache&quot;</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s2">&quot;graph-net&quot;</span><span class="p">,</span>
                             <span class="n">screening_percentile</span><span class="o">=</span><span class="mf">5.</span><span class="p">,</span> <span class="n">memory_level</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a href="../../modules/generated/nilearn.decoding.SpaceNetRegressor.html#nilearn.decoding.SpaceNetRegressor.fit" title="nilearn.decoding.SpaceNetRegressor.fit" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-method"><span class="n">decoder</span><span class="o">.</span><span class="n">fit</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">gm_imgs_train</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age_train</span></a><span class="p">)</span>  <span class="c1"># fit</span>
-<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">coef_img</span></a> <span class="o">=</span> <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">decoder</span><span class="o">.</span><span class="n">coef_img_</span></a>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y_pred</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.decoding.SpaceNetRegressor.html#nilearn.decoding.SpaceNetRegressor.predict" title="nilearn.decoding.SpaceNetRegressor.predict" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-method"><span class="n">decoder</span><span class="o">.</span><span class="n">predict</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">gm_imgs_test</span></a><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>  <span class="c1"># predict</span>
-<a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">mse</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">abs</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age_test</span></a> <span class="o">-</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y_pred</span></a><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Mean square error (MSE) on the predicted age: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">mse</span></a><span class="p">)</span>
+<span class="n">decoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gm_imgs_train</span><span class="p">,</span> <span class="n">age_train</span><span class="p">)</span>  <span class="c1"># fit</span>
+<span class="n">coef_img</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">coef_img_</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">gm_imgs_test</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>  <span class="c1"># predict</span>
+<span class="n">mse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">age_test</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean square error (MSE) on the predicted age: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mse</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[NiftiMasker.fit] Loading data from [/home/alexis/nilearn_data/oasis1/OAS1_0003_MR1/mwrc1OAS1_0003_MR1_mpr_anon_fslswapdim_bet.nii.gz,
@@ -834,14 +840,14 @@ affine=array([[  -2.,    0.,    0.,   90.],
 )
 [NiftiMasker.transform_single_imgs] Extracting region signals
 [NiftiMasker.transform_single_imgs] Cleaning extracted signals
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/space_net.py:836: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/space_net.py:836: UserWarning:
 
 Brain mask is bigger than the volume of a standard human brain. This object is probably not tuned to be used on such data.
 
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
 ________________________________________________________________________________
 [Memory] Calling nilearn.decoding.space_net.path_scores...
-path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[0., ..., 0.],
+path_scores(&lt;function _graph_net_squared_loss at 0x7ff8faee3490&gt;, array([[0., ..., 0.],
        ...,
        [0., ..., 0.]]), array([73., ..., 62.]), array([[[ True, ...,  True],
         ...,
@@ -852,22 +858,22 @@ path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[
        [[ True, ...,  True],
         ...,
         [ True, ...,  True]]]),
-None, [0.5], array([ 15, ..., 119]), array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14]), {'max_iter': 200, 'tol': 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 0), debias=False, verbose=1, screening_percentile=1.2652228933482088)
-........./home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
+None, [0.5], array([ 15, ..., 119]), array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14]), {&#39;max_iter&#39;: 200, &#39;tol&#39;: 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 0), debias=False, verbose=1, screening_percentile=1.2652228933482088)
+........./home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
 
-Persisting input arguments took 1.44s to run.
+Persisting input arguments took 1.84s to run.
 If this happens often in your code, it can cause performance problems
 (results will be correct in all cases).
 The reason for this is probably some large input arguments for a wrapped
  function (e.g. large strings).
-THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib&#39;s team with an
  example so that they can fix the problem.
 
-_____________________________________________________path_scores - 40.1s, 0.7min
-[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:   43.3s remaining:    0.0s
+_____________________________________________________path_scores - 36.4s, 0.6min
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:   40.2s remaining:    0.0s
 ________________________________________________________________________________
 [Memory] Calling nilearn.decoding.space_net.path_scores...
-path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[0., ..., 0.],
+path_scores(&lt;function _graph_net_squared_loss at 0x7ff8faee3490&gt;, array([[0., ..., 0.],
        ...,
        [0., ..., 0.]]), array([73., ..., 62.]), array([[[ True, ...,  True],
         ...,
@@ -878,21 +884,21 @@ path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[
        [[ True, ...,  True],
         ...,
         [ True, ...,  True]]]),
-None, [0.5], array([  0, ..., 119]), array([15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]), {'max_iter': 200, 'tol': 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 1), debias=False, verbose=1, screening_percentile=1.2652228933482088)
-........./home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
+None, [0.5], array([  0, ..., 119]), array([15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]), {&#39;max_iter&#39;: 200, &#39;tol&#39;: 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 1), debias=False, verbose=1, screening_percentile=1.2652228933482088)
+........./home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
 
-Persisting input arguments took 1.28s to run.
+Persisting input arguments took 1.81s to run.
 If this happens often in your code, it can cause performance problems
 (results will be correct in all cases).
 The reason for this is probably some large input arguments for a wrapped
  function (e.g. large strings).
-THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib&#39;s team with an
  example so that they can fix the problem.
 
-_____________________________________________________path_scores - 42.5s, 0.7min
+_____________________________________________________path_scores - 36.3s, 0.6min
 ________________________________________________________________________________
 [Memory] Calling nilearn.decoding.space_net.path_scores...
-path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[0., ..., 0.],
+path_scores(&lt;function _graph_net_squared_loss at 0x7ff8faee3490&gt;, array([[0., ..., 0.],
        ...,
        [0., ..., 0.]]), array([73., ..., 62.]), array([[[ True, ...,  True],
         ...,
@@ -903,21 +909,21 @@ path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[
        [[ True, ...,  True],
         ...,
         [ True, ...,  True]]]),
-None, [0.5], array([  0, ..., 119]), array([30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]), {'max_iter': 200, 'tol': 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 2), debias=False, verbose=1, screening_percentile=1.2652228933482088)
-........./home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
+None, [0.5], array([  0, ..., 119]), array([30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]), {&#39;max_iter&#39;: 200, &#39;tol&#39;: 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 2), debias=False, verbose=1, screening_percentile=1.2652228933482088)
+........./home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
 
-Persisting input arguments took 1.31s to run.
+Persisting input arguments took 1.41s to run.
 If this happens often in your code, it can cause performance problems
 (results will be correct in all cases).
 The reason for this is probably some large input arguments for a wrapped
  function (e.g. large strings).
-THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib&#39;s team with an
  example so that they can fix the problem.
 
 _____________________________________________________path_scores - 34.2s, 0.6min
 ________________________________________________________________________________
 [Memory] Calling nilearn.decoding.space_net.path_scores...
-path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[0., ..., 0.],
+path_scores(&lt;function _graph_net_squared_loss at 0x7ff8faee3490&gt;, array([[0., ..., 0.],
        ...,
        [0., ..., 0.]]), array([73., ..., 62.]), array([[[ True, ...,  True],
         ...,
@@ -928,21 +934,21 @@ path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[
        [[ True, ...,  True],
         ...,
         [ True, ...,  True]]]),
-None, [0.5], array([  0, ..., 119]), array([45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]), {'max_iter': 200, 'tol': 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 3), debias=False, verbose=1, screening_percentile=1.2652228933482088)
-........./home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
+None, [0.5], array([  0, ..., 119]), array([45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]), {&#39;max_iter&#39;: 200, &#39;tol&#39;: 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 3), debias=False, verbose=1, screening_percentile=1.2652228933482088)
+........./home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
 
-Persisting input arguments took 1.38s to run.
+Persisting input arguments took 1.36s to run.
 If this happens often in your code, it can cause performance problems
 (results will be correct in all cases).
 The reason for this is probably some large input arguments for a wrapped
  function (e.g. large strings).
-THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib&#39;s team with an
  example so that they can fix the problem.
 
-_____________________________________________________path_scores - 41.8s, 0.7min
+_____________________________________________________path_scores - 23.9s, 0.4min
 ________________________________________________________________________________
 [Memory] Calling nilearn.decoding.space_net.path_scores...
-path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[0., ..., 0.],
+path_scores(&lt;function _graph_net_squared_loss at 0x7ff8faee3490&gt;, array([[0., ..., 0.],
        ...,
        [0., ..., 0.]]), array([73., ..., 62.]), array([[[ True, ...,  True],
         ...,
@@ -953,21 +959,21 @@ path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[
        [[ True, ...,  True],
         ...,
         [ True, ...,  True]]]),
-None, [0.5], array([  0, ..., 119]), array([60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]), {'max_iter': 200, 'tol': 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 4), debias=False, verbose=1, screening_percentile=1.2652228933482088)
-........./home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
+None, [0.5], array([  0, ..., 119]), array([60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]), {&#39;max_iter&#39;: 200, &#39;tol&#39;: 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 4), debias=False, verbose=1, screening_percentile=1.2652228933482088)
+........./home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
 
-Persisting input arguments took 1.47s to run.
+Persisting input arguments took 1.96s to run.
 If this happens often in your code, it can cause performance problems
 (results will be correct in all cases).
 The reason for this is probably some large input arguments for a wrapped
  function (e.g. large strings).
-THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib&#39;s team with an
  example so that they can fix the problem.
 
-_____________________________________________________path_scores - 41.2s, 0.7min
+_____________________________________________________path_scores - 36.3s, 0.6min
 ________________________________________________________________________________
 [Memory] Calling nilearn.decoding.space_net.path_scores...
-path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[0., ..., 0.],
+path_scores(&lt;function _graph_net_squared_loss at 0x7ff8faee3490&gt;, array([[0., ..., 0.],
        ...,
        [0., ..., 0.]]), array([73., ..., 62.]), array([[[ True, ...,  True],
         ...,
@@ -978,21 +984,21 @@ path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[
        [[ True, ...,  True],
         ...,
         [ True, ...,  True]]]),
-None, [0.5], array([  0, ..., 119]), array([75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89]), {'max_iter': 200, 'tol': 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 5), debias=False, verbose=1, screening_percentile=1.2652228933482088)
-........./home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
+None, [0.5], array([  0, ..., 119]), array([75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89]), {&#39;max_iter&#39;: 200, &#39;tol&#39;: 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 5), debias=False, verbose=1, screening_percentile=1.2652228933482088)
+........./home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
 
-Persisting input arguments took 1.34s to run.
+Persisting input arguments took 1.61s to run.
 If this happens often in your code, it can cause performance problems
 (results will be correct in all cases).
 The reason for this is probably some large input arguments for a wrapped
  function (e.g. large strings).
-THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib&#39;s team with an
  example so that they can fix the problem.
 
-_____________________________________________________path_scores - 38.5s, 0.6min
+_____________________________________________________path_scores - 31.1s, 0.5min
 ________________________________________________________________________________
 [Memory] Calling nilearn.decoding.space_net.path_scores...
-path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[0., ..., 0.],
+path_scores(&lt;function _graph_net_squared_loss at 0x7ff8faee3490&gt;, array([[0., ..., 0.],
        ...,
        [0., ..., 0.]]), array([73., ..., 62.]), array([[[ True, ...,  True],
         ...,
@@ -1005,21 +1011,21 @@ path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[
         [ True, ...,  True]]]),
 None, [0.5], array([  0, ..., 119]), array([ 90,  91,  92,  93,  94,  95,  96,  97,  98,  99, 100, 101, 102,
        103, 104]),
-{'max_iter': 200, 'tol': 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 6), debias=False, verbose=1, screening_percentile=1.2652228933482088)
-........./home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
+{&#39;max_iter&#39;: 200, &#39;tol&#39;: 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 6), debias=False, verbose=1, screening_percentile=1.2652228933482088)
+........./home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
 
-Persisting input arguments took 1.33s to run.
+Persisting input arguments took 1.36s to run.
 If this happens often in your code, it can cause performance problems
 (results will be correct in all cases).
 The reason for this is probably some large input arguments for a wrapped
  function (e.g. large strings).
-THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib&#39;s team with an
  example so that they can fix the problem.
 
-_____________________________________________________path_scores - 35.8s, 0.6min
+_____________________________________________________path_scores - 27.3s, 0.5min
 ________________________________________________________________________________
 [Memory] Calling nilearn.decoding.space_net.path_scores...
-path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[0., ..., 0.],
+path_scores(&lt;function _graph_net_squared_loss at 0x7ff8faee3490&gt;, array([[0., ..., 0.],
        ...,
        [0., ..., 0.]]), array([73., ..., 62.]), array([[[ True, ...,  True],
         ...,
@@ -1032,20 +1038,20 @@ path_scores(&lt;function _graph_net_squared_loss at 0x7f6258c22560&gt;, array([[
         [ True, ...,  True]]]),
 None, [0.5], array([  0, ..., 104]), array([105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117,
        118, 119]),
-{'max_iter': 200, 'tol': 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 7), debias=False, verbose=1, screening_percentile=1.2652228933482088)
-........./home/alexis/anaconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
+{&#39;max_iter&#39;: 200, &#39;tol&#39;: 0.0001}, n_alphas=10, eps=0.001, is_classif=False, key=(0, 7), debias=False, verbose=1, screening_percentile=1.2652228933482088)
+........./home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/joblib/parallel.py:262: UserWarning:
 
-Persisting input arguments took 1.24s to run.
+Persisting input arguments took 1.48s to run.
 If this happens often in your code, it can cause performance problems
 (results will be correct in all cases).
 The reason for this is probably some large input arguments for a wrapped
  function (e.g. large strings).
-THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib&#39;s team with an
  example so that they can fix the problem.
 
-_____________________________________________________path_scores - 34.4s, 0.6min
-[Parallel(n_jobs=1)]: Done   8 out of   8 | elapsed:  5.5min finished
-Time Elapsed: 347.37 seconds, 5 minutes.
+_____________________________________________________path_scores - 25.6s, 0.4min
+[Parallel(n_jobs=1)]: Done   8 out of   8 | elapsed:  4.6min finished
+Time Elapsed: 291.51 seconds, 4 minutes.
 [NiftiMasker.transform_single_imgs] Loading data from Nifti1Image(
 shape=(91, 109, 91, 80),
 affine=array([[  -2.,    0.,    0.,   90.],
@@ -1060,42 +1066,42 @@ Mean square error (MSE) on the predicted age: 12.33
 </div>
 </section>
 <section id="visualize-the-decoding-maps-and-quality-of-predictions">
-<h2>Visualize the decoding maps and quality of predictions<a class="headerlink" href="#visualize-the-decoding-maps-and-quality-of-predictions" title="Permalink to this headline">#</a></h2>
+<h2>Visualize the decoding maps and quality of predictions<a class="headerlink" href="#visualize-the-decoding-maps-and-quality-of-predictions" title="Permalink to this heading">#</a></h2>
 <p>Visualize the resulting maps</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a><span class="p">,</span> <a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_stat_map</span><span class="p">,</span> <span class="n">show</span>
 <span class="c1"># weights map</span>
-<a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.str_" title="numpy.str_" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">background_img</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">gm_imgs</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">coef_img</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.str_" title="numpy.str_" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">background_img</span></a><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"graph-net weights"</span><span class="p">,</span>
-              <span class="n">display_mode</span><span class="o">=</span><span class="s2">"z"</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">background_img</span> <span class="o">=</span> <span class="n">gm_imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plot_stat_map</span><span class="p">(</span><span class="n">coef_img</span><span class="p">,</span> <span class="n">background_img</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;graph-net weights&quot;</span><span class="p">,</span>
+              <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Plot the prediction errors.</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s2">"graph-net: Mean Absolute Error </span><span class="si">%.2f</span><span class="s2"> years"</span> <span class="o">%</span> <a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">mse</span></a><span class="p">)</span>
-<a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">linewidth</span></a> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">ax1</span> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax1</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age_test</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"True age"</span><span class="p">,</span> <a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">linewidth</span></a><span class="o">=</span><a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">linewidth</span></a><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax1</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y_pred</span></a><span class="p">,</span> <span class="s1">'--'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">"g"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Predicted age"</span><span class="p">,</span> <a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">linewidth</span></a><span class="o">=</span><a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">linewidth</span></a><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylabel.html#matplotlib.axes.Axes.set_ylabel" title="matplotlib.axes.Axes.set_ylabel" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span></a><span class="p">(</span><span class="s2">"age"</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"best"</span><span class="p">)</span>
-<span class="n">ax2</span> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax2</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">age_test</span></a> <span class="o">-</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y_pred</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"True age - predicted age"</span><span class="p">,</span>
-         <a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">linewidth</span></a><span class="o">=</span><a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">linewidth</span></a><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html#matplotlib.axes.Axes.set_xlabel" title="matplotlib.axes.Axes.set_xlabel" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span></a><span class="p">(</span><span class="s2">"subject"</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"best"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;graph-net: Mean Absolute Error </span><span class="si">%.2f</span><span class="s2"> years&quot;</span> <span class="o">%</span> <span class="n">mse</span><span class="p">)</span>
+<span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">age_test</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;True age&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">linewidth</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Predicted age&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">linewidth</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">age_test</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;True age - predicted age&quot;</span><span class="p">,</span>
+         <span class="n">linewidth</span><span class="o">=</span><span class="n">linewidth</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;subject&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
 
-<a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a><span class="p">()</span>
+<span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img alt="plot oasis vbm space net" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_oasis_vbm_space_net_001.png" srcset="../../_images/sphx_glr_plot_oasis_vbm_space_net_001.png"/></li>
-<li><img alt="graph-net: Mean Absolute Error 12.33 years" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_oasis_vbm_space_net_002.png" srcset="../../_images/sphx_glr_plot_oasis_vbm_space_net_002.png"/></li>
+<li><img src="../../_images/sphx_glr_plot_oasis_vbm_space_net_001.png" srcset="../../_images/sphx_glr_plot_oasis_vbm_space_net_001.png" alt="plot oasis vbm space net" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_oasis_vbm_space_net_002.png" srcset="../../_images/sphx_glr_plot_oasis_vbm_space_net_002.png" alt="graph-net: Mean Absolute Error 12.33 years" class = "sphx-glr-multi-img"/></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 5 minutes  56.903 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  2053 MB</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-02-decoding-plot-oasis-vbm-space-net-py">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 4 minutes  57.846 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  2075 MB</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-02-decoding-plot-oasis-vbm-space-net-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_oasis_vbm_space_net.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" width="150px"/></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_oasis_vbm_space_net.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d4538acc0b1d0d875eba83ac76dd0c21/plot_oasis_vbm_space_net.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_oasis_vbm_space_net.py</span></code></a></p>
@@ -1183,6 +1189,7 @@ Mean square error (MSE) on the predicted age: 12.33
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>

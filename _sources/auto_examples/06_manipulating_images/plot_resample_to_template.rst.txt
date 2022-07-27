@@ -184,37 +184,32 @@ Finally, result images are displayed using nilearn plotting module.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.005 seconds)
+   **Total running time of the script:** ( 0 minutes  7.486 seconds)
 
 **Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_resample_to_template.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/06_manipulating_images/plot_resample_to_template.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/06_manipulating_images/plot_resample_to_template.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_resample_to_template.py <plot_resample_to_template.py>`
 
-     :download:`Download Python source code: plot_resample_to_template.py <plot_resample_to_template.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_resample_to_template.ipynb <plot_resample_to_template.ipynb>`
+      :download:`Download Jupyter notebook: plot_resample_to_template.ipynb <plot_resample_to_template.ipynb>`
 
 
 .. only:: html

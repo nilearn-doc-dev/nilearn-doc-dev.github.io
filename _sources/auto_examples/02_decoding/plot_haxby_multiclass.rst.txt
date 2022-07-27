@@ -24,12 +24,14 @@ The haxby dataset: different multi-class strategies
 We compare one vs all and one vs one multi-class strategies: the overall
 cross-validated accuracy and the confusion matrix.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-13
+.. include:: ../../../examples/masker_note.rst
+
+.. GENERATED FROM PYTHON SOURCE LINES 13-15
 
 Load the Haxby data dataset
 ----------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-40
+.. GENERATED FROM PYTHON SOURCE LINES 15-42
 
 .. code-block:: default
 
@@ -74,12 +76,12 @@ Load the Haxby data dataset
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-43
+.. GENERATED FROM PYTHON SOURCE LINES 43-45
 
 Prepare the fMRI data
 ----------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-54
+.. GENERATED FROM PYTHON SOURCE LINES 45-56
 
 .. code-block:: default
 
@@ -101,14 +103,14 @@ Prepare the fMRI data
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-59
+.. GENERATED FROM PYTHON SOURCE LINES 57-61
 
 Build the decoders, using scikit-learn
 ----------------------------------------
 Here we use a Support Vector Classification, with a linear kernel,
 and a simple feature selection step
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-75
+.. GENERATED FROM PYTHON SOURCE LINES 61-77
 
 .. code-block:: default
 
@@ -135,12 +137,12 @@ and a simple feature selection step
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-78
+.. GENERATED FROM PYTHON SOURCE LINES 78-80
 
 Now we compute cross-validation scores
 ----------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-87
+.. GENERATED FROM PYTHON SOURCE LINES 80-89
 
 .. code-block:: default
 
@@ -162,21 +164,21 @@ Now we compute cross-validation scores
  .. code-block:: none
 
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   15.6s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   12.1s finished
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    8.6s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    9.0s finished
     OvO: 0.601855088049469
     OvA: 0.6712058072321548
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-90
+.. GENERATED FROM PYTHON SOURCE LINES 90-92
 
 Plot barplots of the prediction scores
 ----------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-96
+.. GENERATED FROM PYTHON SOURCE LINES 92-98
 
 .. code-block:: default
 
@@ -204,14 +206,14 @@ Plot barplots of the prediction scores
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-101
+.. GENERATED FROM PYTHON SOURCE LINES 99-103
 
 Plot a confusion matrix
 ------------------------
 We fit on the first 10 sessions and plot a confusion matrix on the
 last 2 sessions
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-119
+.. GENERATED FROM PYTHON SOURCE LINES 103-121
 
 .. code-block:: default
 
@@ -260,37 +262,32 @@ last 2 sessions
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  49.780 seconds)
+   **Total running time of the script:** ( 0 minutes  39.951 seconds)
 
-**Estimated memory usage:**  2595 MB
+**Estimated memory usage:**  2690 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_haxby_multiclass.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_multiclass.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_multiclass.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_haxby_multiclass.py <plot_haxby_multiclass.py>`
 
-     :download:`Download Python source code: plot_haxby_multiclass.py <plot_haxby_multiclass.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_haxby_multiclass.ipynb <plot_haxby_multiclass.ipynb>`
+      :download:`Download Jupyter notebook: plot_haxby_multiclass.ipynb <plot_haxby_multiclass.ipynb>`
 
 
 .. only:: html

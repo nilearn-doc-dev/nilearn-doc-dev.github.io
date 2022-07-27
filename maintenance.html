@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="search.html" /><link rel="next" title="What’s new" href="changes/whats_new.html" /><link rel="prev" title="Contributing" href="development.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Maintenance - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,16 +653,16 @@
         </div>
         <article role="main">
           <section id="maintenance">
-<span id="maintenance-process"></span><h1>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this headline">#</a></h1>
+<span id="maintenance-process"></span><h1>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this heading">#</a></h1>
 <section id="project-organization">
-<h2>Project Organization<a class="headerlink" href="#project-organization" title="Permalink to this headline">#</a></h2>
+<h2>Project Organization<a class="headerlink" href="#project-organization" title="Permalink to this heading">#</a></h2>
 <p>This section describes how the project is organized.</p>
 <section id="issues">
-<h3>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">#</a></h3>
+<h3>Issues<a class="headerlink" href="#issues" title="Permalink to this heading">#</a></h3>
 <p>Nilearn uses <a class="reference external" href="https://github.com/nilearn/nilearn/issues">issues</a> for
 tracking bugs, requesting potential features, and holding project discussions.</p>
 <section id="labels">
-<span id="issue-labels"></span><h4>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">#</a></h4>
+<span id="issue-labels"></span><h4>Labels<a class="headerlink" href="#labels" title="Permalink to this heading">#</a></h4>
 <p><a class="reference external" href="https://github.com/nilearn/nilearn/labels">Labels</a> are useful to
 quickly sort <a class="reference external" href="https://github.com/nilearn/nilearn/issues">issues</a>
 and easily find what you are looking for in the issue tracker.</p>
@@ -664,9 +670,9 @@ and easily find what you are looking for in the issue tracker.</p>
 is responsible for a very basic labeling categorizing the issue:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><img alt="Bug" src="https://img.shields.io/badge/-Bug-fc2929.svg"/> for bug reports.</p></li>
-<li><p><img alt="Documentation" src="https://img.shields.io/badge/-Documentation-5319e7.svg"/> for documentation related questions or requests.</p></li>
-<li><p><img alt="Enhancement" src="https://img.shields.io/badge/-Enhancement-fbca04.svg"/> for feature requests.</p></li>
+<li><p><img alt="Bug" src="https://img.shields.io/badge/-Bug-fc2929.svg" /> for bug reports.</p></li>
+<li><p><img alt="Documentation" src="https://img.shields.io/badge/-Documentation-5319e7.svg" /> for documentation related questions or requests.</p></li>
+<li><p><img alt="Enhancement" src="https://img.shields.io/badge/-Enhancement-fbca04.svg" /> for feature requests.</p></li>
 </ul>
 </div></blockquote>
 <p>First of all, the user might have mislabeled the issue, in which case a member
@@ -676,94 +682,105 @@ in more detail a given issue. First, we try to describe the <strong>estimated am
 of work</strong> required to solve each issue:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><img alt="effort: high" src="https://img.shields.io/badge/-effort:%20high-e26051.svg"/> The issue is likely to require a serious amount of work (more than a couple of days).</p></li>
-<li><p><img alt="effort: medium" src="https://img.shields.io/badge/-effort:%20medium-ddad1a.svg"/> The issue is likely to require a decent amount of work (in between a few hours and a couple days).</p></li>
-<li><p><img alt="effort: low" src="https://img.shields.io/badge/-effort:%20low-77c940.svg"/> The issue is likely to require a small amount of work (less than a few hours).</p></li>
+<li><p><img alt="effort: high" src="https://img.shields.io/badge/-effort:%20high-e26051.svg" /> The issue is likely to require a serious amount of work (more than a couple of days).</p></li>
+<li><p><img alt="effort: medium" src="https://img.shields.io/badge/-effort:%20medium-ddad1a.svg" /> The issue is likely to require a decent amount of work (in between a few hours and a couple days).</p></li>
+<li><p><img alt="effort: low" src="https://img.shields.io/badge/-effort:%20low-77c940.svg" /> The issue is likely to require a small amount of work (less than a few hours).</p></li>
 </ul>
 </div></blockquote>
 <p>We also try to quantify the <strong>estimated impact</strong> of the proposed change on the project:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><img alt="impact: high" src="https://img.shields.io/badge/-impact:%20high-1f1dc1.svg"/> Solving this issue will have a high impact on the project.</p></li>
-<li><p><img alt="impact: medium" src="https://img.shields.io/badge/-impact:%20medium-bac1fc.svg"/> Solving this issue will have a decent impact on the project.</p></li>
-<li><p><img alt="impact: low" src="https://img.shields.io/badge/-impact:%20low-75eae6.svg"/> Solving this issue will have a small impact on the project.</p></li>
+<li><p><img alt="impact: high" src="https://img.shields.io/badge/-impact:%20high-1f1dc1.svg" /> Solving this issue will have a high impact on the project.</p></li>
+<li><p><img alt="impact: medium" src="https://img.shields.io/badge/-impact:%20medium-bac1fc.svg" /> Solving this issue will have a decent impact on the project.</p></li>
+<li><p><img alt="impact: low" src="https://img.shields.io/badge/-impact:%20low-75eae6.svg" /> Solving this issue will have a small impact on the project.</p></li>
 </ul>
 </div></blockquote>
 <p>Finally, we also indicate the <strong>priority level</strong> of the issue:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><img alt="priority: high" src="https://img.shields.io/badge/-priority:%20high-9e2409.svg"/> The task is urgent and needs to be addressed as soon as possible.</p></li>
-<li><p><img alt="priority: medium" src="https://img.shields.io/badge/-priority:%20medium-FBCA04.svg"/> The task is important but not urgent and should be addressed over the next few months.</p></li>
-<li><p><img alt="priority: low" src="https://img.shields.io/badge/-priority:%20low-c5def5.svg"/> The task is not urgent and can be delayed.</p></li>
+<li><p><img alt="priority: high" src="https://img.shields.io/badge/-priority:%20high-9e2409.svg" /> The task is urgent and needs to be addressed as soon as possible.</p></li>
+<li><p><img alt="priority: medium" src="https://img.shields.io/badge/-priority:%20medium-FBCA04.svg" /> The task is important but not urgent and should be addressed over the next few months.</p></li>
+<li><p><img alt="priority: low" src="https://img.shields.io/badge/-priority:%20low-c5def5.svg" /> The task is not urgent and can be delayed.</p></li>
 </ul>
 </div></blockquote>
 <p>Some issues—particular those which are low effort and low to medium priority—can serve as good starting project for
-new contributors. We label these issues with the <img alt="Good first issue" src="https://img.shields.io/badge/-Good%20first%20issue-c7def8.svg"/> label
+new contributors. We label these issues with the <img alt="Good first issue" src="https://img.shields.io/badge/-Good%20first%20issue-c7def8.svg" /> label
 which can be seen as an equivalent to a “very low effort” label. Because of
 this, good first issues do not require a separate effort label.</p>
 <p>Other labels can be used to describe further the topic of the issue:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><img alt="API" src="https://img.shields.io/badge/-API-fef2c0.svg"/> This issue is related to the Nilearn’s API.</p></li>
-<li><p><img alt="code quality" src="https://img.shields.io/badge/-code%20quality-09ef5a.svg"/> This issue tackles code quality (code refactoring, PEP8…).</p></li>
-<li><p><img alt="Datasets" src="https://img.shields.io/badge/-Datasets-fad8c7.svg"/> This issue is related to datasets or the <a class="reference internal" href="modules/datasets.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a> module.</p></li>
-<li><p><img alt="Discussion" src="https://img.shields.io/badge/-Discussion-bfe5bf.svg"/> This issue is used to hold a general discussion on a specific topic where community feedback is desired (no need to specify effort, priority, or impact here).</p></li>
-<li><p><img alt="GLM" src="https://img.shields.io/badge/-GLM-fce1c4.svg"/> This issue is related to the <a class="reference internal" href="modules/glm.html#module-nilearn.glm" title="nilearn.glm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.glm</span></code></a> module.</p></li>
-<li><p><img alt="Infrastructure" src="https://img.shields.io/badge/-Infrastructure-0052cc.svg"/> This issue describes a problem with the project’s infrastructure (CI/CD…).</p></li>
-<li><p><img alt="Installation" src="https://img.shields.io/badge/-Installation-ba7030.svg"/> The issue describes a problem with the installation of Nilearn.</p></li>
-<li><p><img alt="Maintenance" src="https://img.shields.io/badge/-Maintenance-fc918f.svg"/> This issue is related to maintenance work.</p></li>
-<li><p><img alt="Plotting" src="https://img.shields.io/badge/-Plotting-5319e7.svg"/> The issue is related to plotting functionalities.</p></li>
-<li><p><img alt="Testing" src="https://img.shields.io/badge/-Testing-50bac4.svg"/> The issue is related to testing.</p></li>
-<li><p><img alt="Usage" src="https://img.shields.io/badge/-Usage-e99695.svg"/> This issue is a usage question and should have been posted on <a class="reference external" href="https://neurostars.org/">neurostars</a>.</p></li>
+<li><p><img alt="API" src="https://img.shields.io/badge/-API-fef2c0.svg" /> This issue is related to the Nilearn’s API.</p></li>
+<li><p><img alt="code quality" src="https://img.shields.io/badge/-code%20quality-09ef5a.svg" /> This issue tackles code quality (code refactoring, PEP8…).</p></li>
+<li><p><img alt="Datasets" src="https://img.shields.io/badge/-Datasets-fad8c7.svg" /> This issue is related to datasets or the <a class="reference internal" href="modules/reference.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a> module.</p></li>
+<li><p><img alt="Discussion" src="https://img.shields.io/badge/-Discussion-bfe5bf.svg" /> This issue is used to hold a general discussion on a specific topic where community feedback is desired (no need to specify effort, priority, or impact here).</p></li>
+<li><p><img alt="GLM" src="https://img.shields.io/badge/-GLM-fce1c4.svg" /> This issue is related to the <a class="reference internal" href="modules/reference.html#module-nilearn.glm" title="nilearn.glm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.glm</span></code></a> module.</p></li>
+<li><p><img alt="Infrastructure" src="https://img.shields.io/badge/-Infrastructure-0052cc.svg" /> This issue describes a problem with the project’s infrastructure (CI/CD…).</p></li>
+<li><p><img alt="Installation" src="https://img.shields.io/badge/-Installation-ba7030.svg" /> The issue describes a problem with the installation of Nilearn.</p></li>
+<li><p><img alt="Maintenance" src="https://img.shields.io/badge/-Maintenance-fc918f.svg" /> This issue is related to maintenance work.</p></li>
+<li><p><img alt="Plotting" src="https://img.shields.io/badge/-Plotting-5319e7.svg" /> The issue is related to plotting functionalities.</p></li>
+<li><p><img alt="Testing" src="https://img.shields.io/badge/-Testing-50bac4.svg" /> The issue is related to testing.</p></li>
+<li><p><img alt="Usage" src="https://img.shields.io/badge/-Usage-e99695.svg" /> This issue is a usage question and should have been posted on <a class="reference external" href="https://neurostars.org/">neurostars</a>.</p></li>
 </ul>
 </div></blockquote>
 <p>Finally, we use the following labels to indicate how the work on the issue
 is going:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><img alt="in progress" src="https://img.shields.io/badge/-in%20progress-ededed.svg"/> Can be used to indicate that this issue is currently being investigated.</p></li>
-<li><p><img alt="next-release" src="https://img.shields.io/badge/-next--release-55c11f.svg"/> Commonly used for tagging PRs, this can be used to indicate that this issue should be solved before the next release.</p></li>
-<li><p><img alt="stalled" src="https://img.shields.io/badge/-stalled-c2e0c6.svg"/> This issue is currently stalled and has no recent activity. Use this label before closing due to inactivity.</p></li>
+<li><p><img alt="in progress" src="https://img.shields.io/badge/-in%20progress-ededed.svg" /> Can be used to indicate that this issue is currently being investigated.</p></li>
+<li><p><img alt="next-release" src="https://img.shields.io/badge/-next--release-55c11f.svg" /> Commonly used for tagging PRs, this can be used to indicate that this issue should be solved before the next release.</p></li>
+<li><p><img alt="stalled" src="https://img.shields.io/badge/-stalled-c2e0c6.svg" /> This issue is currently stalled and has no recent activity. Use this label before closing due to inactivity.</p></li>
 </ul>
 </div></blockquote>
 </section>
 <section id="closing-policy">
-<span id="id4"></span><h4>Closing policy<a class="headerlink" href="#closing-policy" title="Permalink to this headline">#</a></h4>
+<span id="id4"></span><h4>Closing policy<a class="headerlink" href="#closing-policy" title="Permalink to this heading">#</a></h4>
 <p>Usually we expect the issue’s author to close the issue, but there are several
 possible reasons for a community member to close an issue:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>The issue has been solved: kindly asked the author whether the issue can be closed. In the absence of reply, close the issue after two weeks.</p></li>
-<li><p>The issue is a usage question: label the issue with <img alt="Usage" src="https://img.shields.io/badge/-Usage-e99695.svg"/> and kindly redirect the author to <a class="reference external" href="https://neurostars.org/">neurostars</a>. Close the issue afterwards.</p></li>
-<li><p>The issue has no recent activity (no messages in the last three months): ping the author to see if the issue is still relevant. In the absence of reply, label the issue with <img alt="stalled" src="https://img.shields.io/badge/-stalled-c2e0c6.svg"/> and close it after 2 weeks.</p></li>
+<li><p>The issue is a usage question: label the issue with <img alt="Usage" src="https://img.shields.io/badge/-Usage-e99695.svg" /> and kindly redirect the author to <a class="reference external" href="https://neurostars.org/">neurostars</a>. Close the issue afterwards.</p></li>
+<li><p>The issue has no recent activity (no messages in the last three months): ping the author to see if the issue is still relevant. In the absence of reply, label the issue with <img alt="stalled" src="https://img.shields.io/badge/-stalled-c2e0c6.svg" /> and close it after 2 weeks.</p></li>
 </ul>
 </div></blockquote>
 </section>
 </section>
 <section id="pull-requests">
-<span id="pull-request"></span><h3>Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this headline">#</a></h3>
+<span id="pull-request"></span><h3>Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this heading">#</a></h3>
 <p>We welcome pull requests from all community members, if they follow the
 <a class="reference internal" href="development.html#contribution-guidelines"><span class="std std-ref">Contribution Guidelines</span></a> inspired from scikit learn conventions. (More
 details on their process are available <a class="reference external" href="https://scikit-learn.org/stable/developers/contributing.html#contributing-code">here</a>)</p>
 </section>
 </section>
 <section id="how-to-make-a-release">
-<h2>How to make a release?<a class="headerlink" href="#how-to-make-a-release" title="Permalink to this headline">#</a></h2>
+<h2>How to make a release?<a class="headerlink" href="#how-to-make-a-release" title="Permalink to this heading">#</a></h2>
 <p>This section describes how to make a new release of Nilearn. It is targeted to the specific case of Nilearn although it contains generic steps for packaging and distributing projects. More detailed information can be found on <a class="reference external" href="https://packaging.python.org/guides/distributing-packages-using-setuptools/#id70">packaging.python.org</a>.</p>
-<p>We assume that we are in a clean state where all the Pull Requests (PR) that we wish to include in the new release have been merged.
-For example, make sure all deprecations that are supposed to be removed with this new version have been addressed. Furthermore, if this new release comes with dependency version bumps (Python, Numpy…), make sure to implement and test these changes beforehand. Ideally, these would have been done before such as to update the code base if necessary. Finally, make sure the documentation can be built correctly.</p>
+<p>We assume that we are in a clean state where all the Pull Requests (PR) that we wish to include in the new release have been merged.</p>
+<section id="prepare-code-for-the-release">
+<h3>Prepare code for the release<a class="headerlink" href="#prepare-code-for-the-release" title="Permalink to this heading">#</a></h3>
+<p>The repository should be checked and updated in preparation for the release.</p>
+<p>One thing that <strong>must</strong> be done before the release is made is to update all versionchanged and versionadded directives from the current <code class="docutils literal notranslate"><span class="pre">[x.y.z].dev</span></code> tag to the new version number.</p>
+<p>Additionally, make sure all deprecations that are supposed to be removed with this new version have been addressed.
+If this new release comes with dependency version bumps (Python, Numpy…), make sure to implement and test these changes beforehand.
+Ideally, these would have been done before such as to update the code base if necessary.
+Finally, make sure the documentation can be built correctly.</p>
+</section>
 <section id="prepare-the-release">
-<h3>Prepare the release<a class="headerlink" href="#prepare-the-release" title="Permalink to this headline">#</a></h3>
+<h3>Prepare the release<a class="headerlink" href="#prepare-the-release" title="Permalink to this heading">#</a></h3>
 <p>Switch to a new branch locally:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b REL-x.y.z
 </pre></div>
 </div>
-<p>First we need to prepare the release by updating the file <cite>nilearn/doc/whats_new.rst</cite> to make sure all the new features, enhancements, and bug fixes are included in their respective sections.
-We also need to write a “Highlights” section promoting the most important additions that come with this new release, and add the version tag just above the corresponding title:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_vx.y.z:</span>
+<p>First we need to prepare the release by updating the file <code class="docutils literal notranslate"><span class="pre">nilearn/doc/changes/latest.rst</span></code> to make sure all the new features, enhancements, and bug fixes are included in their respective sections.</p>
+<p>We also need to write a “Highlights” section promoting the most important additions that come with this new release. Finally, we need to change the title from <code class="docutils literal notranslate"><span class="pre">x.y.z.dev</span></code> to <code class="docutils literal notranslate"><span class="pre">x.y.z</span></code>:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">currentmodule</span><span class="p">::</span> nilearn
+
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> names.rst
 
 <span class="gh">x.y.z</span>
 <span class="gh">=====</span>
+
 <span class="gs">**Released MONTH YEAR**</span>
 
 <span class="gh">HIGHLIGHTS</span>
@@ -773,7 +790,18 @@ We also need to write a “Highlights” section promoting the most important ad
 <span class="m">-</span> ...
 </pre></div>
 </div>
-<p>Next, we need to bump the version number of Nilearn by updating the file <cite>nilearn/version.py</cite> with the new version number, that is edit the line:</p>
+<p>Once we have made all the necessary changes to <code class="docutils literal notranslate"><span class="pre">nilearn/doc/changes/latest.rst</span></code>, we should rename it into <code class="docutils literal notranslate"><span class="pre">nilearn/doc/changes/x.y.z.rst</span></code>, where <code class="docutils literal notranslate"><span class="pre">x.y.z</span></code> is the corresponding version number.</p>
+<p>We then need to update <code class="docutils literal notranslate"><span class="pre">nilearn/doc/changes/whats_new.rst</span></code> and replace:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_latest:</span>
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> latest.rst
+</pre></div>
+</div>
+<p>By:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_vx.y.z:</span>
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> x.y.z.rst
+</pre></div>
+</div>
+<p>Next, we need to bump the version number of Nilearn by updating the file <code class="docutils literal notranslate"><span class="pre">nilearn/version.py</span></code> with the new version number, that is edit the line:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">__version__</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">dev</span>
 </pre></div>
 </div>
@@ -781,17 +809,17 @@ We also need to write a “Highlights” section promoting the most important ad
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">__version__</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span>
 </pre></div>
 </div>
-<p>We also need to update the website news section by editing the file <cite>nilearn/doc/themes/nilearn/layout.html</cite>. The news section typically contains links to the last 3 releases that should look like:</p>
+<p>We also need to update the website news section by editing the file <code class="docutils literal notranslate"><span class="pre">nilearn/doc/themes/nilearn/layout.html</span></code>. The news section typically contains links to the last 3 releases that should look like:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span> News <span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>November 2020<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>:
-            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"whats_new.html#v0-7-0"</span><span class="p">&gt;</span>Nilearn 0.7.0 released<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;whats_new.html#v0-7-0&quot;</span><span class="p">&gt;</span>Nilearn 0.7.0 released<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>February 2020<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>:
-            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"whats_new.html#v0-6-2"</span><span class="p">&gt;</span>Nilearn 0.6.2 released<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;whats_new.html#v0-6-2&quot;</span><span class="p">&gt;</span>Nilearn 0.6.2 released<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>January 2020<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>:
-            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"whats_new.html#v0-6-1"</span><span class="p">&gt;</span>Nilearn 0.6.1 released<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;whats_new.html#v0-6-1&quot;</span><span class="p">&gt;</span>Nilearn 0.6.1 released<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </pre></div>
@@ -800,7 +828,7 @@ We also need to write a “Highlights” section promoting the most important ad
 <p>In addition, we can have a look at <cite>MANIFEST.in</cite> to check that all additional files that we want to be included or excluded from the release are indicated. Normally we shouldn’t have to touch this file.</p>
 <p>Add these changes and submit a PR:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add doc/whats_new.rst nilearn/version.py
-git commit -m <span class="s2">"REL x.y.z"</span>
+git commit -m <span class="s2">&quot;REL x.y.z&quot;</span>
 git push origin REL-x.y.z
 </pre></div>
 </div>
@@ -813,7 +841,7 @@ git push upstream --tags
 </div>
 </section>
 <section id="build-the-distributions-and-upload-them-to-pypi">
-<h3>Build the distributions and upload them to Pypi<a class="headerlink" href="#build-the-distributions-and-upload-them-to-pypi" title="Permalink to this headline">#</a></h3>
+<h3>Build the distributions and upload them to Pypi<a class="headerlink" href="#build-the-distributions-and-upload-them-to-pypi" title="Permalink to this heading">#</a></h3>
 <p>First of all we should make sure we don’t include files that shouldn’t be present:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout x.y.z
 </pre></div>
@@ -851,7 +879,7 @@ git push upstream --tags
 <p>At this point, we need to upload the binaries to GitHub and link them to the tag. To do so, go to the <a class="reference external" href="https://github.com/nilearn/nilearn/tags">Nilearn GitHub page</a> under the “Releases” tab, and edit the <cite>x.y.z</cite> tag by providing a description, and upload the distributions we just created (you can just drag and drop the files).</p>
 </section>
 <section id="build-and-deploy-the-documentation">
-<h3>Build and deploy the documentation<a class="headerlink" href="#build-and-deploy-the-documentation" title="Permalink to this headline">#</a></h3>
+<h3>Build and deploy the documentation<a class="headerlink" href="#build-and-deploy-the-documentation" title="Permalink to this heading">#</a></h3>
 <p>We now need to update the documentation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> doc
 make install
@@ -860,13 +888,17 @@ make install
 <p>This will build the documentation (beware, this is time consuming…) and push it to the <a class="reference external" href="https://github.com/nilearn/nilearn.github.io">GitHub pages repo</a>.</p>
 </section>
 <section id="post-release">
-<h3>Post-release<a class="headerlink" href="#post-release" title="Permalink to this headline">#</a></h3>
-<p>At this point, the release has been made. We can now update the file <cite>nilearn/version.py</cite> and update the version number by increasing the patch number and appending <cite>.dev</cite>:</p>
+<h3>Post-release<a class="headerlink" href="#post-release" title="Permalink to this heading">#</a></h3>
+<p>At this point, the release has been made. We can now update the file <code class="docutils literal notranslate"><span class="pre">nilearn/version.py</span></code> and update the version number by increasing the patch number and appending <cite>.dev</cite>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">__version__</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="p">(</span><span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dev</span>
 </pre></div>
 </div>
-<p>We can also update the file <cite>doc/whats_new.rst</cite> by adding a title and the usual <cite>New</cite>, <cite>Enhancements</cite>, and <cite>Bug Fixes</cite> sections for the version currently under development:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="gh">x.y.z+1.dev</span>
+<p>We also need to create a new file <code class="docutils literal notranslate"><span class="pre">doc/changes/latest.rst</span></code> with a title and the usual <code class="docutils literal notranslate"><span class="pre">New</span></code>, <code class="docutils literal notranslate"><span class="pre">Enhancements</span></code>, <code class="docutils literal notranslate"><span class="pre">Bug</span> <span class="pre">Fixes</span></code>, and <code class="docutils literal notranslate"><span class="pre">Changes</span></code> sections for the version currently under development:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">currentmodule</span><span class="p">::</span> nilearn
+
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> names.rst
+
+<span class="gh">x.y.z+1.dev</span>
 <span class="gh">=========</span>
 
 <span class="gh">NEW</span>
@@ -878,11 +910,13 @@ make install
 <span class="gh">Enhancements</span>
 <span class="gh">------------</span>
 
-<span class="p">..</span> <span class="nt">_vx.y.z:</span>
-
-<span class="gh">x.y.z</span>
-<span class="gh">=====</span>
-<span class="cp">...</span>
+<span class="gh">Changes</span>
+<span class="gh">-------</span>
+</pre></div>
+</div>
+<p>Finally, we need to include this new file in <code class="docutils literal notranslate"><span class="pre">doc/changes/whats_new.rst</span></code>:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_latest:</span>
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> latest.rst
 </pre></div>
 </div>
 </section>
@@ -957,6 +991,7 @@ make install
 </ul>
 </li>
 <li><a class="reference internal" href="#how-to-make-a-release">How to make a release?</a><ul>
+<li><a class="reference internal" href="#prepare-code-for-the-release">Prepare code for the release</a></li>
 <li><a class="reference internal" href="#prepare-the-release">Prepare the release</a></li>
 <li><a class="reference internal" href="#build-the-distributions-and-upload-them-to-pypi">Build the distributions and upload them to Pypi</a></li>
 <li><a class="reference internal" href="#build-and-deploy-the-documentation">Build and deploy the documentation</a></li>
@@ -977,6 +1012,7 @@ make install
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/clipboard.min.js"></script>

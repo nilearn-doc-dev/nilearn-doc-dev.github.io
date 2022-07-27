@@ -1021,7 +1021,56 @@ killed, probably because they were somewhat colinear to the confounds. On the
 other hand, some of the maps become cleaner (horizontal-vertical,
 computation) after this addition.
 
-.. GENERATED FROM PYTHON SOURCE LINES 434-443
+.. GENERATED FROM PYTHON SOURCE LINES 433-446
+
+Volume censoring
+------------------
+
+Volume censoring is a common way to remove non-steady state volumes, or
+high-motion volumes in scrubbing based noise removal strategies. In this
+scenario, we can apply a sample mask along the time dimension to exclude
+unwanted volumes. When using :term:`fMRIPrep` outputs from 1.4.x series or
+above, wecan use the :func:`~nilearn.interfaces.fmriprep.load_confounds`
+function of Nilearn to retrieve sample masks based on the given scrubbing
+threshold and the non-steady state columns.
+For non-fMRIPrep output, we can still define a sample mask. Here we apply a
+sample mask that removes the first 50 volumes.
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 446-456
+
+.. code-block:: default
+
+
+    sample_masks = np.arange(events.shape[0])[50:]
+    first_level_model = FirstLevelModel(t_r, hrf_model='spm + derivative',
+                                        slice_time_ref=0.5)
+    first_level_model = first_level_model.fit(fmri_img, events=events,
+                                              sample_masks=sample_masks)
+    design_matrix = first_level_model.design_matrices_[0]
+    plot_design_matrix(design_matrix)
+    plt.show()
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+.. code-block:: pytb
+
+    Traceback (most recent call last):
+      File "/home/alexis/singbrain/repo/nilearn-alexis/examples/04_glm_first_level/plot_first_level_details.py", line 450, in <module>
+        first_level_model = first_level_model.fit(fmri_img, events=events,
+    TypeError: FirstLevelModel.fit() got an unexpected keyword argument 'sample_masks'
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 457-459
+
+Note the significantly shorter design matrix compared to the previous
+examples.
+
+.. GENERATED FROM PYTHON SOURCE LINES 461-470
 
 Smoothing
 ---------
@@ -1033,7 +1082,7 @@ position of activation. Here, we simply illustrate the statistical
 gains.  We use a mild smoothing of 5mm
 :term:`full-width at half maximum<FWHM>` (:term:`FWHM`).
 
-.. GENERATED FROM PYTHON SOURCE LINES 443-452
+.. GENERATED FROM PYTHON SOURCE LINES 470-479
 
 .. code-block:: default
 
@@ -1047,35 +1096,12 @@ gains.  We use a mild smoothing of 5mm
     plt.show()
 
 
-
-
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_027.png
-         :alt: plot first level details
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_027.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_028.png
-         :alt: plot first level details
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_028.png
-         :class: sphx-glr-multi-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 453-455
+.. GENERATED FROM PYTHON SOURCE LINES 480-482
 
 The design is unchanged but the maps are smoother and more contrasted.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 457-471
+.. GENERATED FROM PYTHON SOURCE LINES 484-498
 
 Masking
 -------
@@ -1092,7 +1118,7 @@ non-grey matter regions, in which no BOLD signal is expected.  The
 downside is that the mask may not fit very well this particular
 data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 471-484
+.. GENERATED FROM PYTHON SOURCE LINES 498-511
 
 .. code-block:: default
 
@@ -1110,24 +1136,13 @@ data.
     plt.show()
 
 
-
-
-.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_029.png
-   :alt: plot first level details
-   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_029.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 485-488
+.. GENERATED FROM PYTHON SOURCE LINES 512-515
 
 For the sake of time saving, we resample icbm_mask to our data.
 For this we call the resample_to_img routine of Nilearn.
 We use interpolation = 'nearest' to keep the mask as a binary image.
 
-.. GENERATED FROM PYTHON SOURCE LINES 488-492
+.. GENERATED FROM PYTHON SOURCE LINES 515-519
 
 .. code-block:: default
 
@@ -1136,17 +1151,11 @@ We use interpolation = 'nearest' to keep the mask as a binary image.
                                           interpolation='nearest')
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 493-494
+.. GENERATED FROM PYTHON SOURCE LINES 520-521
 
 Impact on the first-level model.
 
-.. GENERATED FROM PYTHON SOURCE LINES 494-503
+.. GENERATED FROM PYTHON SOURCE LINES 521-530
 
 .. code-block:: default
 
@@ -1160,34 +1169,11 @@ Impact on the first-level model.
     plt.show()
 
 
-
-
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_030.png
-         :alt: plot first level details
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_030.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_031.png
-         :alt: plot first level details
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_031.png
-         :class: sphx-glr-multi-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 504-505
+.. GENERATED FROM PYTHON SOURCE LINES 531-532
 
 Note that it removed spurious spots in the white matter.
 
-.. GENERATED FROM PYTHON SOURCE LINES 507-515
+.. GENERATED FROM PYTHON SOURCE LINES 534-542
 
 Conclusion
 ----------
@@ -1201,37 +1187,32 @@ are specific to this dataset and may vary with other ones.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 6 minutes  11.261 seconds)
+   **Total running time of the script:** ( 2 minutes  20.129 seconds)
 
-**Estimated memory usage:**  278 MB
+**Estimated memory usage:**  954 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_first_level_details.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_first_level_details.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_first_level_details.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_first_level_details.py <plot_first_level_details.py>`
 
-     :download:`Download Python source code: plot_first_level_details.py <plot_first_level_details.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_first_level_details.ipynb <plot_first_level_details.ipynb>`
+      :download:`Download Jupyter notebook: plot_first_level_details.ipynb <plot_first_level_details.ipynb>`
 
 
 .. only:: html

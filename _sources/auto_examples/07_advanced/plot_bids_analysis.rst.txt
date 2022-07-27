@@ -57,6 +57,17 @@ confounds.tsv files.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    Dataset created in /home/alexis/nilearn_data/fMRI-language-localizer-demo-dataset
+
+    Downloading data from https://osf.io/3dj2a/download ...
+    Downloaded 17768448 of 749503182 bytes (2.4%,   41.6s remaining)    Downloaded 57712640 of 749503182 bytes (7.7%,   24.1s remaining)    Downloaded 99221504 of 749503182 bytes (13.2%,   19.7s remaining)    Downloaded 143597568 of 749503182 bytes (19.2%,   16.9s remaining)    Downloaded 188817408 of 749503182 bytes (25.2%,   14.9s remaining)    Downloaded 226942976 of 749503182 bytes (30.3%,   13.8s remaining)    Downloaded 270843904 of 749503182 bytes (36.1%,   12.4s remaining)    Downloaded 317079552 of 749503182 bytes (42.3%,   10.9s remaining)    Downloaded 358080512 of 749503182 bytes (47.8%,    9.9s remaining)    Downloaded 404078592 of 749503182 bytes (53.9%,    8.6s remaining)    Downloaded 440090624 of 749503182 bytes (58.7%,    7.7s remaining)    Downloaded 479420416 of 749503182 bytes (64.0%,    6.8s remaining)    Downloaded 521510912 of 749503182 bytes (69.6%,    5.7s remaining)    Downloaded 565444608 of 749503182 bytes (75.4%,    4.6s remaining)    Downloaded 609492992 of 749503182 bytes (81.3%,    3.4s remaining)    Downloaded 646275072 of 749503182 bytes (86.2%,    2.6s remaining)    Downloaded 683892736 of 749503182 bytes (91.2%,    1.6s remaining)    Downloaded 728293376 of 749503182 bytes (97.2%,    0.5s remaining) ...done. (20 seconds, 0 min)
+    Extracting data from /home/alexis/nilearn_data/fMRI-language-localizer-demo-dataset/fMRI-language-localizer-demo-dataset.zip..... done.
+
 
 
 
@@ -113,7 +124,7 @@ and the task_label as specified in the file names.
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:901: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/first_level/first_level.py:901: UserWarning:
 
     SliceTimingRef not found in file /home/alexis/nilearn_data/fMRI-language-localizer-demo-dataset/derivatives/sub-01/func/sub-01_task-languagelocalizer_desc-preproc_bold.json. It will be assumed that the slice timing reference is 0.0 percent of the repetition time. If it is not the case it will need to be set manually in the generated list of models
 
@@ -359,37 +370,32 @@ language network.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  11.646 seconds)
+   **Total running time of the script:** ( 2 minutes  21.901 seconds)
 
-**Estimated memory usage:**  192 MB
+**Estimated memory usage:**  188 MB
 
 
 .. _sphx_glr_download_auto_examples_07_advanced_plot_bids_analysis.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/07_advanced/plot_bids_analysis.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/07_advanced/plot_bids_analysis.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_bids_analysis.py <plot_bids_analysis.py>`
 
-     :download:`Download Python source code: plot_bids_analysis.py <plot_bids_analysis.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_bids_analysis.ipynb <plot_bids_analysis.ipynb>`
+      :download:`Download Jupyter notebook: plot_bids_analysis.ipynb <plot_bids_analysis.ipynb>`
 
 
 .. only:: html

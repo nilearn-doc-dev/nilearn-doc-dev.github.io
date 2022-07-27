@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Different classifiers in decoding the Haxby dataset" href="plot_haxby_different_estimators.html" /><link rel="prev" title="Setting a parameter by cross-validation" href="plot_haxby_grid_search.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>ROI-based decoding analysis in Haxby et al. dataset - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -652,7 +658,7 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="roi-based-decoding-analysis-in-haxby-et-al-dataset">
-<span id="sphx-glr-auto-examples-02-decoding-plot-haxby-full-analysis-py"></span><h1>ROI-based decoding analysis in Haxby et al. dataset<a class="headerlink" href="#roi-based-decoding-analysis-in-haxby-et-al-dataset" title="Permalink to this headline">#</a></h1>
+<span id="sphx-glr-auto-examples-02-decoding-plot-haxby-full-analysis-py"></span><h1>ROI-based decoding analysis in Haxby et al. dataset<a class="headerlink" href="#roi-based-decoding-analysis-in-haxby-et-al-dataset" title="Permalink to this heading">#</a></h1>
 <p>In this script we reproduce the data analysis conducted by
 Haxby et al. in “Distributed and Overlapping Representations of Faces and
 Objects in Ventral Temporal Cortex”.</p>
@@ -660,39 +666,54 @@ Objects in Ventral Temporal Cortex”.</p>
 three different masks: the full ventral stream (mask_vt), the house
 selective areas (mask_house) and the face selective areas (mask_face),
 that have been defined via a standard GLM-based analysis.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using Nilearn with a version older than <code class="docutils literal notranslate"><span class="pre">0.9.0</span></code>,
+then you should either upgrade your version or import maskers
+from the <code class="docutils literal notranslate"><span class="pre">input_data</span></code> module instead of the <code class="docutils literal notranslate"><span class="pre">maskers</span></code> module.</p>
+<p>That is, you should manually replace in the following example
+all occurrences of:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+</pre></div>
+</div>
+<p>with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+</pre></div>
+</div>
+</div>
 <section id="load-and-prepare-the-data">
-<h2>Load and prepare the data<a class="headerlink" href="#load-and-prepare-the-data" title="Permalink to this headline">#</a></h2>
+<h2>Load and prepare the data<a class="headerlink" href="#load-and-prepare-the-data" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fetch data using nilearn dataset fetcher</span>
 <span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 <span class="c1"># by default we fetch 2nd subject data for analysis</span>
-<a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">haxby_dataset</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.datasets.fetch_haxby.html#nilearn.datasets.fetch_haxby" title="nilearn.datasets.fetch_haxby" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_haxby</span></a><span class="p">()</span>
-<a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a> <span class="o">=</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">func</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">haxby_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_haxby</span><span class="p">()</span>
+<span class="n">func_filename</span> <span class="o">=</span> <span class="n">haxby_dataset</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># Print basic information on the dataset</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'First subject anatomical nifti image (3D) located is at: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span>
-      <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">anat</span></a><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'First subject functional nifti image (4D) is located at: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span>
-      <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First subject anatomical nifti image (3D) located is at: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span>
+      <span class="n">haxby_dataset</span><span class="o">.</span><span class="n">anat</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First subject functional nifti image (4D) is located at: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span>
+      <span class="n">func_filename</span><span class="p">)</span>
 
 <span class="c1"># Load nilearn NiftiMasker, the practical masking and unmasking tool</span>
-<span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiMasker</span></a>
+<span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
 
 <span class="c1"># load labels</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">labels</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html#pandas.read_csv" title="pandas.read_csv" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-function"><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">session_target</span></a><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stimuli</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">labels</span></a><span class="p">[</span><span class="s1">'labels'</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">session_target</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">stimuli</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span>
 <span class="c1"># identify resting state labels in order to be able to remove them</span>
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">task_mask</span></a> <span class="o">=</span> <span class="p">(</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stimuli</span></a> <span class="o">!=</span> <span class="s1">'rest'</span><span class="p">)</span>
+<span class="n">task_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">stimuli</span> <span class="o">!=</span> <span class="s1">&#39;rest&#39;</span><span class="p">)</span>
 
 <span class="c1"># find names of remaining active labels</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">categories</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stimuli</span></a><span class="p">[</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">task_mask</span></a><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="n">stimuli</span><span class="p">[</span><span class="n">task_mask</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 
 <span class="c1"># extract tags indicating to which acquisition run a tag belongs</span>
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">session_labels</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">labels</span></a><span class="p">[</span><span class="s2">"chunks"</span><span class="p">][</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">task_mask</span></a><span class="p">]</span>
+<span class="n">session_labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="s2">&quot;chunks&quot;</span><span class="p">][</span><span class="n">task_mask</span><span class="p">]</span>
 
 <span class="c1"># apply the task_mask to  fMRI data (func_filename)</span>
-<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">index_img</span></a>
-<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">task_data</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">index_img</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">func_filename</span></a><span class="p">,</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">task_mask</span></a><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">index_img</span>
+<span class="n">task_data</span> <span class="o">=</span> <span class="n">index_img</span><span class="p">(</span><span class="n">func_filename</span><span class="p">,</span> <span class="n">task_mask</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>First subject anatomical nifti image (3D) located is at: /home/alexis/nilearn_data/haxby2001/subj2/anat.nii.gz
@@ -701,50 +722,50 @@ First subject functional nifti image (4D) is located at: /home/alexis/nilearn_da
 </div>
 </section>
 <section id="decoding-on-the-different-masks">
-<h2>Decoding on the different masks<a class="headerlink" href="#decoding-on-the-different-masks" title="Permalink to this headline">#</a></h2>
+<h2>Decoding on the different masks<a class="headerlink" href="#decoding-on-the-different-masks" title="Permalink to this heading">#</a></h2>
 <p>The classifier used here is a support vector classifier (svc). We use
 class:<cite>nilearn.decoding.Decoder</cite> and specify the classifier.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">nilearn.decoding</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class"><span class="n">Decoder</span></a>
+<span class="kn">from</span> <span class="nn">nilearn.decoding</span> <span class="kn">import</span> <span class="n">Decoder</span>
 
 <span class="c1"># Make a data splitting object for cross validation</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneGroupOut.html#sklearn.model_selection.LeaveOneGroupOut" title="sklearn.model_selection.LeaveOneGroupOut" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class"><span class="n">LeaveOneGroupOut</span></a>
-<a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneGroupOut.html#sklearn.model_selection.LeaveOneGroupOut" title="sklearn.model_selection.LeaveOneGroupOut" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cv</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneGroupOut.html#sklearn.model_selection.LeaveOneGroupOut" title="sklearn.model_selection.LeaveOneGroupOut" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class"><span class="n">LeaveOneGroupOut</span></a><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">LeaveOneGroupOut</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">LeaveOneGroupOut</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>We use <a class="reference internal" href="../../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.decoding.Decoder</span></code></a> to estimate a baseline.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_names</span></a> <span class="o">=</span> <span class="p">[</span><span class="s1">'mask_vt'</span><span class="p">,</span> <span class="s1">'mask_face'</span><span class="p">,</span> <span class="s1">'mask_house'</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mask_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mask_vt&#39;</span><span class="p">,</span> <span class="s1">&#39;mask_face&#39;</span><span class="p">,</span> <span class="s1">&#39;mask_house&#39;</span><span class="p">]</span>
 
-<a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_scores</span></a> <span class="o">=</span> <span class="p">{}</span>
-<a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_chance_scores</span></a> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">mask_scores</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">mask_chance_scores</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="k">for</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a> <span class="ow">in</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_names</span></a><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Working on </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">)</span>
+<span class="k">for</span> <span class="n">mask_name</span> <span class="ow">in</span> <span class="n">mask_names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Working on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">mask_name</span><span class="p">)</span>
     <span class="c1"># For decoding, standardizing is often very important</span>
-    <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_filename</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">haxby_dataset</span></a><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">masker</span> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiMasker</span></a><span class="p">(</span><span class="n">mask_img</span><span class="o">=</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_filename</span></a><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_scores</span></a><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-    <a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_chance_scores</span></a><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">mask_filename</span> <span class="o">=</span> <span class="n">haxby_dataset</span><span class="p">[</span><span class="n">mask_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">masker</span> <span class="o">=</span> <span class="n">NiftiMasker</span><span class="p">(</span><span class="n">mask_img</span><span class="o">=</span><span class="n">mask_filename</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">mask_scores</span><span class="p">[</span><span class="n">mask_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">mask_chance_scores</span><span class="p">[</span><span class="n">mask_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">for</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a> <span class="ow">in</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">categories</span></a><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Processing </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">,</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a><span class="p">))</span>
-        <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">classification_target</span></a> <span class="o">=</span> <span class="p">(</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stimuli</span></a><span class="p">[</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">task_mask</span></a><span class="p">]</span> <span class="o">==</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a><span class="p">)</span>
+    <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processing </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mask_name</span><span class="p">,</span> <span class="n">category</span><span class="p">))</span>
+        <span class="n">classification_target</span> <span class="o">=</span> <span class="p">(</span><span class="n">stimuli</span><span class="p">[</span><span class="n">task_mask</span><span class="p">]</span> <span class="o">==</span> <span class="n">category</span><span class="p">)</span>
         <span class="c1"># Specify the classifier to the decoder object.</span>
         <span class="c1"># With the decoder we can input the masker directly.</span>
         <span class="c1"># We are using the svc_l1 here because it is intra subject.</span>
-        <a href="../../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">decoder</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class"><span class="n">Decoder</span></a><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">'svc_l1'</span><span class="p">,</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneGroupOut.html#sklearn.model_selection.LeaveOneGroupOut" title="sklearn.model_selection.LeaveOneGroupOut" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cv</span></a><span class="o">=</span><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneGroupOut.html#sklearn.model_selection.LeaveOneGroupOut" title="sklearn.model_selection.LeaveOneGroupOut" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cv</span></a><span class="p">,</span>
-                          <span class="n">mask</span><span class="o">=</span><span class="n">masker</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">'roc_auc'</span><span class="p">)</span>
-        <a href="../../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder.fit" title="nilearn.decoding.Decoder.fit" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-method"><span class="n">decoder</span><span class="o">.</span><span class="n">fit</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">task_data</span></a><span class="p">,</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">classification_target</span></a><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">session_labels</span></a><span class="p">)</span>
-        <a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_scores</span></a><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">][</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">decoder</span><span class="o">.</span><span class="n">cv_scores_</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Scores: </span><span class="si">%1.2f</span><span class="s2"> +- </span><span class="si">%1.2f</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span>
-              <a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_scores</span></a><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">][</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a><span class="p">]),</span>
-              <a href="https://numpy.org/doc/stable/reference/generated/numpy.std.html#numpy.std" title="numpy.std" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">std</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_scores</span></a><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">][</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a><span class="p">])))</span>
+        <span class="n">decoder</span> <span class="o">=</span> <span class="n">Decoder</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;svc_l1&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span>
+                          <span class="n">mask</span><span class="o">=</span><span class="n">masker</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+        <span class="n">decoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">task_data</span><span class="p">,</span> <span class="n">classification_target</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">session_labels</span><span class="p">)</span>
+        <span class="n">mask_scores</span><span class="p">[</span><span class="n">mask_name</span><span class="p">][</span><span class="n">category</span><span class="p">]</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">cv_scores_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scores: </span><span class="si">%1.2f</span><span class="s2"> +- </span><span class="si">%1.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+              <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mask_scores</span><span class="p">[</span><span class="n">mask_name</span><span class="p">][</span><span class="n">category</span><span class="p">]),</span>
+              <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">mask_scores</span><span class="p">[</span><span class="n">mask_name</span><span class="p">][</span><span class="n">category</span><span class="p">])))</span>
 
-        <a href="../../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dummy_classifier</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class"><span class="n">Decoder</span></a><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">'dummy_classifier'</span><span class="p">,</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneGroupOut.html#sklearn.model_selection.LeaveOneGroupOut" title="sklearn.model_selection.LeaveOneGroupOut" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cv</span></a><span class="o">=</span><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneGroupOut.html#sklearn.model_selection.LeaveOneGroupOut" title="sklearn.model_selection.LeaveOneGroupOut" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cv</span></a><span class="p">,</span>
-                                   <span class="n">mask</span><span class="o">=</span><span class="n">masker</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">'roc_auc'</span><span class="p">)</span>
-        <a href="../../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder.fit" title="nilearn.decoding.Decoder.fit" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-method"><span class="n">dummy_classifier</span><span class="o">.</span><span class="n">fit</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">task_data</span></a><span class="p">,</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">classification_target</span></a><span class="p">,</span>
-                             <span class="n">groups</span><span class="o">=</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">session_labels</span></a><span class="p">)</span>
-        <a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_chance_scores</span></a><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">][</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dummy_classifier</span><span class="o">.</span><span class="n">cv_scores_</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">dummy_classifier</span> <span class="o">=</span> <span class="n">Decoder</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;dummy_classifier&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span>
+                                   <span class="n">mask</span><span class="o">=</span><span class="n">masker</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+        <span class="n">dummy_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">task_data</span><span class="p">,</span> <span class="n">classification_target</span><span class="p">,</span>
+                             <span class="n">groups</span><span class="o">=</span><span class="n">session_labels</span><span class="p">)</span>
+        <span class="n">mask_chance_scores</span><span class="p">[</span><span class="n">mask_name</span><span class="p">][</span><span class="n">category</span><span class="p">]</span> <span class="o">=</span> <span class="n">dummy_classifier</span><span class="o">.</span><span class="n">cv_scores_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Working on mask_vt
@@ -766,271 +787,271 @@ Processing mask_vt chair
 Scores: 0.93 +- 0.04
 Working on mask_face
 Processing mask_face scissors
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Scores: 0.70 +- 0.16
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Processing mask_face face
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Scores: 0.90 +- 0.06
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Processing mask_face cat
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Scores: 0.76 +- 0.12
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Processing mask_face shoe
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Scores: 0.73 +- 0.17
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Processing mask_face house
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Scores: 0.71 +- 0.16
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Processing mask_face scrambledpix
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Scores: 0.87 +- 0.09
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Processing mask_face bottle
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Scores: 0.67 +- 0.17
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Processing mask_face chair
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Scores: 0.63 +- 0.10
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-/home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
 After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
 Working on mask_house
 Processing mask_house scissors
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Scores: 0.83 +- 0.08
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Processing mask_house face
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Scores: 0.90 +- 0.07
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Processing mask_house cat
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Scores: 0.86 +- 0.09
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Processing mask_house shoe
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Scores: 0.82 +- 0.12
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Processing mask_house house
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Scores: 1.00 +- 0.00
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Processing mask_house scrambledpix
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Scores: 0.96 +- 0.05
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Processing mask_house bottle
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Scores: 0.86 +- 0.10
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Processing mask_house chair
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
 Scores: 0.90 +- 0.10
-/home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
 Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 </pre></div>
 </div>
 </section>
 <section id="we-make-a-simple-bar-plot-to-summarize-the-results">
-<h2>We make a simple bar plot to summarize the results<a class="headerlink" href="#we-make-a-simple-bar-plot-to-summarize-the-results" title="Permalink to this headline">#</a></h2>
+<h2>We make a simple bar plot to summarize the results<a class="headerlink" href="#we-make-a-simple-bar-plot-to-summarize-the-results" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">show</span>
 
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tick_position</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="nb">len</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">categories</span></a><span class="p">))</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html#matplotlib.pyplot.xticks" title="matplotlib.pyplot.xticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tick_position</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">categories</span></a><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">tick_position</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">categories</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">tick_position</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
 
-<span class="k">for</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">color</span></a><span class="p">,</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s1">'rgb'</span><span class="p">,</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_names</span></a><span class="p">):</span>
-    <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">score_means</span></a> <span class="o">=</span> <span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_scores</span></a><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">][</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a><span class="p">])</span>
-                   <span class="k">for</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a> <span class="ow">in</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">categories</span></a><span class="p">]</span>
-    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html#matplotlib.pyplot.bar" title="matplotlib.pyplot.bar" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">bar</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tick_position</span></a><span class="p">,</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">score_means</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">,</span>
-            <span class="n">width</span><span class="o">=</span><span class="mf">.25</span><span class="p">,</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">color</span></a><span class="o">=</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">color</span></a><span class="p">)</span>
+<span class="k">for</span> <span class="n">color</span><span class="p">,</span> <span class="n">mask_name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span> <span class="n">mask_names</span><span class="p">):</span>
+    <span class="n">score_means</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mask_scores</span><span class="p">[</span><span class="n">mask_name</span><span class="p">][</span><span class="n">category</span><span class="p">])</span>
+                   <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">tick_position</span><span class="p">,</span> <span class="n">score_means</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">mask_name</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mf">.25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
 
-    <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">score_chance</span></a> <span class="o">=</span> <span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_chance_scores</span></a><span class="p">[</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_name</span></a><span class="p">][</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a><span class="p">])</span>
-                    <span class="k">for</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">category</span></a> <span class="ow">in</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">categories</span></a><span class="p">]</span>
-    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html#matplotlib.pyplot.bar" title="matplotlib.pyplot.bar" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">bar</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tick_position</span></a><span class="p">,</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">score_chance</span></a><span class="p">,</span>
-            <span class="n">width</span><span class="o">=</span><span class="mf">.25</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'none'</span><span class="p">)</span>
+    <span class="n">score_chance</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mask_chance_scores</span><span class="p">[</span><span class="n">mask_name</span><span class="p">][</span><span class="n">category</span><span class="p">])</span>
+                    <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">tick_position</span><span class="p">,</span> <span class="n">score_chance</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mf">.25</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
 
-    <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tick_position</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tick_position</span></a> <span class="o">+</span> <span class="mf">.2</span>
+    <span class="n">tick_position</span> <span class="o">=</span> <span class="n">tick_position</span> <span class="o">+</span> <span class="mf">.2</span>
 
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s1">'Classification accuracy (AUC score)'</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s1">'Visual stimuli category'</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html#matplotlib.pyplot.ylim" title="matplotlib.pyplot.ylim" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span></a><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'lower right'</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s1">'Category-specific classification accuracy for different masks'</span><span class="p">)</span>
-<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Classification accuracy (AUC score)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Visual stimuli category&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Category-specific classification accuracy for different masks&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 
 
-<a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a><span class="p">()</span>
+<span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="Category-specific classification accuracy for different masks" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_haxby_full_analysis_001.png" srcset="../../_images/sphx_glr_plot_haxby_full_analysis_001.png"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 3 minutes  50.570 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  1353 MB</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-02-decoding-plot-haxby-full-analysis-py">
+<img src="../../_images/sphx_glr_plot_haxby_full_analysis_001.png" srcset="../../_images/sphx_glr_plot_haxby_full_analysis_001.png" alt="Category-specific classification accuracy for different masks" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  30.844 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  1344 MB</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-02-decoding-plot-haxby-full-analysis-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_full_analysis.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" width="150px"/></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_full_analysis.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/e76a732ac72af39d323979705f3621cb/plot_haxby_full_analysis.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_haxby_full_analysis.py</span></code></a></p>
@@ -1118,6 +1139,7 @@ Brain mask is smaller than .5% of the volume human brain. This object is probabl
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>

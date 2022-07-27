@@ -122,10 +122,10 @@ statistical map:
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/img_plotting.py:348: FutureWarning: Default resolution of the MNI template will change from 2mm to 1mm in version 0.10.0
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/plotting/img_plotting.py:300: FutureWarning: Default resolution of the MNI template will change from 2mm to 1mm in version 0.10.0
       anat_img = load_mni152_template()
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f62589c5ed0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8fad8e080>
 
 
 
@@ -154,7 +154,7 @@ Visualizing works better with a threshold
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258a82c50>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8faec4280>
 
 
 
@@ -262,7 +262,7 @@ We can then plot it
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258a83e50>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8facff5b0>
 
 
 
@@ -472,37 +472,32 @@ image.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  33.219 seconds)
+   **Total running time of the script:** ( 0 minutes  19.525 seconds)
 
-**Estimated memory usage:**  160 MB
+**Estimated memory usage:**  127 MB
 
 
 .. _sphx_glr_download_auto_examples_00_tutorials_plot_3d_and_4d_niimg.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/00_tutorials/plot_3d_and_4d_niimg.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/00_tutorials/plot_3d_and_4d_niimg.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_3d_and_4d_niimg.py <plot_3d_and_4d_niimg.py>`
 
-     :download:`Download Python source code: plot_3d_and_4d_niimg.py <plot_3d_and_4d_niimg.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_3d_and_4d_niimg.ipynb <plot_3d_and_4d_niimg.ipynb>`
+      :download:`Download Jupyter notebook: plot_3d_and_4d_niimg.ipynb <plot_3d_and_4d_niimg.ipynb>`
 
 
 .. only:: html

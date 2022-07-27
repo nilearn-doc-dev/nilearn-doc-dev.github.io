@@ -3,7 +3,7 @@
 .. _sphx_glr_auto_examples_05_glm_second_level:
 
 ===========================
-GLM : Second level analysis
+GLM: Second level analysis
 ===========================
 
 These are examples focused on showcasing second level models functionality and group level analysis.
@@ -70,35 +70,18 @@ See :ref:`glm` for more details.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example uses Voxel-Based Morphometry (VBM) to study the relationship between aging, sex an...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example uses voxel-based morphometry (:term:`VBM`) to study the relationship between aging...">
 
 .. only:: html
 
   .. image:: /auto_examples/05_glm_second_level/images/thumb/sphx_glr_plot_oasis_thumb.png
-    :alt: Voxel-Based Morphometry on Oasis dataset
+    :alt: Voxel-Based Morphometry on OASIS dataset
 
   :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_oasis.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Voxel-Based Morphometry on Oasis dataset</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Full step-by-step example of fitting a GLM to perform a second level analysis in experimental d...">
-
-.. only:: html
-
-  .. image:: /auto_examples/05_glm_second_level/images/thumb/sphx_glr_plot_second_level_two_sample_test_thumb.png
-    :alt: Second-level fMRI model: two-sample test, unpaired and paired
-
-  :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_two_sample_test.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Second-level fMRI model: two-sample test, unpaired and paired</div>
+      <div class="sphx-glr-thumbnail-title">Voxel-Based Morphometry on OASIS dataset</div>
     </div>
 
 
@@ -116,6 +99,23 @@ See :ref:`glm` for more details.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Second-level fMRI model: one sample test</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Full step-by-step example of fitting a GLM to perform a second level analysis in experimental d...">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_glm_second_level/images/thumb/sphx_glr_plot_second_level_two_sample_test_thumb.png
+    :alt: Second-level fMRI model: two-sample test, unpaired and paired
+
+  :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_two_sample_test.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Second-level fMRI model: two-sample test, unpaired and paired</div>
     </div>
 
 
@@ -148,7 +148,7 @@ See :ref:`glm` for more details.
    /auto_examples/05_glm_second_level/plot_proportion_activated_voxels
    /auto_examples/05_glm_second_level/plot_thresholding
    /auto_examples/05_glm_second_level/plot_oasis
-   /auto_examples/05_glm_second_level/plot_second_level_two_sample_test
    /auto_examples/05_glm_second_level/plot_second_level_one_sample_test
+   /auto_examples/05_glm_second_level/plot_second_level_two_sample_test
    /auto_examples/05_glm_second_level/plot_second_level_association_test
 

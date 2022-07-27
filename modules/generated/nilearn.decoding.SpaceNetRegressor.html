@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="FREM on Jimura et al &quot;mixed gambles&quot; dataset." />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.decoding.SearchLight" href="nilearn.decoding.SearchLight.html" /><link rel="prev" title="nilearn.decoding.SpaceNetClassifier" href="nilearn.decoding.SpaceNetClassifier.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>nilearn.decoding.SpaceNetRegressor - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -653,10 +659,10 @@ signature, and not how to use it. Please refer to the
 <a class="reference internal" href="../../user_guide.html#user-guide"><span class="std std-ref">user guide</span></a> for the big picture.</p>
 </div>
 <section id="nilearn-decoding-spacenetregressor">
-<h1>nilearn.decoding.SpaceNetRegressor<a class="headerlink" href="#nilearn-decoding-spacenetregressor" title="Permalink to this headline">#</a></h1>
+<h1>nilearn.decoding.SpaceNetRegressor<a class="headerlink" href="#nilearn-decoding-spacenetregressor" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nilearn.decoding.</span></span><span class="sig-name descname"><span class="pre">SpaceNetRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'graph-net'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alphas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_alphas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_affine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_pass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_pass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Memory(location=None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standardize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">screening_percentile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/a25b8c49/nilearn/decoding/space_net.py#L1168"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nilearn.decoding.</span></span><span class="sig-name descname"><span class="pre">SpaceNetRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'graph-net'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alphas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_alphas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_affine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_pass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_pass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Memory(location=None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standardize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">screening_percentile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/decoding/space_net.py#L1168"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor" title="Permalink to this definition">#</a></dt>
 <dd><p>Regression learners with sparsity and spatial priors.</p>
 <p><cite>SpaceNetRegressor</cite> implements Graph-Net and TV-L1 priors / penalties
 for regression problems. Thus, the penalty is a sum an L1 term and a
@@ -689,7 +695,7 @@ This parameter is mutually exclusive with the <cite>alphas</cite> parameter.</p>
 then its mask will be used. If no mask is it will be computed
 automatically by a MultiNiftiMasker with default parameters.</p>
 </dd>
-<dt><strong>target_affine</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional.</span></dt><dd><p>If specified, the image is resampled corresponding to this new affine.
+<dt><strong>target_affine</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional.</span></dt><dd><p>If specified, the image is resampled corresponding to this new affine.
 <code class="docutils literal notranslate"><span class="pre">target_affine</span></code> can be a 3x3 or a 4x4 matrix.
 Default=None.</p>
 </dd>
@@ -807,24 +813,28 @@ relative to the volume of standard brain.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'graph-net'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alphas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_alphas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_affine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_pass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_pass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Memory(location=None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standardize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">screening_percentile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/a25b8c49/nilearn/decoding/space_net.py#L1310"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'graph-net'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alphas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_alphas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_affine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_pass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_pass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Memory(location=None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standardize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">screening_percentile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/decoding/space_net.py#L1310"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.__init__" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.SUPPORTED_LOSSES">
 <span class="sig-name descname"><span class="pre">SUPPORTED_LOSSES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['mse',</span> <span class="pre">'logistic']</span></em><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.SUPPORTED_LOSSES" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.SUPPORTED_PENALTIES">
 <span class="sig-name descname"><span class="pre">SUPPORTED_PENALTIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['graph-net',</span> <span class="pre">'tv-l1']</span></em><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.SUPPORTED_PENALTIES" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.check_params">
-<span class="sig-name descname"><span class="pre">check_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/a25b8c49/nilearn/decoding/space_net.py#L681"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.check_params" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">check_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/decoding/space_net.py#L681"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.check_params" title="Permalink to this definition">#</a></dt>
 <dd><p>Makes sure parameters are sane</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.decision_function">
-<span class="sig-name descname"><span class="pre">decision_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/a25b8c49/nilearn/decoding/space_net.py#L891"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.decision_function" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">decision_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/decoding/space_net.py#L891"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.decision_function" title="Permalink to this definition">#</a></dt>
 <dd><p>Predict confidence scores for samples</p>
 <p>The confidence score for a sample is the signed distance of that
 sample to the hyperplane.</p>
@@ -845,9 +855,10 @@ class would be predicted.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/a25b8c49/nilearn/decoding/space_net.py#L731"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.fit" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/decoding/space_net.py#L731"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.fit" title="Permalink to this definition">#</a></dt>
 <dd><p>Fit the learner</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -867,6 +878,7 @@ the affine is considered the same for all.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.get_params">
 <span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.get_params" title="Permalink to this definition">#</a></dt>
@@ -887,9 +899,10 @@ contained subobjects that are estimators.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/a25b8c49/nilearn/decoding/space_net.py#L924"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.predict" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/decoding/space_net.py#L924"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.predict" title="Permalink to this definition">#</a></dt>
 <dd><p>Predict class labels for samples in X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -908,18 +921,19 @@ the affine is considered the same for all.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.score">
 <span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.score" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the coefficient of determination of the prediction.</p>
-<p>The coefficient of determination <img alt="R^2" class="math" src="../../_images/math/2fc807898ff2ed580bd1543c9d726076fe764032.png"/> is defined as
-<img alt="(1 - \frac{u}{v})" class="math" src="../../_images/math/692833b8b522d84c55593b3c1739c93c8e1bdbeb.png"/>, where <img alt="u" class="math" src="../../_images/math/9b444cf6329a14140aee8ff5a06ff30772cc1c2f.png"/> is the residual
-sum of squares <code class="docutils literal notranslate"><span class="pre">((y_true</span> <span class="pre">-</span> <span class="pre">y_pred)**</span> <span class="pre">2).sum()</span></code> and <img alt="v" class="math" src="../../_images/math/02d98909b5d6acd6a7ff927d4d42790bdd407d58.png"/>
+<p>The coefficient of determination <span class="math">R^2</span> is defined as
+<span class="math">(1 - \frac{u}{v})</span>, where <span class="math">u</span> is the residual
+sum of squares <code class="docutils literal notranslate"><span class="pre">((y_true</span> <span class="pre">-</span> <span class="pre">y_pred)**</span> <span class="pre">2).sum()</span></code> and <span class="math">v</span>
 is the total sum of squares <code class="docutils literal notranslate"><span class="pre">((y_true</span> <span class="pre">-</span> <span class="pre">y_true.mean())</span> <span class="pre">**</span> <span class="pre">2).sum()</span></code>.
 The best possible score is 1.0 and it can be negative (because the
 model can be arbitrarily worse). A constant model that always predicts
 the expected value of <cite>y</cite>, disregarding the input features, would get
-a <img alt="R^2" class="math" src="../../_images/math/2fc807898ff2ed580bd1543c9d726076fe764032.png"/> score of 0.0.</p>
+a <span class="math">R^2</span> score of 0.0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -936,25 +950,26 @@ is the number of samples used in the fitting for the estimator.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>score</strong><span class="classifier">float</span></dt><dd><p><img alt="R^2" class="math" src="../../_images/math/2fc807898ff2ed580bd1543c9d726076fe764032.png"/> of <code class="docutils literal notranslate"><span class="pre">self.predict(X)</span></code> wrt. <cite>y</cite>.</p>
+<dt><strong>score</strong><span class="classifier">float</span></dt><dd><p><span class="math">R^2</span> of <code class="docutils literal notranslate"><span class="pre">self.predict(X)</span></code> wrt. <cite>y</cite>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>The <img alt="R^2" class="math" src="../../_images/math/2fc807898ff2ed580bd1543c9d726076fe764032.png"/> score used when calling <code class="docutils literal notranslate"><span class="pre">score</span></code> on a regressor uses
+<p>The <span class="math">R^2</span> score used when calling <code class="docutils literal notranslate"><span class="pre">score</span></code> on a regressor uses
 <code class="docutils literal notranslate"><span class="pre">multioutput='uniform_average'</span></code> from version 0.23 to keep consistent
-with default value of <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score" title="(in scikit-learn v1.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">r2_score</span></code></a>.
+with default value of <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score" title="(in scikit-learn v1.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">r2_score</span></code></a>.
 This influences the <code class="docutils literal notranslate"><span class="pre">score</span></code> method of all the multioutput
 regressors (except for
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputRegressor.html#sklearn.multioutput.MultiOutputRegressor" title="(in scikit-learn v1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiOutputRegressor</span></code></a>).</p>
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputRegressor.html#sklearn.multioutput.MultiOutputRegressor" title="(in scikit-learn v1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiOutputRegressor</span></code></a>).</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.decoding.SpaceNetRegressor.set_params">
 <span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nilearn.decoding.SpaceNetRegressor.set_params" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
-(such as <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="(in scikit-learn v1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
+(such as <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="(in scikit-learn v1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
 parameters of the form <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;__&lt;parameter&gt;</span></code> so that it’s
 possible to update each component of a nested object.</p>
 <dl class="field-list simple">
@@ -972,16 +987,18 @@ possible to update each component of a nested object.</p>
 </dd>
 </dl>
 </dd></dl>
+
 </dd></dl>
+
 <section id="examples-using-nilearn-decoding-spacenetregressor">
-<h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.decoding.SpaceNetRegressor</span></code><a class="headerlink" href="#examples-using-nilearn-decoding-spacenetregressor" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example, we use fast ensembling of regularized models (FREM) to solve a regression prob..."><img alt='FREM on Jimura et al "mixed gambles" dataset.' src="../../_images/sphx_glr_plot_mixed_gambles_frem_thumb.png"/>
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.decoding.SpaceNetRegressor</span></code><a class="headerlink" href="#examples-using-nilearn-decoding-spacenetregressor" title="Permalink to this heading">#</a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="In this example, we use fast ensembling of regularized models (FREM) to solve a regression prob..."><img alt="FREM on Jimura et al &quot;mixed gambles&quot; dataset." src="../../_images/sphx_glr_plot_mixed_gambles_frem_thumb.png" />
 <p><a class="reference internal" href="../../auto_examples/02_decoding/plot_mixed_gambles_frem.html#sphx-glr-auto-examples-02-decoding-plot-mixed-gambles-frem-py"><span class="std std-ref">FREM on Jimura et al “mixed gambles” dataset.</span></a></p>
-<div class="sphx-glr-thumbnail-title">FREM on Jimura et al "mixed gambles" dataset.</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Predicting age from gray-matter concentration maps from OASIS dataset. Note that age is a conti..."><img alt="Voxel-Based Morphometry on Oasis dataset with Space-Net prior" src="../../_images/sphx_glr_plot_oasis_vbm_space_net_thumb.png"/>
+  <div class="sphx-glr-thumbnail-title">FREM on Jimura et al "mixed gambles" dataset.</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Predicting age from gray-matter concentration maps from OASIS dataset. Note that age is a conti..."><img alt="Voxel-Based Morphometry on Oasis dataset with Space-Net prior" src="../../_images/sphx_glr_plot_oasis_vbm_space_net_thumb.png" />
 <p><a class="reference internal" href="../../auto_examples/02_decoding/plot_oasis_vbm_space_net.html#sphx-glr-auto-examples-02-decoding-plot-oasis-vbm-space-net-py"><span class="std std-ref">Voxel-Based Morphometry on Oasis dataset with Space-Net prior</span></a></p>
-<div class="sphx-glr-thumbnail-title">Voxel-Based Morphometry on Oasis dataset with Space-Net prior</div>
-</div><div style="clear:both"></div></section>
+  <div class="sphx-glr-thumbnail-title">Voxel-Based Morphometry on Oasis dataset with Space-Net prior</div>
+</div></div><div style='clear:both'></div></section>
 </section>
 
         </article>
@@ -1057,6 +1074,7 @@ possible to update each component of a nested object.</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>

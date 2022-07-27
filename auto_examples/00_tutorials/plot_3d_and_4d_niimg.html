@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="A introduction tutorial to fMRI decoding" href="plot_decoding_tutorial.html" /><link rel="prev" title="Basic nilearn example: manipulating and looking at data" href="plot_nilearn_101.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>3D and 4D niimgs: handling and visualizing - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -652,77 +658,77 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="d-and-4d-niimgs-handling-and-visualizing">
-<span id="sphx-glr-auto-examples-00-tutorials-plot-3d-and-4d-niimg-py"></span><h1>3D and 4D niimgs: handling and visualizing<a class="headerlink" href="#d-and-4d-niimgs-handling-and-visualizing" title="Permalink to this headline">#</a></h1>
+<span id="sphx-glr-auto-examples-00-tutorials-plot-3d-and-4d-niimg-py"></span><h1>3D and 4D niimgs: handling and visualizing<a class="headerlink" href="#d-and-4d-niimgs-handling-and-visualizing" title="Permalink to this heading">#</a></h1>
 <p>Here we discover how to work with 3D and 4D niimgs.</p>
 <section id="downloading-tutorial-datasets-from-internet">
-<h2>Downloading tutorial datasets from Internet<a class="headerlink" href="#downloading-tutorial-datasets-from-internet" title="Permalink to this headline">#</a></h2>
+<h2>Downloading tutorial datasets from Internet<a class="headerlink" href="#downloading-tutorial-datasets-from-internet" title="Permalink to this heading">#</a></h2>
 <p>Nilearn comes with functions that download public data from Internet</p>
 <p>Let’s first check where the data is downloaded on our disk:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Datasets are stored in: </span><span class="si">%r</span><span class="s1">'</span> <span class="o">%</span> <a href="../../modules/generated/nilearn.datasets.get_data_dirs.html#nilearn.datasets.get_data_dirs" title="nilearn.datasets.get_data_dirs" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">get_data_dirs</span></a><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Datasets are stored in: </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">datasets</span><span class="o">.</span><span class="n">get_data_dirs</span><span class="p">())</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Datasets are stored in: ['/home/alexis/nilearn_data']
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Datasets are stored in: [&#39;/home/alexis/nilearn_data&#39;]
 </pre></div>
 </div>
 <p>Let’s now retrieve a motor contrast from a Neurovault repository</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">motor_images</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.datasets.fetch_neurovault_motor_task.html#nilearn.datasets.fetch_neurovault_motor_task" title="nilearn.datasets.fetch_neurovault_motor_task" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_neurovault_motor_task</span></a><span class="p">()</span>
-<a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">motor_images</span><span class="o">.</span><span class="n">images</span></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">motor_images</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_neurovault_motor_task</span><span class="p">()</span>
+<span class="n">motor_images</span><span class="o">.</span><span class="n">images</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>['/home/alexis/nilearn_data/neurovault/collection_658/image_10426.nii.gz']
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;/home/alexis/nilearn_data/neurovault/collection_658/image_10426.nii.gz&#39;]
 </pre></div>
 </div>
 <p>motor_images is a list of filenames. We need to take the first one</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tmap_filename</span></a> <span class="o">=</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">motor_images</span><span class="o">.</span><span class="n">images</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tmap_filename</span> <span class="o">=</span> <span class="n">motor_images</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
 <section id="visualizing-a-3d-file">
-<h2>Visualizing a 3D file<a class="headerlink" href="#visualizing-a-3d-file" title="Permalink to this headline">#</a></h2>
+<h2>Visualizing a 3D file<a class="headerlink" href="#visualizing-a-3d-file" title="Permalink to this heading">#</a></h2>
 <p>The file contains a 3D volume, we can easily visualize it as a
 statistical map:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
-<a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tmap_filename</span></a><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">tmap_filename</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="plot 3d and 4d niimg" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_001.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_001.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/alexis/singbrain/repo/nilearn/nilearn/plotting/img_plotting.py:348: FutureWarning: Default resolution of the MNI template will change from 2mm to 1mm in version 0.10.0
+<img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_001.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_001.png" alt="plot 3d and 4d niimg" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/plotting/img_plotting.py:300: FutureWarning: Default resolution of the MNI template will change from 2mm to 1mm in version 0.10.0
   anat_img = load_mni152_template()
 
-&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f62589c5ed0&gt;
+&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8fad8e080&gt;
 </pre></div>
 </div>
 <p>Visualizing works better with a threshold</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tmap_filename</span></a><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">tmap_filename</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="plot 3d and 4d niimg" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_002.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_002.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258a82c50&gt;
+<img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_002.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_002.png" alt="plot 3d and 4d niimg" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8faec4280&gt;
 </pre></div>
 </div>
 </section>
 <section id="visualizing-one-volume-in-a-4d-file">
-<h2>Visualizing one volume in a 4D file<a class="headerlink" href="#visualizing-one-volume-in-a-4d-file" title="Permalink to this headline">#</a></h2>
+<h2>Visualizing one volume in a 4D file<a class="headerlink" href="#visualizing-one-volume-in-a-4d-file" title="Permalink to this heading">#</a></h2>
 <p>We can download resting-state networks from the Smith 2009 study on
 correspondence between rest and task</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rsn</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.datasets.fetch_atlas_smith_2009.html#nilearn.datasets.fetch_atlas_smith_2009" title="nilearn.datasets.fetch_atlas_smith_2009" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_smith_2009</span></a><span class="p">()[</span><span class="s1">'rsn10'</span><span class="p">]</span>
-<a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rsn</span></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rsn</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_smith_2009</span><span class="p">()[</span><span class="s1">&#39;rsn10&#39;</span><span class="p">]</span>
+<span class="n">rsn</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>'/home/alexis/nilearn_data/smith_2009/PNAS_Smith09_rsn10.nii.gz'
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;/home/alexis/nilearn_data/smith_2009/PNAS_Smith09_rsn10.nii.gz&#39;
 </pre></div>
 </div>
 <p>It is a 4D nifti file. We load it into the memory to print its
 shape.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
-<span class="nb">print</span><span class="p">(</span><a href="../../modules/generated/nilearn.image.load_img.html#nilearn.image.load_img" title="nilearn.image.load_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">load_img</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rsn</span></a><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">rsn</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(91, 109, 91, 10)
 </pre></div>
 </div>
 <p>We can retrieve the first volume (note that Python indexing starts at 0):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">first_rsn</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">index_img</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rsn</span></a><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.dataobj_images.html#nibabel.dataobj_images.DataobjImage.shape" title="nibabel.dataobj_images.DataobjImage.shape" class="sphx-glr-backref-module-nibabel-dataobj_images sphx-glr-backref-type-py-method"><span class="n">first_rsn</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first_rsn</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">index_img</span><span class="p">(</span><span class="n">rsn</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_rsn</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(91, 109, 91)
@@ -730,67 +736,67 @@ shape.</p>
 </div>
 <p>first_rsn is a 3D image.</p>
 <p>We can then plot it</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">first_rsn</span></a><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">first_rsn</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="plot 3d and 4d niimg" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_003.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_003.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258a83e50&gt;
+<img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_003.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_003.png" alt="plot 3d and 4d niimg" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8facff5b0&gt;
 </pre></div>
 </div>
 </section>
 <section id="looping-on-all-volumes-in-a-4d-file">
-<h2>Looping on all volumes in a 4D file<a class="headerlink" href="#looping-on-all-volumes-in-a-4d-file" title="Permalink to this headline">#</a></h2>
+<h2>Looping on all volumes in a 4D file<a class="headerlink" href="#looping-on-all-volumes-in-a-4d-file" title="Permalink to this heading">#</a></h2>
 <p>If we want to plot all the volumes in this 4D file, we can use iter_img
 to loop on them.</p>
 <p>Then we give a few arguments to plot_stat_map in order to have a more
 compact display.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">img</span></a> <span class="ow">in</span> <a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">iter_img</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rsn</span></a><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">image</span><span class="o">.</span><span class="n">iter_img</span><span class="p">(</span><span class="n">rsn</span><span class="p">):</span>
     <span class="c1"># img is now an in-memory 3D img</span>
-    <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">img</span></a><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">"z"</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                            <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_004.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_004.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_005.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_005.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_006.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_006.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_007.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_007.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_008.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_008.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_009.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_009.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_010.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_010.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_011.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_011.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_012.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_012.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_013.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_013.png"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_004.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_004.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_005.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_005.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_006.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_006.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_007.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_007.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_008.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_008.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_009.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_009.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_010.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_010.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_011.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_011.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_012.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_012.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_013.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_013.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
 </ul>
 </section>
 <section id="looping-through-selected-volumes-in-a-4d-file">
-<h2>Looping through selected volumes in a 4D file<a class="headerlink" href="#looping-through-selected-volumes-in-a-4d-file" title="Permalink to this headline">#</a></h2>
+<h2>Looping through selected volumes in a 4D file<a class="headerlink" href="#looping-through-selected-volumes-in-a-4d-file" title="Permalink to this heading">#</a></h2>
 <p>If we want to plot selected volumes in this 4D file, we can use index_img
 with the <cite>slice</cite> constructor to select the desired volumes.</p>
 <p>Afterwards, we’ll use iter_img to loop through them following the same
 formula as before.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">selected_volumes</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">index_img</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rsn</span></a><span class="p">,</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">selected_volumes</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">index_img</span><span class="p">(</span><span class="n">rsn</span><span class="p">,</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>If you’re new to Python, one thing to note is that the slice constructor
 uses 0-based indexing. You can confirm this by matching these slices
 to the previous plot above.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">img</span></a> <span class="ow">in</span> <a href="../../modules/generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">iter_img</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">selected_volumes</span></a><span class="p">):</span>
-    <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">img</span></a><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">image</span><span class="o">.</span><span class="n">iter_img</span><span class="p">(</span><span class="n">selected_volumes</span><span class="p">):</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_014.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_014.png"/></li>
-<li><img alt="plot 3d and 4d niimg" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_3d_and_4d_niimg_015.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_015.png"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_014.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_014.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_3d_and_4d_niimg_015.png" srcset="../../_images/sphx_glr_plot_3d_and_4d_niimg_015.png" alt="plot 3d and 4d niimg" class = "sphx-glr-multi-img"/></li>
 </ul>
 <p>plotting.show is useful to force the display of figures when running
 outside IPython</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plotting</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
-<hr class="docutils"/>
+<hr class="docutils" />
 <p>To recap, neuroimaging images (niimgs as we call them) come in
 different flavors:</p>
 <ul class="simple">
@@ -804,11 +810,11 @@ hand <a class="reference internal" href="../../modules/generated/nilearn.image.i
 to break down 4D images into 3D images, and on the other hand
 <a class="reference internal" href="../../modules/generated/nilearn.image.concat_imgs.html#nilearn.image.concat_imgs" title="nilearn.image.concat_imgs"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.image.concat_imgs</span></code></a> to group a list of 3D images into a 4D
 image.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  33.219 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  160 MB</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-00-tutorials-plot-3d-and-4d-niimg-py">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.525 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  127 MB</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-00-tutorials-plot-3d-and-4d-niimg-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/00_tutorials/plot_3d_and_4d_niimg.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px"/></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/00_tutorials/plot_3d_and_4d_niimg.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/0a08d2a6f3fe90c61fff00f683f2fa0a/plot_3d_and_4d_niimg.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_3d_and_4d_niimg.py</span></code></a></p>
@@ -898,6 +904,7 @@ image.</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>

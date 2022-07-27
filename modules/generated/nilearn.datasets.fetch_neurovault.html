@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="NeuroVault cross-study ICA maps." />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.datasets.fetch_neurovault_ids" href="nilearn.datasets.fetch_neurovault_ids.html" /><link rel="prev" title="nilearn.datasets.fetch_megatrawls_netmats" href="nilearn.datasets.fetch_megatrawls_netmats.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>nilearn.datasets.fetch_neurovault - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -653,10 +659,10 @@ function signature, and not how to use it. Please refer to the
 <a class="reference internal" href="../../user_guide.html#user-guide"><span class="std std-ref">user guide</span></a> for the big picture.</p>
 </div>
 <section id="nilearn-datasets-fetch-neurovault">
-<h1>nilearn.datasets.fetch_neurovault<a class="headerlink" href="#nilearn-datasets-fetch-neurovault" title="Permalink to this headline">#</a></h1>
+<h1>nilearn.datasets.fetch_neurovault<a class="headerlink" href="#nilearn-datasets-fetch-neurovault" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.datasets.fetch_neurovault">
-<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_neurovault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_images=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection_terms={'number_of_images':</span> <span class="pre">NotNull()}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection_filter=&lt;function</span> <span class="pre">_empty_filter&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_terms={'image_type':</span> <span class="pre">NotEqual('atlas')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'is_thresholded':</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'map_type':</span> <span class="pre">NotIn('ROI/mask'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'anatomical'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'parcellation')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'not_mni':</span> <span class="pre">False}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_filter=&lt;function</span> <span class="pre">_empty_filter&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode='download_new'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fetch_neurosynth_words=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resample=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vectorize_words=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwarg_image_filters</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/a25b8c49/nilearn/datasets/neurovault.py#L2297"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_neurovault" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_neurovault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_images=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection_terms={'number_of_images':</span> <span class="pre">NotNull()}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection_filter=&lt;function</span> <span class="pre">_empty_filter&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_terms={'image_type':</span> <span class="pre">NotEqual('atlas')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'is_thresholded':</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'map_type':</span> <span class="pre">NotIn('ROI/mask'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'anatomical'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'parcellation')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'not_mni':</span> <span class="pre">False}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_filter=&lt;function</span> <span class="pre">_empty_filter&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode='download_new'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fetch_neurosynth_words=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resample=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vectorize_words=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwarg_image_filters</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/datasets/neurovault.py#L2297"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_neurovault" title="Permalink to this definition">#</a></dt>
 <dd><p>Download data from neurovault.org that match certain criteria.</p>
 <p>Any downloaded data is saved on the local disk and subsequent
 calls to this function will first look for the data locally before
@@ -796,7 +802,8 @@ the server - see Examples section).</p>
 all the images matching the filters or if too many images fail to
 be downloaded in a row.</p>
 <p class="rubric">References</p>
-<p id="id3"><dl class="footnote brackets">
+<div class="docutils container" id="id3">
+<dl class="footnote brackets">
 <dt class="label" id="footcite-gorgolewski2015neurovault"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Krzysztof J. Gorgolewski, Gael Varoquaux, Gabriel Rivera, Yannick Schwarz, Satrajit S. Ghosh, Camille Maumet, Vanessa V. Sochat, Thomas E. Nichols, Russell A. Poldrack, Jean-Baptiste Poline, Tal Yarkoni, and Daniel S. Margulies. Neurovault.org: a web-based repository for collecting and sharing unthresholded statistical maps of the human brain. <em>Frontiers in Neuroinformatics</em>, 9:8, 2015. URL: <a class="reference external" href="https://www.frontiersin.org/article/10.3389/fninf.2015.00008">https://www.frontiersin.org/article/10.3389/fninf.2015.00008</a>, <a class="reference external" href="https://doi.org/10.3389/fninf.2015.00008">doi:10.3389/fninf.2015.00008</a>.</p>
 </dd>
@@ -804,7 +811,7 @@ be downloaded in a row.</p>
 <dd><p>Tal Yarkoni, Russell A Poldrack, Thomas E Nichols, David C Van Essen, and Tor D Wager. Large-scale automated synthesis of human functional neuroimaging data. <em>Nature methods</em>, 8(8):665–670, 2011.</p>
 </dd>
 </dl>
-</p>
+</div>
 <p class="rubric">Examples</p>
 <p>To download <strong>all</strong> the collections and images from Neurovault:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fetch_neurovault</span><span class="p">(</span><span class="n">max_images</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">collection_terms</span><span class="o">=</span><span class="p">{},</span> <span class="n">image_terms</span><span class="o">=</span><span class="p">{})</span>
@@ -820,17 +827,18 @@ more likely to contain good images):</p>
 </div>
 <p>To update all the images (matching the default filters):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fetch_neurovault</span><span class="p">(</span>
-    <span class="n">max_images</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'overwrite'</span><span class="p">,</span>
+    <span class="n">max_images</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;overwrite&#39;</span><span class="p">,</span>
     <span class="n">modify_date</span><span class="o">=</span><span class="n">GreaterThan</span><span class="p">(</span><span class="n">newest</span><span class="p">))</span>
 </pre></div>
 </div>
 </dd></dl>
+
 <section id="examples-using-nilearn-datasets-fetch-neurovault">
-<h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_neurovault</span></code><a class="headerlink" href="#examples-using-nilearn-datasets-fetch-neurovault" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="This example shows how to download statistical maps from NeuroVault, label them with NeuroSynth..."><img alt="NeuroVault cross-study ICA maps." src="../../_images/sphx_glr_plot_ica_neurovault_thumb.png"/>
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_neurovault</span></code><a class="headerlink" href="#examples-using-nilearn-datasets-fetch-neurovault" title="Permalink to this heading">#</a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to download statistical maps from NeuroVault, label them with NeuroSynth..."><img alt="NeuroVault cross-study ICA maps." src="../../_images/sphx_glr_plot_ica_neurovault_thumb.png" />
 <p><a class="reference internal" href="../../auto_examples/07_advanced/plot_ica_neurovault.html#sphx-glr-auto-examples-07-advanced-plot-ica-neurovault-py"><span class="std std-ref">NeuroVault cross-study ICA maps.</span></a></p>
-<div class="sphx-glr-thumbnail-title">NeuroVault cross-study ICA maps.</div>
-</div><div style="clear:both"></div></section>
+  <div class="sphx-glr-thumbnail-title">NeuroVault cross-study ICA maps.</div>
+</div></div><div style='clear:both'></div></section>
 </section>
 
         </article>
@@ -906,6 +914,7 @@ more likely to contain good images):</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>

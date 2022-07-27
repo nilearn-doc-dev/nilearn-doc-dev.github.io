@@ -30,12 +30,14 @@ three different masks: the full ventral stream (mask_vt), the house
 selective areas (mask_house) and the face selective areas (mask_face),
 that have been defined via a standard GLM-based analysis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-19
+.. include:: ../../../examples/masker_note.rst
+
+.. GENERATED FROM PYTHON SOURCE LINES 19-21
 
 Load and prepare the data
 -----------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-52
+.. GENERATED FROM PYTHON SOURCE LINES 21-54
 
 .. code-block:: default
 
@@ -86,7 +88,7 @@ Load and prepare the data
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-58
+.. GENERATED FROM PYTHON SOURCE LINES 55-60
 
 Decoding on the different masks
 --------------------------------
@@ -94,7 +96,7 @@ Decoding on the different masks
 The classifier used here is a support vector classifier (svc). We use
 class:`nilearn.decoding.Decoder` and specify the classifier.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-65
+.. GENERATED FROM PYTHON SOURCE LINES 60-67
 
 .. code-block:: default
 
@@ -112,11 +114,11 @@ class:`nilearn.decoding.Decoder` and specify the classifier.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-67
+.. GENERATED FROM PYTHON SOURCE LINES 68-69
 
 We use :class:`nilearn.decoding.Decoder` to estimate a baseline.
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-102
+.. GENERATED FROM PYTHON SOURCE LINES 69-104
 
 .. code-block:: default
 
@@ -182,227 +184,227 @@ We use :class:`nilearn.decoding.Decoder` to estimate a baseline.
     Scores: 0.93 +- 0.04
     Working on mask_face
     Processing mask_face scissors
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Scores: 0.70 +- 0.16
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Processing mask_face face
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Scores: 0.90 +- 0.06
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Processing mask_face cat
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Scores: 0.76 +- 0.12
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Processing mask_face shoe
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Scores: 0.73 +- 0.17
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Processing mask_face house
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Scores: 0.71 +- 0.16
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Processing mask_face scrambledpix
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Scores: 0.87 +- 0.09
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Processing mask_face bottle
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Scores: 0.67 +- 0.17
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Processing mask_face chair
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Scores: 0.63 +- 0.10
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/decoding/decoder.py:518: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/decoding/decoder.py:518: UserWarning:
 
     After clustering and screening, the decoding model will be trained only on 30 features. Consider raising clustering_percentile or screening_percentile parameters
 
     Working on mask_house
     Processing mask_house scissors
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Scores: 0.83 +- 0.08
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Processing mask_house face
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Scores: 0.90 +- 0.07
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Processing mask_house cat
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Scores: 0.86 +- 0.09
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Processing mask_house shoe
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Scores: 0.82 +- 0.12
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Processing mask_house house
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Scores: 1.00 +- 0.00
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Processing mask_house scrambledpix
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Scores: 0.96 +- 0.05
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Processing mask_house bottle
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Scores: 0.86 +- 0.10
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Processing mask_house chair
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
     Scores: 0.90 +- 0.10
-    /home/alexis/singbrain/repo/nilearn/nilearn/_utils/param_validation.py:197: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/param_validation.py:197: UserWarning:
 
     Brain mask is smaller than .5% of the volume human brain. This object is probably not tuned tobe used on such data.
 
@@ -410,12 +412,12 @@ We use :class:`nilearn.decoding.Decoder` to estimate a baseline.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-105
+.. GENERATED FROM PYTHON SOURCE LINES 105-107
 
 We make a simple bar plot to summarize the results
 ---------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-135
+.. GENERATED FROM PYTHON SOURCE LINES 107-137
 
 .. code-block:: default
 
@@ -464,37 +466,32 @@ We make a simple bar plot to summarize the results
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  50.570 seconds)
+   **Total running time of the script:** ( 2 minutes  30.844 seconds)
 
-**Estimated memory usage:**  1353 MB
+**Estimated memory usage:**  1344 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_haxby_full_analysis.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_full_analysis.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_full_analysis.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_haxby_full_analysis.py <plot_haxby_full_analysis.py>`
 
-     :download:`Download Python source code: plot_haxby_full_analysis.py <plot_haxby_full_analysis.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_haxby_full_analysis.ipynb <plot_haxby_full_analysis.ipynb>`
+      :download:`Download Jupyter notebook: plot_haxby_full_analysis.ipynb <plot_haxby_full_analysis.ipynb>`
 
 
 .. only:: html

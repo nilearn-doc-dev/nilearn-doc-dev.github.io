@@ -56,7 +56,7 @@ Fetching data from ADHD dataset
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/datasets/func.py:250: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/datasets/func.py:250: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
       phenotypic = np.genfromtxt(phenotypic, names=True, delimiter=',',
     First subject functional nifti image (4D) is at: /home/alexis/nilearn_data/adhd/data/0010042/0010042_rest_tshift_RPI_voreg_mni.nii.gz
 
@@ -120,11 +120,10 @@ Deriving a label-based mask
 Create a gray matter/white matter/cerebrospinal fluid mask from
 ICBM152 tissue probability maps.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-68
+.. GENERATED FROM PYTHON SOURCE LINES 51-64
 
 .. code-block:: default
 
-    import nibabel as nib
     import numpy as np
     from nilearn import image
 
@@ -135,25 +134,29 @@ ICBM152 tissue probability maps.
     atlas_data = atlas_img.get_fdata()
     discrete_version = np.argmax(atlas_data, axis=3) + 1
     discrete_version[np.max(atlas_data, axis=3) == 0] = 0
-    discrete_atlas_img = nib.Nifti1Image(
-        discrete_version,
-        atlas_img.affine,
-        atlas_img.header,
-    )
+    discrete_atlas_img = image.new_img_like(atlas_img, discrete_version)
 
 
 
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/image/image.py:756: FutureWarning: Image data has type int64, which may cause incompatibilities with other tools. This will error in NiBabel 5.0. This warning can be silenced by passing the dtype argument to Nifti1Image().
+      return klass(data, affine, header=header)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-71
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 65-67
 
 Visualizing global patterns, separated by tissue type
 -----------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-86
+.. GENERATED FROM PYTHON SOURCE LINES 67-83
 
 .. code-block:: default
 
@@ -169,6 +172,7 @@ Visualizing global patterns, separated by tissue type
         t_r=t_r,
         mask_labels=map_labels,
         axes=ax,
+        cmap="gray",
     )
 
     fig.show()
@@ -185,7 +189,7 @@ Visualizing global patterns, separated by tissue type
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/image/resampling.py:531: UserWarning: Casting data from int32 to float32
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/image/resampling.py:531: UserWarning: Casting data from int32 to float32
       warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
     Coercing atlas_values to <class 'int'>
 
@@ -195,37 +199,32 @@ Visualizing global patterns, separated by tissue type
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.756 seconds)
+   **Total running time of the script:** ( 0 minutes  8.468 seconds)
 
-**Estimated memory usage:**  1117 MB
+**Estimated memory usage:**  1042 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_carpet.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/01_plotting/plot_carpet.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/01_plotting/plot_carpet.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_carpet.py <plot_carpet.py>`
 
-     :download:`Download Python source code: plot_carpet.py <plot_carpet.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_carpet.ipynb <plot_carpet.ipynb>`
+      :download:`Download Jupyter notebook: plot_carpet.ipynb <plot_carpet.ipynb>`
 
 
 .. only:: html

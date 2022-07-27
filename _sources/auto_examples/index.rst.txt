@@ -821,7 +821,7 @@ See :ref:`parcellating_brain`, :ref:`extracting_rsn` or
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to produce seed-to-voxel correlation maps for a single subject based on ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to produce seed-to-:term:`voxel` correlation maps for a single subject b...">
 
 .. only:: html
 
@@ -860,13 +860,13 @@ See :ref:`parcellating_brain`, :ref:`extracting_rsn` or
 .. only:: html
 
   .. image:: /auto_examples/03_connectivity/images/thumb/sphx_glr_plot_extract_regions_dictlearning_maps_thumb.png
-    :alt: Regions extraction using :term:`Dictionary learning` and functional connectomes
+    :alt: Regions extraction using dictionary learning and functional connectomes
 
   :ref:`sphx_glr_auto_examples_03_connectivity_plot_extract_regions_dictlearning_maps.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Regions extraction using :term:`Dictionary learning` and functional connectomes</div>
+      <div class="sphx-glr-thumbnail-title">Regions extraction using dictionary learning and functional connectomes</div>
     </div>
 
 
@@ -1112,23 +1112,6 @@ See :ref:`glm` for more details.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B...">
-
-.. only:: html
-
-  .. image:: /auto_examples/04_glm_first_level/images/thumb/sphx_glr_plot_bids_features_thumb.png
-    :alt: First level analysis of a complete BIDS dataset from openneuro
-
-  :ref:`sphx_glr_auto_examples_04_glm_first_level_plot_bids_features.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">First level analysis of a complete BIDS dataset from openneuro</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Here we fit a First Level GLM with the minimize_memory-argument set to False. By doing so, the ...">
 
 .. only:: html
@@ -1141,6 +1124,23 @@ See :ref:`glm` for more details.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Predicted time series and residuals</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B...">
+
+.. only:: html
+
+  .. image:: /auto_examples/04_glm_first_level/images/thumb/sphx_glr_plot_bids_features_thumb.png
+    :alt: First level analysis of a complete BIDS dataset from openneuro
+
+  :ref:`sphx_glr_auto_examples_04_glm_first_level_plot_bids_features.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">First level analysis of a complete BIDS dataset from openneuro</div>
     </div>
 
 
@@ -1183,7 +1183,7 @@ See :ref:`glm` for more details.
     </div>
 
 ===========================
-GLM : Second level analysis
+GLM: Second level analysis
 ===========================
 
 These are examples focused on showcasing second level models functionality and group level analysis.
@@ -1250,35 +1250,18 @@ See :ref:`glm` for more details.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example uses Voxel-Based Morphometry (VBM) to study the relationship between aging, sex an...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example uses voxel-based morphometry (:term:`VBM`) to study the relationship between aging...">
 
 .. only:: html
 
   .. image:: /auto_examples/05_glm_second_level/images/thumb/sphx_glr_plot_oasis_thumb.png
-    :alt: Voxel-Based Morphometry on Oasis dataset
+    :alt: Voxel-Based Morphometry on OASIS dataset
 
   :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_oasis.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Voxel-Based Morphometry on Oasis dataset</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Full step-by-step example of fitting a GLM to perform a second level analysis in experimental d...">
-
-.. only:: html
-
-  .. image:: /auto_examples/05_glm_second_level/images/thumb/sphx_glr_plot_second_level_two_sample_test_thumb.png
-    :alt: Second-level fMRI model: two-sample test, unpaired and paired
-
-  :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_two_sample_test.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Second-level fMRI model: two-sample test, unpaired and paired</div>
+      <div class="sphx-glr-thumbnail-title">Voxel-Based Morphometry on OASIS dataset</div>
     </div>
 
 
@@ -1296,6 +1279,23 @@ See :ref:`glm` for more details.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Second-level fMRI model: one sample test</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Full step-by-step example of fitting a GLM to perform a second level analysis in experimental d...">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_glm_second_level/images/thumb/sphx_glr_plot_second_level_two_sample_test_thumb.png
+    :alt: Second-level fMRI model: two-sample test, unpaired and paired
+
+  :ref:`sphx_glr_auto_examples_05_glm_second_level_plot_second_level_two_sample_test.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Second-level fMRI model: two-sample test, unpaired and paired</div>
     </div>
 
 
@@ -1454,7 +1454,7 @@ See :ref:`data_manipulation` for more details.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This simple example shows how to extract signals from functional fmri data and brain regions de...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This simple example shows how to extract signals from functional fMRI data and brain regions de...">
 
 .. only:: html
 
@@ -1639,23 +1639,6 @@ Advanced statistical analysis of brain images
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM (first and second level analysis) in a 10-subjects ...">
-
-.. only:: html
-
-  .. image:: /auto_examples/07_advanced/images/thumb/sphx_glr_plot_surface_bids_analysis_thumb.png
-    :alt: Surface-based dataset first and second level analysis of a dataset
-
-  :ref:`sphx_glr_auto_examples_07_advanced_plot_surface_bids_analysis.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Surface-based dataset first and second level analysis of a dataset</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows the results obtained in a massively univariate analysis performed at the int...">
 
 .. only:: html
@@ -1668,6 +1651,23 @@ Advanced statistical analysis of brain images
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Massively univariate analysis of a motor task from the Localizer dataset</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM (first and second level analysis) in a 10-subjects ...">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_advanced/images/thumb/sphx_glr_plot_surface_bids_analysis_thumb.png
+    :alt: Surface-based dataset first and second level analysis of a dataset
+
+  :ref:`sphx_glr_auto_examples_07_advanced_plot_surface_bids_analysis.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Surface-based dataset first and second level analysis of a dataset</div>
     </div>
 
 
@@ -1724,6 +1724,23 @@ Advanced statistical analysis of brain images
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Beta series models fit trial-wise conditions, which allow users to create &quot;time series&quot; of thes...">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_advanced/images/thumb/sphx_glr_plot_beta_series_thumb.png
+    :alt: Beta-Series Modeling for Task-Based Functional Connectivity and Decoding
+
+  :ref:`sphx_glr_auto_examples_07_advanced_plot_beta_series.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
@@ -1741,22 +1758,17 @@ Advanced statistical analysis of brain images
    /auto_examples/07_advanced/index.rst
 
 
+.. only:: html
 
-.. only :: html
+  .. container:: sphx-glr-footer sphx-glr-footer-gallery
 
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-gallery
+    .. container:: sphx-glr-download sphx-glr-download-python
 
+      :download:`Download all examples in Python source code: auto_examples_python.zip </auto_examples/auto_examples_python.zip>`
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-    :download:`Download all examples in Python source code: auto_examples_python.zip </auto_examples/auto_examples_python.zip>`
-
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip </auto_examples/auto_examples_jupyter.zip>`
+      :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip </auto_examples/auto_examples_jupyter.zip>`
 
 
 .. only:: html

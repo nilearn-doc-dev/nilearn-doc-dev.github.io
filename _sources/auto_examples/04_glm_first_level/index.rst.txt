@@ -155,23 +155,6 @@ See :ref:`glm` for more details.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B...">
-
-.. only:: html
-
-  .. image:: /auto_examples/04_glm_first_level/images/thumb/sphx_glr_plot_bids_features_thumb.png
-    :alt: First level analysis of a complete BIDS dataset from openneuro
-
-  :ref:`sphx_glr_auto_examples_04_glm_first_level_plot_bids_features.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">First level analysis of a complete BIDS dataset from openneuro</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Here we fit a First Level GLM with the minimize_memory-argument set to False. By doing so, the ...">
 
 .. only:: html
@@ -184,6 +167,23 @@ See :ref:`glm` for more details.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Predicted time series and residuals</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B...">
+
+.. only:: html
+
+  .. image:: /auto_examples/04_glm_first_level/images/thumb/sphx_glr_plot_bids_features_thumb.png
+    :alt: First level analysis of a complete BIDS dataset from openneuro
+
+  :ref:`sphx_glr_auto_examples_04_glm_first_level_plot_bids_features.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">First level analysis of a complete BIDS dataset from openneuro</div>
     </div>
 
 
@@ -237,8 +237,8 @@ See :ref:`glm` for more details.
    /auto_examples/04_glm_first_level/plot_spm_multimodal_faces
    /auto_examples/04_glm_first_level/plot_hrf
    /auto_examples/04_glm_first_level/plot_fiac_analysis
-   /auto_examples/04_glm_first_level/plot_bids_features
    /auto_examples/04_glm_first_level/plot_predictions_residuals
+   /auto_examples/04_glm_first_level/plot_bids_features
    /auto_examples/04_glm_first_level/plot_localizer_surface_analysis
    /auto_examples/04_glm_first_level/plot_first_level_details
 

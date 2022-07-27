@@ -43,7 +43,7 @@ basic nilearn functionalities.
 
  .. code-block:: none
 
-    Path to MNI152 template: '/home/alexis/singbrain/repo/nilearn/nilearn/datasets/data/mni_icbm152_t1_tal_nlin_sym_09a_converted.nii.gz'
+    Path to MNI152 template: '/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/datasets/data/mni_icbm152_t1_tal_nlin_sym_09a_converted.nii.gz'
 
 
 
@@ -76,7 +76,7 @@ Let's quickly plot this file:
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258ba1ea0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8fb1df640>
 
 
 
@@ -123,7 +123,7 @@ Here we give as inputs the image filename and the smoothing value in mm
  .. code-block:: none
 
 
-    <nibabel.nifti1.Nifti1Image object at 0x7f6234770bb0>
+    <nibabel.nifti1.Nifti1Image object at 0x7ff8fd58ec50>
 
 
 
@@ -152,7 +152,7 @@ instance to look at it
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258c5afe0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8fb1dfe50>
 
 
 
@@ -181,7 +181,7 @@ We could also pass it to the smoothing function
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258ae05b0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8fad39d50>
 
 
 
@@ -236,37 +236,32 @@ passed on to other nilearn tools, or saved to disk.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.679 seconds)
+   **Total running time of the script:** ( 0 minutes  5.321 seconds)
 
-**Estimated memory usage:**  232 MB
+**Estimated memory usage:**  170 MB
 
 
 .. _sphx_glr_download_auto_examples_00_tutorials_plot_nilearn_101.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/00_tutorials/plot_nilearn_101.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/00_tutorials/plot_nilearn_101.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_nilearn_101.py <plot_nilearn_101.py>`
 
-     :download:`Download Python source code: plot_nilearn_101.py <plot_nilearn_101.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_nilearn_101.ipynb <plot_nilearn_101.ipynb>`
+      :download:`Download Jupyter notebook: plot_nilearn_101.ipynb <plot_nilearn_101.ipynb>`
 
 
 .. only:: html

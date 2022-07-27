@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="From neuroimaging volumes to data matrices: the masker objects" href="masker_objects.html" /><link rel="prev" title="Input and output: neuroimaging data representation" href="input_output.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Manipulating images: resampling, smoothing, masking, ROIs… - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,11 +653,11 @@
         </div>
         <article role="main">
           <section id="manipulating-images-resampling-smoothing-masking-rois">
-<span id="data-manipulation"></span><h1>Manipulating images: resampling, smoothing, masking, ROIs…<a class="headerlink" href="#manipulating-images-resampling-smoothing-masking-rois" title="Permalink to this headline">#</a></h1>
+<span id="data-manipulation"></span><h1>Manipulating images: resampling, smoothing, masking, ROIs…<a class="headerlink" href="#manipulating-images-resampling-smoothing-masking-rois" title="Permalink to this heading">#</a></h1>
 <p>This chapter discusses how nilearn can be used to do simple operations on
 brain images.</p>
 <section id="functions-for-data-preparation-and-image-transformation">
-<span id="preprocessing-functions"></span><h2>Functions for data preparation and image transformation<a class="headerlink" href="#functions-for-data-preparation-and-image-transformation" title="Permalink to this headline">#</a></h2>
+<span id="preprocessing-functions"></span><h2>Functions for data preparation and image transformation<a class="headerlink" href="#functions-for-data-preparation-and-image-transformation" title="Permalink to this heading">#</a></h2>
 <p>Nilearn comes with many simple functions for simple data preparation and
 transformation. Note that if you want to perform these operations while
 loading the data into a data matrix, most are also integrated in the
@@ -677,9 +683,9 @@ confound removal, low/high pass filtering):
 </ul>
 </section>
 <section id="resampling-images">
-<span id="resampling"></span><h2>Resampling images<a class="headerlink" href="#resampling-images" title="Permalink to this headline">#</a></h2>
+<span id="resampling"></span><h2>Resampling images<a class="headerlink" href="#resampling-images" title="Permalink to this heading">#</a></h2>
 <section id="resampling-one-image-to-match-another-one">
-<h3>Resampling one image to match another one<a class="headerlink" href="#resampling-one-image-to-match-another-one" title="Permalink to this headline">#</a></h3>
+<h3>Resampling one image to match another one<a class="headerlink" href="#resampling-one-image-to-match-another-one" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="../modules/generated/nilearn.image.resample_to_img.html#nilearn.image.resample_to_img" title="nilearn.image.resample_to_img"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.image.resample_to_img</span></code></a> resamples an image to a reference
 image.</p>
 <div class="topic">
@@ -688,13 +694,13 @@ image.</p>
 <li><p><a class="reference internal" href="../auto_examples/06_manipulating_images/plot_resample_to_template.html#sphx-glr-auto-examples-06-manipulating-images-plot-resample-to-template-py"><span class="std std-ref">Resample an image to a template</span></a></p></li>
 </ul>
 </div>
-<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_resample_to_template.html"><img alt="../_images/sphx_glr_plot_resample_to_template_001.png" src="../_images/sphx_glr_plot_resample_to_template_001.png" style="width: 45%;"/></a>
-<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_resample_to_template.html"><img alt="../_images/sphx_glr_plot_resample_to_template_002.png" src="../_images/sphx_glr_plot_resample_to_template_002.png" style="width: 45%;"/></a>
+<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_resample_to_template.html"><img alt="../_images/sphx_glr_plot_resample_to_template_001.png" src="../_images/sphx_glr_plot_resample_to_template_001.png" style="width: 45%;" /></a>
+<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_resample_to_template.html"><img alt="../_images/sphx_glr_plot_resample_to_template_002.png" src="../_images/sphx_glr_plot_resample_to_template_002.png" style="width: 45%;" /></a>
 <p>This can be useful to display two images as overlays in some
 viewers (e.g., FSLView) that require all images to be on the same grid.</p>
 </section>
 <section id="resampling-to-a-specific-target-affine-shape-or-resolution">
-<h3>Resampling to a specific target affine, shape, or resolution<a class="headerlink" href="#resampling-to-a-specific-target-affine-shape-or-resolution" title="Permalink to this headline">#</a></h3>
+<h3>Resampling to a specific target affine, shape, or resolution<a class="headerlink" href="#resampling-to-a-specific-target-affine-shape-or-resolution" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="../modules/generated/nilearn.image.resample_img.html#nilearn.image.resample_img" title="nilearn.image.resample_img"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.image.resample_img</span></code></a> specifies the resampling in terms of
 the <cite>target_affine</cite> to match the spatial configuration defined by the new
 affine.</p>
@@ -707,9 +713,9 @@ speed and lower memory consumption.</p>
 can be performed by specifying a 3x3 matrix instead of the 4x4 affine.
 In this case, nilearn computes automatically the translation part
 of the transformation matrix (i.e., affine).</p>
-<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_affine_transformation.html"><img alt="../_images/sphx_glr_plot_affine_transformation_002.png" src="../_images/sphx_glr_plot_affine_transformation_002.png" style="width: 30%;"/></a>
-<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_affine_transformation.html"><img alt="../_images/sphx_glr_plot_affine_transformation_004.png" src="../_images/sphx_glr_plot_affine_transformation_004.png" style="width: 30%;"/></a>
-<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_affine_transformation.html"><img alt="../_images/sphx_glr_plot_affine_transformation_003.png" src="../_images/sphx_glr_plot_affine_transformation_003.png" style="width: 30%;"/></a>
+<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_affine_transformation.html"><img alt="../_images/sphx_glr_plot_affine_transformation_002.png" src="../_images/sphx_glr_plot_affine_transformation_002.png" style="width: 30%;" /></a>
+<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_affine_transformation.html"><img alt="../_images/sphx_glr_plot_affine_transformation_004.png" src="../_images/sphx_glr_plot_affine_transformation_004.png" style="width: 30%;" /></a>
+<a class="reference external image-reference" href="../auto_examples/06_manipulating_images/plot_affine_transformation.html"><img alt="../_images/sphx_glr_plot_affine_transformation_003.png" src="../_images/sphx_glr_plot_affine_transformation_003.png" style="width: 30%;" /></a>
 <div class="topic">
 <p class="topic-title"><strong>Special case: resampling to a given voxel size</strong></p>
 <p>Specifying a 3x3 matrix that is diagonal as a target_affine fixes the
@@ -726,7 +732,7 @@ voxel size. For instance to resample to 3x3x3 mm voxels:</p>
 </section>
 </section>
 <section id="accessing-individual-volumes-in-4d-images">
-<h2>Accessing individual volumes in 4D images<a class="headerlink" href="#accessing-individual-volumes-in-4d-images" title="Permalink to this headline">#</a></h2>
+<h2>Accessing individual volumes in 4D images<a class="headerlink" href="#accessing-individual-volumes-in-4d-images" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../modules/generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.image.index_img</span></code></a>: selects one or more volumes in a 4D
 image.</p></li>
@@ -748,7 +754,7 @@ metadata.</p></li>
 </ul>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 <div class="topic">
 <p class="topic-title"><strong>Examples</strong></p>
@@ -759,7 +765,7 @@ metadata.</p></li>
 </div>
 </section>
 <section id="computing-and-applying-spatial-masks">
-<span id="computing-and-applying-mask"></span><h2>Computing and applying spatial masks<a class="headerlink" href="#computing-and-applying-spatial-masks" title="Permalink to this headline">#</a></h2>
+<span id="computing-and-applying-mask"></span><h2>Computing and applying spatial masks<a class="headerlink" href="#computing-and-applying-spatial-masks" title="Permalink to this heading">#</a></h2>
 <p>Relevant functions:</p>
 <ul class="simple">
 <li><p>compute a mask from EPI images: <a class="reference internal" href="../modules/generated/nilearn.masking.compute_epi_mask.html#nilearn.masking.compute_epi_mask" title="nilearn.masking.compute_epi_mask"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.masking.compute_epi_mask</span></code></a></p></li>
@@ -775,7 +781,7 @@ metadata.</p></li>
 <li><p>unmasking: <a class="reference internal" href="../modules/generated/nilearn.masking.unmask.html#nilearn.masking.unmask" title="nilearn.masking.unmask"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.masking.unmask</span></code></a></p></li>
 </ul>
 <section id="extracting-a-brain-mask">
-<h3>Extracting a brain mask<a class="headerlink" href="#extracting-a-brain-mask" title="Permalink to this headline">#</a></h3>
+<h3>Extracting a brain mask<a class="headerlink" href="#extracting-a-brain-mask" title="Permalink to this heading">#</a></h3>
 <p>If we do not have a spatial mask of the target regions, a brain mask
 can be computed from the data:</p>
 <ul class="simple">
@@ -797,18 +803,18 @@ whole-brain, grey-matter or white-matter mask using the MNI template.</p></li>
 </pre></div>
 </div>
 <figure class="align-default">
-<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_visualization.html"><img alt="../_images/sphx_glr_plot_visualization_002.png" src="../_images/sphx_glr_plot_visualization_002.png" style="width: 330.0px; height: 130.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_visualization.html"><img alt="../_images/sphx_glr_plot_visualization_002.png" src="../_images/sphx_glr_plot_visualization_002.png" style="width: 330.0px; height: 130.0px;" /></a>
 </figure>
 </section>
 <section id="masking-data-from-4d-nifti-images-to-2d-data-arrays">
-<span id="mask-4d-2-3d"></span><h3>Masking data: from 4D Nifti images to 2D data arrays<a class="headerlink" href="#masking-data-from-4d-nifti-images-to-2d-data-arrays" title="Permalink to this headline">#</a></h3>
+<span id="mask-4d-2-3d"></span><h3>Masking data: from 4D Nifti images to 2D data arrays<a class="headerlink" href="#masking-data-from-4d-nifti-images-to-2d-data-arrays" title="Permalink to this heading">#</a></h3>
 <p>fMRI data is usually represented as a 4D block of data: 3 spatial
 dimensions and one time dimension. In practice, we are usually
 interested in working on the voxel time-series in the
 brain. It is thus convenient to apply a brain mask in order to convert the
 4D brain images representation into a restructured 2D data representation,
 <cite>voxel</cite> <strong>x</strong> <cite>time</cite>, as depicted below:</p>
-<a class="reference internal image-reference" href="../_images/masking.jpg"><img alt="../_images/masking.jpg" class="align-center" src="../_images/masking.jpg" style="width: 100%;"/></a>
+<a class="reference internal image-reference" href="../_images/masking.jpg"><img alt="../_images/masking.jpg" class="align-center" src="../_images/masking.jpg" style="width: 100%;" /></a>
 <p>Note that in an analysis pipeline, this operation is best done using the
 <a class="reference internal" href="masker_objects.html#masker-objects"><span class="std std-ref">masker objects</span></a>. For completeness, we give the code to
 do it manually below:</p>
@@ -823,8 +829,8 @@ do it manually below:</p>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">masked_data</span><span class="p">[:</span><span class="mi">150</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time [TRs]'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Intensity'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [TRs]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mf">.12</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">.95</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">.95</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">.12</span><span class="p">)</span>
 
@@ -832,12 +838,12 @@ do it manually below:</p>
 </pre></div>
 </div>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_visualization.html"><img alt="../_images/sphx_glr_plot_visualization_003.png" src="../_images/sphx_glr_plot_visualization_003.png" style="width: 280.0px; height: 200.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_visualization.html"><img alt="../_images/sphx_glr_plot_visualization_003.png" src="../_images/sphx_glr_plot_visualization_003.png" style="width: 280.0px; height: 200.0px;" /></a>
 </figure>
 </section>
 </section>
 <section id="image-operations-creating-a-roi-mask-manually">
-<h2>Image operations: creating a ROI mask manually<a class="headerlink" href="#image-operations-creating-a-roi-mask-manually" title="Permalink to this headline">#</a></h2>
+<h2>Image operations: creating a ROI mask manually<a class="headerlink" href="#image-operations-creating-a-roi-mask-manually" title="Permalink to this heading">#</a></h2>
 <p>A region of interest (ROI) mask can be computed for instance with a
 statistical test. This requires a chain of image
 operations on the input data. Here is a possible recipe for computing an
@@ -850,7 +856,7 @@ fMRI.</p></li>
 <li><p><strong>Selecting voxels</strong>: Given the smoothed data, we can select voxels
 with a statistical test (eg opposing face and house experimental
 conditions), for instance with a simple Student’s t-test using scipy
-function <a class="reference external" href="http://scipy.github.io/devdocs/reference/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind" title="(in SciPy v1.9.0.dev0+1660.da64f8c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_ind</span></code></a>.</p></li>
+function <a class="reference external" href="http://scipy.github.io/devdocs/reference/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind" title="(in SciPy v1.10.0.dev0+1548.63ead5d)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_ind</span></code></a>.</p></li>
 <li><p><strong>Thresholding</strong>: Then we need threshold the statistical map to have
 better representation of voxels of interest.</p></li>
 <li><p><strong>Mask intersection and dilation</strong>: Post-processing the results with
@@ -860,12 +866,12 @@ simple morphological operations, mask intersection and dilation.</p>
 only the voxels which are common in both masks.</p></li>
 <li><p>we can do <a class="reference external" href="http://en.wikipedia.org/wiki/Dilation_(morphology)">morphological dilation</a> to achieve
 more compact blobs with more regular boundaries. The function is
-used from <a class="reference external" href="http://scipy.github.io/devdocs/reference/generated/scipy.ndimage.binary_dilation.html#scipy.ndimage.binary_dilation" title="(in SciPy v1.9.0.dev0+1660.da64f8c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_dilation</span></code></a>.</p></li>
+used from <a class="reference external" href="http://scipy.github.io/devdocs/reference/generated/scipy.ndimage.binary_dilation.html#scipy.ndimage.binary_dilation" title="(in SciPy v1.10.0.dev0+1548.63ead5d)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_dilation</span></code></a>.</p></li>
 </ul>
 </li>
 <li><p><strong>Extracting connected components</strong>: We end with splitting the connected
 ROIs into two separate regions (ROIs), one in each hemisphere. The
-function <a class="reference external" href="http://scipy.github.io/devdocs/reference/generated/scipy.ndimage.label.html#scipy.ndimage.label" title="(in SciPy v1.9.0.dev0+1660.da64f8c)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.label</span></code></a> from the scipy library is used.</p></li>
+function <a class="reference external" href="http://scipy.github.io/devdocs/reference/generated/scipy.ndimage.label.html#scipy.ndimage.label" title="(in SciPy v1.10.0.dev0+1548.63ead5d)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.label</span></code></a> from the scipy library is used.</p></li>
 <li><p><strong>Saving the result</strong>: The final voxel mask is saved to disk using
 the ‘to_filename’ method of the image object.
 (or <strong>nibabel.save</strong>).</p></li>
@@ -979,6 +985,7 @@ atlases denoted as labels. For instance, atlases labelled using KMeans.</p></li>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>

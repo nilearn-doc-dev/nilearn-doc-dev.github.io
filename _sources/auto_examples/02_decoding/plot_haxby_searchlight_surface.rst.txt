@@ -176,37 +176,32 @@ Visualization
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  39.509 seconds)
+   **Total running time of the script:** ( 1 minutes  35.417 seconds)
 
 **Estimated memory usage:**  916 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_haxby_searchlight_surface.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_searchlight_surface.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_searchlight_surface.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_haxby_searchlight_surface.py <plot_haxby_searchlight_surface.py>`
 
-     :download:`Download Python source code: plot_haxby_searchlight_surface.py <plot_haxby_searchlight_surface.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_haxby_searchlight_surface.ipynb <plot_haxby_searchlight_surface.ipynb>`
+      :download:`Download Jupyter notebook: plot_haxby_searchlight_surface.ipynb <plot_haxby_searchlight_surface.ipynb>`
 
 
 .. only:: html

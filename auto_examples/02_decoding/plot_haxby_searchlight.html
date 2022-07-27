@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Decoding of a dataset after GLM fit for signal extraction" href="plot_haxby_glm_decoding.html" /><link rel="prev" title="The haxby dataset: different multi-class strategies" href="plot_haxby_multiclass.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Searchlight analysis of face vs house recognition - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -652,28 +658,43 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="searchlight-analysis-of-face-vs-house-recognition">
-<span id="sphx-glr-auto-examples-02-decoding-plot-haxby-searchlight-py"></span><h1>Searchlight analysis of face vs house recognition<a class="headerlink" href="#searchlight-analysis-of-face-vs-house-recognition" title="Permalink to this headline">#</a></h1>
+<span id="sphx-glr-auto-examples-02-decoding-plot-haxby-searchlight-py"></span><h1>Searchlight analysis of face vs house recognition<a class="headerlink" href="#searchlight-analysis-of-face-vs-house-recognition" title="Permalink to this heading">#</a></h1>
 <p>Searchlight analysis requires fitting a classifier a large amount of
 times. As a result, it is an intrinsically slow method. In order to speed
 up computing, in this example, Searchlight is run only on one slice on
-the fMRI (see the generated figures).</p>
+the <a class="reference internal" href="../../glossary.html#term-fMRI"><span class="xref std std-term">fMRI</span></a> (see the generated figures).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using Nilearn with a version older than <code class="docutils literal notranslate"><span class="pre">0.9.0</span></code>,
+then you should either upgrade your version or import maskers
+from the <code class="docutils literal notranslate"><span class="pre">input_data</span></code> module instead of the <code class="docutils literal notranslate"><span class="pre">maskers</span></code> module.</p>
+<p>That is, you should manually replace in the following example
+all occurrences of:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+</pre></div>
+</div>
+<p>with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+</pre></div>
+</div>
+</div>
 <section id="load-haxby-dataset">
-<h2>Load Haxby dataset<a class="headerlink" href="#load-haxby-dataset" title="Permalink to this headline">#</a></h2>
+<h2>Load Haxby dataset<a class="headerlink" href="#load-haxby-dataset" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.image.new_img_like.html#nilearn.image.new_img_like" title="nilearn.image.new_img_like" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">new_img_like</span></a><span class="p">,</span> <a href="../../modules/generated/nilearn.image.load_img.html#nilearn.image.load_img" title="nilearn.image.load_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">load_img</span></a><span class="p">,</span> <a href="../../modules/generated/nilearn.image.get_data.html#nilearn.image.get_data" title="nilearn.image.get_data" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">get_data</span></a>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">new_img_like</span><span class="p">,</span> <span class="n">load_img</span><span class="p">,</span> <span class="n">get_data</span>
 
 <span class="c1"># We fetch 2nd subject from haxby datasets (which is default)</span>
-<a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch" class="sphx-glr-backref-module-sklearn-utils sphx-glr-backref-type-py-function"><span class="n">haxby_dataset</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.datasets.fetch_haxby.html#nilearn.datasets.fetch_haxby" title="nilearn.datasets.fetch_haxby" class="sphx-glr-backref-module-nilearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_haxby</span></a><span class="p">()</span>
+<span class="n">haxby_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_haxby</span><span class="p">()</span>
 
 <span class="c1"># print basic information on the dataset</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Anatomical nifti image (3D) is located at: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">mask</span></a><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Functional nifti image (4D) is located at: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">func</span></a><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Anatomical nifti image (3D) is located at: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">haxby_dataset</span><span class="o">.</span><span class="n">mask</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Functional nifti image (4D) is located at: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">haxby_dataset</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fmri_filename</span></a> <span class="o">=</span> <a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">func</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">labels</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html#pandas.read_csv" title="pandas.read_csv" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-function"><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">session_target</span></a><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">labels</span></a><span class="p">[</span><span class="s1">'labels'</span><span class="p">]</span>
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">session</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">labels</span></a><span class="p">[</span><span class="s1">'chunks'</span><span class="p">]</span>
+<span class="n">fmri_filename</span> <span class="o">=</span> <span class="n">haxby_dataset</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">session_target</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="s1">&#39;chunks&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Anatomical nifti image (3D) is located at: /home/alexis/nilearn_data/haxby2001/mask.nii.gz
@@ -682,17 +703,17 @@ Functional nifti image (4D) is located at: /home/alexis/nilearn_data/haxby2001/s
 </div>
 </section>
 <section id="restrict-to-faces-and-houses">
-<h2>Restrict to faces and houses<a class="headerlink" href="#restrict-to-faces-and-houses" title="Permalink to this headline">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">index_img</span></a>
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">condition_mask</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isin.html#pandas.Series.isin" title="pandas.Series.isin" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-method"><span class="n">y</span><span class="o">.</span><span class="n">isin</span></a><span class="p">([</span><span class="s1">'face'</span><span class="p">,</span> <span class="s1">'house'</span><span class="p">])</span>
+<h2>Restrict to faces and houses<a class="headerlink" href="#restrict-to-faces-and-houses" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">index_img</span>
+<span class="n">condition_mask</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;face&#39;</span><span class="p">,</span> <span class="s1">&#39;house&#39;</span><span class="p">])</span>
 
-<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fmri_img</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">index_img</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fmri_filename</span></a><span class="p">,</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">condition_mask</span></a><span class="p">)</span>
-<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y</span></a><span class="p">,</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">session</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y</span></a><span class="p">[</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">condition_mask</span></a><span class="p">],</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">session</span></a><span class="p">[</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">condition_mask</span></a><span class="p">]</span>
+<span class="n">fmri_img</span> <span class="o">=</span> <span class="n">index_img</span><span class="p">(</span><span class="n">fmri_filename</span><span class="p">,</span> <span class="n">condition_mask</span><span class="p">)</span>
+<span class="n">y</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">condition_mask</span><span class="p">],</span> <span class="n">session</span><span class="p">[</span><span class="n">condition_mask</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
 <section id="prepare-masks">
-<h2>Prepare masks<a class="headerlink" href="#prepare-masks" title="Permalink to this headline">#</a></h2>
+<h2>Prepare masks<a class="headerlink" href="#prepare-masks" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>mask_img is the original mask</p></li>
 <li><p>process_mask_img is a subset of mask_img, it contains the voxels that
@@ -701,87 +722,92 @@ brain to speed up computation)</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_img</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.load_img.html#nilearn.image.load_img" title="nilearn.image.load_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">load_img</span></a><span class="p">(</span><a href="https://docs.python.org/3.8/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">mask</span></a><span class="p">)</span>
+<span class="n">mask_img</span> <span class="o">=</span> <span class="n">load_img</span><span class="p">(</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">mask</span><span class="p">)</span>
 
 <span class="c1"># .astype() makes a copy.</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">process_mask</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.get_data.html#nilearn.image.get_data" title="nilearn.image.get_data" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">get_data</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_img</span></a><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">picked_slice</span></a> <span class="o">=</span> <span class="mi">29</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">process_mask</span></a><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">(</span><a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">picked_slice</span></a> <span class="o">+</span> <span class="mi">1</span><span class="p">):]</span> <span class="o">=</span> <span class="mi">0</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">process_mask</span></a><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">picked_slice</span></a><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">process_mask</span></a><span class="p">[:,</span> <span class="mi">30</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
-<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">process_mask_img</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.new_img_like.html#nilearn.image.new_img_like" title="nilearn.image.new_img_like" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">new_img_like</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_img</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">process_mask</span></a><span class="p">)</span>
+<span class="n">process_mask</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">mask_img</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">picked_slice</span> <span class="o">=</span> <span class="mi">29</span>
+<span class="n">process_mask</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">(</span><span class="n">picked_slice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">process_mask</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="n">picked_slice</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">process_mask</span><span class="p">[:,</span> <span class="mi">30</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">process_mask_img</span> <span class="o">=</span> <span class="n">new_img_like</span><span class="p">(</span><span class="n">mask_img</span><span class="p">,</span> <span class="n">process_mask</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/image/image.py:756: FutureWarning:
+
+Image data has type int64, which may cause incompatibilities with other tools. This will error in NiBabel 5.0. This warning can be silenced by passing the dtype argument to Nifti1Image().
 </pre></div>
 </div>
 </section>
 <section id="searchlight-computation">
-<h2>Searchlight computation<a class="headerlink" href="#searchlight-computation" title="Permalink to this headline">#</a></h2>
+<h2>Searchlight computation<a class="headerlink" href="#searchlight-computation" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make processing parallel</span>
 <span class="c1"># /!\ As each thread will print its progress, n_jobs &gt; 1 could mess up the</span>
 <span class="c1">#     information output.</span>
-<a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_jobs</span></a> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n_jobs</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="c1"># Define the cross-validation scheme used for validation.</span>
 <span class="c1"># Here we use a KFold cross-validation on the session, which corresponds to</span>
 <span class="c1"># splitting the samples in 4 folds and make 4 runs using each fold as a test</span>
 <span class="c1"># set once and the others as learning sets</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="sklearn.model_selection.KFold" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class"><span class="n">KFold</span></a>
-<a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="sklearn.model_selection.KFold" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cv</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="sklearn.model_selection.KFold" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class"><span class="n">KFold</span></a><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">nilearn.decoding</span>
 <span class="c1"># The radius is the one of the Searchlight sphere that will scan the volume</span>
-<a href="../../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">searchlight</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-class"><span class="n">nilearn</span><span class="o">.</span><span class="n">decoding</span><span class="o">.</span><span class="n">SearchLight</span></a><span class="p">(</span>
-    <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_img</span></a><span class="p">,</span>
-    <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">process_mask_img</span></a><span class="o">=</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">process_mask_img</span></a><span class="p">,</span>
-    <span class="n">radius</span><span class="o">=</span><span class="mf">5.6</span><span class="p">,</span> <a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_jobs</span></a><span class="o">=</span><a href="https://docs.python.org/3.8/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_jobs</span></a><span class="p">,</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="sklearn.model_selection.KFold" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cv</span></a><span class="o">=</span><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="sklearn.model_selection.KFold" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cv</span></a><span class="p">)</span>
-<a href="../../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight.fit" title="nilearn.decoding.SearchLight.fit" class="sphx-glr-backref-module-nilearn-decoding sphx-glr-backref-type-py-method"><span class="n">searchlight</span><span class="o">.</span><span class="n">fit</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fmri_img</span></a><span class="p">,</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y</span></a><span class="p">)</span>
+<span class="n">searchlight</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">decoding</span><span class="o">.</span><span class="n">SearchLight</span><span class="p">(</span>
+    <span class="n">mask_img</span><span class="p">,</span>
+    <span class="n">process_mask_img</span><span class="o">=</span><span class="n">process_mask_img</span><span class="p">,</span>
+    <span class="n">radius</span><span class="o">=</span><span class="mf">5.6</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">)</span>
+<span class="n">searchlight</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-Job #1, processed 0/739 voxels (0.00%, 316 seconds remaining)
-Job #1, processed 10/739 voxels (1.35%, 26 seconds remaining)
-Job #1, processed 20/739 voxels (2.71%, 30 seconds remaining)
-Job #1, processed 30/739 voxels (4.06%, 30 seconds remaining)
-Job #1, processed 40/739 voxels (5.41%, 29 seconds remaining)
-Job #1, processed 50/739 voxels (6.77%, 28 seconds remaining)
-Job #1, processed 60/739 voxels (8.12%, 28 seconds remaining)
-Job #1, processed 70/739 voxels (9.47%, 27 seconds remaining)
-Job #1, processed 80/739 voxels (10.83%, 27 seconds remaining)
-Job #1, processed 90/739 voxels (12.18%, 27 seconds remaining)
-Job #1, processed 100/739 voxels (13.53%, 27 seconds remaining)
-Job #1, processed 110/739 voxels (14.88%, 27 seconds remaining)
-Job #1, processed 120/739 voxels (16.24%, 27 seconds remaining)
-Job #1, processed 130/739 voxels (17.59%, 27 seconds remaining)
-Job #1, processed 140/739 voxels (18.94%, 27 seconds remaining)
-Job #1, processed 150/739 voxels (20.30%, 26 seconds remaining)
-Job #1, processed 160/739 voxels (21.65%, 26 seconds remaining)
-Job #1, processed 170/739 voxels (23.00%, 26 seconds remaining)
-Job #1, processed 180/739 voxels (24.36%, 26 seconds remaining)
-Job #1, processed 190/739 voxels (25.71%, 25 seconds remaining)
-Job #1, processed 200/739 voxels (27.06%, 25 seconds remaining)
+Job #1, processed 0/739 voxels (0.00%, 383 seconds remaining)
+Job #1, processed 10/739 voxels (1.35%, 28 seconds remaining)
+Job #1, processed 20/739 voxels (2.71%, 28 seconds remaining)
+Job #1, processed 30/739 voxels (4.06%, 28 seconds remaining)
+Job #1, processed 40/739 voxels (5.41%, 30 seconds remaining)
+Job #1, processed 50/739 voxels (6.77%, 31 seconds remaining)
+Job #1, processed 60/739 voxels (8.12%, 30 seconds remaining)
+Job #1, processed 70/739 voxels (9.47%, 30 seconds remaining)
+Job #1, processed 80/739 voxels (10.83%, 30 seconds remaining)
+Job #1, processed 90/739 voxels (12.18%, 30 seconds remaining)
+Job #1, processed 100/739 voxels (13.53%, 30 seconds remaining)
+Job #1, processed 110/739 voxels (14.88%, 30 seconds remaining)
+Job #1, processed 120/739 voxels (16.24%, 30 seconds remaining)
+Job #1, processed 130/739 voxels (17.59%, 29 seconds remaining)
+Job #1, processed 140/739 voxels (18.94%, 29 seconds remaining)
+Job #1, processed 150/739 voxels (20.30%, 28 seconds remaining)
+Job #1, processed 160/739 voxels (21.65%, 28 seconds remaining)
+Job #1, processed 170/739 voxels (23.00%, 28 seconds remaining)
+Job #1, processed 180/739 voxels (24.36%, 27 seconds remaining)
+Job #1, processed 190/739 voxels (25.71%, 26 seconds remaining)
+Job #1, processed 200/739 voxels (27.06%, 26 seconds remaining)
 Job #1, processed 210/739 voxels (28.42%, 25 seconds remaining)
-Job #1, processed 220/739 voxels (29.77%, 24 seconds remaining)
+Job #1, processed 220/739 voxels (29.77%, 25 seconds remaining)
 Job #1, processed 230/739 voxels (31.12%, 24 seconds remaining)
-Job #1, processed 240/739 voxels (32.48%, 23 seconds remaining)
+Job #1, processed 240/739 voxels (32.48%, 24 seconds remaining)
 Job #1, processed 250/739 voxels (33.83%, 23 seconds remaining)
 Job #1, processed 260/739 voxels (35.18%, 23 seconds remaining)
-Job #1, processed 270/739 voxels (36.54%, 22 seconds remaining)
+Job #1, processed 270/739 voxels (36.54%, 23 seconds remaining)
 Job #1, processed 280/739 voxels (37.89%, 22 seconds remaining)
-Job #1, processed 290/739 voxels (39.24%, 22 seconds remaining)
+Job #1, processed 290/739 voxels (39.24%, 21 seconds remaining)
 Job #1, processed 300/739 voxels (40.60%, 21 seconds remaining)
-Job #1, processed 310/739 voxels (41.95%, 21 seconds remaining)
+Job #1, processed 310/739 voxels (41.95%, 20 seconds remaining)
 Job #1, processed 320/739 voxels (43.30%, 20 seconds remaining)
 Job #1, processed 330/739 voxels (44.65%, 20 seconds remaining)
 Job #1, processed 340/739 voxels (46.01%, 19 seconds remaining)
-Job #1, processed 350/739 voxels (47.36%, 19 seconds remaining)
+Job #1, processed 350/739 voxels (47.36%, 18 seconds remaining)
 Job #1, processed 360/739 voxels (48.71%, 18 seconds remaining)
-Job #1, processed 370/739 voxels (50.07%, 18 seconds remaining)
+Job #1, processed 370/739 voxels (50.07%, 17 seconds remaining)
 Job #1, processed 380/739 voxels (51.42%, 17 seconds remaining)
-Job #1, processed 390/739 voxels (52.77%, 17 seconds remaining)
+Job #1, processed 390/739 voxels (52.77%, 16 seconds remaining)
 Job #1, processed 400/739 voxels (54.13%, 16 seconds remaining)
 Job #1, processed 410/739 voxels (55.48%, 15 seconds remaining)
 Job #1, processed 420/739 voxels (56.83%, 15 seconds remaining)
-Job #1, processed 430/739 voxels (58.19%, 15 seconds remaining)
+Job #1, processed 430/739 voxels (58.19%, 14 seconds remaining)
 Job #1, processed 440/739 voxels (59.54%, 14 seconds remaining)
 Job #1, processed 450/739 voxels (60.89%, 13 seconds remaining)
 Job #1, processed 460/739 voxels (62.25%, 13 seconds remaining)
@@ -795,7 +821,7 @@ Job #1, processed 530/739 voxels (71.72%, 9 seconds remaining)
 Job #1, processed 540/739 voxels (73.07%, 9 seconds remaining)
 Job #1, processed 550/739 voxels (74.42%, 8 seconds remaining)
 Job #1, processed 560/739 voxels (75.78%, 8 seconds remaining)
-Job #1, processed 570/739 voxels (77.13%, 7 seconds remaining)
+Job #1, processed 570/739 voxels (77.13%, 8 seconds remaining)
 Job #1, processed 580/739 voxels (78.48%, 7 seconds remaining)
 Job #1, processed 590/739 voxels (79.84%, 7 seconds remaining)
 Job #1, processed 600/739 voxels (81.19%, 6 seconds remaining)
@@ -812,68 +838,73 @@ Job #1, processed 700/739 voxels (94.72%, 1 seconds remaining)
 Job #1, processed 710/739 voxels (96.08%, 1 seconds remaining)
 Job #1, processed 720/739 voxels (97.43%, 0 seconds remaining)
 Job #1, processed 730/739 voxels (98.78%, 0 seconds remaining)
-[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:   34.2s finished
-
-SearchLight(cv=KFold(n_splits=4, random_state=None, shuffle=False),
-            mask_img=&lt;nibabel.nifti1.Nifti1Image object at 0x7f6204602530&gt;,
-            process_mask_img=&lt;nibabel.nifti1.Nifti1Image object at 0x7f621090aa70&gt;,
-            radius=5.6, verbose=1)
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:   34.1s finished
 </pre></div>
 </div>
-</section>
+<div class="output_subarea output_html rendered_html output_result">
+<style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>SearchLight(cv=KFold(n_splits=4, random_state=None, shuffle=False),
+            mask_img=&lt;nibabel.nifti1.Nifti1Image object at 0x7ff8ed540eb0&gt;,
+            process_mask_img=&lt;nibabel.nifti1.Nifti1Image object at 0x7ff90838e470&gt;,
+            radius=5.6, verbose=1)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">SearchLight</label><div class="sk-toggleable__content"><pre>SearchLight(cv=KFold(n_splits=4, random_state=None, shuffle=False),
+            mask_img=&lt;nibabel.nifti1.Nifti1Image object at 0x7ff8ed540eb0&gt;,
+            process_mask_img=&lt;nibabel.nifti1.Nifti1Image object at 0x7ff90838e470&gt;,
+            radius=5.6, verbose=1)</pre></div></div></div></div></div>
+</div>
+<br />
+<br /></section>
 <section id="f-scores-computation">
-<h2>F-scores computation<a class="headerlink" href="#f-scores-computation" title="Permalink to this headline">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiMasker</span></a>
+<h2>F-scores computation<a class="headerlink" href="#f-scores-computation" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
 
 <span class="c1"># For decoding, standardizing is often very important</span>
-<span class="n">nifti_masker</span> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="sklearn.base.BaseEstimator" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-class"><span class="n">NiftiMasker</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_img</span></a><span class="o">=</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask_img</span></a><span class="p">,</span> <span class="n">runs</span><span class="o">=</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">session</span></a><span class="p">,</span>
-                           <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s1">'nilearn_cache'</span><span class="p">,</span>
+<span class="n">nifti_masker</span> <span class="o">=</span> <span class="n">NiftiMasker</span><span class="p">(</span><span class="n">mask_img</span><span class="o">=</span><span class="n">mask_img</span><span class="p">,</span> <span class="n">runs</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+                           <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s1">&#39;nilearn_cache&#39;</span><span class="p">,</span>
                            <span class="n">memory_level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fmri_masked</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin.fit_transform" title="sklearn.base.TransformerMixin.fit_transform" class="sphx-glr-backref-module-sklearn-base sphx-glr-backref-type-py-method"><span class="n">nifti_masker</span><span class="o">.</span><span class="n">fit_transform</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fmri_img</span></a><span class="p">)</span>
+<span class="n">fmri_masked</span> <span class="o">=</span> <span class="n">nifti_masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.f_classif.html#sklearn.feature_selection.f_classif" title="sklearn.feature_selection.f_classif" class="sphx-glr-backref-module-sklearn-feature_selection sphx-glr-backref-type-py-function"><span class="n">f_classif</span></a>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">f_values</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_values</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.f_classif.html#sklearn.feature_selection.f_classif" title="sklearn.feature_selection.f_classif" class="sphx-glr-backref-module-sklearn-feature_selection sphx-glr-backref-type-py-function"><span class="n">f_classif</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fmri_masked</span></a><span class="p">,</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.core.series.Series" class="sphx-glr-backref-module-pandas-core-series sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">y</span></a><span class="p">)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_values</span></a> <span class="o">=</span> <span class="o">-</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">log10</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_values</span></a><span class="p">)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_values</span></a><span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_values</span></a> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_unmasked</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.get_data.html#nilearn.image.get_data" title="nilearn.image.get_data" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">get_data</span></a><span class="p">(</span><span class="n">nifti_masker</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_values</span></a><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">f_classif</span>
+<span class="n">f_values</span><span class="p">,</span> <span class="n">p_values</span> <span class="o">=</span> <span class="n">f_classif</span><span class="p">(</span><span class="n">fmri_masked</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">p_values</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">p_values</span><span class="p">)</span>
+<span class="n">p_values</span><span class="p">[</span><span class="n">p_values</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">p_unmasked</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">nifti_masker</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">p_values</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
 <section id="visualization">
-<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h2>
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h2>
 <p>Use the fmri mean image as a surrogate of anatomical data</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
-<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mean_fmri</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.mean_img.html#nilearn.image.mean_img" title="nilearn.image.mean_img" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">image</span><span class="o">.</span><span class="n">mean_img</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fmri_img</span></a><span class="p">)</span>
+<span class="n">mean_fmri</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">mean_img</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a><span class="p">,</span> <a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_img</span></a><span class="p">,</span> <a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a>
-<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">searchlight_img</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.new_img_like.html#nilearn.image.new_img_like" title="nilearn.image.new_img_like" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">new_img_like</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mean_fmri</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">searchlight</span><span class="o">.</span><span class="n">scores_</span></a><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_stat_map</span><span class="p">,</span> <span class="n">plot_img</span><span class="p">,</span> <span class="n">show</span>
+<span class="n">searchlight_img</span> <span class="o">=</span> <span class="n">new_img_like</span><span class="p">(</span><span class="n">mean_fmri</span><span class="p">,</span> <span class="n">searchlight</span><span class="o">.</span><span class="n">scores_</span><span class="p">)</span>
 
 <span class="c1"># Because scores are not a zero-center test statistics, we cannot use</span>
 <span class="c1"># plot_stat_map</span>
-<a href="../../modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_img</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">searchlight_img</span></a><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mean_fmri</span></a><span class="p">,</span>
-         <span class="n">title</span><span class="o">=</span><span class="s2">"Searchlight"</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">"z"</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">],</span>
-         <span class="n">vmin</span><span class="o">=</span><span class="mf">.42</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'hot'</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">black_bg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plot_img</span><span class="p">(</span><span class="n">searchlight_img</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">mean_fmri</span><span class="p">,</span>
+         <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Searchlight&quot;</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">],</span>
+         <span class="n">vmin</span><span class="o">=</span><span class="mf">.42</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">black_bg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># F_score results</span>
-<a href="https://numpy.org/doc/stable/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray" title="numpy.ma.MaskedArray" class="sphx-glr-backref-module-numpy-ma sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_ma</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ma.array.html#numpy.ma.array" title="numpy.ma.array" class="sphx-glr-backref-module-numpy-ma sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_unmasked</span></a><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">logical_not</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">process_mask</span></a><span class="p">))</span>
-<a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">f_score_img</span></a> <span class="o">=</span> <a href="../../modules/generated/nilearn.image.new_img_like.html#nilearn.image.new_img_like" title="nilearn.image.new_img_like" class="sphx-glr-backref-module-nilearn-image sphx-glr-backref-type-py-function"><span class="n">new_img_like</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mean_fmri</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray" title="numpy.ma.MaskedArray" class="sphx-glr-backref-module-numpy-ma sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_ma</span></a><span class="p">)</span>
-<a href="../../modules/generated/nilearn.plotting.plot_stat_map.html#nilearn.plotting.plot_stat_map" title="nilearn.plotting.plot_stat_map" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_stat_map</span></a><span class="p">(</span><a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">f_score_img</span></a><span class="p">,</span> <a href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="nibabel.nifti1.Nifti1Image" class="sphx-glr-backref-module-nibabel-nifti1 sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mean_fmri</span></a><span class="p">,</span>
-              <span class="n">title</span><span class="o">=</span><span class="s2">"F-scores"</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">"z"</span><span class="p">,</span>
+<span class="n">p_ma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p_unmasked</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">process_mask</span><span class="p">))</span>
+<span class="n">f_score_img</span> <span class="o">=</span> <span class="n">new_img_like</span><span class="p">(</span><span class="n">mean_fmri</span><span class="p">,</span> <span class="n">p_ma</span><span class="p">)</span>
+<span class="n">plot_stat_map</span><span class="p">(</span><span class="n">f_score_img</span><span class="p">,</span> <span class="n">mean_fmri</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="s2">&quot;F-scores&quot;</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">,</span>
               <span class="n">cut_coords</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">],</span>
               <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<a href="../../modules/generated/nilearn.plotting.show.html#nilearn.plotting.show" title="nilearn.plotting.show" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">show</span></a><span class="p">()</span>
+<span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img alt="plot haxby searchlight" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_haxby_searchlight_001.png" srcset="../../_images/sphx_glr_plot_haxby_searchlight_001.png"/></li>
-<li><img alt="plot haxby searchlight" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_haxby_searchlight_002.png" srcset="../../_images/sphx_glr_plot_haxby_searchlight_002.png"/></li>
+<li><img src="../../_images/sphx_glr_plot_haxby_searchlight_001.png" srcset="../../_images/sphx_glr_plot_haxby_searchlight_001.png" alt="plot haxby searchlight" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_haxby_searchlight_002.png" srcset="../../_images/sphx_glr_plot_haxby_searchlight_002.png" alt="plot haxby searchlight" class = "sphx-glr-multi-img"/></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  47.127 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  914 MB</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-02-decoding-plot-haxby-searchlight-py">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  43.729 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  916 MB</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-02-decoding-plot-haxby-searchlight-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_searchlight.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" width="150px"/></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_searchlight.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2b452a6ad2276d7c92efa36b4a5f800e/plot_haxby_searchlight.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_haxby_searchlight.py</span></code></a></p>
@@ -964,6 +995,7 @@ SearchLight(cv=KFold(n_splits=4, random_state=None, shuffle=False),
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>

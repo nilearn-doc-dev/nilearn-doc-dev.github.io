@@ -136,7 +136,7 @@ See :ref:`data_manipulation` for more details.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This simple example shows how to extract signals from functional fmri data and brain regions de...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This simple example shows how to extract signals from functional fMRI data and brain regions de...">
 
 .. only:: html
 

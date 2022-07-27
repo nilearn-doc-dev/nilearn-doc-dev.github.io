@@ -48,14 +48,17 @@ This dataset contains the necessary information to run a statistical analysis
 using Nilearn. The dataset also contains statistical results from a previous
 FSL analysis that we can employ for comparison with the Nilearn estimation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-46
+.. GENERATED FROM PYTHON SOURCE LINES 31-49
 
 .. code-block:: default
 
-    from nilearn.datasets import (fetch_openneuro_dataset_index,
-                                  fetch_openneuro_dataset, select_from_index)
+    from nilearn.datasets import (
+        fetch_ds000030_urls,
+        fetch_openneuro_dataset,
+        select_from_index,
+    )
 
-    _, urls = fetch_openneuro_dataset_index()
+    _, urls = fetch_ds000030_urls()
 
     exclusion_patterns = ['*group*', '*phenotype*', '*mriqc*',
                           '*parameter_plots*', '*physio_plots*',
@@ -69,12 +72,19 @@ FSL analysis that we can employ for comparison with the Nilearn estimation.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+.. code-block:: pytb
+
+    Traceback (most recent call last):
+      File "/home/alexis/singbrain/repo/nilearn-alexis/examples/04_glm_first_level/plot_bids_features.py", line 31, in <module>
+        from nilearn.datasets import (
+    ImportError: cannot import name 'fetch_ds000030_urls' from 'nilearn.datasets' (/home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/datasets/__init__.py)
 
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 47-58
+.. GENERATED FROM PYTHON SOURCE LINES 50-61
 
 Obtain FirstLevelModel objects automatically and fit arguments
 ---------------------------------------------------------------
@@ -88,7 +98,7 @@ the task_label and the space_label as specified in the file names.
 We also have to provide the folder with the desired derivatives, that in this
 case were produced by the :term:`fMRIPrep` :term:`BIDS` app.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-67
+.. GENERATED FROM PYTHON SOURCE LINES 61-70
 
 .. code-block:: default
 
@@ -102,32 +112,18 @@ case were produced by the :term:`fMRIPrep` :term:`BIDS` app.
                               derivatives_folder=derivatives_folder)
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:901: UserWarning:
-
-    SliceTimingRef not found in file /home/alexis/nilearn_data/ds000030/ds000030_R1.0.4/uncompressed/sub-10159/func/sub-10159_task-stopsignal_bold.json. It will be assumed that the slice timing reference is 0.0 percent of the repetition time. If it is not the case it will need to be set manually in the generated list of models
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 68-69
+.. GENERATED FROM PYTHON SOURCE LINES 71-72
 
 Access the model and model arguments of the subject and process events.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-80
+.. GENERATED FROM PYTHON SOURCE LINES 72-84
 
 .. code-block:: default
 
     model, imgs, events, confounds = (
         models[0], models_run_imgs[0], models_events[0], models_confounds[0])
     subject = 'sub-' + model.subject_label
+    model.minimize_memory = False  # override default
 
     import os
     from nilearn.interfaces.fsl import get_design_from_fslmat
@@ -137,19 +133,13 @@ Access the model and model arguments of the subject and process events.
         fsl_design_matrix_path, column_names=None)
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 81-84
+.. GENERATED FROM PYTHON SOURCE LINES 85-88
 
 We identify the columns of the Go and StopSuccess conditions of the
 design matrix inferred from the FSL file, to use them later for contrast
 definition.
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-89
+.. GENERATED FROM PYTHON SOURCE LINES 88-93
 
 .. code-block:: default
 
@@ -159,61 +149,37 @@ definition.
     design_matrix.columns = design_columns
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 90-93
+.. GENERATED FROM PYTHON SOURCE LINES 94-97
 
 First level model estimation (one subject)
 -------------------------------------------
 We fit the first level model for one subject.
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-95
+.. GENERATED FROM PYTHON SOURCE LINES 97-99
 
 .. code-block:: default
 
     model.fit(imgs, design_matrices=[design_matrix])
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-
-    FirstLevelModel(smoothing_fwhm=5.0, subject_label='10159', t_r=2.0)
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 96-98
+.. GENERATED FROM PYTHON SOURCE LINES 100-102
 
 Then we compute the StopSuccess - Go contrast. We can use the column names
 of the design matrix.
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-100
+.. GENERATED FROM PYTHON SOURCE LINES 102-104
 
 .. code-block:: default
 
     z_map = model.compute_contrast('StopSuccess - Go')
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 101-103
+.. GENERATED FROM PYTHON SOURCE LINES 105-107
 
 We show the agreement between the Nilearn estimation and the FSL estimation
 available in the dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-124
+.. GENERATED FROM PYTHON SOURCE LINES 107-128
 
 .. code-block:: default
 
@@ -239,43 +205,13 @@ available in the dataset.
     plt.show()
 
 
-
-
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_001.png
-         :alt: plot bids features
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_001.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_002.png
-         :alt: plot bids features
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_002.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_003.png
-         :alt: Histogram of imgs values
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_003.png
-         :class: sphx-glr-multi-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 125-128
+.. GENERATED FROM PYTHON SOURCE LINES 129-132
 
 Simple statistical report of thresholded contrast
 -----------------------------------------------------
 We display the contrast plot and table with cluster information
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-135
+.. GENERATED FROM PYTHON SOURCE LINES 132-139
 
 .. code-block:: default
 
@@ -287,35 +223,12 @@ We display the contrast plot and table with cluster information
     plt.show()
 
 
-
-
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_004.png
-         :alt: plot bids features
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_004.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_005.png
-         :alt: plot bids features
-         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_bids_features_005.png
-         :class: sphx-glr-multi-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 136-138
+.. GENERATED FROM PYTHON SOURCE LINES 140-142
 
 We can get a latex table from a Pandas Dataframe for display and publication
 purposes
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-141
+.. GENERATED FROM PYTHON SOURCE LINES 142-145
 
 .. code-block:: default
 
@@ -323,45 +236,14 @@ purposes
     print(get_clusters_table(z_map, norm.isf(0.001), 10).to_latex())
 
 
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/alexis/singbrain/repo/nilearn/examples/04_glm_first_level/plot_bids_features.py:139: FutureWarning:
-
-    In future versions `DataFrame.to_latex` is expected to utilise the base implementation of `Styler.to_latex` for formatting and rendering. The arguments signature may therefore change. It is recommended instead to use `DataFrame.style.to_latex` which also contains additional functionality.
-
-    \begin{tabular}{llrrrrl}
-    \toprule
-    {} & Cluster ID &     X &     Y &     Z &  Peak Stat & Cluster Size (mm3) \\
-    \midrule
-    0 &          1 & -66.0 & -45.0 &  22.0 &   5.307532 &                108 \\
-    1 &          2 & -63.0 & -39.0 &  22.0 &   4.827078 &                972 \\
-    2 &          3 & -42.0 &   9.0 &  30.0 &   4.683343 &                324 \\
-    3 &          4 & -45.0 &  18.0 &  22.0 &   4.468989 &                612 \\
-    4 &          5 & -57.0 & -48.0 &  10.0 &   4.254210 &                792 \\
-    5 &         5a & -51.0 & -39.0 &  10.0 &   3.669244 &                    \\
-    6 &          6 &  33.0 &  42.0 &  34.0 &   3.906274 &                288 \\
-    7 &         6a &  30.0 &  42.0 &  26.0 &   3.734401 &                    \\
-    8 &          7 & -42.0 &  12.0 &  26.0 &   3.496939 &                 36 \\
-    \bottomrule
-    \end{tabular}
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 142-146
+.. GENERATED FROM PYTHON SOURCE LINES 146-150
 
 Generating a report
 -------------------
 Using the computed FirstLevelModel and contrast information,
 we can quickly create a summary report.
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-153
+.. GENERATED FROM PYTHON SOURCE LINES 150-157
 
 .. code-block:: default
 
@@ -373,17 +255,11 @@ we can quickly create a summary report.
                              )
 
 
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 154-155
+.. GENERATED FROM PYTHON SOURCE LINES 158-159
 
 We have several ways to access the report:
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-159
+.. GENERATED FROM PYTHON SOURCE LINES 159-164
 
 .. code-block:: default
 
@@ -393,45 +269,67 @@ We have several ways to access the report:
     # report.open_in_browser()
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 165-167
+
+Saving model outputs to disk
+----------------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 167-177
+
+.. code-block:: default
+
+    from nilearn.interfaces.bids import save_glm_to_bids
+
+    save_glm_to_bids(
+        model,
+        contrasts='StopSuccess - Go',
+        contrast_types={'StopSuccess - Go': 't'},
+        out_dir='derivatives/nilearn_glm/',
+        prefix=subject + '_task-stopsignal',
+    )
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 178-179
 
+View the generated files
 
+.. GENERATED FROM PYTHON SOURCE LINES 179-182
+
+.. code-block:: default
+
+    from glob import glob
+
+    print('\n'.join(sorted(glob('derivatives/nilearn_glm/*'))))
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  42.697 seconds)
+   **Total running time of the script:** ( 0 minutes  0.037 seconds)
 
-**Estimated memory usage:**  465 MB
+**Estimated memory usage:**  705 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_bids_features.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_bids_features.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_bids_features.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_bids_features.py <plot_bids_features.py>`
 
-     :download:`Download Python source code: plot_bids_features.py <plot_bids_features.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_bids_features.ipynb <plot_bids_features.ipynb>`
+      :download:`Download Jupyter notebook: plot_bids_features.ipynb <plot_bids_features.ipynb>`
 
 
 .. only:: html

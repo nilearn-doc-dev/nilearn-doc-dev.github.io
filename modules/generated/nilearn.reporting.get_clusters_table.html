@@ -12,24 +12,24 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.reporting.get_clusters_table: Intro to GLM Analysis: a single-session, single-subject fMRI dataset Intro to GLM Analysis: a single-session, single-subject fMRI dataset First ..." />
+<meta property="og:description" content="Examples using nilearn.reporting.get_clusters_table: Intro to GLM Analysis: a single-session, single-subject fMRI dataset Intro to GLM Analysis: a single-session, single-subject fMRI dataset Predic..." />
   
 <meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_single_subject_single_run_thumb.png" />
   
 <meta property="og:image:alt" content="Intro to GLM Analysis: a single-session, single-subject fMRI dataset" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.reporting.make_glm_report" href="nilearn.reporting.make_glm_report.html" /><link rel="prev" title="nilearn.reporting: Reporting Functions" href="../reporting.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>nilearn.reporting.get_clusters_table - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -653,51 +659,94 @@ function signature, and not how to use it. Please refer to the
 <a class="reference internal" href="../../user_guide.html#user-guide"><span class="std std-ref">user guide</span></a> for the big picture.</p>
 </div>
 <section id="nilearn-reporting-get-clusters-table">
-<h1>nilearn.reporting.get_clusters_table<a class="headerlink" href="#nilearn-reporting-get-clusters-table" title="Permalink to this headline">#</a></h1>
+<h1>nilearn.reporting.get_clusters_table<a class="headerlink" href="#nilearn-reporting-get-clusters-table" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.reporting.get_clusters_table">
-<span class="sig-prename descclassname"><span class="pre">nilearn.reporting.</span></span><span class="sig-name descname"><span class="pre">get_clusters_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stat_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/a25b8c49/nilearn/reporting/_get_clusters_table.py#L134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.get_clusters_table" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.reporting.</span></span><span class="sig-name descname"><span class="pre">get_clusters_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stat_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/reporting/_get_clusters_table.py#L186"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.get_clusters_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates pandas dataframe with img cluster statistics.</p>
+<p>This function should work on any statistical maps where more extreme values
+indicate greater statistical significance.
+For example, z-statistic or -log10(p) maps are valid inputs, but a p-value
+map is not.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For binary clusters (clusters comprised of only one value),
+the table reports the center of mass of the cluster,
+rather than any peaks/subpeaks.</p>
+<p>This center of mass may, in some cases, appear outside of the cluster.</p>
+</div>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>stat_img</strong><span class="classifier">Niimg-like object,</span></dt><dd><p>Statistical image (presumably in z- or p-scale).</p>
+<dt><strong>stat_img</strong><span class="classifier">Niimg-like object</span></dt><dd><p>Statistical image to threshold and summarize.</p>
 </dd>
-<dt><strong>stat_threshold</strong><span class="classifier"><cite>float</cite></span></dt><dd><p>Cluster forming threshold in same scale as <cite>stat_img</cite> (either a
-p-value or z-scale value).</p>
+<dt><strong>stat_threshold</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Cluster forming threshold. This value must be in the same scale as
+<code class="docutils literal notranslate"><span class="pre">stat_img</span></code>.</p>
 </dd>
-<dt><strong>cluster_threshold</strong><span class="classifier"><cite>int</cite> or <cite>None</cite>, optional</span></dt><dd><p>Cluster size threshold, in voxels.</p>
+<dt><strong>cluster_threshold</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a> or None, optional</span></dt><dd><p>Cluster size threshold, in <a class="reference internal" href="../../glossary.html#term-voxel"><span class="xref std std-term">voxels</span></a>.
+If None, then no cluster size threshold will be applied. Default=None.</p>
 </dd>
-<dt><strong>two_sided</strong><span class="classifier"><cite>bool</cite>, optional</span></dt><dd><p>Whether to employ two-sided thresholding or to evaluate positive values
+<dt><strong>two_sided</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional</span></dt><dd><p>Whether to employ two-sided thresholding or to evaluate positive values
 only. Default=False.</p>
 </dd>
-<dt><strong>min_distance</strong><span class="classifier"><cite>float</cite>, optional</span></dt><dd><p>Minimum distance between subpeaks in mm. Default=8mm.</p>
+<dt><strong>min_distance</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>Minimum distance between subpeaks, in millimeters. Default=8.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If two different clusters are closer than <code class="docutils literal notranslate"><span class="pre">min_distance</span></code>, it can
+result in peaks closer than <code class="docutils literal notranslate"><span class="pre">min_distance</span></code>.</p>
+</div>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>df</strong><span class="classifier"><cite>pandas.DataFrame</cite></span></dt><dd><p>Table with peaks and subpeaks from thresholded <cite>stat_img</cite>. For binary
-clusters (clusters with &gt;1 voxel containing only one value), the table
-reports the center of mass of the cluster,
-rather than any peaks/subpeaks.</p>
+<dt><strong>df</strong><span class="classifier"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>Table with peaks and subpeaks from thresholded <code class="docutils literal notranslate"><span class="pre">stat_img</span></code>.
+The columns in this table include:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Cluster ID</p></td>
+<td><p>The cluster number. Subpeaks have letters after the
+number.</p></td>
+</tr>
+<tr class="row-even"><td><p>X/Y/Z</p></td>
+<td><p>The coordinate for the peak, in millimeters.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Peak Stat</p></td>
+<td><p>The statistical value associated with the peak.
+The statistic type is dependent on the type of the
+statistical image.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cluster Size (mm3)</p></td>
+<td><p>The size of the cluster, in millimeters cubed.
+Rows corresponding to subpeaks will not have a value
+in this column.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </dd>
 </dl>
 </dd>
 </dl>
 </dd></dl>
+
 <section id="examples-using-nilearn-reporting-get-clusters-table">
-<h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.reporting.get_clusters_table</span></code><a class="headerlink" href="#examples-using-nilearn-reporting-get-clusters-table" title="Permalink to this headline">#</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="In this tutorial, we use a General Linear Model (:term:`GLM`) to compare the fMRI signal during..."><img alt="Intro to GLM Analysis: a single-session, single-subject fMRI dataset" src="../../_images/sphx_glr_plot_single_subject_single_run_thumb.png"/>
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.reporting.get_clusters_table</span></code><a class="headerlink" href="#examples-using-nilearn-reporting-get-clusters-table" title="Permalink to this heading">#</a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="In this tutorial, we use a General Linear Model (:term:`GLM`) to compare the fMRI signal during..."><img alt="Intro to GLM Analysis: a single-session, single-subject fMRI dataset" src="../../_images/sphx_glr_plot_single_subject_single_run_thumb.png" />
 <p><a class="reference internal" href="../../auto_examples/00_tutorials/plot_single_subject_single_run.html#sphx-glr-auto-examples-00-tutorials-plot-single-subject-single-run-py"><span class="std std-ref">Intro to GLM Analysis: a single-session, single-subject fMRI dataset</span></a></p>
-<div class="sphx-glr-thumbnail-title">Intro to GLM Analysis: a single-session, single-subject fMRI dataset</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B..."><img alt="First level analysis of a complete BIDS dataset from openneuro" src="../../_images/sphx_glr_plot_bids_features_thumb.png"/>
-<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html#sphx-glr-auto-examples-04-glm-first-level-plot-bids-features-py"><span class="std std-ref">First level analysis of a complete BIDS dataset from openneuro</span></a></p>
-<div class="sphx-glr-thumbnail-title">First level analysis of a complete BIDS dataset from openneuro</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here we fit a First Level GLM with the minimize_memory-argument set to False. By doing so, the ..."><img alt="Predicted time series and residuals" src="../../_images/sphx_glr_plot_predictions_residuals_thumb.png"/>
+  <div class="sphx-glr-thumbnail-title">Intro to GLM Analysis: a single-session, single-subject fMRI dataset</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here we fit a First Level GLM with the minimize_memory-argument set to False. By doing so, the ..."><img alt="Predicted time series and residuals" src="../../_images/sphx_glr_plot_predictions_residuals_thumb.png" />
 <p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_predictions_residuals.html#sphx-glr-auto-examples-04-glm-first-level-plot-predictions-residuals-py"><span class="std std-ref">Predicted time series and residuals</span></a></p>
-<div class="sphx-glr-thumbnail-title">Predicted time series and residuals</div>
-</div><div style="clear:both"></div></section>
+  <div class="sphx-glr-thumbnail-title">Predicted time series and residuals</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B..."><img alt="First level analysis of a complete BIDS dataset from openneuro" src="../../_images/sphx_glr_plot_bids_features_thumb.png" />
+<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html#sphx-glr-auto-examples-04-glm-first-level-plot-bids-features-py"><span class="std std-ref">First level analysis of a complete BIDS dataset from openneuro</span></a></p>
+  <div class="sphx-glr-thumbnail-title">First level analysis of a complete BIDS dataset from openneuro</div>
+</div></div><div style='clear:both'></div></section>
 </section>
 
         </article>
@@ -773,6 +822,7 @@ rather than any peaks/subpeaks.</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>

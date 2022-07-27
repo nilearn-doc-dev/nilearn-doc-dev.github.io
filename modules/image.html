@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="nilearn.image.binarize_img" href="generated/nilearn.image.binarize_img.html" /><link rel="prev" title="nilearn.glm.second_level.non_parametric_inference" href="generated/nilearn.glm.second_level.non_parametric_inference.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>nilearn.image: Image Processing and Resampling Utilities - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,41 +653,42 @@
         </div>
         <article role="main">
           <section id="module-nilearn.image">
-<span id="nilearn-image-image-processing-and-resampling-utilities"></span><h1><a class="reference internal" href="#module-nilearn.image" title="nilearn.image"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.image</span></code></a>: Image Processing and Resampling Utilities<a class="headerlink" href="#module-nilearn.image" title="Permalink to this headline">#</a></h1>
+<span id="nilearn-image-image-processing-and-resampling-utilities"></span><h1><a class="reference internal" href="reference.html#module-nilearn.image" title="nilearn.image"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.image</span></code></a>: Image Processing and Resampling Utilities<a class="headerlink" href="#module-nilearn.image" title="Permalink to this heading">#</a></h1>
 <p>Mathematical operations working on Niimg-like objects like a (3+)D block of
 data, and an affine.</p>
 <p><strong>Functions</strong>:</p>
-<div class="table-wrapper"><table class="longtable docutils align-default">
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
-<col style="width: 10%"/>
-<col style="width: 90%"/>
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.binarize_img.html#nilearn.image.binarize_img" title="nilearn.image.binarize_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">binarize_img</span></code></a>(img[, threshold, mask_img])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.binarize_img.html#nilearn.image.binarize_img" title="nilearn.image.binarize_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">binarize_img</span></code></a>(img[, threshold, mask_img])</p></td>
 <td><p>Binarize an image such that its values are either 0 or 1.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.clean_img.html#nilearn.image.clean_img" title="nilearn.image.clean_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_img</span></code></a>(imgs[, runs, detrend, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.clean_img.html#nilearn.image.clean_img" title="nilearn.image.clean_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_img</span></code></a>(imgs[, runs, detrend, ...])</p></td>
 <td><p>Improve SNR on masked fMRI signals.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.concat_imgs.html#nilearn.image.concat_imgs" title="nilearn.image.concat_imgs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concat_imgs</span></code></a>(niimgs[, dtype, ensure_ndim, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.concat_imgs.html#nilearn.image.concat_imgs" title="nilearn.image.concat_imgs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concat_imgs</span></code></a>(niimgs[, dtype, ensure_ndim, ...])</p></td>
 <td><p>Concatenate a list of 3D/4D niimgs of varying lengths.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.coord_transform.html#nilearn.image.coord_transform" title="nilearn.image.coord_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coord_transform</span></code></a>(x, y, z, affine)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.coord_transform.html#nilearn.image.coord_transform" title="nilearn.image.coord_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coord_transform</span></code></a>(x, y, z, affine)</p></td>
 <td><p>Convert the x, y, z coordinates from one image space to another</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.copy_img.html#nilearn.image.copy_img" title="nilearn.image.copy_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy_img</span></code></a>(img)</p></td>
 <td><p>Copy an image to a nibabel.Nifti1Image.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.crop_img.html#nilearn.image.crop_img" title="nilearn.image.crop_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crop_img</span></code></a>(img[, rtol, copy, pad, return_offset])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.crop_img.html#nilearn.image.crop_img" title="nilearn.image.crop_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crop_img</span></code></a>(img[, rtol, copy, pad, return_offset])</p></td>
 <td><p>Crops an image as much as possible.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.get_data.html#nilearn.image.get_data" title="nilearn.image.get_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data</span></code></a>(img)</p></td>
-<td><p>Get the image data as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>.</p></td>
+<td><p>Get the image data as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.high_variance_confounds.html#nilearn.image.high_variance_confounds" title="nilearn.image.high_variance_confounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">high_variance_confounds</span></code></a>(imgs[, n_confounds, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.high_variance_confounds.html#nilearn.image.high_variance_confounds" title="nilearn.image.high_variance_confounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">high_variance_confounds</span></code></a>(imgs[, n_confounds, ...])</p></td>
 <td><p>Return confounds signals extracted from input signals with highest variance.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index_img</span></code></a>(imgs, index)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index_img</span></code></a>(imgs, index)</p></td>
 <td><p>Indexes into a 4D Niimg-like object in the fourth dimension.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.iter_img.html#nilearn.image.iter_img" title="nilearn.image.iter_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_img</span></code></a>(imgs)</p></td>
@@ -690,38 +697,39 @@ data, and an affine.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.largest_connected_component_img.html#nilearn.image.largest_connected_component_img" title="nilearn.image.largest_connected_component_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">largest_connected_component_img</span></code></a>(imgs)</p></td>
 <td><p>Return the largest connected component of an image or list of images.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.load_img.html#nilearn.image.load_img" title="nilearn.image.load_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_img</span></code></a>(img[, wildcards, dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.load_img.html#nilearn.image.load_img" title="nilearn.image.load_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_img</span></code></a>(img[, wildcards, dtype])</p></td>
 <td><p>Load a Niimg-like object from filenames or list of filenames.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.math_img.html#nilearn.image.math_img" title="nilearn.image.math_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">math_img</span></code></a>(formula, **imgs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.math_img.html#nilearn.image.math_img" title="nilearn.image.math_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">math_img</span></code></a>(formula, **imgs)</p></td>
 <td><p>Interpret a numpy based string formula using niimg in named parameters.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.mean_img.html#nilearn.image.mean_img" title="nilearn.image.mean_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_img</span></code></a>(imgs[, target_affine, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.mean_img.html#nilearn.image.mean_img" title="nilearn.image.mean_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_img</span></code></a>(imgs[, target_affine, ...])</p></td>
 <td><p>Compute the mean of the images over time or the 4th dimension.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.new_img_like.html#nilearn.image.new_img_like" title="nilearn.image.new_img_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_img_like</span></code></a>(ref_niimg, data[, affine, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.new_img_like.html#nilearn.image.new_img_like" title="nilearn.image.new_img_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_img_like</span></code></a>(ref_niimg, data[, affine, ...])</p></td>
 <td><p>Create a new image of the same class as the reference image</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.resample_img.html#nilearn.image.resample_img" title="nilearn.image.resample_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample_img</span></code></a>(img[, target_affine, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.resample_img.html#nilearn.image.resample_img" title="nilearn.image.resample_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample_img</span></code></a>(img[, target_affine, ...])</p></td>
 <td><p>Resample a Niimg-like object</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.resample_to_img.html#nilearn.image.resample_to_img" title="nilearn.image.resample_to_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample_to_img</span></code></a>(source_img, target_img[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.resample_to_img.html#nilearn.image.resample_to_img" title="nilearn.image.resample_to_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample_to_img</span></code></a>(source_img, target_img[, ...])</p></td>
 <td><p>Resample a Niimg-like source image on a target Niimg-like image (no registration is performed: the image should already be aligned).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.reorder_img.html#nilearn.image.reorder_img" title="nilearn.image.reorder_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reorder_img</span></code></a>(img[, resample])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.reorder_img.html#nilearn.image.reorder_img" title="nilearn.image.reorder_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reorder_img</span></code></a>(img[, resample])</p></td>
 <td><p>Returns an image with the affine diagonal (by permuting axes).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth_img</span></code></a>(imgs, fwhm)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.smooth_img.html#nilearn.image.smooth_img" title="nilearn.image.smooth_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth_img</span></code></a>(imgs, fwhm)</p></td>
 <td><p>Smooth images by applying a Gaussian filter.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/nilearn.image.swap_img_hemispheres.html#nilearn.image.swap_img_hemispheres" title="nilearn.image.swap_img_hemispheres"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swap_img_hemispheres</span></code></a>(img)</p></td>
 <td><p>Performs swapping of hemispheres in the indicated NIfTI image.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.threshold_img.html#nilearn.image.threshold_img" title="nilearn.image.threshold_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">threshold_img</span></code></a>(img, threshold[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/nilearn.image.threshold_img.html#nilearn.image.threshold_img" title="nilearn.image.threshold_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">threshold_img</span></code></a>(img, threshold[, ...])</p></td>
 <td><p>Threshold the given input image, mostly statistical or atlas images.</p></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+</div>
 </section>
 
         </article>
@@ -778,6 +786,7 @@ data, and an affine.</p>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>

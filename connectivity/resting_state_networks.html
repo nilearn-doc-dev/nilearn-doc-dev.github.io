@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Region Extraction for better brain parcellations" href="region_extraction.html" /><link rel="prev" title="Group-sparse covariance estimation" href="../developers/group_sparse_covariance.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Extracting functional brain networks: ICA and related - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,7 +653,7 @@
         </div>
         <article role="main">
           <section id="extracting-functional-brain-networks-ica-and-related">
-<span id="extracting-rsn"></span><h1>Extracting functional brain networks: ICA and related<a class="headerlink" href="#extracting-functional-brain-networks-ica-and-related" title="Permalink to this headline">#</a></h1>
+<span id="extracting-rsn"></span><h1>Extracting functional brain networks: ICA and related<a class="headerlink" href="#extracting-functional-brain-networks-ica-and-related" title="Permalink to this heading">#</a></h1>
 <div class="topic">
 <p class="topic-title"><strong>Page summary</strong></p>
 <p>This page demonstrates the use of multi-subject decompositions models
@@ -657,7 +663,7 @@ implements a multivariate random effects model across subjects. We will
 then compare <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> to a newer technique, based on dictionary learning.</p>
 </div>
 <section id="multi-subject-ica-canica">
-<h2>Multi-subject ICA: CanICA<a class="headerlink" href="#multi-subject-ica-canica" title="Permalink to this headline">#</a></h2>
+<h2>Multi-subject ICA: CanICA<a class="headerlink" href="#multi-subject-ica-canica" title="Permalink to this heading">#</a></h2>
 <div class="topic">
 <p class="topic-title"><strong>References</strong></p>
 <ul class="simple">
@@ -666,7 +672,7 @@ fMRI datasets”, <a class="reference external" href="http://www.sciencedirect.c
 </ul>
 </div>
 <section id="objective">
-<h3>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h3>
+<h3>Objective<a class="headerlink" href="#objective" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> is a useful approach for finding independent sources from <a class="reference internal" href="../glossary.html#term-fMRI"><span class="xref std std-term">fMRI</span></a>
 images. <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> and similar techniques can be therefore used to define
 regions or networks that share similar <a class="reference internal" href="../glossary.html#term-BOLD"><span class="xref std std-term">BOLD</span></a> signal across time. The
@@ -682,7 +688,7 @@ filenames (<a class="reference internal" href="../manipulating_images/input_outp
 </div>
 </section>
 <section id="fitting-canica-model-with-nilearn">
-<h3>Fitting CanICA model with nilearn<a class="headerlink" href="#fitting-canica-model-with-nilearn" title="Permalink to this headline">#</a></h3>
+<h3>Fitting CanICA model with nilearn<a class="headerlink" href="#fitting-canica-model-with-nilearn" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="../modules/generated/nilearn.decomposition.CanICA.html#nilearn.decomposition.CanICA" title="nilearn.decomposition.CanICA"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanICA</span></code></a> is a ready-to-use object that can be applied to
 multi-subject Nifti data, for instance presented as filenames, and will
 perform a multi-subject <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> decomposition following the <a class="reference internal" href="../glossary.html#term-CanICA"><span class="xref std std-term">CanICA</span></a> model.
@@ -694,14 +700,14 @@ components can be accessed as a 4D Nifti object using the
 <code class="docutils literal notranslate"><span class="pre">components_img_</span></code> attribute.</p>
 </section>
 <section id="visualizing-results">
-<h3>Visualizing results<a class="headerlink" href="#visualizing-results" title="Permalink to this headline">#</a></h3>
+<h3>Visualizing results<a class="headerlink" href="#visualizing-results" title="Permalink to this heading">#</a></h3>
 <p>We can visualize each component outlined over the brain:</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="../_images/sphx_glr_plot_compare_decomposition_001.png" src="../_images/sphx_glr_plot_compare_decomposition_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="../_images/sphx_glr_plot_compare_decomposition_001.png" src="../_images/sphx_glr_plot_compare_decomposition_001.png" /></a>
 </figure>
 <p>We can also plot the map for different components separately:</p>
 <p class="centered">
-<strong><a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_002.png"><img alt="ic1" src="../_images/sphx_glr_plot_compare_decomposition_002.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_003.png"><img alt="ic2" src="../_images/sphx_glr_plot_compare_decomposition_003.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_004.png"><img alt="ic3" src="../_images/sphx_glr_plot_compare_decomposition_004.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_005.png"><img alt="ic4" src="../_images/sphx_glr_plot_compare_decomposition_005.png" style="width: 23%;"/></a></strong></p><div class="admonition seealso">
+<strong><a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_002.png"><img alt="ic1" src="../_images/sphx_glr_plot_compare_decomposition_002.png" style="width: 23%;" /></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_003.png"><img alt="ic2" src="../_images/sphx_glr_plot_compare_decomposition_003.png" style="width: 23%;" /></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_004.png"><img alt="ic3" src="../_images/sphx_glr_plot_compare_decomposition_004.png" style="width: 23%;" /></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_005.png"><img alt="ic4" src="../_images/sphx_glr_plot_compare_decomposition_005.png" style="width: 23%;" /></a></strong></p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>The full code can be found as an example:
 <a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html#sphx-glr-auto-examples-03-connectivity-plot-compare-decomposition-py"><span class="std std-ref">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</span></a></p>
@@ -715,7 +721,7 @@ investigate which one resemble those displayed above.</p>
 </div>
 </section>
 <section id="interpreting-such-components">
-<h3>Interpreting such components<a class="headerlink" href="#interpreting-such-components" title="Permalink to this headline">#</a></h3>
+<h3>Interpreting such components<a class="headerlink" href="#interpreting-such-components" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a>, and related algorithms, extract patterns that coactivate in the
 signal. As a result, it finds functional networks, but also patterns of
 non neural activity, ie confounding signals. Both are visible in the
@@ -723,7 +729,7 @@ plots of the components.</p>
 </section>
 </section>
 <section id="an-alternative-to-ica-dictionary-learning">
-<h2>An alternative to <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a>: <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a><a class="headerlink" href="#an-alternative-to-ica-dictionary-learning" title="Permalink to this headline">#</a></h2>
+<h2>An alternative to <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a>: <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a><a class="headerlink" href="#an-alternative-to-ica-dictionary-learning" title="Permalink to this heading">#</a></h2>
 <p>Recent work has shown that <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> based techniques
 outperform <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> in term of stability and constitutes a better first
 step in a statistical analysis pipeline.
@@ -744,16 +750,16 @@ a larger alpha yields sparser maps.</p>
 <a class="reference internal" href="../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.plotting.plot_prob_atlas</span></code></a>) offers an efficient way to
 compare both resulting outputs.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="../_images/sphx_glr_plot_compare_decomposition_022.png" src="../_images/sphx_glr_plot_compare_decomposition_022.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="../_images/sphx_glr_plot_compare_decomposition_022.png" src="../_images/sphx_glr_plot_compare_decomposition_022.png" /></a>
 </figure>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="../_images/sphx_glr_plot_compare_decomposition_001.png" src="../_images/sphx_glr_plot_compare_decomposition_001.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_compare_decomposition.html"><img alt="../_images/sphx_glr_plot_compare_decomposition_001.png" src="../_images/sphx_glr_plot_compare_decomposition_001.png" /></a>
 </figure>
 <p>Maps obtained with <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> are often easier to exploit as they are
 more contrasted than <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a> maps, with blobs usually better defined. Typically,
 <em>smoothing can be lower than when doing ICA</em>.</p>
 <p class="centered">
-<strong><a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_023.png"><img alt="dl1" src="../_images/sphx_glr_plot_compare_decomposition_023.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_024.png"><img alt="dl2" src="../_images/sphx_glr_plot_compare_decomposition_024.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_025.png"><img alt="dl3" src="../_images/sphx_glr_plot_compare_decomposition_025.png" style="width: 23%;"/></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_026.png"><img alt="dl4" src="../_images/sphx_glr_plot_compare_decomposition_026.png" style="width: 23%;"/></a></strong></p><p>While <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> computation time is comparable to
+<strong><a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_023.png"><img alt="dl1" src="../_images/sphx_glr_plot_compare_decomposition_023.png" style="width: 23%;" /></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_024.png"><img alt="dl2" src="../_images/sphx_glr_plot_compare_decomposition_024.png" style="width: 23%;" /></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_025.png"><img alt="dl3" src="../_images/sphx_glr_plot_compare_decomposition_025.png" style="width: 23%;" /></a> <a class="reference internal" href="../_images/sphx_glr_plot_compare_decomposition_026.png"><img alt="dl4" src="../_images/sphx_glr_plot_compare_decomposition_026.png" style="width: 23%;" /></a></strong></p><p>While <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> computation time is comparable to
 <a class="reference internal" href="../glossary.html#term-CanICA"><span class="xref std std-term">CanICA</span></a>, obtained atlases have been shown to outperform <a class="reference internal" href="../glossary.html#term-ICA"><span class="xref std std-term">ICA</span></a>
 in a variety of classification tasks.</p>
 <div class="admonition seealso">
@@ -765,7 +771,7 @@ in a variety of classification tasks.</p>
 <p class="admonition-title">See also</p>
 <p>Learn how to extract <a class="reference internal" href="../glossary.html#term-fMRI"><span class="xref std std-term">fMRI</span></a> data from regions created with
 <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> with this example:
-<a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html#sphx-glr-auto-examples-03-connectivity-plot-extract-regions-dictlearning-maps-py"><span class="std std-ref">Regions extraction using Dictionary learning and functional connectomes</span></a></p>
+<a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html#sphx-glr-auto-examples-03-connectivity-plot-extract-regions-dictlearning-maps-py"><span class="std std-ref">Regions extraction using dictionary learning and functional connectomes</span></a></p>
 </div>
 </section>
 </section>
@@ -850,6 +856,7 @@ in a variety of classification tasks.</p>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>

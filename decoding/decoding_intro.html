@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Choosing the right predictive model for neuroimaging" href="estimator_choice.html" /><link rel="prev" title="Decoding and MVPA: predicting from brain images" href="index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>An introduction to decoding - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,7 +653,7 @@
         </div>
         <article role="main">
           <section id="an-introduction-to-decoding">
-<span id="decoding-intro"></span><h1>An introduction to decoding<a class="headerlink" href="#an-introduction-to-decoding" title="Permalink to this headline">#</a></h1>
+<span id="decoding-intro"></span><h1>An introduction to decoding<a class="headerlink" href="#an-introduction-to-decoding" title="Permalink to this heading">#</a></h1>
 <p>This section gives an introduction to the main concept of decoding:
 predicting from brain images.</p>
 <p>The discussion and examples are articulated on the analysis of the Haxby
@@ -664,39 +670,39 @@ pitfalls of decoding analysis. For an introduction on the code to use please
 refer to : <a class="reference internal" href="../auto_examples/00_tutorials/plot_decoding_tutorial.html#sphx-glr-auto-examples-00-tutorials-plot-decoding-tutorial-py"><span class="std std-ref">A introduction tutorial to fMRI decoding</span></a></p>
 </div>
 <section id="loading-and-preparing-the-data">
-<h2>Loading and preparing the data<a class="headerlink" href="#loading-and-preparing-the-data" title="Permalink to this headline">#</a></h2>
+<h2>Loading and preparing the data<a class="headerlink" href="#loading-and-preparing-the-data" title="Permalink to this heading">#</a></h2>
 <section id="the-haxby-2001-experiment">
-<h3>The Haxby 2001 experiment<a class="headerlink" href="#the-haxby-2001-experiment" title="Permalink to this headline">#</a></h3>
+<h3>The Haxby 2001 experiment<a class="headerlink" href="#the-haxby-2001-experiment" title="Permalink to this heading">#</a></h3>
 <p>In the Haxby experiment, subjects were presented visual stimuli from
 different categories. We are going to predict which category the subject is
 seeing from the <a class="reference internal" href="../glossary.html#term-fMRI"><span class="xref std std-term">fMRI</span></a> activity recorded in regions of the ventral visual system.
 Significant prediction shows that the signal in the region contains
 information on the corresponding category.</p>
 <figure class="align-left" id="id1">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_stimuli.html"><img alt="../_images/sphx_glr_plot_haxby_stimuli_007.png" src="../_images/sphx_glr_plot_haxby_stimuli_007.png" style="width: 192.0px; height: 144.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_stimuli.html"><img alt="../_images/sphx_glr_plot_haxby_stimuli_007.png" src="../_images/sphx_glr_plot_haxby_stimuli_007.png" style="width: 192.0px; height: 144.0px;" /></a>
 <figcaption>
 <p><span class="caption-text">Face stimuli</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-left" id="id2">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_stimuli.html"><img alt="../_images/sphx_glr_plot_haxby_stimuli_004.png" src="../_images/sphx_glr_plot_haxby_stimuli_004.png" style="width: 192.0px; height: 144.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_stimuli.html"><img alt="../_images/sphx_glr_plot_haxby_stimuli_004.png" src="../_images/sphx_glr_plot_haxby_stimuli_004.png" style="width: 192.0px; height: 144.0px;" /></a>
 <figcaption>
 <p><span class="caption-text">Cat stimuli</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-left" id="id3">
-<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_haxby_masks.html"><img alt="../_images/sphx_glr_plot_haxby_masks_001.png" src="../_images/sphx_glr_plot_haxby_masks_001.png" style="width: 120.0px; height: 162.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_haxby_masks.html"><img alt="../_images/sphx_glr_plot_haxby_masks_001.png" src="../_images/sphx_glr_plot_haxby_masks_001.png" style="width: 120.0px; height: 162.0px;" /></a>
 <figcaption>
 <p><span class="caption-text">Masks</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-left" id="id4">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_full_analysis.html"><img alt="../_images/sphx_glr_plot_haxby_full_analysis_001.png" src="../_images/sphx_glr_plot_haxby_full_analysis_001.png" style="width: 224.0px; height: 168.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_full_analysis.html"><img alt="../_images/sphx_glr_plot_haxby_full_analysis_001.png" src="../_images/sphx_glr_plot_haxby_full_analysis_001.png" style="width: 224.0px; height: 168.0px;" /></a>
 <figcaption>
 <p><span class="caption-text">Decoding scores per mask</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<hr class="docutils"/>
+<hr class="docutils" />
 <div class="topic">
 <p class="topic-title"><strong>fMRI: using beta maps of a first-level analysis</strong></p>
 <p>The Haxby experiment is unusual because the experimental paradigm is
@@ -720,7 +726,7 @@ responses from various confounds</strong> as demonstrated in <a class="reference
 </div>
 </section>
 <section id="loading-the-data-into-nilearn">
-<h3>Loading the data into nilearn<a class="headerlink" href="#loading-the-data-into-nilearn" title="Permalink to this headline">#</a></h3>
+<h3>Loading the data into nilearn<a class="headerlink" href="#loading-the-data-into-nilearn" title="Permalink to this heading">#</a></h3>
 <div class="topic">
 <p class="topic-title"><strong>Full code example</strong></p>
 <p>The documentation here just gives the big idea. A full code example,
@@ -752,7 +758,7 @@ restrict to a specific pair of conditions (<em>eg</em> cats versus faces).</p></
 <li><p><a class="reference internal" href="../building_blocks/manual_pipeline.html#masking"><span class="std std-ref">Masking the data: from 4D image to 2D array</span></a>
 To better control this process of spatial masking and add additional signal
 processing steps (smoothing, filtering, standardizing…), we could
-explicitly define a masker :  <code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.maskers.NiftiMasker</span></code>.
+explicitly define a masker :  <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMasker.html#nilearn.maskers.NiftiMasker" title="nilearn.maskers.NiftiMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.maskers.NiftiMasker</span></code></a>.
 This object extracts <a class="reference internal" href="../glossary.html#term-voxel"><span class="xref std std-term">voxels</span></a> belonging to a given spatial mask and converts
 their signal to a 2D data matrix with a shape (n_timepoints, n_voxels)
 (see <a class="reference internal" href="../manipulating_images/manipulating_images.html#mask-4d-2-3d"><span class="std std-ref">Masking data: from 4D Nifti images to 2D data arrays</span></a> for a discussion on using</p></li>
@@ -766,9 +772,9 @@ for instance standardizing the data.</p>
 </section>
 </section>
 <section id="performing-a-simple-decoding-analysis">
-<h2>Performing a simple decoding analysis<a class="headerlink" href="#performing-a-simple-decoding-analysis" title="Permalink to this headline">#</a></h2>
+<h2>Performing a simple decoding analysis<a class="headerlink" href="#performing-a-simple-decoding-analysis" title="Permalink to this heading">#</a></h2>
 <section id="a-few-definitions">
-<h3>A few definitions<a class="headerlink" href="#a-few-definitions" title="Permalink to this headline">#</a></h3>
+<h3>A few definitions<a class="headerlink" href="#a-few-definitions" title="Permalink to this heading">#</a></h3>
 <p>When doing predictive analysis you train an estimator to predict a variable of
 interest to you. Or in other words to predict a condition label <strong>y</strong> given a
 set <strong>X</strong> of imaging data.</p>
@@ -789,7 +795,7 @@ optimistic scores.</strong></p>
 </div>
 </section>
 <section id="a-first-estimator">
-<h3>A first estimator<a class="headerlink" href="#a-first-estimator" title="Permalink to this headline">#</a></h3>
+<h3>A first estimator<a class="headerlink" href="#a-first-estimator" title="Permalink to this heading">#</a></h3>
 <p>To perform decoding, we need a model that can learn some relations
 between <strong>X</strong> (the imaging data) and <strong>y</strong> the condition label. As a default,
 Nilearn uses <a class="reference external" href="http://scikit-learn.org/stable/modules/svm.html">Support Vector Classifier</a> (or SVC) with a
@@ -801,7 +807,7 @@ variety of problems.</p>
 </div>
 </section>
 <section id="decoding-made-easy">
-<h3>Decoding made easy<a class="headerlink" href="#decoding-made-easy" title="Permalink to this headline">#</a></h3>
+<h3>Decoding made easy<a class="headerlink" href="#decoding-made-easy" title="Permalink to this heading">#</a></h3>
 <p>Nilearn makes it easy to train a model with a principled pipeline using the
 <a class="reference internal" href="../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.decoding.Decoder</span></code></a> object. Using the mask we defined before
 and an SVC estimator as we already introduced, we can create a pipeline in
@@ -809,7 +815,7 @@ two lines. The additional <cite>standardize=True</cite> argument adds a normaliz
 of images signal to a zero mean and unit variance, which will improve
 performance of most estimators.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nilearn.decoding</span> <span class="kn">import</span> <span class="n">Decoder</span> 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">decoder</span> <span class="o">=</span> <span class="n">Decoder</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">'svc'</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask_filename</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">decoder</span> <span class="o">=</span> <span class="n">Decoder</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;svc&#39;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask_filename</span><span class="p">)</span> 
 </pre></div>
 </div>
 <p>Then we can fit it on the images and the conditions we chose before.</p>
@@ -821,13 +827,13 @@ Be careful though, as we warned you, predicting on images that were used to
 <cite>fit</cite> your model should never be done.</p>
 </section>
 <section id="measuring-prediction-performance">
-<h3>Measuring prediction performance<a class="headerlink" href="#measuring-prediction-performance" title="Permalink to this headline">#</a></h3>
+<h3>Measuring prediction performance<a class="headerlink" href="#measuring-prediction-performance" title="Permalink to this heading">#</a></h3>
 <p>One of the most common interests of decoding is to measure how well we can learn
 to predict various targets from our images to have a sense of which information
 is really contained in a given region of the brain. To do this, we need ways to
 measure the errors we make when we do prediction.</p>
 <section id="cross-validation">
-<h4>Cross-validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">#</a></h4>
+<h4>Cross-validation<a class="headerlink" href="#cross-validation" title="Permalink to this heading">#</a></h4>
 <p>We cannot measure prediction error on the same set of data that we have
 used to fit the estimator: it would be much easier than on new data, and
 the result would be meaningless. We need to use a technique called
@@ -846,7 +852,7 @@ the prediction “score” it got in each fold.</p>
 </div>
 </section>
 <section id="choosing-a-good-cross-validation-strategy">
-<h4>Choosing a good cross-validation strategy<a class="headerlink" href="#choosing-a-good-cross-validation-strategy" title="Permalink to this headline">#</a></h4>
+<h4>Choosing a good cross-validation strategy<a class="headerlink" href="#choosing-a-good-cross-validation-strategy" title="Permalink to this heading">#</a></h4>
 <p>There are many cross-validation strategies possible, including K-Fold or
 leave-one-out. When choosing a strategy, keep in mind that the test set should
 be as little correlated as possible with the train set and have enough samples
@@ -873,7 +879,7 @@ groups=`session_labels` will use one session as test set.</p>
 </div>
 </section>
 <section id="choice-of-the-prediction-accuracy-measure">
-<h4>Choice of the prediction accuracy measure<a class="headerlink" href="#choice-of-the-prediction-accuracy-measure" title="Permalink to this headline">#</a></h4>
+<h4>Choice of the prediction accuracy measure<a class="headerlink" href="#choice-of-the-prediction-accuracy-measure" title="Permalink to this heading">#</a></h4>
 <p>Once you have a prediction about new data and its real label (the <em>ground truth</em>)
 there are different ways to measure a <em>score</em> that summarizes its performance.</p>
 <p>The default metric used for measuring errors is the accuracy score, i.e.
@@ -889,7 +895,7 @@ choosing the dominant class can achieve a low number of errors.</p>
 </div>
 </section>
 <section id="prediction-accuracy-at-chance-using-simple-strategies">
-<h4>Prediction accuracy at chance using simple strategies<a class="headerlink" href="#prediction-accuracy-at-chance-using-simple-strategies" title="Permalink to this headline">#</a></h4>
+<h4>Prediction accuracy at chance using simple strategies<a class="headerlink" href="#prediction-accuracy-at-chance-using-simple-strategies" title="Permalink to this heading">#</a></h4>
 <p>When performing decoding, prediction performance of a model can be checked against
 null distributions or random predictions. For this, we guess a chance level score using
 simple strategies while predicting condition <strong>y</strong> with <strong>X</strong> imaging data.</p>
@@ -909,22 +915,22 @@ over masks and categories and Python dictionaries to store the
 scores.</p>
 </div>
 <figure class="align-left" id="id5">
-<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_haxby_masks.html"><img alt="../_images/sphx_glr_plot_haxby_masks_001.png" src="../_images/sphx_glr_plot_haxby_masks_001.png" style="width: 220.00000000000003px; height: 297.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_haxby_masks.html"><img alt="../_images/sphx_glr_plot_haxby_masks_001.png" src="../_images/sphx_glr_plot_haxby_masks_001.png" style="width: 220.00000000000003px; height: 297.0px;" /></a>
 <figcaption>
 <p><span class="caption-text">Masks</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-left">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_full_analysis.html"><img alt="../_images/sphx_glr_plot_haxby_full_analysis_001.png" src="../_images/sphx_glr_plot_haxby_full_analysis_001.png" style="width: 448.0px; height: 336.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_full_analysis.html"><img alt="../_images/sphx_glr_plot_haxby_full_analysis_001.png" src="../_images/sphx_glr_plot_haxby_full_analysis_001.png" style="width: 448.0px; height: 336.0px;" /></a>
 </figure>
 </section>
 </section>
 <section id="visualizing-the-decoder-s-weights">
-<h3>Visualizing the decoder’s weights<a class="headerlink" href="#visualizing-the-decoder-s-weights" title="Permalink to this headline">#</a></h3>
+<h3>Visualizing the decoder’s weights<a class="headerlink" href="#visualizing-the-decoder-s-weights" title="Permalink to this heading">#</a></h3>
 <p>During <cite>fit</cite> step, the <a class="reference internal" href="../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.decoding.Decoder</span></code></a> object retains the
 coefficients of best models for each class in <cite>decoder.coef_img_</cite>.</p>
 <figure class="align-default">
-<a class="reference external image-reference" href="../auto_examples/plot_decoding_tutorial.html"><img alt="../_images/sphx_glr_plot_haxby_anova_svm_001.png" src="../_images/sphx_glr_plot_haxby_anova_svm_001.png" style="width: 474.5px; height: 169.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/plot_decoding_tutorial.html"><img alt="../_images/sphx_glr_plot_haxby_anova_svm_001.png" src="../_images/sphx_glr_plot_haxby_anova_svm_001.png" style="width: 474.5px; height: 169.0px;" /></a>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -940,9 +946,9 @@ coefficients of best models for each class in <cite>decoder.coef_img_</cite>.</p
 </section>
 </section>
 <section id="decoding-without-a-mask-anova-svm">
-<h2>Decoding without a mask: Anova-SVM<a class="headerlink" href="#decoding-without-a-mask-anova-svm" title="Permalink to this headline">#</a></h2>
+<h2>Decoding without a mask: Anova-SVM<a class="headerlink" href="#decoding-without-a-mask-anova-svm" title="Permalink to this heading">#</a></h2>
 <section id="dimension-reduction-with-feature-selection">
-<h3>Dimension reduction with feature selection<a class="headerlink" href="#dimension-reduction-with-feature-selection" title="Permalink to this headline">#</a></h3>
+<h3>Dimension reduction with feature selection<a class="headerlink" href="#dimension-reduction-with-feature-selection" title="Permalink to this heading">#</a></h3>
 <p>If we do not start from a mask of the relevant regions, there is a very
 large number of voxels and not all are useful for
 face vs cat prediction. We thus add a <a class="reference external" href="http://scikit-learn.org/stable/modules/feature_selection.html">feature selection</a>
@@ -955,8 +961,8 @@ argument. To keep the 10% most correlated voxels, just create us this parameter 
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.decoding</span> <span class="kn">import</span> <span class="n">Decoder</span>
 <span class="c1"># Here screening_percentile is set to 5 percent</span>
 <span class="n">mask_img</span> <span class="o">=</span> <span class="n">haxby_dataset</span><span class="o">.</span><span class="n">mask</span>
-<span class="n">decoder</span> <span class="o">=</span> <span class="n">Decoder</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">'svc'</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask_img</span><span class="p">,</span> <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-                  <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">screening_percentile</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">'accuracy'</span><span class="p">)</span>
+<span class="n">decoder</span> <span class="o">=</span> <span class="n">Decoder</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;svc&#39;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask_img</span><span class="p">,</span> <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                  <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">screening_percentile</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
 
 <span class="c1">#############################################################################</span>
 <span class="c1"># Fit the decoder and predict</span>
@@ -972,24 +978,24 @@ argument. To keep the 10% most correlated voxels, just create us this parameter 
 <span class="c1"># leave a session out scheme, then pass the cross-validator object to the cv</span>
 <span class="c1"># parameter of decoder.leave-one-session-out For more details please take a</span>
 <span class="c1"># look at:</span>
-<span class="c1"># &lt;https://nilearn.github.io/auto_examples/plot_decoding_tutorial.html#measuring-prediction-scores-using-cross-validation&gt;</span>
+<span class="c1"># &lt;https://nilearn.github.io/stable/auto_examples/plot_decoding_tutorial.html#measuring-prediction-scores-using-cross-validation&gt;</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">LeaveOneGroupOut</span>
 <span class="n">cv</span> <span class="o">=</span> <span class="n">LeaveOneGroupOut</span><span class="p">()</span>
 
-<span class="n">decoder</span> <span class="o">=</span> <span class="n">Decoder</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">'svc'</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask_img</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                  <span class="n">screening_percentile</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">'accuracy'</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">)</span>
+<span class="n">decoder</span> <span class="o">=</span> <span class="n">Decoder</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;svc&#39;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask_img</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">screening_percentile</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">)</span>
 <span class="c1"># Compute the prediction accuracy for the different folds (i.e. session)</span>
 <span class="n">decoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">func_img</span><span class="p">,</span> <span class="n">conditions</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">session_label</span><span class="p">)</span>
 
 <span class="c1"># Print the CV scores</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">decoder</span><span class="o">.</span><span class="n">cv_scores_</span><span class="p">[</span><span class="s1">'face'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decoder</span><span class="o">.</span><span class="n">cv_scores_</span><span class="p">[</span><span class="s1">&#39;face&#39;</span><span class="p">])</span>
 
 <span class="c1">#############################################################################</span>
 </pre></div>
 </div>
 </section>
 <section id="visualizing-the-results">
-<h3>Visualizing the results<a class="headerlink" href="#visualizing-the-results" title="Permalink to this headline">#</a></h3>
+<h3>Visualizing the results<a class="headerlink" href="#visualizing-the-results" title="Permalink to this heading">#</a></h3>
 <p>To visualize the results, <a class="reference internal" href="../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.decoding.Decoder</span></code></a> handles two main steps for you :</p>
 <ul class="simple">
 <li><p>first get the support vectors of the SVC and inverse the feature selection mechanism</p></li>
@@ -997,11 +1003,11 @@ argument. To keep the 10% most correlated voxels, just create us this parameter 
 position and plot</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ----------------------</span>
-<span class="c1"># Look at the SVC's discriminating weights using</span>
+<span class="c1"># Look at the SVC&#39;s discriminating weights using</span>
 <span class="c1"># :class:`nilearn.plotting.plot_stat_map`</span>
-<span class="n">weight_img</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">coef_img_</span><span class="p">[</span><span class="s1">'face'</span><span class="p">]</span>
+<span class="n">weight_img</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">coef_img_</span><span class="p">[</span><span class="s1">&#39;face&#39;</span><span class="p">]</span>
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_stat_map</span><span class="p">,</span> <span class="n">show</span>
-<span class="n">plot_stat_map</span><span class="p">(</span><span class="n">weight_img</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">anat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">'SVM weights'</span><span class="p">)</span>
+<span class="n">plot_stat_map</span><span class="p">(</span><span class="n">weight_img</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">anat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;SVM weights&#39;</span><span class="p">)</span>
 
 <span class="n">show</span><span class="p">()</span>
 <span class="c1">#############################################################################</span>
@@ -1009,12 +1015,12 @@ position and plot</p></li>
 <span class="c1"># dynamic html viewer</span>
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">view_img</span>
 <span class="n">view_img</span><span class="p">(</span><span class="n">weight_img</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">anat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-         <span class="n">title</span><span class="o">=</span><span class="s2">"SVM weights"</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+         <span class="n">title</span><span class="o">=</span><span class="s2">&quot;SVM weights&quot;</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="c1">#############################################################################</span>
 </pre></div>
 </div>
 <figure class="align-default">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_anova_svm.html"><img alt="../_images/sphx_glr_plot_haxby_anova_svm_001.png" src="../_images/sphx_glr_plot_haxby_anova_svm_001.png" style="width: 474.5px; height: 169.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_anova_svm.html"><img alt="../_images/sphx_glr_plot_haxby_anova_svm_001.png" src="../_images/sphx_glr_plot_haxby_anova_svm_001.png" style="width: 474.5px; height: 169.0px;" /></a>
 </figure>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -1135,6 +1141,7 @@ position and plot</p></li>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>

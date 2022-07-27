@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Connectome extraction: inverse covariance for direct connections" href="connectome_extraction.html" /><link rel="prev" title="Functional connectivity and resting state" href="index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Extracting times series to build a functional connectome - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,7 +653,7 @@
         </div>
         <article role="main">
           <section id="extracting-times-series-to-build-a-functional-connectome">
-<span id="functional-connectomes"></span><h1>Extracting times series to build a functional connectome<a class="headerlink" href="#extracting-times-series-to-build-a-functional-connectome" title="Permalink to this headline">#</a></h1>
+<span id="functional-connectomes"></span><h1>Extracting times series to build a functional connectome<a class="headerlink" href="#extracting-times-series-to-build-a-functional-connectome" title="Permalink to this heading">#</a></h1>
 <div class="topic">
 <p class="topic-title"><strong>Page summary</strong></p>
 <p>A <em>functional connectome</em> is a set of connections representing brain
@@ -662,18 +668,18 @@ connectomes across subjects”, NeuroImage 2013</a>.</p></li>
 </ul>
 </div>
 <section id="time-series-from-a-brain-parcellation-or-maxprob-atlas">
-<span id="parcellation-time-series"></span><h2>Time-series from a brain parcellation or “MaxProb” atlas<a class="headerlink" href="#time-series-from-a-brain-parcellation-or-maxprob-atlas" title="Permalink to this headline">#</a></h2>
+<span id="parcellation-time-series"></span><h2>Time-series from a brain parcellation or “MaxProb” atlas<a class="headerlink" href="#time-series-from-a-brain-parcellation-or-maxprob-atlas" title="Permalink to this heading">#</a></h2>
 <section id="brain-parcellations">
-<h3>Brain parcellations<a class="headerlink" href="#brain-parcellations" title="Permalink to this headline">#</a></h3>
+<h3>Brain parcellations<a class="headerlink" href="#brain-parcellations" title="Permalink to this heading">#</a></h3>
 <p>Regions used to extract the signal can be defined by a “hard”
-parcellation. For instance, the <a class="reference internal" href="../modules/datasets.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a> has functions to
+parcellation. For instance, the <a class="reference internal" href="../modules/reference.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a> has functions to
 download atlases forming reference parcellation, e.g.,
 <a class="reference internal" href="../modules/generated/nilearn.datasets.fetch_atlas_craddock_2012.html#nilearn.datasets.fetch_atlas_craddock_2012" title="nilearn.datasets.fetch_atlas_craddock_2012"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_atlas_craddock_2012</span></code></a>, <a class="reference internal" href="../modules/generated/nilearn.datasets.fetch_atlas_harvard_oxford.html#nilearn.datasets.fetch_atlas_harvard_oxford" title="nilearn.datasets.fetch_atlas_harvard_oxford"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_atlas_harvard_oxford</span></code></a>,
 <a class="reference internal" href="../modules/generated/nilearn.datasets.fetch_atlas_yeo_2011.html#nilearn.datasets.fetch_atlas_yeo_2011" title="nilearn.datasets.fetch_atlas_yeo_2011"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_atlas_yeo_2011</span></code></a>.</p>
 <p>For instance to retrieve the Harvard-Oxford cortical parcellation, sampled
 at 2mm, and with a threshold of a probability of 0.25:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_harvard_oxford</span><span class="p">(</span><span class="s1">'cort-maxprob-thr25-2mm'</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_harvard_oxford</span><span class="p">(</span><span class="s1">&#39;cort-maxprob-thr25-2mm&#39;</span><span class="p">)</span>
 <span class="n">atlas_filename</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">maps</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">labels</span>
 </pre></div>
@@ -683,19 +689,19 @@ at 2mm, and with a threshold of a probability of 0.25:</p>
 <span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">atlas_filename</span><span class="p">)</span>
 </pre></div>
 </div>
-<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_atlas.html"><img alt="../_images/sphx_glr_plot_atlas_001.png" src="../_images/sphx_glr_plot_atlas_001.png" style="width: 396.0px; height: 156.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_atlas.html"><img alt="../_images/sphx_glr_plot_atlas_001.png" src="../_images/sphx_glr_plot_atlas_001.png" style="width: 396.0px; height: 156.0px;" /></a>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="../plotting/index.html#plotting"><span class="std std-ref">plotting documentation</span></a>;</p></li>
-<li><p>The <a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#datasets-ref" title="(in scikit-learn v1.0)"><span class="xref std std-ref">dataset downloaders</span></a>.</p></li>
+<li><p>The <a class="reference internal" href="../modules/reference.html#datasets-ref"><span class="std std-ref">dataset downloaders</span></a>.</p></li>
 </ul>
 </div>
 </section>
 <section id="extracting-signals-on-a-parcellation">
-<h3>Extracting signals on a parcellation<a class="headerlink" href="#extracting-signals-on-a-parcellation" title="Permalink to this headline">#</a></h3>
+<h3>Extracting signals on a parcellation<a class="headerlink" href="#extracting-signals-on-a-parcellation" title="Permalink to this heading">#</a></h3>
 <p>To extract signal on the parcellation, the easiest option is to use the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code>. As any “maskers” in
+<a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker" title="nilearn.maskers.NiftiLabelsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiLabelsMasker</span></code></a>. As any “maskers” in
 nilearn, it is a processing object that is created by specifying all
 the important parameters, but not the data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <span class="n">NiftiLabelsMasker</span>
@@ -703,14 +709,14 @@ the important parameters, but not the data:</p>
 </pre></div>
 </div>
 <p>The Nifti data can then be turned to time-series by calling the
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">NiftiLabelsMasker.fit_transform</span></code> method, that takes either
+<a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiLabelsMasker.html#nilearn.maskers.NiftiLabelsMasker.fit_transform" title="nilearn.maskers.NiftiLabelsMasker.fit_transform"><code class="xref py py-meth docutils literal notranslate"><span class="pre">NiftiLabelsMasker.fit_transform</span></code></a> method, that takes either
 filenames or <a class="reference external" href="http://nipy.org/nibabel/nibabel_images.html">NiftiImage objects</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time_series</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">frmi_files</span><span class="p">,</span>
                                    <span class="n">confounds</span><span class="o">=</span><span class="n">confounds_dataframe</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 <p>Note that confound signals can be specified in the call. Indeed, to
 obtain time series that capture well the functional interactions between
@@ -725,8 +731,8 @@ based on past literature with limited parameters for customisation.
 For more freedoms of confounds selection,
 <a class="reference internal" href="../modules/generated/nilearn.interfaces.fmriprep.load_confounds.html#nilearn.interfaces.fmriprep.load_confounds" title="nilearn.interfaces.fmriprep.load_confounds"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_confounds</span></code></a> groups confound variables as
 sets of noise components and one can fine tune each of the parameters.</p>
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_signal_extraction.html"><img alt="../_images/sphx_glr_plot_signal_extraction_001.png" src="../_images/sphx_glr_plot_signal_extraction_001.png" style="width: 400.0px; height: 320.0px;"/></a>
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_signal_extraction.html"><img alt="../_images/sphx_glr_plot_signal_extraction_002.png" src="../_images/sphx_glr_plot_signal_extraction_002.png" style="width: 400.0px; height: 320.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_signal_extraction.html"><img alt="../_images/sphx_glr_plot_signal_extraction_001.png" src="../_images/sphx_glr_plot_signal_extraction_001.png" style="width: 400.0px; height: 320.0px;" /></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_signal_extraction.html"><img alt="../_images/sphx_glr_plot_signal_extraction_002.png" src="../_images/sphx_glr_plot_signal_extraction_002.png" style="width: 400.0px; height: 320.0px;" /></a>
 <div class="topic">
 <p class="topic-title"><strong>Full example</strong></p>
 <p>See the following example for a full file running the analysis:
@@ -749,19 +755,19 @@ set of confounds. (Note: only <code class="docutils literal notranslate"><span c
 to the brain development dataset).</p></li>
 <li><p><a class="reference internal" href="../modules/generated/nilearn.connectome.ConnectivityMeasure.html#nilearn.connectome.ConnectivityMeasure" title="nilearn.connectome.ConnectivityMeasure"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.connectome.ConnectivityMeasure</span></code></a> can be used to compute
 a correlation matrix (check the shape of your matrices).</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.5.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow</span></code></a> can show a correlation matrix.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.5.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow</span></code></a> can show a correlation matrix.</p></li>
 <li><p>The example above has the solution.</p></li>
 </ul>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 </section>
 </section>
 <section id="time-series-from-a-probabilistic-atlas">
-<h2>Time-series from a probabilistic atlas<a class="headerlink" href="#time-series-from-a-probabilistic-atlas" title="Permalink to this headline">#</a></h2>
+<h2>Time-series from a probabilistic atlas<a class="headerlink" href="#time-series-from-a-probabilistic-atlas" title="Permalink to this heading">#</a></h2>
 <section id="probabilistic-atlases">
-<h3>Probabilistic atlases<a class="headerlink" href="#probabilistic-atlases" title="Permalink to this headline">#</a></h3>
+<h3>Probabilistic atlases<a class="headerlink" href="#probabilistic-atlases" title="Permalink to this heading">#</a></h3>
 <p>The definition of regions as by a continuous probability map captures
 better our imperfect knowledge of boundaries in brain images (notably
 because of inter-subject registration errors). One example of such an
@@ -772,13 +778,13 @@ the <a class="reference external" href="https://team.inria.fr/parietal/18-2/spat
 4D nifti image. Visualization the atlas thus requires to visualize each
 of these maps, which requires accessing them with
 <a class="reference internal" href="../modules/generated/nilearn.image.index_img.html#nilearn.image.index_img" title="nilearn.image.index_img"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.image.index_img</span></code></a> (see the <a class="reference internal" href="../auto_examples/01_plotting/plot_overlay.html#sphx-glr-auto-examples-01-plotting-plot-overlay-py"><span class="std std-ref">corresponding example</span></a>).</p>
-<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_overlay.html"><img alt="../_images/sphx_glr_plot_overlay_001.png" src="../_images/sphx_glr_plot_overlay_001.png" style="width: 396.0px; height: 156.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/01_plotting/plot_overlay.html"><img alt="../_images/sphx_glr_plot_overlay_001.png" src="../_images/sphx_glr_plot_overlay_001.png" style="width: 396.0px; height: 156.0px;" /></a>
 </section>
 <section id="extracting-signals-from-a-probabilistic-atlas">
-<h3>Extracting signals from a probabilistic atlas<a class="headerlink" href="#extracting-signals-from-a-probabilistic-atlas" title="Permalink to this headline">#</a></h3>
+<h3>Extracting signals from a probabilistic atlas<a class="headerlink" href="#extracting-signals-from-a-probabilistic-atlas" title="Permalink to this heading">#</a></h3>
 <p>As with extraction of signals on a parcellation, extracting signals from
 a probabilistic atlas can be done with a “masker” object:  the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code>. It is created by
+<a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a>. It is created by
 specifying the important parameters, in particular the atlas:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.maskers</span> <span class="kn">import</span> <span class="n">NiftiMapsMasker</span>
 <span class="n">masker</span> <span class="o">=</span> <span class="n">NiftiMapsMasker</span><span class="p">(</span><span class="n">maps_img</span><span class="o">=</span><span class="n">atlas_filename</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -788,9 +794,9 @@ specifying the important parameters, in particular the atlas:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time_series</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">frmi_files</span><span class="p">,</span> <span class="n">confounds</span><span class="o">=</span><span class="n">csv_file</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The procedure is the same as with <a class="reference external" href="parcellation_time_series">brain parcellations</a> but using the <code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code>, and
+<p>The procedure is the same as with <a class="reference external" href="parcellation_time_series">brain parcellations</a> but using the <a class="reference internal" href="../modules/generated/nilearn.maskers.NiftiMapsMasker.html#nilearn.maskers.NiftiMapsMasker" title="nilearn.maskers.NiftiMapsMasker"><code class="xref py py-class docutils literal notranslate"><span class="pre">NiftiMapsMasker</span></code></a>, and
 the same considerations on using confounds regressors apply.</p>
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_probabilistic_atlas_extraction.html"><img alt="../_images/sphx_glr_plot_probabilistic_atlas_extraction_001.png" src="../_images/sphx_glr_plot_probabilistic_atlas_extraction_001.png" style="width: 280.0px; height: 200.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_probabilistic_atlas_extraction.html"><img alt="../_images/sphx_glr_plot_probabilistic_atlas_extraction_001.png" src="../_images/sphx_glr_plot_probabilistic_atlas_extraction_001.png" style="width: 280.0px; height: 200.0px;" /></a>
 <div class="topic">
 <p class="topic-title"><strong>Full example</strong></p>
 <p>A full example of extracting signals on a probabilistic:
@@ -808,7 +814,7 @@ with the MSDL atlas downloaded via
 </section>
 </section>
 <section id="a-functional-connectome-a-graph-of-interactions">
-<h2>A functional connectome: a graph of interactions<a class="headerlink" href="#a-functional-connectome-a-graph-of-interactions" title="Permalink to this headline">#</a></h2>
+<h2>A functional connectome: a graph of interactions<a class="headerlink" href="#a-functional-connectome-a-graph-of-interactions" title="Permalink to this heading">#</a></h2>
 <p>A square matrix, such as a correlation matrix, can also be seen as a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Graph_%28mathematics%29">“graph”</a>: a set
 of “nodes”, connected by “edges”. When these nodes are brain regions, and
@@ -820,14 +826,14 @@ In the case of the MSDL atlas
 (<a class="reference internal" href="../modules/generated/nilearn.datasets.fetch_atlas_msdl.html#nilearn.datasets.fetch_atlas_msdl" title="nilearn.datasets.fetch_atlas_msdl"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_atlas_msdl</span></code></a>), the CSV file readily comes
 with <a class="reference internal" href="../glossary.html#term-MNI"><span class="xref std std-term">MNI</span></a> coordinates for each region (see for instance example:
 <a class="reference internal" href="../auto_examples/03_connectivity/plot_probabilistic_atlas_extraction.html#sphx-glr-auto-examples-03-connectivity-plot-probabilistic-atlas-extraction-py"><span class="std std-ref">Extracting signals of a probabilistic atlas of functional regions</span></a>).</p>
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_probabilistic_atlas_extraction.html"><img alt="../_images/sphx_glr_plot_probabilistic_atlas_extraction_002.png" src="../_images/sphx_glr_plot_probabilistic_atlas_extraction_002.png"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_probabilistic_atlas_extraction.html"><img alt="../_images/sphx_glr_plot_probabilistic_atlas_extraction_002.png" src="../_images/sphx_glr_plot_probabilistic_atlas_extraction_002.png" /></a>
 <p>As you can see, the correlation matrix gives a very “full” graph: every
 node is connected to every other one. This is because it also captures
 indirect connections. In the next section we will see how to focus on
 direct connections only.</p>
 </section>
 <section id="a-functional-connectome-extracting-coordinates-of-regions">
-<h2>A functional connectome: extracting coordinates of regions<a class="headerlink" href="#a-functional-connectome-extracting-coordinates-of-regions" title="Permalink to this headline">#</a></h2>
+<h2>A functional connectome: extracting coordinates of regions<a class="headerlink" href="#a-functional-connectome-extracting-coordinates-of-regions" title="Permalink to this heading">#</a></h2>
 <p>For atlases without readily available label coordinates, center coordinates
 can be computed for each region on hard parcellation or probabilistic atlases.</p>
 <blockquote>
@@ -847,7 +853,7 @@ See example: <a class="reference internal" href="../auto_examples/03_connectivit
 </ul>
 </div></blockquote>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 <div class="topic">
 <p class="topic-title"><strong>References</strong></p>
@@ -945,6 +951,7 @@ connectomes across subjects”</a>.</p></li>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>

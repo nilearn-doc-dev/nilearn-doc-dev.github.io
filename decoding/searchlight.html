@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Running scikit-learn functions for more control on the analysis" href="going_further.html" /><link rel="prev" title="SpaceNet: decoding with spatial structure for better maps" href="space_net.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Searchlight : finding voxels containing information - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,11 +653,11 @@
         </div>
         <article role="main">
           <section id="searchlight-finding-voxels-containing-information">
-<span id="searchlight"></span><h1>Searchlight : finding voxels containing information<a class="headerlink" href="#searchlight-finding-voxels-containing-information" title="Permalink to this headline">#</a></h1>
+<span id="searchlight"></span><h1>Searchlight : finding voxels containing information<a class="headerlink" href="#searchlight-finding-voxels-containing-information" title="Permalink to this heading">#</a></h1>
 <p>This page overviews searchlight analyses and how they are approached
 in nilearn with the <a class="reference internal" href="../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchLight</span></code></a> estimator.</p>
 <section id="principle-of-the-searchlight">
-<h2>Principle of the Searchlight<a class="headerlink" href="#principle-of-the-searchlight" title="Permalink to this headline">#</a></h2>
+<h2>Principle of the Searchlight<a class="headerlink" href="#principle-of-the-searchlight" title="Permalink to this heading">#</a></h2>
 <p><a class="reference internal" href="../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchLight</span></code></a> analysis was introduced in [Kriegeskorte <em>et al.</em><a class="footnote-reference brackets" href="#footcite-kriegeskorte3863" id="id1">3</a>], and consists of scanning the brain with a <em>searchlight</em>.
 Briefly, a ball of given radius is scanned across the brain volume and the prediction accuracy of a classifier trained on the corresponding <a class="reference internal" href="../glossary.html#term-voxel"><span class="xref std std-term">voxels</span></a> is measured.</p>
 <p>Searchlights are also not limited to <a class="reference internal" href="../glossary.html#term-classification"><span class="xref std std-term">classification</span></a>; <a class="reference internal" href="../glossary.html#term-regression"><span class="xref std std-term">regression</span></a> (e.g., [Kahnt <em>et al.</em><a class="footnote-reference brackets" href="#footcite-kahnt2011549" id="id2">4</a>]) and representational similarity analysis (e.g., [Clarke and Tyler<a class="footnote-reference brackets" href="#footcite-clarke4766" id="id3">5</a>]) are other uses of searchlights.
@@ -662,12 +668,12 @@ Currently, only <a class="reference internal" href="../glossary.html#term-classi
 </div>
 </section>
 <section id="preparing-the-data">
-<h2>Preparing the data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">#</a></h2>
+<h2>Preparing the data<a class="headerlink" href="#preparing-the-data" title="Permalink to this heading">#</a></h2>
 <p><a class="reference internal" href="../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchLight</span></code></a> requires a series of brain volumes as input, <cite>X</cite>, each with
 a corresponding label, <cite>y</cite>. The number of brain volumes therefore correspond to
 the number of samples used for decoding.</p>
 <section id="masking">
-<h3>Masking<a class="headerlink" href="#masking" title="Permalink to this headline">#</a></h3>
+<h3>Masking<a class="headerlink" href="#masking" title="Permalink to this heading">#</a></h3>
 <p>One of the main elements that distinguish <a class="reference internal" href="../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchLight</span></code></a> from other
 algorithms is the notion of structuring element that scans the entire volume.
 This has an impact on the masking procedure.</p>
@@ -685,9 +691,9 @@ searchlight. This could be a full-brain mask or a gray-matter mask.</p>
 </section>
 </section>
 <section id="setting-up-the-searchlight">
-<h2>Setting up the searchlight<a class="headerlink" href="#setting-up-the-searchlight" title="Permalink to this headline">#</a></h2>
+<h2>Setting up the searchlight<a class="headerlink" href="#setting-up-the-searchlight" title="Permalink to this heading">#</a></h2>
 <section id="classifier">
-<h3>Classifier<a class="headerlink" href="#classifier" title="Permalink to this headline">#</a></h3>
+<h3>Classifier<a class="headerlink" href="#classifier" title="Permalink to this heading">#</a></h3>
 <p>The classifier used by default by <a class="reference internal" href="../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchLight</span></code></a> is LinearSVC with C=1 but
 this can be customized easily by passing an estimator parameter to the
 Searchlight. See scikit-learn documentation for <a class="reference external" href="http://scikit-learn.org/stable/supervised_learning.html">other classifiers</a>. You can
@@ -696,12 +702,12 @@ to the <a class="reference internal" href="../modules/generated/nilearn.decoding
 (e.g., feature scaling) for your searchlight.</p>
 </section>
 <section id="score-function">
-<h3>Score function<a class="headerlink" href="#score-function" title="Permalink to this headline">#</a></h3>
+<h3>Score function<a class="headerlink" href="#score-function" title="Permalink to this heading">#</a></h3>
 <p>Metrics can be specified by the “scoring” argument to the <a class="reference internal" href="../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchLight</span></code></a>, as
 detailed in the <a class="reference external" href="http://scikit-learn.org/dev/modules/model_evaluation.html#the-scoring-parameter-defining-model-evaluation-rules">scikit-learn documentation</a></p>
 </section>
 <section id="cross-validation">
-<h3>Cross validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">#</a></h3>
+<h3>Cross validation<a class="headerlink" href="#cross-validation" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchLight</span></code></a> will iterate on the volume and give a score to each <a class="reference internal" href="../glossary.html#term-voxel"><span class="xref std std-term">voxel</span></a>.
 This score is computed by running a classifier on selected <a class="reference internal" href="../glossary.html#term-voxel"><span class="xref std std-term">voxels</span></a>.
 In order to make this score as accurate as possible (and avoid overfitting),
@@ -719,7 +725,7 @@ LOROCV is often recommended. This can be performed by using <a class="reference 
 and then setting the group/run labels when fitting the estimator.</p>
 </section>
 <section id="sphere-radius">
-<h3>Sphere radius<a class="headerlink" href="#sphere-radius" title="Permalink to this headline">#</a></h3>
+<h3>Sphere radius<a class="headerlink" href="#sphere-radius" title="Permalink to this heading">#</a></h3>
 <p>An important parameter is the radius of the sphere that will run through
 the data. The sphere size determines the number of voxels/features to use
 for <a class="reference internal" href="../glossary.html#term-classification"><span class="xref std std-term">classification</span></a> (i.e. more <a class="reference internal" href="../glossary.html#term-voxel"><span class="xref std std-term">voxels</span></a> are included with larger spheres).</p>
@@ -734,9 +740,9 @@ the best detection performance in their simulation of 2mm isovoxel data.</p>
 </section>
 </section>
 <section id="visualization">
-<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h2>
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h2>
 <section id="id6">
-<h3>Searchlight<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>Searchlight<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>The results of the searchlight can be found in the <cite>scores_</cite> attribute of the
 <a class="reference internal" href="../modules/generated/nilearn.decoding.SearchLight.html#nilearn.decoding.SearchLight" title="nilearn.decoding.SearchLight"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchLight</span></code></a> object after fitting it to the data. Below is a
 visualization of the results from <a class="reference internal" href="../auto_examples/02_decoding/plot_haxby_searchlight.html#sphx-glr-auto-examples-02-decoding-plot-haxby-searchlight-py"><span class="std std-ref">Searchlight analysis of face
@@ -746,7 +752,7 @@ this slice, we can see that a cluster of <a class="reference internal" href="../
 contains information to distinguish pictures showed to the volunteers,
 which was the expected result.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_searchlight.html"><img alt="../_images/sphx_glr_plot_haxby_searchlight_001.png" src="../_images/sphx_glr_plot_haxby_searchlight_001.png" style="width: 176.0px; height: 183.20000000000002px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_searchlight.html"><img alt="../_images/sphx_glr_plot_haxby_searchlight_001.png" src="../_images/sphx_glr_plot_haxby_searchlight_001.png" style="width: 176.0px; height: 183.20000000000002px;" /></a>
 </figure>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -756,14 +762,14 @@ which was the expected result.</p>
 </div>
 </section>
 <section id="comparing-to-massively-univariate-analysis-f-score-or-spm">
-<h3>Comparing to massively univariate analysis: F_score or SPM<a class="headerlink" href="#comparing-to-massively-univariate-analysis-f-score-or-spm" title="Permalink to this headline">#</a></h3>
+<h3>Comparing to massively univariate analysis: F_score or SPM<a class="headerlink" href="#comparing-to-massively-univariate-analysis-f-score-or-spm" title="Permalink to this heading">#</a></h3>
 <p>The standard approach to brain mapping is performed using <em>Statistical
 Parametric Mapping</em> (<a class="reference internal" href="../glossary.html#term-SPM"><span class="xref std std-term">SPM</span></a>), using <a class="reference internal" href="../glossary.html#term-ANOVA"><span class="xref std std-term">ANOVA</span></a> (analysis of
 variance), and parametric tests (F-tests ot t-tests).
 Here we compute the <em>p-values</em> of the <a class="reference internal" href="../glossary.html#term-voxel"><span class="xref std std-term">voxels</span></a> <a class="footnote-reference brackets" href="#id9" id="id7">1</a>.
 To display the results, we use the negative log of the p-value.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_searchlight.html"><img alt="../_images/sphx_glr_plot_haxby_searchlight_002.png" src="../_images/sphx_glr_plot_haxby_searchlight_002.png" style="width: 176.0px; height: 183.20000000000002px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_searchlight.html"><img alt="../_images/sphx_glr_plot_haxby_searchlight_002.png" src="../_images/sphx_glr_plot_haxby_searchlight_002.png" style="width: 176.0px; height: 183.20000000000002px;" /></a>
 </figure>
 <p>Parametric scores can be converted into p-values using a reference
 theoretical distribution, which is known under specific assumptions
@@ -809,7 +815,7 @@ every <a class="reference internal" href="../glossary.html#term-voxel"><span cla
 This correction strategy is applied in nilearn
 <a class="reference internal" href="../modules/generated/nilearn.mass_univariate.permuted_ols.html#nilearn.mass_univariate.permuted_ols" title="nilearn.mass_univariate.permuted_ols"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.mass_univariate.permuted_ols</span></code></a> function.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html"><img alt="../_images/sphx_glr_plot_haxby_mass_univariate_001.png" src="../_images/sphx_glr_plot_haxby_mass_univariate_001.png" style="width: 174.0px; height: 137.4px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html"><img alt="../_images/sphx_glr_plot_haxby_mass_univariate_001.png" src="../_images/sphx_glr_plot_haxby_mass_univariate_001.png" style="width: 174.0px; height: 137.4px;" /></a>
 </figure>
 <p>We observe that the results obtained with a permutation test are less
 conservative than the ones obtained with a Bonferroni correction
@@ -855,8 +861,9 @@ adopts the suitable strategy according to the input data.</p>
 </section>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
-<p id="id11"><dl class="footnote brackets">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<div class="docutils container" id="id11">
+<dl class="footnote brackets">
 <dt class="label" id="footcite-kriegeskorte3863"><span class="brackets">3</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id5">2</a>)</span></dt>
 <dd><p>Nikolaus Kriegeskorte, Rainer Goebel, and Peter Bandettini. Information-based functional brain mapping. <em>Proceedings of the National Academy of Sciences</em>, 103(10):3863–3868, 2006. URL: <a class="reference external" href="https://www.pnas.org/content/103/10/3863">https://www.pnas.org/content/103/10/3863</a>, <a class="reference external" href="https://doi.org/10.1073/pnas.0600244103">doi:10.1073/pnas.0600244103</a>.</p>
 </dd>
@@ -870,7 +877,7 @@ adopts the suitable strategy according to the input data.</p>
 <dd><p>Joset A. Etzel, Jeffrey M. Zacks, and Todd S. Braver. Searchlight analysis: promise, pitfalls, and potential. <em>NeuroImage</em>, 78:261–269, 2013. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1053811913002917">https://www.sciencedirect.com/science/article/pii/S1053811913002917</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.neuroimage.2013.03.041">doi:https://doi.org/10.1016/j.neuroimage.2013.03.041</a>.</p>
 </dd>
 </dl>
-</p>
+</div>
 </section>
 </section>
 
@@ -964,6 +971,7 @@ adopts the suitable strategy according to the input data.</p>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>

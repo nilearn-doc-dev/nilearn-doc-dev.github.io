@@ -14,22 +14,22 @@
   
 <meta property="og:description" content="Page summary: This section shows how to use RegionExtractor to extract connected regions/components into a separate brain region and also shows how to learn functional connectivity interactions bet..." />
   
-<meta property="og:image" content="https://nilearn.github.io/auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png" />
+<meta property="og:image" content="https://nilearn.github.io/connectivity/auto_examples/03_connectivity/images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png" />
   
 <meta property="og:image:alt" content="dict-maps" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Clustering to parcellate the brain in regions" href="parcellating.html" /><link rel="prev" title="Extracting functional brain networks: ICA and related" href="resting_state_networks.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Region Extraction for better brain parcellations - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,7 +653,7 @@
         </div>
         <article role="main">
           <section id="region-extraction-for-better-brain-parcellations">
-<span id="region-extraction"></span><h1>Region Extraction for better brain parcellations<a class="headerlink" href="#region-extraction-for-better-brain-parcellations" title="Permalink to this headline">#</a></h1>
+<span id="region-extraction"></span><h1>Region Extraction for better brain parcellations<a class="headerlink" href="#region-extraction-for-better-brain-parcellations" title="Permalink to this heading">#</a></h1>
 <div class="topic">
 <p class="topic-title"><strong>Page summary</strong></p>
 <p>This section shows how to use <a class="reference internal" href="../modules/generated/nilearn.regions.RegionExtractor.html#nilearn.regions.RegionExtractor" title="nilearn.regions.RegionExtractor"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegionExtractor</span></code></a>
@@ -664,7 +670,7 @@ Sep 2014</a></p></li>
 </ul>
 </div>
 <section id="fetching-movie-watching-based-functional-datasets">
-<h2>Fetching movie-watching based functional datasets<a class="headerlink" href="#fetching-movie-watching-based-functional-datasets" title="Permalink to this headline">#</a></h2>
+<h2>Fetching movie-watching based functional datasets<a class="headerlink" href="#fetching-movie-watching-based-functional-datasets" title="Permalink to this heading">#</a></h2>
 <p>We use a naturalistic stimuli based movie-watching functional connectivity dataset
 of 20 subjects, which is already preprocessed, downsampled to 4mm isotropic resolution, and publicly available at
 <a class="reference external" href="https://osf.io/5hju4/files/">https://osf.io/5hju4/files/</a>. We use utilities
@@ -680,16 +686,16 @@ dataset.</p>
 </div>
 </section>
 <section id="brain-maps-using-dictionary-learning">
-<h2>Brain maps using <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a><a class="headerlink" href="#brain-maps-using-dictionary-learning" title="Permalink to this headline">#</a></h2>
+<h2>Brain maps using <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a><a class="headerlink" href="#brain-maps-using-dictionary-learning" title="Permalink to this heading">#</a></h2>
 <p>Here, we use object <a class="reference internal" href="../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning" title="nilearn.decomposition.DictLearning"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictLearning</span></code></a>, a multi subject model to decompose multi
 subjects <a class="reference internal" href="../glossary.html#term-fMRI"><span class="xref std std-term">fMRI</span></a> datasets into functionally defined maps. We do this by setting
 the parameters and calling <a class="reference internal" href="../modules/generated/nilearn.decomposition.DictLearning.html#nilearn.decomposition.DictLearning.fit" title="nilearn.decomposition.DictLearning.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DictLearning.fit</span></code></a> on the filenames of datasets without
-necessarily converting each file to <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="(in NiBabel v3.2.2+146.ga20f13ad)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Nifti1Image</span></code></a> object.</p>
+necessarily converting each file to <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.nifti1.html#nibabel.nifti1.Nifti1Image" title="(in NiBabel v4.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Nifti1Image</span></code></a> object.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.decomposition</span> <span class="kn">import</span> <span class="n">DictLearning</span>
 
 <span class="c1"># Initialize DictLearning object</span>
 <span class="n">dict_learn</span> <span class="o">=</span> <span class="n">DictLearning</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="mf">6.</span><span class="p">,</span>
-                          <span class="n">memory</span><span class="o">=</span><span class="s2">"nilearn_cache"</span><span class="p">,</span> <span class="n">memory_level</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                          <span class="n">memory</span><span class="o">=</span><span class="s2">&quot;nilearn_cache&quot;</span><span class="p">,</span> <span class="n">memory_level</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                           <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="c1"># Fit to the data</span>
 <span class="n">dict_learn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">func_filenames</span><span class="p">)</span>
@@ -700,22 +706,22 @@ necessarily converting each file to <a class="reference external" href="https://
 </div>
 </section>
 <section id="visualization-of-dictionary-learning-maps">
-<h2>Visualization of <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> maps<a class="headerlink" href="#visualization-of-dictionary-learning-maps" title="Permalink to this headline">#</a></h2>
+<h2>Visualization of <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> maps<a class="headerlink" href="#visualization-of-dictionary-learning-maps" title="Permalink to this heading">#</a></h2>
 <p>Showing maps stored in <code class="docutils literal notranslate"><span class="pre">components_img</span></code> using nilearn plotting utilities.
 Here, we use <a class="reference internal" href="../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_prob_atlas</span></code></a> for easy visualization of 4D atlas maps
 onto the anatomical standard template. Each map is displayed in different
 color and colors are random and automatically picked.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
 
-<span class="n">plotting</span><span class="o">.</span><span class="n">plot_prob_atlas</span><span class="p">(</span><span class="n">components_img</span><span class="p">,</span> <span class="n">view_type</span><span class="o">=</span><span class="s1">'filled_contours'</span><span class="p">,</span>
-                         <span class="n">title</span><span class="o">=</span><span class="s1">'Dictionary Learning maps'</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_prob_atlas</span><span class="p">(</span><span class="n">components_img</span><span class="p">,</span> <span class="n">view_type</span><span class="o">=</span><span class="s1">&#39;filled_contours&#39;</span><span class="p">,</span>
+                         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Dictionary Learning maps&#39;</span><span class="p">)</span>
 
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dict-maps" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png" style="width: 528.0px; height: 208.0px;"/></a></strong></p></section>
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dict-maps" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_001.png" style="width: 528.0px; height: 208.0px;" /></a></strong></p></section>
 <section id="region-extraction-with-dictionary-learning-maps">
-<h2>Region Extraction with <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> maps<a class="headerlink" href="#region-extraction-with-dictionary-learning-maps" title="Permalink to this headline">#</a></h2>
+<h2>Region Extraction with <a class="reference internal" href="../glossary.html#term-Dictionary-learning"><span class="xref std std-term">Dictionary learning</span></a> maps<a class="headerlink" href="#region-extraction-with-dictionary-learning-maps" title="Permalink to this heading">#</a></h2>
 <p>We use object <a class="reference internal" href="../modules/generated/nilearn.regions.RegionExtractor.html#nilearn.regions.RegionExtractor" title="nilearn.regions.RegionExtractor"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegionExtractor</span></code></a> for extracting brain connected regions
 from dictionary maps into separated brain activation regions with automatic
 thresholding strategy selected as <code class="docutils literal notranslate"><span class="pre">thresholding_strategy='ratio_n_voxels'</span></code>.
@@ -734,8 +740,8 @@ units to adapt well to the resolution of the image. Please see the documentation
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.regions</span> <span class="kn">import</span> <span class="n">RegionExtractor</span>
 
 <span class="n">extractor</span> <span class="o">=</span> <span class="n">RegionExtractor</span><span class="p">(</span><span class="n">components_img</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-                            <span class="n">thresholding_strategy</span><span class="o">=</span><span class="s1">'ratio_n_voxels'</span><span class="p">,</span>
-                            <span class="n">extractor</span><span class="o">=</span><span class="s1">'local_regions'</span><span class="p">,</span>
+                            <span class="n">thresholding_strategy</span><span class="o">=</span><span class="s1">&#39;ratio_n_voxels&#39;</span><span class="p">,</span>
+                            <span class="n">extractor</span><span class="o">=</span><span class="s1">&#39;local_regions&#39;</span><span class="p">,</span>
                             <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">min_region_size</span><span class="o">=</span><span class="mi">1350</span><span class="p">)</span>
 <span class="c1"># Just call fit() to process for regions extraction</span>
 <span class="n">extractor</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -750,23 +756,23 @@ units to adapt well to the resolution of the image. Please see the documentation
 </div>
 </section>
 <section id="visualization-of-region-extraction-results">
-<h2>Visualization of Region Extraction results<a class="headerlink" href="#visualization-of-region-extraction-results" title="Permalink to this headline">#</a></h2>
+<h2>Visualization of Region Extraction results<a class="headerlink" href="#visualization-of-region-extraction-results" title="Permalink to this heading">#</a></h2>
 <p>Showing region extraction results. The same function <a class="reference internal" href="../modules/generated/nilearn.plotting.plot_prob_atlas.html#nilearn.plotting.plot_prob_atlas" title="nilearn.plotting.plot_prob_atlas"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_prob_atlas</span></code></a> is used
 for visualizing extracted regions on a standard template. Each extracted brain
 region is assigned a color and as you can see that visual cortex area is extracted
 quite nicely into each hemisphere.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'</span><span class="si">%d</span><span class="s1"> regions are extracted from </span><span class="si">%d</span><span class="s1"> components.'</span>
-         <span class="s1">'</span><span class="se">\n</span><span class="s1">Each separate color of region indicates extracted region'</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> regions are extracted from </span><span class="si">%d</span><span class="s1"> components.&#39;</span>
+         <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Each separate color of region indicates extracted region&#39;</span>
          <span class="o">%</span> <span class="p">(</span><span class="n">n_regions_extracted</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">plotting</span><span class="o">.</span><span class="n">plot_prob_atlas</span><span class="p">(</span><span class="n">regions_extracted_img</span><span class="p">,</span> <span class="n">view_type</span><span class="o">=</span><span class="s1">'filled_contours'</span><span class="p">,</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_prob_atlas</span><span class="p">(</span><span class="n">regions_extracted_img</span><span class="p">,</span> <span class="n">view_type</span><span class="o">=</span><span class="s1">&#39;filled_contours&#39;</span><span class="p">,</span>
                          <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
 
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dict" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_002.png" style="width: 528.0px; height: 208.0px;"/></a></strong></p></section>
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dict" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_002.png" style="width: 528.0px; height: 208.0px;" /></a></strong></p></section>
 <section id="computing-functional-connectivity-matrices">
-<h2>Computing functional connectivity matrices<a class="headerlink" href="#computing-functional-connectivity-matrices" title="Permalink to this headline">#</a></h2>
+<h2>Computing functional connectivity matrices<a class="headerlink" href="#computing-functional-connectivity-matrices" title="Permalink to this heading">#</a></h2>
 <p>Here, we use the object called <a class="reference internal" href="../modules/generated/nilearn.connectome.ConnectivityMeasure.html#nilearn.connectome.ConnectivityMeasure" title="nilearn.connectome.ConnectivityMeasure"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectivityMeasure</span></code></a> to compute
 functional connectivity measured between each extracted brain regions. Many different
 kinds of measures exists in nilearn such as “correlation”, “partial correlation”, “tangent”,
@@ -782,8 +788,8 @@ The third step, we compute the mean correlation across all subjects.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.connectome</span> <span class="kn">import</span> <span class="n">ConnectivityMeasure</span>
 
 <span class="n">correlations</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="c1"># Initializing ConnectivityMeasure object with kind='correlation'</span>
-<span class="n">connectome_measure</span> <span class="o">=</span> <span class="n">ConnectivityMeasure</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'correlation'</span><span class="p">)</span>
+<span class="c1"># Initializing ConnectivityMeasure object with kind=&#39;correlation&#39;</span>
+<span class="n">connectome_measure</span> <span class="o">=</span> <span class="n">ConnectivityMeasure</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">filename</span><span class="p">,</span> <span class="n">confound</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">func_filenames</span><span class="p">,</span> <span class="n">confounds</span><span class="p">):</span>
     <span class="c1"># call transform from RegionExtractor object to extract timeseries signals</span>
     <span class="n">timeseries_each_subject</span> <span class="o">=</span> <span class="n">extractor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">confounds</span><span class="o">=</span><span class="n">confound</span><span class="p">)</span>
@@ -801,14 +807,14 @@ The third step, we compute the mean correlation across all subjects.</p>
 </div>
 </section>
 <section id="visualization-of-functional-connectivity-matrices">
-<h2>Visualization of functional connectivity matrices<a class="headerlink" href="#visualization-of-functional-connectivity-matrices" title="Permalink to this headline">#</a></h2>
+<h2>Visualization of functional connectivity matrices<a class="headerlink" href="#visualization-of-functional-connectivity-matrices" title="Permalink to this heading">#</a></h2>
 <p>Showing mean of correlation matrices computed between each extracted brain regions.
 At this point, we make use of nilearn image and plotting utilities to find
 automatically the coordinates required, for plotting connectome relations.
 Left image is the correlations in a matrix form and right image is the
 connectivity relations to brain regions plotted using <a class="reference internal" href="../modules/generated/nilearn.plotting.plot_connectome.html#nilearn.plotting.plot_connectome" title="nilearn.plotting.plot_connectome"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_connectome</span></code></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">title</span> <span class="o">=</span> <span class="s1">'Correlation between </span><span class="si">%d</span><span class="s1"> regions'</span> <span class="o">%</span> <span class="n">n_regions_extracted</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Correlation between </span><span class="si">%d</span><span class="s1"> regions&#39;</span> <span class="o">%</span> <span class="n">n_regions_extracted</span>
 
 <span class="c1"># First plot the matrix</span>
 <span class="n">display</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">plot_matrix</span><span class="p">(</span><span class="n">mean_correlations</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
@@ -819,35 +825,35 @@ connectivity relations to brain regions plotted using <a class="reference intern
 <span class="n">coords_connectome</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">find_probabilistic_atlas_cut_coords</span><span class="p">(</span><span class="n">regions_img</span><span class="p">)</span>
 
 <span class="n">plotting</span><span class="o">.</span><span class="n">plot_connectome</span><span class="p">(</span><span class="n">mean_correlations</span><span class="p">,</span> <span class="n">coords_connectome</span><span class="p">,</span>
-                         <span class="n">edge_threshold</span><span class="o">=</span><span class="s1">'90%'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+                         <span class="n">edge_threshold</span><span class="o">=</span><span class="s1">&#39;90%&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
 
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="matrix" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_003.png" style="width: 420.0px; height: 300.0px;"/></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="connectome" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_004.png" style="width: 396.0px; height: 156.0px;"/></a></strong></p></section>
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="matrix" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_003.png" style="width: 420.0px; height: 300.0px;" /></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="connectome" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_004.png" style="width: 396.0px; height: 156.0px;" /></a></strong></p></section>
 <section id="validating-results">
-<h2>Validating results<a class="headerlink" href="#validating-results" title="Permalink to this headline">#</a></h2>
+<h2>Validating results<a class="headerlink" href="#validating-results" title="Permalink to this heading">#</a></h2>
 <p>Showing only one specific network regions before and after region extraction. The first image displays the regions of one specific functional network without region extraction.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
 
 <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">index_img</span><span class="p">(</span><span class="n">components_img</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">coords</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">find_xyz_cut_coords</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">display</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                 <span class="n">title</span><span class="o">=</span><span class="s1">'Showing one specific network'</span><span class="p">)</span>
+                                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Showing one specific network&#39;</span><span class="p">)</span>
 
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dmn" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_005.png" style="width: 528.0px; height: 208.0px;"/></a></strong></p><p>The second image displays the regions split apart after region extraction. Here, we can
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dmn" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_005.png" style="width: 528.0px; height: 208.0px;" /></a></strong></p><p>The second image displays the regions split apart after region extraction. Here, we can
 validate that regions are nicely separated identified by each extracted region in different
 color.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">regions_indices_of_map3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">regions_index</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="n">display</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">plot_anat</span><span class="p">(</span><span class="n">cut_coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
-                             <span class="n">title</span><span class="o">=</span><span class="s1">'Regions from this network'</span><span class="p">)</span>
+                             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Regions from this network&#39;</span><span class="p">)</span>
 
 <span class="c1"># Add as an overlay all the regions of index 4</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="s1">'rgbcmyk'</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="s1">&#39;rgbcmyk&#39;</span>
 <span class="k">for</span> <span class="n">each_index_of_map3</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">regions_indices_of_map3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">colors</span><span class="p">):</span>
     <span class="n">display</span><span class="o">.</span><span class="n">add_overlay</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">index_img</span><span class="p">(</span><span class="n">regions_extracted_img</span><span class="p">,</span> <span class="n">each_index_of_map3</span><span class="p">),</span>
                         <span class="n">cmap</span><span class="o">=</span><span class="n">plotting</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">alpha_cmap</span><span class="p">(</span><span class="n">color</span><span class="p">))</span>
@@ -856,10 +862,10 @@ color.</p>
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dmn_reg" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_006.png" style="width: 528.0px; height: 208.0px;"/></a></strong></p><div class="admonition seealso">
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html"><img alt="dmn_reg" src="../_images/sphx_glr_plot_extract_regions_dictlearning_maps_006.png" style="width: 528.0px; height: 208.0px;" /></a></strong></p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>The full code can be found as an example:
-<a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html#sphx-glr-auto-examples-03-connectivity-plot-extract-regions-dictlearning-maps-py"><span class="std std-ref">Regions extraction using Dictionary learning and functional connectomes</span></a></p>
+<a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html#sphx-glr-auto-examples-03-connectivity-plot-extract-regions-dictlearning-maps-py"><span class="std std-ref">Regions extraction using dictionary learning and functional connectomes</span></a></p>
 </div>
 </section>
 </section>
@@ -944,6 +950,7 @@ color.</p>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>

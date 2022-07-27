@@ -30,7 +30,9 @@ More specifically:
 3. A GLM is applied to the dataset (effect/covariance, then contrast estimation).
 4. The Default Mode Network is displayed.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-23
+.. include:: ../../../examples/masker_note.rst
+
+.. GENERATED FROM PYTHON SOURCE LINES 17-25
 
 .. code-block:: default
 
@@ -49,13 +51,13 @@ More specifically:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-27
+.. GENERATED FROM PYTHON SOURCE LINES 26-29
 
 Prepare data and analysis parameters
 -------------------------------------
 Prepare the data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-37
+.. GENERATED FROM PYTHON SOURCE LINES 29-39
 
 .. code-block:: default
 
@@ -77,7 +79,7 @@ Prepare the data.
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/datasets/func.py:250: VisibleDeprecationWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/datasets/func.py:250: VisibleDeprecationWarning:
 
     Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
 
@@ -85,13 +87,13 @@ Prepare the data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-41
+.. GENERATED FROM PYTHON SOURCE LINES 40-43
 
 Estimate contrasts
 ------------------
 Specify the contrasts.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-54
+.. GENERATED FROM PYTHON SOURCE LINES 43-56
 
 .. code-block:: default
 
@@ -115,13 +117,13 @@ Specify the contrasts.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-58
+.. GENERATED FROM PYTHON SOURCE LINES 57-60
 
 Perform first level analysis
 ----------------------------
 Setup and fit GLM.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-62
+.. GENERATED FROM PYTHON SOURCE LINES 60-64
 
 .. code-block:: default
 
@@ -137,7 +139,7 @@ Setup and fit GLM.
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:63: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/first_level/first_level.py:63: UserWarning:
 
     Mean values of 0 observed.The data have probably been centered.Scaling might not work as expected
 
@@ -145,11 +147,11 @@ Setup and fit GLM.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-64
+.. GENERATED FROM PYTHON SOURCE LINES 65-66
 
 Estimate the contrast.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-77
+.. GENERATED FROM PYTHON SOURCE LINES 66-79
 
 .. code-block:: default
 
@@ -185,7 +187,7 @@ Estimate the contrast.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-84
+.. GENERATED FROM PYTHON SOURCE LINES 80-86
 
 Generating a report
 -------------------
@@ -194,7 +196,7 @@ portable, ready-to-view report with most of the pertinent information.
 This is easy to do if you have a fitted model and the list of contrasts,
 which we do here.
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-95
+.. GENERATED FROM PYTHON SOURCE LINES 86-97
 
 .. code-block:: default
 
@@ -216,11 +218,11 @@ which we do here.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-97
+.. GENERATED FROM PYTHON SOURCE LINES 98-99
 
 We have several ways to access the report:
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-101
+.. GENERATED FROM PYTHON SOURCE LINES 99-103
 
 .. code-block:: default
 
@@ -238,37 +240,32 @@ We have several ways to access the report:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.190 seconds)
+   **Total running time of the script:** ( 0 minutes  18.787 seconds)
 
-**Estimated memory usage:**  406 MB
+**Estimated memory usage:**  385 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_adhd_dmn.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_adhd_dmn.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_adhd_dmn.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_adhd_dmn.py <plot_adhd_dmn.py>`
 
-     :download:`Download Python source code: plot_adhd_dmn.py <plot_adhd_dmn.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_adhd_dmn.ipynb <plot_adhd_dmn.ipynb>`
+      :download:`Download Jupyter notebook: plot_adhd_dmn.ipynb <plot_adhd_dmn.ipynb>`
 
 
 .. only:: html

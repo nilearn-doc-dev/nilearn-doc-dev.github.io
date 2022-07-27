@@ -148,7 +148,7 @@ Training the decoder
  .. code-block:: none
 
     ______________________________________________________________________
-    logistic_l1: 23.39s
+    logistic_l1: 17.87s
               scissors vs all -- AUC: 0.92 +- 0.05
                   face vs all -- AUC: 0.98 +- 0.02
                    cat vs all -- AUC: 0.96 +- 0.04
@@ -158,7 +158,7 @@ Training the decoder
                 bottle vs all -- AUC: 0.90 +- 0.08
                  chair vs all -- AUC: 0.91 +- 0.06
     ______________________________________________________________________
-    logistic_l2: 67.50s
+    logistic_l2: 53.16s
               scissors vs all -- AUC: 0.91 +- 0.08
                   face vs all -- AUC: 0.97 +- 0.04
                    cat vs all -- AUC: 0.97 +- 0.03
@@ -168,7 +168,7 @@ Training the decoder
                 bottle vs all -- AUC: 0.82 +- 0.18
                  chair vs all -- AUC: 0.89 +- 0.18
     ______________________________________________________________________
-    ridge_classifier: 19.28s
+    ridge_classifier: 26.72s
               scissors vs all -- AUC: 0.91 +- 0.08
                   face vs all -- AUC: 0.96 +- 0.03
                    cat vs all -- AUC: 0.91 +- 0.07
@@ -178,7 +178,7 @@ Training the decoder
                 bottle vs all -- AUC: 0.85 +- 0.10
                  chair vs all -- AUC: 0.91 +- 0.06
     ______________________________________________________________________
-        svc_l1: 57.01s
+        svc_l1: 35.46s
               scissors vs all -- AUC: 0.92 +- 0.05
                   face vs all -- AUC: 0.98 +- 0.03
                    cat vs all -- AUC: 0.96 +- 0.04
@@ -188,7 +188,7 @@ Training the decoder
                 bottle vs all -- AUC: 0.89 +- 0.08
                  chair vs all -- AUC: 0.93 +- 0.04
     ______________________________________________________________________
-        svc_l2: 88.98s
+        svc_l2: 83.25s
               scissors vs all -- AUC: 0.90 +- 0.09
                   face vs all -- AUC: 0.96 +- 0.05
                    cat vs all -- AUC: 0.96 +- 0.04
@@ -365,37 +365,32 @@ Use the average EPI as a background
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 4 minutes  51.015 seconds)
+   **Total running time of the script:** ( 4 minutes  1.775 seconds)
 
-**Estimated memory usage:**  1271 MB
+**Estimated memory usage:**  1347 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_haxby_different_estimators.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_different_estimators.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_different_estimators.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_haxby_different_estimators.py <plot_haxby_different_estimators.py>`
 
-     :download:`Download Python source code: plot_haxby_different_estimators.py <plot_haxby_different_estimators.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_haxby_different_estimators.ipynb <plot_haxby_different_estimators.ipynb>`
+      :download:`Download Jupyter notebook: plot_haxby_different_estimators.ipynb <plot_haxby_different_estimators.ipynb>`
 
 
 .. only:: html

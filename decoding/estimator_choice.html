@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="FREM: fast ensembling of regularized models for robust decoding" href="frem.html" /><link rel="prev" title="An introduction to decoding" href="decoding_intro.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Choosing the right predictive model for neuroimaging - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,7 +653,7 @@
         </div>
         <article role="main">
           <section id="choosing-the-right-predictive-model-for-neuroimaging">
-<span id="estimator-choice"></span><h1>Choosing the right predictive model for neuroimaging<a class="headerlink" href="#choosing-the-right-predictive-model-for-neuroimaging" title="Permalink to this headline">#</a></h1>
+<span id="estimator-choice"></span><h1>Choosing the right predictive model for neuroimaging<a class="headerlink" href="#choosing-the-right-predictive-model-for-neuroimaging" title="Permalink to this heading">#</a></h1>
 <p>This page gives a few simple considerations on the choice of an estimator to
 tackle your <em>decoding</em> application, that is the prediction of external
 variables such as behavior or clinical traits from brain images. It is
@@ -656,13 +662,13 @@ is well suited to your problem and how to implement it easily with Nilearn.
 This builds on concepts introduced in this <a class="reference internal" href="decoding_intro.html#decoding-intro"><span class="std std-ref">didactic
 introduction to decoding with nilearn</span></a>.</p>
 <section id="predictions-regression-classification-and-multi-class">
-<h2>Predictions: regression, classification and multi-class<a class="headerlink" href="#predictions-regression-classification-and-multi-class" title="Permalink to this headline">#</a></h2>
+<h2>Predictions: regression, classification and multi-class<a class="headerlink" href="#predictions-regression-classification-and-multi-class" title="Permalink to this heading">#</a></h2>
 <p>As seen in the previous section, high-level objects in Nilearn help you decode
 easily your dataset using a <strong>mask</strong> and/or <strong>feature selection</strong>. You can tune
 the <strong>cross-validation</strong> and <strong>scoring</strong> schemes of your model. Those objects
 come in two kinds, depending on your usecase : <a class="reference internal" href="../glossary.html#term-regression"><span class="xref std std-term">Regression</span></a> or <a class="reference internal" href="../glossary.html#term-classification"><span class="xref std std-term">Classification</span></a>.</p>
 <section id="regression">
-<h3>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">#</a></h3>
+<h3>Regression<a class="headerlink" href="#regression" title="Permalink to this heading">#</a></h3>
 <p>A <a class="reference internal" href="../glossary.html#term-regression"><span class="xref std std-term">regression</span></a> problem is a learning task in which the variable to predict
 –that we often call <strong>y</strong> – is a continuous value, such as an age.
 Encoding models [Naselaris <em>et al.</em><a class="footnote-reference brackets" href="#footcite-naselaris2011" id="id1">1</a>] typically call for regressions.
@@ -678,7 +684,7 @@ neuroimaging at a reasonable computational cost.</p></li>
 </div>
 </section>
 <section id="classification-two-classes-or-multi-class">
-<h3>Classification: two classes or multi-class<a class="headerlink" href="#classification-two-classes-or-multi-class" title="Permalink to this headline">#</a></h3>
+<h3>Classification: two classes or multi-class<a class="headerlink" href="#classification-two-classes-or-multi-class" title="Permalink to this heading">#</a></h3>
 <p>A <a class="reference internal" href="../glossary.html#term-classification"><span class="xref std std-term">classification</span></a> task consists in predicting a <em>class</em> label for each
 observation. In other words, the variable to predict is categorical.</p>
 <p>Often <a class="reference internal" href="../glossary.html#term-classification"><span class="xref std std-term">classification</span></a> is performed between two classes, but it may well be
@@ -692,13 +698,13 @@ work by dividing the multi-class problem in a set of two class problems.
 There are two noteworthy strategies:</p>
 <dl class="field-list simple">
 <dt class="field-odd">One versus All</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html#sklearn.multiclass.OneVsRestClassifier" title="(in scikit-learn v1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.multiclass.OneVsRestClassifier</span></code></a>
+<dd class="field-odd"><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html#sklearn.multiclass.OneVsRestClassifier" title="(in scikit-learn v1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.multiclass.OneVsRestClassifier</span></code></a>
 An estimator is trained to distinguish each class from all the others,
 and during prediction, the final decision is taken by a vote across
 the different estimators.</p>
 </dd>
 <dt class="field-even">One versus One</dt>
-<dd class="field-even"><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsOneClassifier.html#sklearn.multiclass.OneVsOneClassifier" title="(in scikit-learn v1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.multiclass.OneVsOneClassifier</span></code></a>
+<dd class="field-even"><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsOneClassifier.html#sklearn.multiclass.OneVsOneClassifier" title="(in scikit-learn v1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.multiclass.OneVsOneClassifier</span></code></a>
 An estimator is trained to distinguish each pair of classes,
 and during prediction, the final decision is taken by a vote across
 the different estimators.</p>
@@ -716,21 +722,21 @@ whereas the latter is linear with the number of classes.</p>
 </ul>
 </div>
 <p><strong>Confusion matrix</strong> <a class="reference external" href="http://en.wikipedia.org/wiki/Confusion_matrix">The confusion matrix</a>,
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html#sklearn.metrics.confusion_matrix" title="(in scikit-learn v1.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.metrics.confusion_matrix</span></code></a> is a useful tool to
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html#sklearn.metrics.confusion_matrix" title="(in scikit-learn v1.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.metrics.confusion_matrix</span></code></a> is a useful tool to
 understand the classifier’s errors in a multiclass problem.</p>
 <figure class="align-left">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_multiclass.html"><img alt="../_images/sphx_glr_plot_haxby_multiclass_001.png" src="../_images/sphx_glr_plot_haxby_multiclass_001.png" style="width: 240.0px; height: 180.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_multiclass.html"><img alt="../_images/sphx_glr_plot_haxby_multiclass_001.png" src="../_images/sphx_glr_plot_haxby_multiclass_001.png" style="width: 240.0px; height: 180.0px;" /></a>
 </figure>
 <figure class="align-left">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_multiclass.html"><img alt="../_images/sphx_glr_plot_haxby_multiclass_002.png" src="../_images/sphx_glr_plot_haxby_multiclass_002.png" style="width: 280.0px; height: 200.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_multiclass.html"><img alt="../_images/sphx_glr_plot_haxby_multiclass_002.png" src="../_images/sphx_glr_plot_haxby_multiclass_002.png" style="width: 280.0px; height: 200.0px;" /></a>
 </figure>
 <figure class="align-left">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_multiclass.html"><img alt="../_images/sphx_glr_plot_haxby_multiclass_003.png" src="../_images/sphx_glr_plot_haxby_multiclass_003.png" style="width: 280.0px; height: 200.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_multiclass.html"><img alt="../_images/sphx_glr_plot_haxby_multiclass_003.png" src="../_images/sphx_glr_plot_haxby_multiclass_003.png" style="width: 280.0px; height: 200.0px;" /></a>
 </figure>
 </section>
 </section>
 <section id="different-linear-models">
-<h2>Different linear models<a class="headerlink" href="#different-linear-models" title="Permalink to this headline">#</a></h2>
+<h2>Different linear models<a class="headerlink" href="#different-linear-models" title="Permalink to this heading">#</a></h2>
 <p>Using Nilearn high-level objects, several estimators are easily available
 to model the relations between your images and the target to predict.
 For <a class="reference internal" href="../glossary.html#term-classification"><span class="xref std std-term">classification</span></a>, <a class="reference internal" href="../modules/generated/nilearn.decoding.Decoder.html#nilearn.decoding.Decoder" title="nilearn.decoding.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.decoding.Decoder</span></code></a> let you choose them
@@ -771,21 +777,21 @@ do decoding with any of these, see : <a class="reference internal" href="going_f
 </ul>
 </div>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_001.png" src="../_images/sphx_glr_plot_haxby_different_estimators_001.png" style="width: 480.0px; height: 480.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_001.png" src="../_images/sphx_glr_plot_haxby_different_estimators_001.png" style="width: 480.0px; height: 480.0px;" /></a>
 </figure>
-<hr class="docutils"/>
+<hr class="docutils" />
 <p>The corresponding weight maps (below) differ widely from one estimator to
 the other, although the prediction scores are fairly similar. In other
 terms, a well-performing estimator in terms of prediction error gives us
 little guarantee on the brain maps.</p>
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_006.png" src="../_images/sphx_glr_plot_haxby_different_estimators_006.png" style="width: 203.0px; height: 160.29999999999998px;"/></a>
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_005.png" src="../_images/sphx_glr_plot_haxby_different_estimators_005.png" style="width: 203.0px; height: 160.29999999999998px;"/></a>
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_004.png" src="../_images/sphx_glr_plot_haxby_different_estimators_004.png" style="width: 203.0px; height: 160.29999999999998px;"/></a>
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_002.png" src="../_images/sphx_glr_plot_haxby_different_estimators_002.png" style="width: 203.0px; height: 160.29999999999998px;"/></a>
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_003.png" src="../_images/sphx_glr_plot_haxby_different_estimators_003.png" style="width: 203.0px; height: 160.29999999999998px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_006.png" src="../_images/sphx_glr_plot_haxby_different_estimators_006.png" style="width: 203.0px; height: 160.29999999999998px;" /></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_005.png" src="../_images/sphx_glr_plot_haxby_different_estimators_005.png" style="width: 203.0px; height: 160.29999999999998px;" /></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_004.png" src="../_images/sphx_glr_plot_haxby_different_estimators_004.png" style="width: 203.0px; height: 160.29999999999998px;" /></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_002.png" src="../_images/sphx_glr_plot_haxby_different_estimators_002.png" style="width: 203.0px; height: 160.29999999999998px;" /></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_different_estimators.html"><img alt="../_images/sphx_glr_plot_haxby_different_estimators_003.png" src="../_images/sphx_glr_plot_haxby_different_estimators_003.png" style="width: 203.0px; height: 160.29999999999998px;" /></a>
 </section>
 <section id="setting-estimator-parameters">
-<h2>Setting estimator parameters<a class="headerlink" href="#setting-estimator-parameters" title="Permalink to this headline">#</a></h2>
+<h2>Setting estimator parameters<a class="headerlink" href="#setting-estimator-parameters" title="Permalink to this heading">#</a></h2>
 <p>Most estimators have parameters (called “hyper-parameters”) that can be set
 to optimize their performance to a given problem. By default, the Decoder
 objects in Nilearn already try several values to roughly adapt to your problem.</p>
@@ -805,7 +811,7 @@ as good performances on your data. You can see below an example in which the
 curve showing the score as a function of the parameter has bumps and peaks
 due to this noise.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_grid_search.html"><img alt="../_images/sphx_glr_plot_haxby_grid_search_001.png" src="../_images/sphx_glr_plot_haxby_grid_search_001.png" style="width: 360.0px; height: 240.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/02_decoding/plot_haxby_grid_search.html"><img alt="../_images/sphx_glr_plot_haxby_grid_search_001.png" src="../_images/sphx_glr_plot_haxby_grid_search_001.png" style="width: 360.0px; height: 240.0px;" /></a>
 </figure>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -813,7 +819,7 @@ due to this noise.</p>
 </div>
 </section>
 <section id="bagging-several-models">
-<h2>Bagging several models<a class="headerlink" href="#bagging-several-models" title="Permalink to this headline">#</a></h2>
+<h2>Bagging several models<a class="headerlink" href="#bagging-several-models" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://scikit-learn.org/stable/modules/ensemble.html#bagging-meta-estimator">Bagging</a>
 is a classical machine learning method to create ensemble of models that usually
 generalize to new data better than single model. The easiest way is to average
@@ -840,13 +846,14 @@ is important.</p></li>
 </div>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
-<p id="id3"><dl class="footnote brackets">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<div class="docutils container" id="id3">
+<dl class="footnote brackets">
 <dt class="label" id="footcite-naselaris2011"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Thomas Naselaris, Kendrick N. Kay, Shinji Nishimoto, and Jack L. Gallant. Encoding and decoding in fmri. <em>NeuroImage</em>, 56(2):400–410, May 2011. 20691790[pmid]. URL: <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/20691790">https://pubmed.ncbi.nlm.nih.gov/20691790</a>, <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2010.07.073">doi:10.1016/j.neuroimage.2010.07.073</a>.</p>
 </dd>
 </dl>
-</p>
+</div>
 </section>
 </section>
 
@@ -931,6 +938,7 @@ is important.</p></li>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>

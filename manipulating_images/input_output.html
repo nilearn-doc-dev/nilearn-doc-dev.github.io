@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Manipulating images: resampling, smoothing, masking, ROIs…" href="manipulating_images.html" /><link rel="prev" title="Manipulation brain volumes with nilearn" href="index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Input and output: neuroimaging data representation - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,17 +653,17 @@
         </div>
         <article role="main">
           <section id="input-and-output-neuroimaging-data-representation">
-<span id="extracting-data"></span><h1>Input and output: neuroimaging data representation<a class="headerlink" href="#input-and-output-neuroimaging-data-representation" title="Permalink to this headline">#</a></h1>
+<span id="extracting-data"></span><h1>Input and output: neuroimaging data representation<a class="headerlink" href="#input-and-output-neuroimaging-data-representation" title="Permalink to this heading">#</a></h1>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 <section id="inputing-data-file-names-or-image-objects">
-<span id="loading-data"></span><h2>Inputing data: file names or image objects<a class="headerlink" href="#inputing-data-file-names-or-image-objects" title="Permalink to this headline">#</a></h2>
+<span id="loading-data"></span><h2>Inputing data: file names or image objects<a class="headerlink" href="#inputing-data-file-names-or-image-objects" title="Permalink to this heading">#</a></h2>
 <section id="file-names-and-objects-3d-and-4d-images">
-<h3>File names and objects, 3D and 4D images<a class="headerlink" href="#file-names-and-objects-3d-and-4d-images" title="Permalink to this headline">#</a></h3>
+<h3>File names and objects, 3D and 4D images<a class="headerlink" href="#file-names-and-objects-3d-and-4d-images" title="Permalink to this heading">#</a></h3>
 <p>All Nilearn functions accept file names as arguments:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">smooth_img</span><span class="p">(</span><span class="s1">'/home/user/t_map001.nii'</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">smoothed_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">smooth_img</span><span class="p">(</span><span class="s1">&#39;/home/user/t_map001.nii&#39;</span><span class="p">)</span>  
 </pre></div>
 </div>
 <p>Nilearn can operate on either file names or <a class="reference external" href="http://nipy.org/nibabel/nibabel_images.html">NiftiImage objects</a>. The later represent the
@@ -671,14 +677,14 @@ series of 3D images. It can be <strong>a list of file names</strong>, if these c
 3D information:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># dataset folder contains subject1.nii and subject2.nii</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">smooth_img</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result_img</span> <span class="o">=</span> <span class="n">smooth_img</span><span class="p">([</span><span class="s1">'dataset/subject1.nii'</span><span class="p">,</span> <span class="s1">'dataset/subject2.nii'</span><span class="p">])</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result_img</span> <span class="o">=</span> <span class="n">smooth_img</span><span class="p">([</span><span class="s1">&#39;dataset/subject1.nii&#39;</span><span class="p">,</span> <span class="s1">&#39;dataset/subject2.nii&#39;</span><span class="p">])</span> 
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">result_img</span></code> is a 4D in-memory image, containing the data of both
 subjects.</p>
 </section>
 <section id="file-name-matching-globbing-and-user-path-expansion">
-<span id="filename-matching"></span><h3>File name matching: “globbing” and user path expansion<a class="headerlink" href="#file-name-matching-globbing-and-user-path-expansion" title="Permalink to this headline">#</a></h3>
+<span id="filename-matching"></span><h3>File name matching: “globbing” and user path expansion<a class="headerlink" href="#file-name-matching-globbing-and-user-path-expansion" title="Permalink to this heading">#</a></h3>
 <p>You can specify files with <em>wildcard</em> matching patterns (as in Unix
 shell):</p>
 <blockquote>
@@ -688,14 +694,14 @@ subject_01.nii, subject_03.nii, and subject_03.nii;
 <code class="docutils literal notranslate"><span class="pre">dataset/subject_*.nii</span></code> is a glob expression matching all filenames:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example with a smoothing process:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">smooth_img</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result_img</span> <span class="o">=</span> <span class="n">smooth_img</span><span class="p">(</span><span class="s2">"dataset/subject_*.nii"</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result_img</span> <span class="o">=</span> <span class="n">smooth_img</span><span class="p">(</span><span class="s2">&quot;dataset/subject_*.nii&quot;</span><span class="p">)</span> 
 </pre></div>
 </div>
 <p>Note that the resulting is a 4D image.</p>
 </li>
 <li><p><strong>Expanding the home directory</strong> <code class="docutils literal notranslate"><span class="pre">~</span></code> is expanded to your home
 directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result_img</span> <span class="o">=</span> <span class="n">smooth_img</span><span class="p">(</span><span class="s2">"~/dataset/subject_01.nii"</span><span class="p">)</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result_img</span> <span class="o">=</span> <span class="n">smooth_img</span><span class="p">(</span><span class="s2">&quot;~/dataset/subject_01.nii&quot;</span><span class="p">)</span> 
 </pre></div>
 </div>
 <p>Using <code class="docutils literal notranslate"><span class="pre">~</span></code> rather than specifying the details of the path is good
@@ -721,11 +727,11 @@ nilearn’s path expansion.</p>
 </section>
 </section>
 <section id="fetching-open-datasets-from-internet">
-<span id="datasets"></span><h2>Fetching open datasets from Internet<a class="headerlink" href="#fetching-open-datasets-from-internet" title="Permalink to this headline">#</a></h2>
+<span id="datasets"></span><h2>Fetching open datasets from Internet<a class="headerlink" href="#fetching-open-datasets-from-internet" title="Permalink to this heading">#</a></h2>
 <p>Nilearn provides dataset fetching function that
 automatically downloads reference
 datasets and atlases. They can be imported from
-<a class="reference internal" href="../modules/datasets.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a>:</p>
+<a class="reference internal" href="../modules/reference.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">haxby_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_haxby</span><span class="p">()</span>  
 </pre></div>
@@ -735,8 +741,8 @@ information on the retrieved dataset, including the
 file names on hard disk:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># The different files</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>  
-<span class="go">['anat', 'description', 'func', 'mask', 'mask_face', 'mask_face_little',</span>
-<span class="go">'mask_house', 'mask_house_little', 'mask_vt', 'session_target']</span>
+<span class="go">[&#39;anat&#39;, &#39;description&#39;, &#39;func&#39;, &#39;mask&#39;, &#39;mask_face&#39;, &#39;mask_face_little&#39;,</span>
+<span class="go">&#39;mask_house&#39;, &#39;mask_house_little&#39;, &#39;mask_vt&#39;, &#39;session_target&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Path to first functional file</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  
 <span class="go">/.../nilearn_data/haxby2001/subj1/bold.nii.gz</span>
@@ -754,15 +760,15 @@ follows:</p>
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>For a list of all the data fetching functions in nilearn, see
-<a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#datasets-ref" title="(in scikit-learn v1.0)"><span>sklearn.datasets: Datasets</span></a>.</p>
+<a class="reference internal" href="../modules/reference.html#datasets-ref"><span class="std std-ref">nilearn.datasets: Automatic Dataset Fetching</span></a>.</p>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 <div class="topic">
 <p class="topic-title"><strong>nilearn_data: Where is the downloaded data stored?</strong></p>
@@ -786,13 +792,13 @@ avoid the initial dataset download on the first fetching call.</p>
 function <a class="reference internal" href="../modules/generated/nilearn.datasets.get_data_dirs.html#nilearn.datasets.get_data_dirs" title="nilearn.datasets.get_data_dirs"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.datasets.get_data_dirs</span></code></a>.</p>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 </section>
 <section id="understanding-neuroimaging-data">
-<h2>Understanding neuroimaging data<a class="headerlink" href="#understanding-neuroimaging-data" title="Permalink to this headline">#</a></h2>
+<h2>Understanding neuroimaging data<a class="headerlink" href="#understanding-neuroimaging-data" title="Permalink to this heading">#</a></h2>
 <section id="nifti-and-analyze-data">
-<h3>Nifti and Analyze data<a class="headerlink" href="#nifti-and-analyze-data" title="Permalink to this headline">#</a></h3>
+<h3>Nifti and Analyze data<a class="headerlink" href="#nifti-and-analyze-data" title="Permalink to this heading">#</a></h3>
 <p>For volumetric data, nilearn works with data stored as in the Nifti
 structure (via the <a class="reference external" href="http://nipy.sourceforge.net/nibabel/">nibabel</a> package).</p>
 <p>The <a class="reference external" href="http://nifti.nimh.nih.gov/">NifTi</a> data structure (also used in
@@ -817,6 +823,17 @@ locations of the brain:
 documentation.</p>
 <p>Note: For older versions of <a class="reference external" href="http://nipy.sourceforge.net/nibabel/">nibabel</a>, affine and header can be retrieved
 with <code class="docutils literal notranslate"><span class="pre">get_affine()</span></code> and <code class="docutils literal notranslate"><span class="pre">get_header()</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>if you create images directly with <a class="reference external" href="http://nipy.sourceforge.net/nibabel/">nibabel</a>, beware of int64
+images. the default integer type used by Numpy is (signed) 64-bit.
+Several popular neuroimaging tools do not handle int64 Nifti
+images, so if you build Nifti images directly from Numpy arrays it
+is recommended to specify a smaller integer type, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;int32&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="topic">
 <p class="topic-title"><strong>Dataset formatting: data shape</strong></p>
 <p>It is important to appreciate two main representations for
@@ -835,7 +852,7 @@ to prefer this format.</p></li>
 </div>
 </section>
 <section id="niimg-like-objects">
-<span id="niimg"></span><h3>Niimg-like objects<a class="headerlink" href="#niimg-like-objects" title="Permalink to this headline">#</a></h3>
+<span id="niimg"></span><h3>Niimg-like objects<a class="headerlink" href="#niimg-like-objects" title="Permalink to this heading">#</a></h3>
 <p>Nilearn functions take as input argument what we call “Niimg-like
 objects”:</p>
 <p><strong>Niimg:</strong> A Niimg-like object can be one of the following:</p>
@@ -873,7 +890,7 @@ be to <a class="reference external" href="https://nipy.org/nibabel/images_and_me
 </div>
 </section>
 <section id="text-files-phenotype-or-behavior">
-<h3>Text files: phenotype or behavior<a class="headerlink" href="#text-files-phenotype-or-behavior" title="Permalink to this headline">#</a></h3>
+<h3>Text files: phenotype or behavior<a class="headerlink" href="#text-files-phenotype-or-behavior" title="Permalink to this heading">#</a></h3>
 <p>Phenotypic or behavioral data are often provided as text or CSV
 (Comma Separated Values) file. They
 can be loaded with <cite>pd.read_csv</cite> but you may have to specify some options
@@ -883,11 +900,11 @@ presented to the subject:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">haxby_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_haxby</span><span class="p">()</span>  
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">session_target</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stimuli</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="s1">'labels'</span><span class="p">]</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">haxby_dataset</span><span class="o">.</span><span class="n">session_target</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stimuli</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span>  
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">stimuli</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>  
-<span class="go">['bottle' 'cat' 'chair' 'face' 'house' 'rest' 'scissors' 'scrambledpix'</span>
-<span class="go"> 'shoe']</span>
+<span class="go">[&#39;bottle&#39; &#39;cat&#39; &#39;chair&#39; &#39;face&#39; &#39;house&#39; &#39;rest&#39; &#39;scissors&#39; &#39;scrambledpix&#39;</span>
+<span class="go"> &#39;shoe&#39;]</span>
 </pre></div>
 </div>
 <div class="topic">
@@ -896,7 +913,7 @@ presented to the subject:</p>
 data from CSV files and manipulate them.</p>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 </section>
 </section>
@@ -986,6 +1003,7 @@ data from CSV files and manipulate them.</p>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>

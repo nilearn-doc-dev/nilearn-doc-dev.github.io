@@ -312,37 +312,32 @@ Plot the prediction scores using matplotlib
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  1.593 seconds)
+   **Total running time of the script:** ( 1 minutes  25.871 seconds)
 
-**Estimated memory usage:**  916 MB
+**Estimated memory usage:**  912 MB
 
 
 .. _sphx_glr_download_auto_examples_02_decoding_plot_haxby_grid_search.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_grid_search.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/02_decoding/plot_haxby_grid_search.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_haxby_grid_search.py <plot_haxby_grid_search.py>`
 
-     :download:`Download Python source code: plot_haxby_grid_search.py <plot_haxby_grid_search.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_haxby_grid_search.ipynb <plot_haxby_grid_search.ipynb>`
+      :download:`Download Jupyter notebook: plot_haxby_grid_search.ipynb <plot_haxby_grid_search.ipynb>`
 
 
 .. only:: html

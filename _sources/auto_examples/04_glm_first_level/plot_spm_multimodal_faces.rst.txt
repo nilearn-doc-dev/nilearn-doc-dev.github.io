@@ -68,6 +68,22 @@ Fetch the SPM multimodal_faces data.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    Dataset created in /home/alexis/nilearn_data/spm_multimodal_fmri
+
+    Missing 390 functional scans for session 1.
+    Data absent, downloading...
+    Downloading data from http://www.fil.ion.ucl.ac.uk/spm/download/data/mmfaces/multimodal_fmri.zip ...
+    Downloaded 1277952 of 134263085 bytes (1.0%,  1.8min remaining)    Downloaded 3620864 of 134263085 bytes (2.7%,  1.2min remaining)    Downloaded 7331840 of 134263085 bytes (5.5%,   52.3s remaining)    Downloaded 12173312 of 134263085 bytes (9.1%,   40.3s remaining)    Downloaded 18833408 of 134263085 bytes (14.0%,   30.8s remaining)    Downloaded 20725760 of 134263085 bytes (15.4%,   33.0s remaining)    Downloaded 23216128 of 134263085 bytes (17.3%,   33.6s remaining)    Downloaded 27025408 of 134263085 bytes (20.1%,   31.9s remaining)    Downloaded 31768576 of 134263085 bytes (23.7%,   29.1s remaining)    Downloaded 38248448 of 134263085 bytes (28.5%,   25.2s remaining)    Downloaded 40509440 of 134263085 bytes (30.2%,   25.6s remaining)    Downloaded 42901504 of 134263085 bytes (32.0%,   25.7s remaining)    Downloaded 46686208 of 134263085 bytes (34.8%,   24.5s remaining)    Downloaded 51838976 of 134263085 bytes (38.6%,   22.4s remaining)    Downloaded 55517184 of 134263085 bytes (41.3%,   21.4s remaining)    Downloaded 57090048 of 134263085 bytes (42.5%,   21.7s remaining)    Downloaded 59236352 of 134263085 bytes (44.1%,   21.6s remaining)    Downloaded 62799872 of 134263085 bytes (46.8%,   20.6s remaining)    Downloaded 67747840 of 134263085 bytes (50.5%,   18.7s remaining)    Downloaded 73916416 of 134263085 bytes (55.1%,   16.4s remaining)    Downloaded 75792384 of 134263085 bytes (56.5%,   16.3s remaining)    Downloaded 78716928 of 134263085 bytes (58.6%,   15.6s remaining)    Downloaded 83107840 of 134263085 bytes (61.9%,   14.2s remaining)    Downloaded 88858624 of 134263085 bytes (66.2%,   12.3s remaining)    Downloaded 95682560 of 134263085 bytes (71.3%,   10.1s remaining)    Downloaded 98811904 of 134263085 bytes (73.6%,    9.4s remaining)    Downloaded 101949440 of 134263085 bytes (75.9%,    8.6s remaining)    Downloaded 106315776 of 134263085 bytes (79.2%,    7.4s remaining)    Downloaded 111992832 of 134263085 bytes (83.4%,    5.8s remaining)    Downloaded 119447552 of 134263085 bytes (89.0%,    3.7s remaining)    Downloaded 122396672 of 134263085 bytes (91.2%,    3.0s remaining)    Downloaded 125468672 of 134263085 bytes (93.4%,    2.3s remaining)    Downloaded 129933312 of 134263085 bytes (96.8%,    1.1s remaining) ...done. (34 seconds, 0 min)
+    Extracting data from /home/alexis/nilearn_data/spm_multimodal_fmri/sub001/multimodal_fmri.zip..... done.
+    Downloading data from http://www.fil.ion.ucl.ac.uk/spm/download/data/mmfaces/multimodal_smri.zip ...
+     ...done. (1 seconds, 0 min)
+    Extracting data from /home/alexis/nilearn_data/spm_multimodal_fmri/sub001/multimodal_smri.zip..... done.
+
 
 
 
@@ -331,21 +347,21 @@ them.
 
     Computing contrasts
             contrast id: faces-scrambled
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
             contrast id: scrambled-faces
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
             contrast id: effects_of_interest
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/contrasts.py:352: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/contrasts.py:352: UserWarning:
 
     Running approximate fixed effects on F statistics.
 
@@ -365,37 +381,32 @@ also displays some responses in the frontal lobe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  37.872 seconds)
+   **Total running time of the script:** ( 2 minutes  9.126 seconds)
 
-**Estimated memory usage:**  940 MB
+**Estimated memory usage:**  984 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_spm_multimodal_faces.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_spm_multimodal_faces.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_spm_multimodal_faces.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_spm_multimodal_faces.py <plot_spm_multimodal_faces.py>`
 
-     :download:`Download Python source code: plot_spm_multimodal_faces.py <plot_spm_multimodal_faces.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_spm_multimodal_faces.ipynb <plot_spm_multimodal_faces.ipynb>`
+      :download:`Download Jupyter notebook: plot_spm_multimodal_faces.ipynb <plot_spm_multimodal_faces.ipynb>`
 
 
 .. only:: html

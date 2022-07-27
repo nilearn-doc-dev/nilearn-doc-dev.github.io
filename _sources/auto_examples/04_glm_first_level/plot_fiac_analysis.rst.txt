@@ -245,7 +245,7 @@ Next, we compute and plot the statistics.
 
     Computing contrasts...
       Contrast  1 out of 8: SStSSp_minus_DStDSp
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
@@ -256,7 +256,7 @@ Next, we compute and plot the statistics.
       Contrast  6 out of 8: DSp_minus_SSp_for_DSt
       Contrast  7 out of 8: Deactivation
       Contrast  8 out of 8: Effects_of_interest
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/contrasts.py:352: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/contrasts.py:352: UserWarning:
 
     Running approximate fixed effects on F statistics.
 
@@ -314,7 +314,7 @@ Compute the statistics for the first session.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6212879c90>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8faec5450>
 
 
 
@@ -348,7 +348,7 @@ Compute the statistics for the second session.
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f621f2dda20>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8ed50ae00>
 
 
 
@@ -383,11 +383,11 @@ Compute the Fixed effects statistics.
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/contrasts.py:352: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/contrasts.py:352: UserWarning:
 
     Running approximate fixed effects on F statistics.
 
@@ -427,11 +427,11 @@ and have the contrast, we can quickly create a summary report.
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:657: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/first_level/first_level.py:657: UserWarning:
 
     One contrast given, assuming it for all 2 runs
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/contrasts.py:352: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/contrasts.py:352: UserWarning:
 
     Running approximate fixed effects on F statistics.
 
@@ -461,37 +461,32 @@ We have several ways to access the report:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  24.885 seconds)
+   **Total running time of the script:** ( 0 minutes  52.718 seconds)
 
 **Estimated memory usage:**  367 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_fiac_analysis.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_fiac_analysis.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_fiac_analysis.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_fiac_analysis.py <plot_fiac_analysis.py>`
 
-     :download:`Download Python source code: plot_fiac_analysis.py <plot_fiac_analysis.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_fiac_analysis.ipynb <plot_fiac_analysis.ipynb>`
+      :download:`Download Jupyter notebook: plot_fiac_analysis.ipynb <plot_fiac_analysis.ipynb>`
 
 
 .. only:: html

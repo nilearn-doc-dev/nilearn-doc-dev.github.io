@@ -86,7 +86,7 @@ Plotting with enhancement of background image with dim=-.5
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258a829b0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8facd7670>
 
 
 
@@ -119,7 +119,7 @@ Plotting with no change of contrast in background image with dim=0
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f62588f0550>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8eaee7a30>
 
 
 
@@ -152,7 +152,7 @@ Plotting with decrease of contrast in background image with dim=.5
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7f6258a805b0>
+    <nilearn.plotting.displays._slicers.OrthoSlicer object at 0x7ff8faec5000>
 
 
 
@@ -187,37 +187,32 @@ Plotting with more decrease in contrast with dim=1
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.055 seconds)
+   **Total running time of the script:** ( 0 minutes  6.332 seconds)
 
 **Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_01_plotting_plot_dim_plotting.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/01_plotting/plot_dim_plotting.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/01_plotting/plot_dim_plotting.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_dim_plotting.py <plot_dim_plotting.py>`
 
-     :download:`Download Python source code: plot_dim_plotting.py <plot_dim_plotting.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_dim_plotting.ipynb <plot_dim_plotting.ipynb>`
+      :download:`Download Jupyter notebook: plot_dim_plotting.ipynb <plot_dim_plotting.ipynb>`
 
 
 .. only:: html

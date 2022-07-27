@@ -124,7 +124,7 @@ Showing thresholding results by importing plotting modules and its utilities
  .. code-block:: none
 
 
-    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7f62041b3a90>
+    <nilearn.plotting.displays._slicers.ZSlicer object at 0x7ff8f2fad570>
 
 
 
@@ -195,7 +195,7 @@ Visualizing region extraction results
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/plotting/displays/_axes.py:71: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/plotting/displays/_axes.py:71: UserWarning:
 
     No contour levels were found within the data range.
 
@@ -206,37 +206,32 @@ Visualizing region extraction results
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.259 seconds)
+   **Total running time of the script:** ( 0 minutes  20.623 seconds)
 
 **Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_06_manipulating_images_plot_extract_rois_statistical_maps.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/06_manipulating_images/plot_extract_rois_statistical_maps.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/06_manipulating_images/plot_extract_rois_statistical_maps.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_extract_rois_statistical_maps.py <plot_extract_rois_statistical_maps.py>`
 
-     :download:`Download Python source code: plot_extract_rois_statistical_maps.py <plot_extract_rois_statistical_maps.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_extract_rois_statistical_maps.ipynb <plot_extract_rois_statistical_maps.ipynb>`
+      :download:`Download Jupyter notebook: plot_extract_rois_statistical_maps.ipynb <plot_extract_rois_statistical_maps.ipynb>`
 
 
 .. only:: html

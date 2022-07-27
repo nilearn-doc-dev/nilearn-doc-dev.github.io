@@ -111,7 +111,7 @@ and the task_label as specified in the file names.
 
  .. code-block:: none
 
-    /home/alexis/singbrain/repo/nilearn/nilearn/glm/first_level/first_level.py:901: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/glm/first_level/first_level.py:901: UserWarning:
 
     SliceTimingRef not found in file /home/alexis/nilearn_data/fMRI-language-localizer-demo-dataset/derivatives/sub-01/func/sub-01_task-languagelocalizer_desc-preproc_bold.json. It will be assumed that the slice timing reference is 0.0 percent of the repetition time. If it is not the case it will need to be set manually in the generated list of models
 
@@ -344,37 +344,32 @@ Next, on the right hemisphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  20.115 seconds)
+   **Total running time of the script:** ( 4 minutes  44.834 seconds)
 
-**Estimated memory usage:**  456 MB
+**Estimated memory usage:**  513 MB
 
 
 .. _sphx_glr_download_auto_examples_07_advanced_plot_surface_bids_analysis.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/07_advanced/plot_surface_bids_analysis.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/07_advanced/plot_surface_bids_analysis.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_surface_bids_analysis.py <plot_surface_bids_analysis.py>`
 
-     :download:`Download Python source code: plot_surface_bids_analysis.py <plot_surface_bids_analysis.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_surface_bids_analysis.ipynb <plot_surface_bids_analysis.ipynb>`
+      :download:`Download Jupyter notebook: plot_surface_bids_analysis.ipynb <plot_surface_bids_analysis.ipynb>`
 
 
 .. only:: html

@@ -56,6 +56,17 @@ At first, we grab the localizer data.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    Dataset created in /home/alexis/nilearn_data/localizer_first_level
+
+    Downloading data from https://osf.io/2bqxn/download ...
+    Downloaded 6299648 of 34532740 bytes (18.2%,    4.5s remaining)    Downloaded 12836864 of 34532740 bytes (37.2%,    3.4s remaining)    Downloaded 19816448 of 34532740 bytes (57.4%,    2.2s remaining)    Downloaded 25911296 of 34532740 bytes (75.0%,    1.3s remaining)    Downloaded 34275328 of 34532740 bytes (99.3%,    0.0s remaining) ...done. (7 seconds, 0 min)
+    Extracting data from /home/alexis/nilearn_data/localizer_first_level/62d16779cfae29f3623d6a194141d263/download..... done.
+
 
 
 
@@ -235,37 +246,32 @@ conditions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  19.123 seconds)
+   **Total running time of the script:** ( 0 minutes  19.981 seconds)
 
-**Estimated memory usage:**  256 MB
+**Estimated memory usage:**  272 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_fir_model.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_fir_model.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/04_glm_first_level/plot_fir_model.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_fir_model.py <plot_fir_model.py>`
 
-     :download:`Download Python source code: plot_fir_model.py <plot_fir_model.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_fir_model.ipynb <plot_fir_model.ipynb>`
+      :download:`Download Jupyter notebook: plot_fir_model.ipynb <plot_fir_model.ipynb>`
 
 
 .. only:: html

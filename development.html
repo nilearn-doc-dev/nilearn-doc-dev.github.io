@@ -19,17 +19,17 @@
 <meta property="og:image:alt" content="Nilearn" />
   <link rel="search" title="Search" href="search.html" /><link rel="next" title="Maintenance" href="maintenance.html" /><link rel="prev" title="Migrating from Nistats" href="nistats_migration.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Contributing - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,20 +653,24 @@
         </div>
         <article role="main">
           <section id="contributing">
-<span id="development-process"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">#</a></h1>
+<span id="development-process"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h1>
 <section id="how-to-get-help">
-<span id="id1"></span><h2>How to get help?<a class="headerlink" href="#how-to-get-help" title="Permalink to this headline">#</a></h2>
+<span id="id1"></span><h2>How to get help?<a class="headerlink" href="#how-to-get-help" title="Permalink to this heading">#</a></h2>
 <p>If you have issues when using Nilearn, or if you have questions on how to use it, please don’t hesitate to reach out!</p>
 <p>There are currently three ways to interact with the Nilearn team: through the <a class="reference external" href="https://neurostars.org/tag/nilearn">neurostars</a> forum, our <a class="reference external" href="https://github.com/nilearn/nilearn">github</a> issues, and through our weekly <a class="reference external" href="https://github.com/nilearn/nilearn/issues/2882">office hours</a>, usually <strong>every Friday from 4pm to 5pm UTC</strong>.</p>
+<div class="topic">
+<p class="topic-title"><strong>Nilearn office hours announcement</strong></p>
+<p>The office hours will not be held over the summer and will restart in September.</p>
+</div>
 <p>If you have a <em>usage question</em>, that is if you need help troubleshooting scripts using Nilearn, we would appreciate it if you either ask it during office hours or create a topic on <a class="reference external" href="https://neurostars.org/tag/nilearn">neurostars</a> with the “nilearn” tag.
 Asking questions or reporting issues is always valuable because it will help other users having the same problem. So, please don’t hold onto a burning question!</p>
 <p>We ask that you <em>don’t</em> open an issue on <a class="reference external" href="https://github.com/nilearn/nilearn">GitHub</a> for usage questions. We use our <a class="reference external" href="https://github.com/nilearn/nilearn">GitHub</a> issue board for bug reports, feature requests, and documentation changes only.</p>
 </section>
 <section id="how-to-help-the-project">
-<h2>How to help the project?<a class="headerlink" href="#how-to-help-the-project" title="Permalink to this headline">#</a></h2>
+<h2>How to help the project?<a class="headerlink" href="#how-to-help-the-project" title="Permalink to this heading">#</a></h2>
 <p>If you are interested in contributing to the Nilearn project, we thank you very much. Note that there are multiple ways to help us, and not all of them require writing code.</p>
 <section id="report-bugs-or-discuss-enhancement-ideas">
-<h3>Report bugs or discuss enhancement ideas<a class="headerlink" href="#report-bugs-or-discuss-enhancement-ideas" title="Permalink to this headline">#</a></h3>
+<h3>Report bugs or discuss enhancement ideas<a class="headerlink" href="#report-bugs-or-discuss-enhancement-ideas" title="Permalink to this heading">#</a></h3>
 <p>We welcome open discussion around improvements—both to the documentation as well as to the code base—through our GitHub issue board!</p>
 <blockquote>
 <div><ul class="simple">
@@ -671,12 +681,12 @@ Asking questions or reporting issues is always valuable because it will help oth
 </div></blockquote>
 </section>
 <section id="answer-questions">
-<h3>Answer questions<a class="headerlink" href="#answer-questions" title="Permalink to this headline">#</a></h3>
+<h3>Answer questions<a class="headerlink" href="#answer-questions" title="Permalink to this heading">#</a></h3>
 <p>Another way to help the project is to answer questions on <a class="reference external" href="https://neurostars.org/tag/nilearn">neurostars</a>, or comment on github <a class="reference external" href="https://github.com/nilearn/nilearn/issues">issues</a>.
 Some <a class="reference external" href="https://github.com/nilearn/nilearn/issues">issues</a> are used to gather user opinions on various questions, and any input from the community is valuable to us.</p>
 </section>
 <section id="review-pull-requests">
-<h3>Review Pull Requests<a class="headerlink" href="#review-pull-requests" title="Permalink to this headline">#</a></h3>
+<h3>Review Pull Requests<a class="headerlink" href="#review-pull-requests" title="Permalink to this heading">#</a></h3>
 <p>Any addition to the Nilearn’s code base has to be reviewed and approved by several people including at least two <a class="reference internal" href="authors.html#core-devs"><span class="std std-ref">Core developers</span></a>.
 This can put a heavy burden on <a class="reference internal" href="authors.html#core-devs"><span class="std std-ref">Core developers</span></a> when a lot of <a class="reference external" href="https://github.com/nilearn/nilearn/pulls">pull requests</a> are opened at the same time.
 We welcome help in reviewing <a class="reference external" href="https://github.com/nilearn/nilearn/pulls">pull requests</a> from any community member.
@@ -685,7 +695,7 @@ We do not expect community members to be experts in all changes included in
 As always, more eyes on a code change means that the code is more likely to work in a wide variety of contexts!</p>
 </section>
 <section id="join-the-triage-team">
-<h3>Join the triage team<a class="headerlink" href="#join-the-triage-team" title="Permalink to this headline">#</a></h3>
+<h3>Join the triage team<a class="headerlink" href="#join-the-triage-team" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference internal" href="authors.html#triage"><span class="std std-ref">Triage team</span></a> is composed of community members who have permission on <a class="reference external" href="https://github.com/nilearn/nilearn">github</a> to label and close <a class="reference external" href="https://github.com/nilearn/nilearn/issues">issues</a>.
 Their work is crucial to improve the communication in the project and limit the crowding of the issue tracker.
 The <a class="reference internal" href="maintenance.html#issue-labels"><span class="std std-ref">Labels</span></a> and <a class="reference internal" href="maintenance.html#closing-policy"><span class="std std-ref">Closing policy</span></a> of the project is defined in more details in the <a class="reference internal" href="maintenance.html#maintenance-process"><span class="std std-ref">Maintenance</span></a> page.</p>
@@ -693,7 +703,7 @@ The <a class="reference internal" href="maintenance.html#issue-labels"><span cla
 If you are interested in joining the <a class="reference internal" href="authors.html#triage"><span class="std std-ref">Triage team</span></a>, please read the <a class="reference internal" href="maintenance.html#maintenance-process"><span class="std std-ref">Maintenance</span></a> page and contact one of the <a class="reference internal" href="authors.html#core-devs"><span class="std std-ref">Core developers</span></a> to express your interest!</p>
 </section>
 <section id="contribute-code">
-<h3>Contribute code<a class="headerlink" href="#contribute-code" title="Permalink to this headline">#</a></h3>
+<h3>Contribute code<a class="headerlink" href="#contribute-code" title="Permalink to this heading">#</a></h3>
 <p>If you want to contribute code:</p>
 <blockquote>
 <div><ul class="simple">
@@ -706,10 +716,10 @@ instructions for  <a class="reference internal" href="#setting-up-your-environme
 </section>
 </section>
 <section id="how-do-we-decide-what-code-goes-in">
-<h2>How do we decide what code goes in?<a class="headerlink" href="#how-do-we-decide-what-code-goes-in" title="Permalink to this headline">#</a></h2>
+<h2>How do we decide what code goes in?<a class="headerlink" href="#how-do-we-decide-what-code-goes-in" title="Permalink to this heading">#</a></h2>
 <p>The following sections explain the <a class="reference internal" href="#nilearn-scope"><span class="std std-ref">Scope of the project</span></a> and <a class="reference internal" href="#nilearn-governance"><span class="std std-ref">Who makes decisions</span></a>, which jointly determine whether potential contributions will be accepted into the project.</p>
 <section id="scope-of-the-project">
-<span id="nilearn-scope"></span><h3>Scope of the project<a class="headerlink" href="#scope-of-the-project" title="Permalink to this headline">#</a></h3>
+<span id="nilearn-scope"></span><h3>Scope of the project<a class="headerlink" href="#scope-of-the-project" title="Permalink to this heading">#</a></h3>
 <p>Nilearn is an Open-source Python package for visualizing and analyzing human
 brain MRI data.
 It provides statistical and machine-learning tools for brain mapping,
@@ -744,7 +754,7 @@ guide below</strong>.
 Be sure to read and follow them so that your code can be accepted quickly.</p>
 </section>
 <section id="who-makes-decisions">
-<span id="nilearn-governance"></span><h3>Who makes decisions<a class="headerlink" href="#who-makes-decisions" title="Permalink to this headline">#</a></h3>
+<span id="nilearn-governance"></span><h3>Who makes decisions<a class="headerlink" href="#who-makes-decisions" title="Permalink to this heading">#</a></h3>
 <p>We strongly aim to be a community oriented project where decisions are
 made based on consensus according to the criteria described above.
 Discussions are public, held on <a class="reference external" href="https://github.com/nilearn/nilearn/issues">issues</a> and <a class="reference external" href="https://github.com/nilearn/nilearn/pulls">pull requests</a> in Github.
@@ -758,7 +768,7 @@ listed <a class="reference internal" href="authors.html#core-devs"><span class="
 </section>
 </section>
 <section id="how-to-contribute-to-nilearn">
-<span id="contributing-code"></span><h2>How to contribute to nilearn<a class="headerlink" href="#how-to-contribute-to-nilearn" title="Permalink to this headline">#</a></h2>
+<span id="contributing-code"></span><h2>How to contribute to nilearn<a class="headerlink" href="#how-to-contribute-to-nilearn" title="Permalink to this heading">#</a></h2>
 <p>This project, hosted on <a class="reference external" href="https://github.com/nilearn/nilearn">https://github.com/nilearn/nilearn</a>, is a community
 effort, and everyone is welcome to contribute.
 We value very much your feedback and opinion on features that should be
@@ -774,7 +784,7 @@ If an issue does not already exist for a potential contribution, we ask that
 you first open a <a class="reference external" href="https://github.com/nilearn/nilearn/issues/new/choose">new issue</a> before sending a <a class="reference internal" href="maintenance.html#pull-request"><span class="std std-ref">Pull Requests</span></a> to discuss
 scope and potential design choices in advance.</p>
 <section id="contribution-guidelines">
-<span id="id5"></span><h3>Contribution Guidelines<a class="headerlink" href="#contribution-guidelines" title="Permalink to this headline">#</a></h3>
+<span id="id5"></span><h3>Contribution Guidelines<a class="headerlink" href="#contribution-guidelines" title="Permalink to this heading">#</a></h3>
 <p>When modifying the codebase, we ask every contributor to respect common
 guidelines.
 Those are inspired from <a class="reference external" href="https://scikit-learn.org/stable/developers/contributing.html#contributing-code">scikit-learn</a>
@@ -787,11 +797,12 @@ running all the examples must lead to downloading a limited amount of data
 Those guidelines will hence be enforced during the reviewing process.
 The section <a class="reference internal" href="#setting-up-your-environment">Setting up your environment</a> will help you to quickly get familiar
 with the tools we use for development and deployment.</p>
-<div class="table-wrapper"><table class="docutils align-default">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 23%"/>
-<col style="width: 17%"/>
-<col style="width: 60%"/>
+<col style="width: 23%" />
+<col style="width: 17%" />
+<col style="width: 60%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
@@ -807,7 +818,7 @@ with the tools we use for development and deployment.</p>
 <li><p>Link issue through mention :”Closes #XXXX”</p></li>
 <li><p>Clearly outline goals and changes proposed</p></li>
 <li><p>Doesn’t include “unrelated” code change</p></li>
-<li><p>Add entry in “doc/whats_new.rst”</p></li>
+<li><p>Add entry in “doc/changes/latest.rst”</p></li>
 </ul>
 </td>
 </tr>
@@ -815,11 +826,15 @@ with the tools we use for development and deployment.</p>
 <td><p>Any</p></td>
 <td><ul class="simple">
 <li><p>Variables, functions, arguments have clear names</p></li>
-<li><p>Easy to read, <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></p></li>
+<li><p>Easy to read, <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> compliant</p></li>
 <li><p>Public functions have docstring (<a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a> format)</p></li>
 <li><p>Low redundancy</p></li>
 <li><p>No new dependency</p></li>
 <li><p>Backward compatibility</p></li>
+<li><p>All internal imports are absolute, not relative</p></li>
+<li><p>Impacted docstrings have versionadded and/or
+versionchanged directives as needed.
+These should use the current dev version.</p></li>
 </ul>
 </td>
 </tr>
@@ -860,10 +875,11 @@ with the tools we use for development and deployment.</p>
 </td>
 </tr>
 </tbody>
-</table></div>
+</table>
+</div>
 </section>
 <section id="pr-structure">
-<h3>PR Structure<a class="headerlink" href="#pr-structure" title="Permalink to this headline">#</a></h3>
+<h3>PR Structure<a class="headerlink" href="#pr-structure" title="Permalink to this heading">#</a></h3>
 <p>A new pull request must have a clear scope, conveyed through its name, a
 reference to the issue it targets (through the exact mention “Closes #XXXX”),
 and a synthetic summary of its goals and main steps.
@@ -882,25 +898,42 @@ change in documentation or examples, [ENH] for a new feature and [MAINT] for
 maintenance changes.</p>
 </section>
 <section id="coding-style">
-<h3>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this headline">#</a></h3>
-<p>Nilearn codebase follow <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> styling.
-The main conventions we enforce are : line length &lt; 80, spaces around operators,
-meaningful variable names, function names are underscore separated
-(e.g., <code class="docutils literal notranslate"><span class="pre">a_nice_function</span></code>) and as short as possible,
-public functions exposed in their parent module’s init file,
-private function names preceded with a “_” and very explicit,
-classes in CamelCase, 2 empty lines between functions or classes.
-Each function and class must come with a “docstring” at the top of the function
-code, using <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a> formatting.
-They must summarize what the function does and document every parameter.</p>
+<h3>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this heading">#</a></h3>
+<p>The nilearn codebase follows <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> styling.
+The main conventions we enforce are :</p>
+<ul class="simple">
+<li><p>line length &lt; 80</p></li>
+<li><p>spaces around operators</p></li>
+<li><p>meaningful variable names</p></li>
+<li><p>function names are underscore separated (e.g., <code class="docutils literal notranslate"><span class="pre">a_nice_function</span></code>) and as short as possible</p></li>
+<li><p>public functions exposed in their parent module’s init file</p></li>
+<li><p>private function names preceded with a “_” and very explicit</p></li>
+<li><p>classes in CamelCase</p></li>
+<li><p>2 empty lines between functions or classes</p></li>
+</ul>
+<p>Each function and class must come with a “docstring” at the top of the function code,
+using <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a> formatting.
+The docstring must summarize what the function does and document every parameter.</p>
+<p>Additionally, we consider it best practice to write modular functions;
+i.e., functions should preferably be relatively short and do <em>one</em> thing.
+This is also useful for writing unit tests.</p>
+<p>Writing small functions is not always possible, and we do not recommend trying to reorganize larger,
+but well-tested, older functions in the codebase, unless there is a strong reason to do so (e.g., when adding a new feature).</p>
 </section>
 <section id="tests">
-<h3>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">#</a></h3>
+<h3>Tests<a class="headerlink" href="#tests" title="Permalink to this heading">#</a></h3>
 <p>When fixing a bug, the first step is to write a minimal test that fails because
 of it, and then write the bugfix to make this test pass.
-For new code you should have roughly one test_function per function covering
+For new code you should have roughly one test function per function covering
 every line and testing the logic of the function.
 They should run on small mocked data, cover a representative range of parameters.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>It is easier to write good unit tests for short, self-contained functions.
+Try to keep this in mind when you write new functions.
+For more information about this coding approach,
+see <a class="reference external" href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a>.</p>
+</div>
 <p>Tests must be seeded to avoid random failures.
 For objects using random seeds (e.g. scikit-learn estimators), pass either
 a  <cite>np.random.RandomState</cite> or an <cite>int</cite> as the seed.
@@ -916,7 +949,7 @@ To do quicker checks it’s possible to run only a subset of tests:</p>
 </div>
 </section>
 <section id="documentation">
-<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">#</a></h3>
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h3>
 <p>Documentation must be understandable by people from different backgrounds.
 The “narrative” documentation should be an introduction to the concepts of
 the library.
@@ -938,9 +971,9 @@ learn how to use those tools to build documentation.</p>
 </section>
 </section>
 <section id="setting-up-your-environment">
-<span id="git-repo"></span><h2>Setting up your environment<a class="headerlink" href="#setting-up-your-environment" title="Permalink to this headline">#</a></h2>
+<span id="git-repo"></span><h2>Setting up your environment<a class="headerlink" href="#setting-up-your-environment" title="Permalink to this heading">#</a></h2>
 <section id="installing">
-<h3>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">#</a></h3>
+<h3>Installing<a class="headerlink" href="#installing" title="Permalink to this heading">#</a></h3>
 <p>Here are the key steps you need to go through to copy the repo before contributing:</p>
 <ol class="arabic">
 <li><p>fork the repo from github (fork button in the top right corner of our <a class="reference external" href="https://github.com/nilearn/nilearn">main github page</a>) and clone your fork locally:</p>
@@ -955,15 +988,15 @@ learn how to use those tools to build documentation.</p>
 </div>
 </li>
 <li><p>install the forked version of <cite>nilearn</cite>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">.</span> <span class="o">-</span><span class="n">e</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;.[dev]&#39;</span>
 </pre></div>
 </div>
 </li>
-<li><p>install development dependencies:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">-</span><span class="n">dev</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-</li>
+</ol>
+<p>This installs your local version of Nilearn, along with all dependencies necessary for developers (hence the <code class="docutils literal notranslate"><span class="pre">[dev]</span></code> tag).
+For more information about the dependency installation options, see <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>.
+The installed version will also reflect any changes you make to your code.</p>
+<ol class="arabic" start="4">
 <li><p>check that all tests pass with (this can take a while):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="n">nilearn</span>
 </pre></div>
@@ -972,7 +1005,7 @@ learn how to use those tools to build documentation.</p>
 </ol>
 </section>
 <section id="id6">
-<h3>Contributing<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>Contributing<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>Here are the key steps you need to go through to contribute code to <cite>nilearn</cite>:</p>
 <ol class="arabic">
 <li><p>open or join an already existing issue explaining what you want to work on</p></li>
@@ -1000,12 +1033,12 @@ you work on with, for example):</p>
 <p>For more details about the Fork Clone Push workflows, read <a class="reference external" href="https://guides.github.com/activities/forking/">here</a>.</p>
 </section>
 <section id="building-documentation">
-<h3>Building documentation<a class="headerlink" href="#building-documentation" title="Permalink to this headline">#</a></h3>
+<h3>Building documentation<a class="headerlink" href="#building-documentation" title="Permalink to this heading">#</a></h3>
 <p>If you wish to build documentation:</p>
 <ol class="arabic">
 <li><p>First, ensure that you have installed sphinx and sphinx-gallery. When in your
 fork top folder, you can install the required packages using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">docs</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s1">&#39;.[doc]&#39;</span>
 </pre></div>
 </div>
 </li>
@@ -1028,7 +1061,7 @@ using <a class="reference external" href="https://www.sphinx-doc.org/en/2.0/usag
 If all looks well and there were no errors, commit and push the changes.</p></li>
 <li><p>You can now open a Pull Request from Nilearn’s Pull Request page.</p></li>
 <li><p>Request the CI builds the full documentation from your branch:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">empty</span> <span class="o">-</span><span class="n">m</span> <span class="s2">"[circle full] request full build"</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">empty</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;[circle full] request full build&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -1045,9 +1078,9 @@ to reduce building time. To do so, use the <code class="docutils literal notrans
 </section>
 </section>
 <section id="additional-cases">
-<h2>Additional cases<a class="headerlink" href="#additional-cases" title="Permalink to this headline">#</a></h2>
+<h2>Additional cases<a class="headerlink" href="#additional-cases" title="Permalink to this heading">#</a></h2>
 <section id="how-to-contribute-an-atlas">
-<h3>How to contribute an atlas<a class="headerlink" href="#how-to-contribute-an-atlas" title="Permalink to this headline">#</a></h3>
+<h3>How to contribute an atlas<a class="headerlink" href="#how-to-contribute-an-atlas" title="Permalink to this heading">#</a></h3>
 <p>We want atlases in nilearn to be internally consistent. Specifically,
 your atlas object should have three attributes (as with the existing
 atlases):</p>
@@ -1065,8 +1098,8 @@ label, in the same (numerical) order as the atlas labels</p></li>
 Examples can be found <a class="reference external" href="https://github.com/nilearn/nilearn/blob/main/nilearn/datasets/tests/test_atlas.py">here</a></p>
 </section>
 <section id="how-to-contribute-a-dataset-fetcher">
-<h3>How to contribute a dataset fetcher<a class="headerlink" href="#how-to-contribute-a-dataset-fetcher" title="Permalink to this headline">#</a></h3>
-<p>The <a class="reference internal" href="modules/datasets.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a> module provides functions to download some
+<h3>How to contribute a dataset fetcher<a class="headerlink" href="#how-to-contribute-a-dataset-fetcher" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference internal" href="modules/reference.html#module-nilearn.datasets" title="nilearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nilearn.datasets</span></code></a> module provides functions to download some
 neuroimaging datasets, such as <a class="reference internal" href="modules/generated/nilearn.datasets.fetch_haxby.html#nilearn.datasets.fetch_haxby" title="nilearn.datasets.fetch_haxby"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_haxby</span></code></a> or
 <a class="reference internal" href="modules/generated/nilearn.datasets.fetch_atlas_harvard_oxford.html#nilearn.datasets.fetch_atlas_harvard_oxford" title="nilearn.datasets.fetch_atlas_harvard_oxford"><code class="xref py py-func docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_atlas_harvard_oxford</span></code></a>. The goal is not to provide a comprehensive
 collection of downloaders for the most widely used datasets, and this would be
@@ -1102,7 +1135,7 @@ Existing tests can also serve as examples.</p>
 </section>
 </section>
 <section id="maintenance">
-<h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this headline">#</a></h2>
+<h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this heading">#</a></h2>
 <p>More information about the project organization, conventions, and maintenance
 process can be found there : <a class="reference internal" href="maintenance.html#maintenance-process"><span class="std std-ref">Maintenance</span></a>.</p>
 </section>
@@ -1214,6 +1247,7 @@ process can be found there : <a class="reference internal" href="maintenance.htm
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/clipboard.min.js"></script>

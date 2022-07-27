@@ -39,66 +39,66 @@ estimation of connectivity structure for a synthetic dataset.
  .. code-block:: none
 
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.4s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.6s finished
     [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  1 out of 4
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.4s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.6s finished
     [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  2 out of 4
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.4s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.7s finished
     [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  3 out of 4
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.4s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.8s finished
     [GroupSparseCovarianceCV.fit] [GroupSparseCovarianceCV] Done refinement  4 out of 4
     [GroupSparseCovarianceCV.fit] Final optimization
-    /home/alexis/singbrain/repo/nilearn/nilearn/connectome/group_sparse_cov.py:245: UserWarning:
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/connectome/group_sparse_cov.py:245: UserWarning:
 
     input signals do not all have unit variance. This can lead to numerical instability.
 
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  1 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  2 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  3 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
-    [GraphicalLassoCV] Done refinement  4 out of 4:   0s
-    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
-    [GraphicalLassoCV] Done refinement  1 out of 4:   0s
-    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
-    [GraphicalLassoCV] Done refinement  2 out of 4:   0s
-    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
-    [GraphicalLassoCV] Done refinement  3 out of 4:   0s
-    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  4 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
     [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  1 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  2 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  3 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  4 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  1 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  2 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
+    [GraphicalLassoCV] Done refinement  3 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
+    [GraphicalLassoCV] Done refinement  4 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
+    [GraphicalLassoCV] Done refinement  1 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
+    [GraphicalLassoCV] Done refinement  2 out of 4:   0s
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.1s finished
     [GraphicalLassoCV] Done refinement  3 out of 4:   0s
     [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
     [Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s finished
@@ -191,37 +191,32 @@ estimation of connectivity structure for a synthetic dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.200 seconds)
+   **Total running time of the script:** ( 0 minutes  5.352 seconds)
 
 **Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_03_connectivity_plot_simulated_connectome.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/03_connectivity/plot_simulated_connectome.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/nilearn/nilearn.github.io/main?filepath=examples/auto_examples/03_connectivity/plot_simulated_connectome.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_simulated_connectome.py <plot_simulated_connectome.py>`
 
-     :download:`Download Python source code: plot_simulated_connectome.py <plot_simulated_connectome.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_simulated_connectome.ipynb <plot_simulated_connectome.ipynb>`
+      :download:`Download Jupyter notebook: plot_simulated_connectome.ipynb <plot_simulated_connectome.ipynb>`
 
 
 .. only:: html

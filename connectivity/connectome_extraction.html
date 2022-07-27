@@ -14,22 +14,22 @@
   
 <meta property="og:description" content="Page summary: Given a set of time-series (eg as extracted in the previous section) A functional connectome is a set of connections representing brain interactions between regions. Here we show the ..." />
   
-<meta property="og:image" content="https://nilearn.github.io/auto_examples/03_connectivity/images/sphx_glr_plot_inverse_covariance_connectome_001.png" />
+<meta property="og:image" content="https://nilearn.github.io/connectivity/auto_examples/03_connectivity/images/sphx_glr_plot_inverse_covariance_connectome_001.png" />
   
 <meta property="og:image:alt" content="covariance" />
   <link rel="search" title="Search" href="../search.html" /><link rel="next" title="Group-sparse covariance estimation" href="../developers/group_sparse_covariance.html" /><link rel="prev" title="Extracting times series to build a functional connectome" href="functional_connectomes.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Connectome extraction: inverse covariance for direct connections - Nilearn</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
@@ -40,6 +40,8 @@
   body {
     --color-code-background: #ffffff;
   --color-code-foreground: black;
+  --admonition-font-size: 100%;
+  --admonition-title-font-size: 100%;
   
   }
   @media not print {
@@ -58,10 +60,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -236,7 +240,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_compare_decomposition.html">Deriving spatial maps from group fMRI data using ICA and Dictionary Learning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_seed_to_voxel_correlation.html">Producing single subject maps of seed-to-voxel correlation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_multi_subject_connectome.html">Group Sparse inverse covariance for multi-subject connectome</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using <span class="xref std std-term">Dictionary learning</span> and functional connectomes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_extract_regions_dictlearning_maps.html">Regions extraction using dictionary learning and functional connectomes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_atlas_comparison.html">Comparing connectomes on different reference atlases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_group_level_connectivity.html">Classification of age groups using functional connectivity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/03_connectivity/plot_signal_extraction.html">Extracting signals from a brain parcellation</a></li>
@@ -253,19 +257,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_spm_multimodal_faces.html">Single-subject data (two sessions) in native space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_hrf.html">Example of MRI response functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_fiac_analysis.html">Simple example of two-session fMRI model fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_predictions_residuals.html">Predicted time series and residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_bids_features.html">First level analysis of a complete BIDS dataset from openneuro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Example of surface-based first-level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/04_glm_first_level/plot_first_level_details.html">Understanding parameters of the first-level model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM : Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/05_glm_second_level/index.html">GLM: Second level analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_design_matrix.html">Example of second level design matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_proportion_activated_voxels.html">Second-level fMRI model: true positive proportion in clusters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_thresholding.html">Statistical testing of a second-level analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on Oasis dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_oasis.html">Voxel-Based Morphometry on OASIS dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_one_sample_test.html">Second-level fMRI model: one sample test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_two_sample_test.html">Second-level fMRI model: two-sample test, unpaired and paired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/05_glm_second_level/plot_second_level_association_test.html">Example of generic design in second-level models</a></li>
 </ul>
 </li>
@@ -290,11 +294,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_bids_analysis.html">BIDS dataset first and second level analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_age_group_prediction_cross_val.html">Functional connectivity predicts age group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_neurovault_meta_analysis.html">NeuroVault meta-analysis of stop-go paradigm studies.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_localizer_mass_univariate_methods.html">Massively univariate analysis of a motor task from the Localizer dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_surface_bids_analysis.html">Surface-based dataset first and second level analysis of a dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_ica_neurovault.html">NeuroVault cross-study ICA maps.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_haxby_mass_univariate.html">Massively univariate analysis of face vs house recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_advanced_decoding_scikit.html">Advanced decoding using scikit learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/07_advanced/plot_beta_series.html">Beta-Series Modeling for Task-Based Functional Connectivity and Decoding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,7 +637,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -647,7 +653,7 @@
         </div>
         <article role="main">
           <section id="connectome-extraction-inverse-covariance-for-direct-connections">
-<span id="connectome-extraction"></span><h1>Connectome extraction: inverse covariance for direct connections<a class="headerlink" href="#connectome-extraction-inverse-covariance-for-direct-connections" title="Permalink to this headline">#</a></h1>
+<span id="connectome-extraction"></span><h1>Connectome extraction: inverse covariance for direct connections<a class="headerlink" href="#connectome-extraction-inverse-covariance-for-direct-connections" title="Permalink to this heading">#</a></h1>
 <div class="topic">
 <p class="topic-title"><strong>Page summary</strong></p>
 <p>Given a set of time-series (eg as extracted in the previous section)
@@ -666,7 +672,7 @@ connectomes across subjects, NeuroImage 2013</a></p></li>
 </ul>
 </div>
 <section id="sparse-inverse-covariance-for-functional-connectomes">
-<h2>Sparse inverse covariance for functional connectomes<a class="headerlink" href="#sparse-inverse-covariance-for-functional-connectomes" title="Permalink to this headline">#</a></h2>
+<h2>Sparse inverse covariance for functional connectomes<a class="headerlink" href="#sparse-inverse-covariance-for-functional-connectomes" title="Permalink to this heading">#</a></h2>
 <p>Functional connectivity can be obtained by estimating a covariance
 (or correlation) matrix for signals from different brain
 regions decomposed, for example on resting-state or naturalistic-stimuli datasets.
@@ -684,7 +690,7 @@ contains <em>partial covariances</em>, which are covariances between two regions
 conditioned on all the others.</p>
 <p>To recover well the interaction structure, a <strong>sparse inverse covariance
 estimator</strong> is necessary. The GraphicalLasso, implemented in scikit-learn’s
-estimator <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLassoCV.html#sklearn.covariance.GraphicalLassoCV" title="(in scikit-learn v1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.covariance.GraphicalLassoCV</span></code></a> is a good, simple
+estimator <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLassoCV.html#sklearn.covariance.GraphicalLassoCV" title="(in scikit-learn v1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.covariance.GraphicalLassoCV</span></code></a> is a good, simple
 solution. To use it, you need to create an estimator object:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.covariance</span> <span class="kn">import</span> <span class="n">GraphicalLassoCV</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">estimator</span> <span class="o">=</span> <span class="n">GraphicalLassoCV</span><span class="p">()</span>
@@ -703,12 +709,12 @@ of the estimator:</p>
 </pre></div>
 </div>
 <p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="covariance" src="../_images/sphx_glr_plot_inverse_covariance_connectome_001.png" style="width: 360.0px; height: 280.0px;"/></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="precision" src="../_images/sphx_glr_plot_inverse_covariance_connectome_003.png" style="width: 360.0px; height: 280.0px;"/></a></strong></p><p class="centered">
-<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="covariance_graph" src="../_images/sphx_glr_plot_inverse_covariance_connectome_002.png" style="width: 363.00000000000006px; height: 143.0px;"/></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="precision_graph" src="../_images/sphx_glr_plot_inverse_covariance_connectome_004.png" style="width: 363.00000000000006px; height: 143.0px;"/></a></strong></p><div class="topic">
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="covariance" src="../_images/sphx_glr_plot_inverse_covariance_connectome_001.png" style="width: 360.0px; height: 280.0px;" /></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="precision" src="../_images/sphx_glr_plot_inverse_covariance_connectome_003.png" style="width: 360.0px; height: 280.0px;" /></a></strong></p><p class="centered">
+<strong><a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="covariance_graph" src="../_images/sphx_glr_plot_inverse_covariance_connectome_002.png" style="width: 363.00000000000006px; height: 143.0px;" /></a> <a class="reference external" href="../auto_examples/03_connectivity/plot_inverse_covariance_connectome.html"><img alt="precision_graph" src="../_images/sphx_glr_plot_inverse_covariance_connectome_004.png" style="width: 363.00000000000006px; height: 143.0px;" /></a></strong></p><div class="topic">
 <p class="topic-title"><strong>Parameter selection</strong></p>
 <p>The parameter controlling the sparsity is set by <a class="reference external" href="http://scikit-learn.org/stable/modules/cross_validation.html">cross-validation</a>
 scheme. If you want to specify it manually, use the estimator
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLasso.html#sklearn.covariance.GraphicalLasso" title="(in scikit-learn v1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.covariance.GraphicalLasso</span></code></a>.</p>
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLasso.html#sklearn.covariance.GraphicalLasso" title="(in scikit-learn v1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.covariance.GraphicalLasso</span></code></a>.</p>
 </div>
 <div class="topic">
 <p class="topic-title"><strong>Full example</strong></p>
@@ -731,7 +737,7 @@ multi-subject data.</p></li>
 </div>
 </section>
 <section id="sparse-inverse-covariance-on-multiple-subjects">
-<h2>Sparse inverse covariance on multiple subjects<a class="headerlink" href="#sparse-inverse-covariance-on-multiple-subjects" title="Permalink to this headline">#</a></h2>
+<h2>Sparse inverse covariance on multiple subjects<a class="headerlink" href="#sparse-inverse-covariance-on-multiple-subjects" title="Permalink to this heading">#</a></h2>
 <p>To work at the level of a group of subject, it can be interesting to
 estimate multiple connectomes for each, with a similar structure but
 differing connection values across subjects.</p>
@@ -749,7 +755,7 @@ a list of time series:</p>
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 <p>One specific case where this may be interesting is for group analysis
 across multiple subjects. Indeed, one challenge when doing statistics on
@@ -783,22 +789,22 @@ adhd.</p>
 </ul>
 </div>
 <div class="line-block">
-<div class="line"><br/></div>
+<div class="line"><br /></div>
 </div>
 </section>
 <section id="comparing-the-different-approaches-on-simulated-data">
-<h2>Comparing the different approaches on simulated data<a class="headerlink" href="#comparing-the-different-approaches-on-simulated-data" title="Permalink to this headline">#</a></h2>
+<h2>Comparing the different approaches on simulated data<a class="headerlink" href="#comparing-the-different-approaches-on-simulated-data" title="Permalink to this heading">#</a></h2>
 <p>We simulate several sets of signals, one set representing one subject,
 with different precision matrices, but sharing a common sparsity pattern:
 10 brain regions, for 20 subjects.</p>
 <p>A single-subject estimation can be performed using the
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLassoCV.html#sklearn.covariance.GraphicalLassoCV" title="(in scikit-learn v1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.covariance.GraphicalLassoCV</span></code></a> estimator from scikit-learn.</p>
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLassoCV.html#sklearn.covariance.GraphicalLassoCV" title="(in scikit-learn v1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.covariance.GraphicalLassoCV</span></code></a> estimator from scikit-learn.</p>
 <p>It is also possible to fit a graph lasso on data from every subject all
 together.</p>
 <p>Finally, we use the
 <a class="reference internal" href="../modules/generated/nilearn.connectome.GroupSparseCovarianceCV.html#nilearn.connectome.GroupSparseCovarianceCV" title="nilearn.connectome.GroupSparseCovarianceCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.connectome.GroupSparseCovarianceCV</span></code></a> <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <p>The results are the following:</p>
-<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_simulated_connectome.html"><img alt="../_images/sphx_glr_plot_simulated_connectome_001.png" src="../_images/sphx_glr_plot_simulated_connectome_001.png" style="width: 600.0px; height: 420.0px;"/></a>
+<a class="reference external image-reference" href="../auto_examples/03_connectivity/plot_simulated_connectome.html"><img alt="../_images/sphx_glr_plot_simulated_connectome_001.png" src="../_images/sphx_glr_plot_simulated_connectome_001.png" style="width: 600.0px; height: 420.0px;" /></a>
 <p>The group-sparse estimation outputs matrices with
 the same sparsity pattern, but different values for the non-zero
 coefficients. This is not the case for the graph lasso output, which
@@ -828,12 +834,12 @@ estimation and its implementation can be found in
 </div>
 </section>
 <section id="linking-total-and-direct-interactions-at-the-group-level">
-<h2>Linking total and direct interactions at the group level<a class="headerlink" href="#linking-total-and-direct-interactions-at-the-group-level" title="Permalink to this headline">#</a></h2>
+<h2>Linking total and direct interactions at the group level<a class="headerlink" href="#linking-total-and-direct-interactions-at-the-group-level" title="Permalink to this heading">#</a></h2>
 <p>Individual connectivity patterns reflect both on covariances and inverse covariances, but in different ways. For multiple subjects, mean covariance (or correlation) and group sparse inverse covariance provide different insights into the connectivity at the group level.</p>
 <p>We can go one step further by coupling the information from total (pairwise) and direct interactions in a unique group connectome. This can be done through a geometrical framework allowing to measure interactions in a common space called <strong>tangent space</strong> <a class="reference external" href="https://hal.inria.fr/inria-00512417/">[Varoquaux et al, MICCAI 2010]</a>.</p>
 <p>In nilearn, this is implemented in
 <a class="reference internal" href="../modules/generated/nilearn.connectome.ConnectivityMeasure.html#nilearn.connectome.ConnectivityMeasure" title="nilearn.connectome.ConnectivityMeasure"><code class="xref py py-class docutils literal notranslate"><span class="pre">nilearn.connectome.ConnectivityMeasure</span></code></a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">measure</span> <span class="o">=</span> <span class="n">ConnectivityMeasure</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'tangent'</span><span class="p">)</span>  
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">measure</span> <span class="o">=</span> <span class="n">ConnectivityMeasure</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;tangent&#39;</span><span class="p">)</span>  
 </pre></div>
 </div>
 <p>The group connectivity is computed using all the subjects timeseries.:</p>
@@ -939,6 +945,7 @@ dataset downloaded with <a class="reference internal" href="../modules/generated
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
