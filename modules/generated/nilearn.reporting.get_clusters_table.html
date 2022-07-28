@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.reporting.get_clusters_table: Intro to GLM Analysis: a single-session, single-subject fMRI dataset Intro to GLM Analysis: a single-session, single-subject fMRI dataset Predic..." />
+<meta property="og:description" content="Examples using nilearn.reporting.get_clusters_table: First level analysis of a complete BIDS dataset from openneuro First level analysis of a complete BIDS dataset from openneuro" />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_single_subject_single_run_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_bids_features_thumb.png" />
   
-<meta property="og:image:alt" content="Intro to GLM Analysis: a single-session, single-subject fMRI dataset" />
+<meta property="og:image:alt" content="First level analysis of a complete BIDS dataset from openneuro" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.reporting.make_glm_report" href="nilearn.reporting.make_glm_report.html" /><link rel="prev" title="nilearn.reporting: Reporting Functions" href="../reporting.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
@@ -662,7 +662,7 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.reporting.get_clusters_table<a class="headerlink" href="#nilearn-reporting-get-clusters-table" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.reporting.get_clusters_table">
-<span class="sig-prename descclassname"><span class="pre">nilearn.reporting.</span></span><span class="sig-name descname"><span class="pre">get_clusters_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stat_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/reporting/_get_clusters_table.py#L186"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.get_clusters_table" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.reporting.</span></span><span class="sig-name descname"><span class="pre">get_clusters_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stat_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_sided</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/reporting/_get_clusters_table.py#L208"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.get_clusters_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates pandas dataframe with img cluster statistics.</p>
 <p>This function should work on any statistical maps where more extreme values
 indicate greater statistical significance.
@@ -674,6 +674,10 @@ map is not.</p>
 the table reports the center of mass of the cluster,
 rather than any peaks/subpeaks.</p>
 <p>This center of mass may, in some cases, appear outside of the cluster.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.9.2dev: </span>In this case, the cluster voxel nearest to the center of mass is
+reported.</p>
+</div>
 </div>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -737,13 +741,7 @@ in this column.</p></td>
 
 <section id="examples-using-nilearn-reporting-get-clusters-table">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.reporting.get_clusters_table</span></code><a class="headerlink" href="#examples-using-nilearn-reporting-get-clusters-table" title="Permalink to this heading">#</a></h2>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="In this tutorial, we use a General Linear Model (:term:`GLM`) to compare the fMRI signal during..."><img alt="Intro to GLM Analysis: a single-session, single-subject fMRI dataset" src="../../_images/sphx_glr_plot_single_subject_single_run_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/00_tutorials/plot_single_subject_single_run.html#sphx-glr-auto-examples-00-tutorials-plot-single-subject-single-run-py"><span class="std std-ref">Intro to GLM Analysis: a single-session, single-subject fMRI dataset</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Intro to GLM Analysis: a single-session, single-subject fMRI dataset</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here we fit a First Level GLM with the minimize_memory-argument set to False. By doing so, the ..."><img alt="Predicted time series and residuals" src="../../_images/sphx_glr_plot_predictions_residuals_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_predictions_residuals.html#sphx-glr-auto-examples-04-glm-first-level-plot-predictions-residuals-py"><span class="std std-ref">Predicted time series and residuals</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Predicted time series and residuals</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B..."><img alt="First level analysis of a complete BIDS dataset from openneuro" src="../../_images/sphx_glr_plot_bids_features_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B..."><img alt="First level analysis of a complete BIDS dataset from openneuro" src="../../_images/sphx_glr_plot_bids_features_thumb.png" />
 <p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html#sphx-glr-auto-examples-04-glm-first-level-plot-bids-features-py"><span class="std std-ref">First level analysis of a complete BIDS dataset from openneuro</span></a></p>
   <div class="sphx-glr-thumbnail-title">First level analysis of a complete BIDS dataset from openneuro</div>
 </div></div><div style='clear:both'></div></section>

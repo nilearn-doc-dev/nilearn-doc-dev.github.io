@@ -733,22 +733,12 @@ observations in rows.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nilearn.glm.OLSModel.df_resid">
-<span class="sig-name descname"><span class="pre">df_resid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/regression.py#L126"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.OLSModel.df_resid" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nilearn.glm.OLSModel.wdesign">
-<span class="sig-name descname"><span class="pre">wdesign</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/regression.py#L134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.OLSModel.wdesign" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.OLSModel.logL">
-<span class="sig-name descname"><span class="pre">logL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nuisance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/regression.py#L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.OLSModel.logL" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">logL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nuisance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/regression.py#L126"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.OLSModel.logL" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the value of the loglikelihood function at beta.</p>
 <p>Given the whitened design matrix, the loglikelihood is evaluated
 at the parameter vector, beta, for the dependent variable, Y
-and the nuisance parameter, sigma <a class="reference internal" href="#r0764f466725c-1" id="id1">[1]</a>.</p>
+and the nuisance parameter, sigma <a class="footnote-reference brackets" href="#footcite-greeneeconometric" id="id1">1</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -790,18 +780,18 @@ then its maximum likelihood estimate:</p>
 <p>is plugged in. This likelihood is now a function of only <span class="math">\beta</span>
 and is technically referred to as a profile-likelihood.</p>
 <p class="rubric">References</p>
-<dl class="citation">
-<dt class="label" id="r0764f466725c-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><ol class="upperalpha simple" start="23">
-<li><p>Green.  “Econometric Analysis,” 5th ed., Pearson, 2003.</p></li>
-</ol>
+<div class="docutils container" id="id2">
+<dl class="footnote brackets">
+<dt class="label" id="footcite-greeneeconometric"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>William H. Greene. <em>Econometric Analysis</em>. Pearson Education, fifth edition, 2003. ISBN 0-13-066189-9. URL: <a class="reference external" href="http://pages.stern.nyu.edu/~wgreene/Text/econometricanalysis.htm">http://pages.stern.nyu.edu/~wgreene/Text/econometricanalysis.htm</a>.</p>
 </dd>
 </dl>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.OLSModel.whiten">
-<span class="sig-name descname"><span class="pre">whiten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/regression.py#L210"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.OLSModel.whiten" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">whiten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/regression.py#L194"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.OLSModel.whiten" title="Permalink to this definition">#</a></dt>
 <dd><p>Whiten design matrix</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -824,7 +814,7 @@ a square root of the covariance matrix to X.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.glm.OLSModel.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/regression.py#L229"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.OLSModel.fit" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/regression.py#L213"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.OLSModel.fit" title="Permalink to this definition">#</a></dt>
 <dd><p>Fit model to data <cite>Y</cite></p>
 <p>Full fit of the model including estimate of covariance matrix,
 (whitened) residuals and scale.</p>

@@ -1053,14 +1053,12 @@ sample mask that removes the first 50 volumes.
 
 
 
-.. rst-class:: sphx-glr-script-out
 
-.. code-block:: pytb
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_027.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_027.png
+   :class: sphx-glr-single-img
 
-    Traceback (most recent call last):
-      File "/home/alexis/singbrain/repo/nilearn-alexis/examples/04_glm_first_level/plot_first_level_details.py", line 450, in <module>
-        first_level_model = first_level_model.fit(fmri_img, events=events,
-    TypeError: FirstLevelModel.fit() got an unexpected keyword argument 'sample_masks'
 
 
 
@@ -1094,6 +1092,29 @@ gains.  We use a mild smoothing of 5mm
     plot_design_matrix(design_matrix)
     plot_contrast(first_level_model)
     plt.show()
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_028.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_028.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_029.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_029.png
+         :class: sphx-glr-multi-img
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 480-482
@@ -1136,6 +1157,17 @@ data.
     plt.show()
 
 
+
+
+.. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_030.png
+   :alt: plot first level details
+   :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_030.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 512-515
 
 For the sake of time saving, we resample icbm_mask to our data.
@@ -1149,6 +1181,12 @@ We use interpolation = 'nearest' to keep the mask as a binary image.
     from nilearn.image import resample_to_img
     resampled_icbm_mask = resample_to_img(icbm_mask, data_mask,
                                           interpolation='nearest')
+
+
+
+
+
+
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 520-521
@@ -1169,6 +1207,29 @@ Impact on the first-level model.
     plt.show()
 
 
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_031.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_031.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_032.png
+         :alt: plot first level details
+         :srcset: /auto_examples/04_glm_first_level/images/sphx_glr_plot_first_level_details_032.png
+         :class: sphx-glr-multi-img
+
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 531-532
 
 Note that it removed spurious spots in the white matter.
@@ -1187,9 +1248,9 @@ are specific to this dataset and may vary with other ones.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  20.129 seconds)
+   **Total running time of the script:** ( 1 minutes  47.890 seconds)
 
-**Estimated memory usage:**  954 MB
+**Estimated memory usage:**  306 MB
 
 
 .. _sphx_glr_download_auto_examples_04_glm_first_level_plot_first_level_details.py:

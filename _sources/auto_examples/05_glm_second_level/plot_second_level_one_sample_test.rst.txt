@@ -240,10 +240,7 @@ them with the results from a nonparametric test.
 
  .. code-block:: none
 
-    <string>:1: RuntimeWarning:
-
-    divide by zero encountered in log10
-
+    <string>:1: RuntimeWarning: divide by zero encountered in log10
 
 
 
@@ -283,14 +280,16 @@ Now, we compute the (corrected) p-values with a permutation test.
 
 
 
+
+
 .. rst-class:: sphx-glr-script-out
 
-.. code-block:: pytb
+ .. code-block:: none
 
-    Traceback (most recent call last):
-      File "/home/alexis/singbrain/repo/nilearn-alexis/examples/05_glm_second_level/plot_second_level_one_sample_test.py", line 139, in <module>
-        out_dict = non_parametric_inference(
-    TypeError: non_parametric_inference() got an unexpected keyword argument 'threshold'
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/mass_univariate/permuted_least_squares.py:960: UserWarning: Data array used to create a new image contains 64-bit ints. This is likely due to creating the array with numpy and passing `int` as the `dtype`. Many tools such as FSL and SPM cannot deal with int64 in Nifti images, so for compatibility the data has been converted to int32.
+      image.new_img_like(masker.mask_img_, metric_map),
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/masking.py:912: UserWarning: Data array used to create a new image contains 64-bit ints. This is likely due to creating the array with numpy and passing `int` as the `dtype`. Many tools such as FSL and SPM cannot deal with int64 in Nifti images, so for compatibility the data has been converted to int32.
+      return new_img_like(mask_img, unmasked, affine)
 
 
 
@@ -355,6 +354,24 @@ only 500 permutations.
     plt.show()
 
 
+
+
+.. image-sg:: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_003.png
+   :alt: Group left-right button press (negative log10 p-values), Parametric Test, Permutation Test (Voxel-Level Error Control), Permutation Test (Cluster-Size Error Control), Permutation Test (Cluster-Mass Error Control)
+   :srcset: /auto_examples/05_glm_second_level/images/sphx_glr_plot_second_level_one_sample_test_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/alexis/miniconda3/envs/nilearn/lib/python3.10/site-packages/nilearn/_utils/niimg.py:61: UserWarning: Non-finite values detected. These values will be replaced with zeros.
+      warn(
+
+
+
+
 .. GENERATED FROM PYTHON SOURCE LINES 204-210
 
 The nonparametric test yields many more discoveries and is more powerful than
@@ -367,9 +384,9 @@ cluster-mass corrections, which are very similar to one another.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  43.329 seconds)
+   **Total running time of the script:** ( 2 minutes  42.702 seconds)
 
-**Estimated memory usage:**  684 MB
+**Estimated memory usage:**  48 MB
 
 
 .. _sphx_glr_download_auto_examples_05_glm_second_level_plot_second_level_one_sample_test.py:

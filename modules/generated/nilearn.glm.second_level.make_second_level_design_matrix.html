@@ -665,22 +665,23 @@ function signature, and not how to use it. Please refer to the
 <span class="sig-prename descclassname"><span class="pre">nilearn.glm.second_level.</span></span><span class="sig-name descname"><span class="pre">make_second_level_design_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subjects_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/first_level/design_matrix.py#L422"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.second_level.make_second_level_design_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Sets up a second level design.</p>
 <p>Construct a design matrix with an intercept and subject specific confounds.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>subjects_label</strong><span class="classifier">list of str</span></dt><dd><p>Contain subject labels to extract confounders in the right order,
+<dd class="field-odd"><dl>
+<dt><strong>subjects_label</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Contain subject labels to extract confounders in the right order,
 corresponding with the images, to create the design matrix.</p>
 </dd>
-<dt><strong>confounds</strong><span class="classifier">pandas DataFrame, optional</span></dt><dd><p>If given, contains at least two columns, ‘subject_label’ and one
+<dt><strong>confounds</strong><span class="classifier"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, optional</span></dt><dd><p>If given, contains at least two columns, <code class="docutils literal notranslate"><span class="pre">subject_label</span></code> and one
 confound. The subjects list determines the rows to extract from
-confounds thanks to its ‘subject_label’ column. All subjects must
-have confounds specified. There should be only one row per subject.</p>
+confounds thanks to its <code class="docutils literal notranslate"><span class="pre">subject_label</span></code> column. All subjects must
+have confounds specified. There should be only one row per subject.
+Default=None.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>design_matrix</strong><span class="classifier">pandas DataFrame</span></dt><dd><p>The second level design matrix.</p>
+<dd class="field-even"><dl>
+<dt><strong>design_matrix</strong><span class="classifier"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>The second level design matrix.</p>
 </dd>
 </dl>
 </dd>

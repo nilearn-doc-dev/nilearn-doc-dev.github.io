@@ -665,7 +665,7 @@ function signature, and not how to use it. Please refer to the
 <span class="sig-prename descclassname"><span class="pre">nilearn.glm.</span></span><span class="sig-name descname"><span class="pre">cluster_level_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stat_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/glm/thresholding.py#L110"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.glm.cluster_level_inference" title="Permalink to this definition">#</a></dt>
 <dd><p>Report the proportion of active voxels for all clusters
 defined by the input threshold.</p>
-<p>This implements the method described in <a class="reference internal" href="#r07546741f8d3-1" id="id1">[1]</a>.</p>
+<p>This implements the method described in <a class="footnote-reference brackets" href="#footcite-inferencerosenblatt" id="id1">1</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -693,14 +693,13 @@ proportion. Default=0.05.</p>
 <p>This function is experimental.
 It may change in any future release of Nilearn.</p>
 <p class="rubric">References</p>
-<dl class="citation">
-<dt class="label" id="r07546741f8d3-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Rosenblatt JD, Finos L, Weeda WD, Solari A, Goeman JJ.
-All-Resolutions Inference for brain imaging.
-Neuroimage. 2018 Nov 1;181:786-796.
-doi: 10.1016/j.neuroimage.2018.07.060</p>
+<div class="docutils container" id="id2">
+<dl class="footnote brackets">
+<dt class="label" id="footcite-inferencerosenblatt"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Jonathan D. Rosenblatt, Livio Finos, Wouter D. Weeda, Aldo Solari, and Jelle J. Goeman. All-resolutions inference for brain imaging. <em>NeuroImage</em>, 181:786–796, November 2018. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2018.07.060">doi:10.1016/j.neuroimage.2018.07.060</a>.</p>
 </dd>
 </dl>
+</div>
 </dd></dl>
 
 <section id="examples-using-nilearn-glm-cluster-level-inference">

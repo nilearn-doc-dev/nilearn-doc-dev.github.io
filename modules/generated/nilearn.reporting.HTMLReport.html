@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.reporting.HTMLReport: Decoding of a dataset after GLM fit for signal extraction Decoding of a dataset after GLM fit for signal extraction Extracting signals of a probabilisti..." />
+<meta property="og:description" content="Examples using nilearn.reporting.HTMLReport: First level analysis of a complete BIDS dataset from openneuro First level analysis of a complete BIDS dataset from openneuro Extracting signals from br..." />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_haxby_glm_decoding_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_bids_features_thumb.png" />
   
-<meta property="og:image:alt" content="Decoding of a dataset after GLM fit for signal extraction" />
+<meta property="og:image:alt" content="First level analysis of a complete BIDS dataset from openneuro" />
   <link rel="search" title="Search" href="../../search.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
@@ -663,41 +663,86 @@ signature, and not how to use it. Please refer to the
 <dl class="py class">
 <dt class="sig sig-object py" id="nilearn.reporting.HTMLReport">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nilearn.reporting.</span></span><span class="sig-name descname"><span class="pre">HTMLReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head_tpl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/reporting/html_report.py#L234"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport" title="Permalink to this definition">#</a></dt>
-<dd><p>A report written as HTML.
-Methods such as save_as_html(), open_in_browser()
-are inherited from HTMLDocument</p>
+<dd><p>A report written as HTML.</p>
+<p>Methods such as <code class="docutils literal notranslate"><span class="pre">save_as_html</span></code>, or <code class="docutils literal notranslate"><span class="pre">open_in_browser</span></code>
+are inherited from class <code class="docutils literal notranslate"><span class="pre">nilearn.plotting.html_document.HTMLDocument</span></code>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.reporting.HTMLReport.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head_tpl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/reporting/html_report.py#L240"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>The head_tpl is meant for display as a full page, eg writing on
-disk. The body is used for embedding in an existing page.</p>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head_tpl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/reporting/html_report.py#L241"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructor the <code class="docutils literal notranslate"><span class="pre">HTMLReport</span></code> class.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>head_tpl</strong><span class="classifier">Template</span></dt><dd><p>This is meant for display as a full page, eg writing on disk.
+This is the Template object used to generate the HTML head
+section of the report. The template should be filled with:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>title: The title of the HTML page.</p></li>
+<li><p>body: The full body of the HTML page. Provided through
+the <code class="docutils literal notranslate"><span class="pre">body</span></code> input.</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt><strong>body</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>This parameter is used for embedding in the provided
+<code class="docutils literal notranslate"><span class="pre">head_tpl</span></code> template. It contains the full body of the
+HTML page.</p>
+</dd>
+<dt><strong>head_values</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>, optional</span></dt><dd><p>Additional substitutions in <code class="docutils literal notranslate"><span class="pre">head_tpl</span></code>.
+Default={}.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This can be used to provide additional values
+with custom templates.</p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.reporting.HTMLReport.get_iframe">
-<span class="sig-name descname"><span class="pre">get_iframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.get_iframe" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_iframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L80"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.get_iframe" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the document wrapped in an inline frame.</p>
 <p>For inserting in another HTML page of for display in a Jupyter
 notebook.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>width</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, optional</span></dt><dd><p>Width of the inline frame. Default=None.</p>
+</dd>
+<dt><strong>height</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, optional</span></dt><dd><p>Height of the inline frame. Default=None.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>wrapped</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Raw HTML code for the inline frame.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.reporting.HTMLReport.get_standalone">
-<span class="sig-name descname"><span class="pre">get_standalone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L85"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.get_standalone" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the plot in an HTML page.</p>
+<span class="sig-name descname"><span class="pre">get_standalone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L109"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.get_standalone" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the plot in an HTML page.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.reporting.HTMLReport.open_in_browser">
-<span class="sig-name descname"><span class="pre">open_in_browser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp_file_lifetime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.open_in_browser" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">open_in_browser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp_file_lifetime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.open_in_browser" title="Permalink to this definition">#</a></dt>
 <dd><p>Save the plot to a temporary HTML file and open it in a browser.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>file_name</strong><span class="classifier">str, optional</span></dt><dd><p>.html file to use as temporary file</p>
+<dd class="field-odd"><dl>
+<dt><strong>file_name</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, optional</span></dt><dd><p>HTML file to use as a temporary file. Default=None.</p>
 </dd>
-<dt><strong>temp_file_lifetime</strong><span class="classifier">float, optional (default=30.)</span></dt><dd><p>Time, in seconds, after which the temporary file is removed.
-If None, it is never removed.</p>
+<dt><strong>temp_file_lifetime</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>Time, in seconds, after which the temporary file is removed.
+If None, it is never removed.
+Default=30.</p>
 </dd>
 </dl>
 </dd>
@@ -706,47 +751,52 @@ If None, it is never removed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.reporting.HTMLReport.remove_temp_file">
-<span class="sig-name descname"><span class="pre">remove_temp_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.remove_temp_file" title="Permalink to this definition">#</a></dt>
-<dd><p>Remove the temporary file created by <cite>open_in_browser</cite>, if necessary.</p>
+<span class="sig-name descname"><span class="pre">remove_temp_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L171"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.remove_temp_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove the temporary file created by
+<code class="docutils literal notranslate"><span class="pre">open_in_browser</span></code>, if necessary.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.reporting.HTMLReport.resize">
-<span class="sig-name descname"><span class="pre">resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L63"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.resize" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L65"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.resize" title="Permalink to this definition">#</a></dt>
 <dd><p>Resize the plot displayed in a Jupyter notebook.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>width</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>New width of the plot.</p>
+</dd>
+<dt><strong>height</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>New height of the plot.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nilearn.reporting.HTMLReport.save_as_html">
-<span class="sig-name descname"><span class="pre">save_as_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L100"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.save_as_html" title="Permalink to this definition">#</a></dt>
-<dd><p>Save the plot in an HTML file, that can later be opened in a browser.</p>
+<span class="sig-name descname"><span class="pre">save_as_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/plotting/html_document.py#L123"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.reporting.HTMLReport.save_as_html" title="Permalink to this definition">#</a></dt>
+<dd><p>Save the plot in an HTML file, that can later be opened
+in a browser.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>file_name</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Path to the HTML file used for saving.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <section id="examples-using-nilearn-reporting-htmlreport">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.reporting.HTMLReport</span></code><a class="headerlink" href="#examples-using-nilearn-reporting-htmlreport" title="Permalink to this heading">#</a></h2>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Full step-by-step example of fitting a GLM to perform a decoding experiment. We use the data fr..."><img alt="Decoding of a dataset after GLM fit for signal extraction" src="../../_images/sphx_glr_plot_haxby_glm_decoding_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/02_decoding/plot_haxby_glm_decoding.html#sphx-glr-auto-examples-02-decoding-plot-haxby-glm-decoding-py"><span class="std std-ref">Decoding of a dataset after GLM fit for signal extraction</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Decoding of a dataset after GLM fit for signal extraction</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example extracts the signal on regions defined via a probabilistic atlas, to construct a f..."><img alt="Extracting signals of a probabilistic atlas of functional regions" src="../../_images/sphx_glr_plot_probabilistic_atlas_extraction_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_probabilistic_atlas_extraction.html#sphx-glr-auto-examples-03-connectivity-plot-probabilistic-atlas-extraction-py"><span class="std std-ref">Extracting signals of a probabilistic atlas of functional regions</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Extracting signals of a probabilistic atlas of functional regions</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows a full step-by-step workflow of fitting a GLM to data extracted from a seed ..."><img alt="Default Mode Network extraction of AHDH dataset" src="../../_images/sphx_glr_plot_adhd_dmn_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_adhd_dmn.html#sphx-glr-auto-examples-04-glm-first-level-plot-adhd-dmn-py"><span class="std std-ref">Default Mode Network extraction of AHDH dataset</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Default Mode Network extraction of AHDH dataset</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here, we will go through a full step-by-step example of fitting a GLM to experimental data and ..."><img alt="Simple example of two-session fMRI model fitting" src="../../_images/sphx_glr_plot_fiac_analysis_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_fiac_analysis.html#sphx-glr-auto-examples-04-glm-first-level-plot-fiac-analysis-py"><span class="std std-ref">Simple example of two-session fMRI model fitting</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Simple example of two-session fMRI model fitting</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example uses voxel-based morphometry (:term:`VBM`) to study the relationship between aging..."><img alt="Voxel-Based Morphometry on OASIS dataset" src="../../_images/sphx_glr_plot_oasis_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/05_glm_second_level/plot_oasis.html#sphx-glr-auto-examples-05-glm-second-level-plot-oasis-py"><span class="std std-ref">Voxel-Based Morphometry on OASIS dataset</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Voxel-Based Morphometry on OASIS dataset</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here is a simple example of automatic mask computation using the nifti masker. The mask is comp..."><img alt="Simple example of NiftiMasker use" src="../../_images/sphx_glr_plot_nifti_simple_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/06_manipulating_images/plot_nifti_simple.html#sphx-glr-auto-examples-06-manipulating-images-plot-nifti-simple-py"><span class="std std-ref">Simple example of NiftiMasker use</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Simple example of NiftiMasker use</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, the Nifti masker is used to automatically compute a mask."><img alt="Understanding NiftiMasker and mask computation" src="../../_images/sphx_glr_plot_mask_computation_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/06_manipulating_images/plot_mask_computation.html#sphx-glr-auto-examples-06-manipulating-images-plot-mask-computation-py"><span class="std std-ref">Understanding NiftiMasker and mask computation</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Understanding NiftiMasker and mask computation</div>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip=" Full step-by-step example of fitting a GLM to perform a first level analysis in an openneuro B..."><img alt="First level analysis of a complete BIDS dataset from openneuro" src="../../_images/sphx_glr_plot_bids_features_thumb.png" />
+<p><a class="reference internal" href="../../auto_examples/04_glm_first_level/plot_bids_features.html#sphx-glr-auto-examples-04-glm-first-level-plot-bids-features-py"><span class="std std-ref">First level analysis of a complete BIDS dataset from openneuro</span></a></p>
+  <div class="sphx-glr-thumbnail-title">First level analysis of a complete BIDS dataset from openneuro</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This simple example shows how to extract signals from functional fMRI data and brain regions de..."><img alt="Extracting signals from brain regions using the NiftiLabelsMasker" src="../../_images/sphx_glr_plot_nifti_labels_simple_thumb.png" />
+<p><a class="reference internal" href="../../auto_examples/06_manipulating_images/plot_nifti_labels_simple.html#sphx-glr-auto-examples-06-manipulating-images-plot-nifti-labels-simple-py"><span class="std std-ref">Extracting signals from brain regions using the NiftiLabelsMasker</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Extracting signals from brain regions using the NiftiLabelsMasker</div>
 </div></div><div style='clear:both'></div></section>
 </section>
 

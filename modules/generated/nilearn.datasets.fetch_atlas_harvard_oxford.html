@@ -12,11 +12,11 @@
   
 <meta property="og:site_name" content="Nilearn" />
   
-<meta property="og:description" content="Examples using nilearn.datasets.fetch_atlas_harvard_oxford: Basic Atlas plotting Basic Atlas plotting Visualizing 4D probabilistic atlas maps Visualizing 4D probabilistic atlas maps Extracting sign..." />
+<meta property="og:description" content="Examples using nilearn.datasets.fetch_atlas_harvard_oxford: Extracting signals from brain regions using the NiftiLabelsMasker Extracting signals from brain regions using the NiftiLabelsMasker" />
   
-<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_atlas_thumb.png" />
+<meta property="og:image" content="https://nilearn.github.io/_images/sphx_glr_plot_nifti_labels_simple_thumb.png" />
   
-<meta property="og:image:alt" content="Basic Atlas plotting" />
+<meta property="og:image:alt" content="Extracting signals from brain regions using the NiftiLabelsMasker" />
   <link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nilearn.datasets.fetch_atlas_juelich" href="nilearn.datasets.fetch_atlas_juelich.html" /><link rel="prev" title="nilearn.datasets.fetch_atlas_destrieux_2009" href="nilearn.datasets.fetch_atlas_destrieux_2009.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
@@ -662,7 +662,7 @@ function signature, and not how to use it. Please refer to the
 <h1>nilearn.datasets.fetch_atlas_harvard_oxford<a class="headerlink" href="#nilearn-datasets-fetch-atlas-harvard-oxford" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="nilearn.datasets.fetch_atlas_harvard_oxford">
-<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_atlas_harvard_oxford</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atlas_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetric_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/datasets/atlas.py#L296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_atlas_harvard_oxford" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">nilearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_atlas_harvard_oxford</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atlas_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetric_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nilearn/nilearn/blob/0f38628d/nilearn/datasets/atlas.py#L297"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nilearn.datasets.fetch_atlas_harvard_oxford" title="Permalink to this definition">#</a></dt>
 <dd><p>Load Harvard-Oxford parcellations from FSL.</p>
 <p>This function downloads Harvard Oxford atlas packaged from FSL 5.0
 and stores atlases in NILEARN_DATA folder in home directory.</p>
@@ -726,7 +726,7 @@ Default=1.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>data</strong><span class="classifier"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.utils.Bunch</span></code></span></dt><dd><p>Dictionary-like object, keys are:</p>
+<dt><strong>data</strong><span class="classifier"><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="(in scikit-learn v1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.utils.Bunch</span></code></a></span></dt><dd><p>Dictionary-like object, keys are:</p>
 <blockquote>
 <div><ul>
 <li><p>‘maps’: <a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, path to nifti file containing the
@@ -767,16 +767,7 @@ compatibility only.</p></li>
 
 <section id="examples-using-nilearn-datasets-fetch-atlas-harvard-oxford">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">nilearn.datasets.fetch_atlas_harvard_oxford</span></code><a class="headerlink" href="#examples-using-nilearn-datasets-fetch-atlas-harvard-oxford" title="Permalink to this heading">#</a></h2>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Plot the regions of a reference atlas (Harvard-Oxford and Juelich atlases)."><img alt="Basic Atlas plotting" src="../../_images/sphx_glr_plot_atlas_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/01_plotting/plot_atlas.html#sphx-glr-auto-examples-01-plotting-plot-atlas-py"><span class="std std-ref">Basic Atlas plotting</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Basic Atlas plotting</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to visualize probabilistic atlases made of 4D images. There are 3 differ..."><img alt="Visualizing 4D probabilistic atlas maps" src="../../_images/sphx_glr_plot_prob_atlas_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/01_plotting/plot_prob_atlas.html#sphx-glr-auto-examples-01-plotting-plot-prob-atlas-py"><span class="std std-ref">Visualizing 4D probabilistic atlas maps</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Visualizing 4D probabilistic atlas maps</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here we show how to extract signals from a brain parcellation and compute a correlation matrix."><img alt="Extracting signals from a brain parcellation" src="../../_images/sphx_glr_plot_signal_extraction_thumb.png" />
-<p><a class="reference internal" href="../../auto_examples/03_connectivity/plot_signal_extraction.html#sphx-glr-auto-examples-03-connectivity-plot-signal-extraction-py"><span class="std std-ref">Extracting signals from a brain parcellation</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Extracting signals from a brain parcellation</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This simple example shows how to extract signals from functional fMRI data and brain regions de..."><img alt="Extracting signals from brain regions using the NiftiLabelsMasker" src="../../_images/sphx_glr_plot_nifti_labels_simple_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This simple example shows how to extract signals from functional fMRI data and brain regions de..."><img alt="Extracting signals from brain regions using the NiftiLabelsMasker" src="../../_images/sphx_glr_plot_nifti_labels_simple_thumb.png" />
 <p><a class="reference internal" href="../../auto_examples/06_manipulating_images/plot_nifti_labels_simple.html#sphx-glr-auto-examples-06-manipulating-images-plot-nifti-labels-simple-py"><span class="std std-ref">Extracting signals from brain regions using the NiftiLabelsMasker</span></a></p>
   <div class="sphx-glr-thumbnail-title">Extracting signals from brain regions using the NiftiLabelsMasker</div>
 </div></div><div style='clear:both'></div></section>
